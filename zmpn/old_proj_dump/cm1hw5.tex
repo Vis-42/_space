@@ -1,0 +1,165 @@
+\documentclass{report}
+
+\input{latex-templates/preamble}
+\input{latex-templates/macros}
+\input{latex-templates/letterfonts}
+\usepackage{physics}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{wrapfig}
+\usepackage{pgfplots}
+\setlength{\fboxsep}{1pt} % Space between image and border
+\setlength{\fboxrule}{0.5pt} % Border thickness
+
+\title{\Huge{PC2032 Classical Mechanics 1}\\Homework Assignment 5}
+\author{\huge{Parth Bhargava}\\ AO310667E}
+\date{}
+
+\begin{document}
+	\maketitle
+	
+	\pbm{}{
+	A $2.0$ kg block slides along a frictionless tabletop at $8.0$ m/s toward a
+	second block (at rest) of mass $4.5$ kg. A coil spring which obeys Hooke’s Law and
+	has spring constant $k = 850$ N/m is attached to the second block in such a way
+	that it will be compressed when struck by the moving block. \\
+	\begin{enumerate}
+		\item[a.] What will be the maximum compression of the spring?\\
+		\item[b.] What will be the final velocities of the blocks after the collision?\\
+	\end{enumerate}
+	}
+	\sol{}{
+	\udia{0.6}{rdf34}
+	\sss{a.}
+	At the maximum compression, the block $M_1$ will be stationary with respect to the block $M_2$. Therefore, at that instance, both of them are moving with the same velocity $v$.\\
+	By conservation of momentum:
+	\begin{equation*}
+		M_1u=(M_1+M_2)v \imps v=\frac{M_1}{M_1+M_2}u \imps v=\qty(\frac{2}{2+4.5})8 \imps v=\frac{32}{13} \unt{ m/s } \approx 2.5 \unt{ m/s } 
+	\end{equation*}
+	The loss of kinetic energy between these two instances is stored in the spring as potential energy. Assuming the maximum compression of the spring to be $x_m$.\\
+	By conservation of energy:
+	\begin{align*}
+		\frac{1}{2}M_1u^2 &= \frac{1}{2}(M_1+M_2)v^2 + \frac{1}{2}kx_m^2\\
+		kx_m^2 &= M_1u^2-(M_1+M_2)v^2\\
+		kx_m^2 &= M_1u^2-(M_1+M_2)\qty(\frac{M_1}{M_1+M_2}u)^2\\
+		kx_m^2 &= \qty(\frac{M_1\qty(M_1+M_2)-M_1^2}{M_1+M_2})u^2\\
+		x_m &= u\sqrt{\frac{M_1M_2}{k(M_1+M_2)}}\\ \\
+		\imps x_m &= 8\sqrt{\frac{2 \times 4.5}{850(6.5)}} = \frac{24}{5\sqrt{13 \times 17}} \imps \boxed{x_m \approx 0.32 \unt{ m}}\\
+	\end{align*}
+	\wa
+	\sss{b.}
+	After the collision the massless spring will return to its natural length, effectively resulting the blocks to behave equivalently to a state where the collision occured without the presence of the spring.\\
+	By conservation of momentum:
+	\begin{equation}
+		M_1u =M_1v_1+M_2v_2 \label{1}
+	\end{equation}
+	By conservation of energy:
+	\begin{align*}
+		\frac{1}{2}M_1u^2 &=\frac{1}{2}M_1v_1^2+\frac{1}{2}M_2v_2^2\\
+		M_1u^2 &=M_1v_1^2+M_2\qty(\frac{M_1(u-v_1)}{M_2})^2 \kyuki{1}\\
+		u^2 &=v_1^2+\qty(\frac{M_1(u-v_1)^2}{M_2})\\
+		M_2(u- v_1)(u+v_1) &= M_1(u-v_1)^2\\
+		M_2(u+v_1) &= M_1(u-v_1) \quad [\because u \neq v_1]\\
+		(M_1+M_2)v_1 &= (M_1-M_2)u\\
+		v_1 &= \qty(\frac{M_1-M_2}{M_1+M_2})u\\ \\
+		\imps v_1 &= \qty(\frac{2-4.5}{2+4.5})8 =-\frac{40}{13} \imps \boxed{v_1 \approx -3.1 \unt{ m/s}}
+	\end{align*}
+	Substituting back in \eqref{1},
+	\begin{align*}
+		v_2&=\frac{M_1(u-v_1)}{M_2}\\
+		&=\frac{M_1\qty(u-\qty(\frac{M_1-M_2}{M_1+M_2})u)}{M_2}\\
+		&=M_1u\frac{\qty(M_1+M_2-\qty(M_1-M_2))}{M_2\qty(M_1+M_2)}\\
+		v_2 &= \frac{2M_1u}{M_1+M_2}\\ \\
+		\imps v_2 &= \frac{2 \times 2 \times 8}{6.5} \imps \boxed{v_2 \approx 4.9 \unt{ m/s}}\\
+	\end{align*}
+	}
+	\wa
+	
+	\pbm{}{
+	A $1.8$ kg duck flies at a height of $15$ m above the ground and a rate
+	of $5.0$ m/s in an easterly direction. A golf ball of mass $50$ g launched from the
+	ground at an angle of $30^{\circ}$ with the horizontal (in the westerly direction) and speed
+	$40$ m/s is caught by the duck and instantly swallowed. What is the duck’s velocity
+	immediately after the encounter?
+	}
+	\sol{}{
+	\udia{0.6}{rdf35}
+	\sss{}
+	At the instance right before the collision,
+	$$v_x=u\cos\theta=(40)(\cos 30^{\circ})=20\sqrt{3} \unt{ m/s}$$
+	$$v_y=\sqrt{(u\sin\theta)^2 +2(-g)(H)}= \sqrt{(20)^2 - 30 \times 9.8} = \sqrt{400 - 294} = \sqrt{106} \unt{ m/s}$$
+	Applying conservation of momentum at the instance right after the collision,
+	\begin{enumerate}
+		\item[i.] Along the x-axis,
+		\begin{align*}
+			M_1v_0 +M_2(-v_x) &= (M_1+M_2)v_{1x}\\
+			v_{1x}&=\frac{M_1v_0 - M_2v_x}{M_1+M_2} \\
+			&= \frac{1.8 \times 5 - 0.05 \times 20\sqrt{3}}{1.8+0.05}\\
+			&= \frac{9 - \sqrt{3}}{1.85}\\
+			\imps v_{1x} &= 3.9 \unt{ m/s}
+		\end{align*}
+		\item[ii.] Along the y-axis,
+		\begin{align*}
+			M_2(v_y) &= (M_1+M_2)v_{1y}\\
+			v_{1y}&=\frac{M_2v_y}{M_1+M_2} \\
+			&= \frac{0.05 \times \sqrt{106}}{1.8+0.05}\\
+			&= \frac{\sqrt{106}}{37}\\
+			\imps v_{1y} &= 0.28 \unt{ m/s}
+		\end{align*}
+	\end{enumerate}
+	Hence, the ducks velocity right after the collision is $\va{v_1} = 3.9 \vu*{i} + 0.28 \vu*{j}$.\\
+	}
+	\wa
+	
+	\pbm{}{
+		By integration, find the position of the centre of mass of a hemispherical
+		object with radius $R$. Assume that the density is uniform.
+	}
+	\sol{}{
+	\udia{0.6}{rdf36}
+	\sss{}
+	Let the density of the object by $\rho$.\\
+	For an elemental disc described by angle $\theta$ from the vertical,
+	$$\dd m = \rho \cdot \pi \qty(R\sin\theta)^2\qty(R\sin\theta\dd\theta)$$
+	By circular symmetry, the COM must lie on the centre of the disc. Subsequently,
+	\begin{align*}
+		x_{com} &= \frac{\int R\cos\theta \dd m}{\int \dd m}\\
+		&= \frac{\int_0^{\frac{\pi}{2}} R\cos\theta \rho \pi \qty(R\sin\theta)^2\qty(R\sin\theta\dd\theta)}{\int_0^{\frac{\pi}{2}} \rho \pi \qty(R\sin\theta)^2\qty(R\sin\theta\dd\theta)}\\
+		&= R\qty(\frac{\int_0^{\frac{\pi}{2}} \cos\theta \sin^3\theta\dd\theta}{\int_0^{\frac{\pi}{2}} \sin^3\theta\dd\theta}) \tag{2} \label{2}
+	\end{align*}
+	Here,
+	\begin{align*}
+		\int_0^{\frac{\pi}{2}} \cos\theta \sin^3\theta\dd\theta &= \int_0^1 y^3 \dd y  \quad \lt[\because y=\sin\theta \Rightarrow dy = \cos\theta \dd \theta \rt]\\
+		&\quad = \lt[\frac{y^4}{4}\rt]_0^1 = \frac{1}{4} \tag{3} \label{3}
+	\end{align*}
+	Similarily,
+	\begin{align*}
+		\int_0^{\frac{\pi}{2}} \sin^3\theta\dd\theta  &= \int_0^{\frac{\pi}{2}} \frac{4\sin\theta - \sin 3\theta}{4} \dd\theta \\
+		&= \lt[ \frac{-3\cos\theta + \frac{1}{3}\cos (3\theta)}{4} \rt]_0^{\frac{\pi}{2}} =\frac{2}{3} \tag{4} \label{4}
+	\end{align*}
+	Using \eqref{2}, \eqref{3} and \eqref{4},
+	\begin{equation*}
+		x_{com} = R\qty(\frac{\frac{1}{4}}{\frac{2}{3}}) \imps \boxed{x_{com} = \frac{3R}{8}}
+	\end{equation*}
+	Hence, the centre of mass of the solid hemisphere will be at vertical height $x_{com}= \dfrac{3R}{8}$ from the centre of the base.
+	}
+	\wa
+	\pbm{}{
+		A uniform circular plate of radius $2R$ has a circular hole of radius $R$ cut
+		out of it. The centre of the smaller circle is a distance $0.80R$ from the centre of
+		the larger circle. What is the position of the centre of mass of the plate? \textit{[Hint:
+		Consider the hole as a sum of two pieces with equal and opposite mass.]}
+	}
+	\sol{}{
+	\udia{0.6}{rdf37}
+	\sss{}
+	The final body can be considered as a superposition of two discs; one of radius $2R$, mass $M$ and centre of mass $(0,0)$, and the other of radius $R$, mass $-\frac{M}{4}$ and centre of mass $(-0.8R,0)$.\\
+	Hence,
+	\begin{equation*}
+		x_{com}=\frac{(0)(M)+(-0.8R)\qty(-\frac{M}{4})}{(M)+\qty(-\frac{M}{4})} \imps x_{com}=\frac{0.2MR}{\qty(\frac{3M}{4})} \imps \boxed{x_{com}=\frac{4R}{15}}
+	\end{equation*}
+	Therefore, the centre of mass of the body is $\qty(\dfrac{4R}{15},0)$.\\
+	}
+	\wa
+	
+\end{document}

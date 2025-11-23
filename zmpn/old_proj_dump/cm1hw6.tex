@@ -1,0 +1,178 @@
+\documentclass{report}
+
+\input{latex-templates/preamble}
+\input{latex-templates/macros}
+\input{latex-templates/letterfonts}
+\usepackage{multicol}
+\usepackage{physics}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{wrapfig}
+\usepackage{pgfplots}
+
+\setlength{\fboxsep}{1pt} % Space between image and border
+\setlength{\fboxrule}{0.5pt} % Border thickness
+
+\setlength{\columnsep}{20pt} % Adjust space between columns
+\setlength{\columnseprule}{1pt}% Thickness of vertical line
+
+\title{\Huge{PC2032 Classical Mechanics 1}\\Homework Assignment 6}
+\author{\huge{Parth Bhargava}\\ AO310667E}
+\date{}
+
+\begin{document}
+	\maketitle
+	
+	\pbm{}{
+	There are $N$ men with equal mass $m$ standing on a cart with mass $M$ . The
+	cart is initially resting on a frictionless floor. \\
+	\begin{enumerate}
+		\item[a.] If all $N$ men jump off the cart at the same time with a horizontal speed $v_r$ in the
+		same direction \textit{relative} to the cart, what is the final speed of the cart?\\
+		\item[b.] If these men jump off the cart one by one with the same horizontal speed $v_r$ in
+		the same direction \textit{relative} to the cart, what is the final speed of the cart?\\
+		\item[c.] In the above two cases, which cart speed is higher? Why?\\
+	\end{enumerate}
+	}
+	\sol{}{
+	\sss{a.}
+	By conservation of momentum,
+	\begin{align*}
+		0 &= Mu - Nm (v_r - u) \\
+		u &= \frac{Nm}{M} \lt( v_r - u \rt) \\
+		u \lt( 1 + \frac{Nm}{M} \rt) &= \frac{Nm}{M} v_r \\
+		\imps u &= \frac{Nm v_r}{\lt( M + Nm \rt)}\h
+	\end{align*}
+	
+	\sss{b.}
+	After the $1^{st}$ jump,
+	\begin{align*}
+		0 &= (M + (N-1)m) u_1 - m (v_r - u_1) \\
+		0 &= (M + N m) u_1 - m v_r \\
+		u_1 &= \frac{m v_r}{M + N m} \label{01} \tag{1}
+	\end{align*}
+	If we put ourselves in the reference frame of the cart after the $(k-1)^{th}$ jump and ignore the $(k-1)$ people that have already jumped, we can apply \eqref{01} for the $k^{th}$ jump,
+	\begin{align*}
+		u_k - u_{k-1}=\frac{mv_r}{M+(N-k+1)m} \label{02} \tag{2}
+	\end{align*}
+	Using \eqref{02},
+	\begin{align*}
+		u_k &=\frac{mv_r}{M+(N-k+1)m} + u_{k-1}\\
+		u_k &=\frac{mv_r}{M+(N-k+1)m} + \frac{mv_r}{M+(N-(k-1)+1)m} + u_{k-2} &&\kyuki{02}\\
+		u_k &=\sum_{p=1}^N \frac{mv_r}{M+(N-(k-p))m} &&\kyuki{02}
+	\end{align*}
+	For $k=N$,
+	$$
+	u_N =\sum_{p=1}^N \frac{mv_r}{M+pm} \h
+	$$
+	\udia{0.7}{rdf59}
+	\sss{c.}
+	The final speed of the cart is higher in case (b). This is because each subsequent jump occurs when the cart is lighter, leading to a larger velocity increment per jump. The cumulative effect of these increments exceeds the single velocity change when all jump together.\\
+	}
+	\wa
+	
+	\pbm{}{
+	A raindrop starts falling freely with an initial mass of $m_0$. During its descent,
+	water vapor condenses onto it at a constant rate $k$. Neglecting air resistance, determine
+	the motion of the raindrop by answering the following questions:\\
+	\begin{enumerate}
+		\item[a.] Find the velocity of the raindrop as a function of time.\\
+		\item[b.] Find the distance fallen by the raindrop after a time $t$.\\
+	\end{enumerate}
+	}
+	\sol{}{
+	\sss{a.}
+	Applying Newton's $2^{nd}$ Law:
+	\begin{align*}
+		mg&=\dv{t} (mv) = v \dv{m}{t} + m \dv{v}{t} = vk + m \dv{v}{t}\\
+		&\imps \dv{v}{t} + \frac{vk}{m} = g \\
+		&\imps \dv{v}{t} + \lt(\frac{k}{m_0+kt}\rt)v = g \\
+	\end{align*}
+	This gives us a linear ODE, for which:\\
+	Integrating Factor, $\gamma = \e{\int \dfrac{k}{m_0+kt}\dd{t}}=\e{\ln(m_0+kt)}=m_0+kt$\\
+	Hence,
+	\begin{align*}
+		v\gamma&=\int\gamma g \dd{t}\\
+		v(m_0+kt)&=\int(m_0+kt) g \dd{t}\\
+		v(m_0+kt)&=gm_0t+\frac{kgt^2}{2}+c &&\ki{v=0 \text{ at } t=0 \Rightarrow c=0}\\
+		\imps v&=\frac{2gm_0t+kgt^2}{2(m_0+kt)}\h
+	\end{align*}
+	\sss{b.}
+	Given the velocity function, we find the displacement \( x(t) \) by integrating \( v \) with respect to \( t \):
+	\begin{align*}
+		x(t) &= \int v \dd{t} \\
+		&= \int \frac{2g m_0 t + k g t^2}{2(m_0 + k t)} \dd{t}\\
+		&= \int \frac{g}{2} \lt( \frac{t^2 + \frac{2 m_0}{k} t}{\frac{m_0}{k} + t} \rt) \dd{t}\\
+		&= \frac{g}{2} \int \lt( \frac{\lt(t + z\rt)^2 - \lt(z\rt)^2}{z + t} \rt) \dd{t} && \ki{ z = \frac{m_0}{k}}\\
+		&= \frac{g}{2} \int \lt( \qty(t + z) - \frac{z^2}{t + z} \rt) \dd{t} \\
+		&= \frac{g}{2} \lt( \int (t + z) \dd{t} - \int \frac{z^2}{t + z} \dd{t} \rt) \\
+		&= \frac{g}{2} \lt( \frac{t^2}{2} + z t - z^2 \ln |t + z| \rt) + c \\
+		\imps x(t) &= \frac{g}{2} \lt( \frac{t^2}{2} + \frac{m_0}{k} t - \lt(\frac{m_0}{k}\rt)^2 \ln \abs{t + \frac{m_0}{k}} \rt) + C\h
+	\end{align*}
+	}
+	\wa
+	
+	\pbm{}{
+	As shown in the figure, two massless rods of equal length $l$ meet at a spherical
+	bead of mass $m$. The other ends of the rods are attached to spheres of mass $m$ and
+	$2m$, respectively, both of which rest on a frictionless horizontal surface. Initially, the
+	rods are held upright, with the top bead at rest. Once released, the lower two spheres
+	slide outward and the rods fall in the same vertical plane (friction neglected). Find:\\
+	\begin{enumerate}
+		\item[a.] The speed of the top bead (mass $m$) the moment it reaches the table.\\
+		\item[b.] The speed of the sphere of mass $2m$ at the instant the angle between the two
+		rods is $90^{\circ}$.\\
+	\end{enumerate}
+	\udia{0.4}{rdf55}
+	}
+	\sol{}{
+	\udia{0.7}{rdf58}
+	Along the rod joining the bead of mass $m$ and sphere of mass $m$, the components of velocity along the rod for each body must be equal for the distance between them to remain the same (i.e. for the rod to not break),
+	\begin{equation}
+		u_1 \sin\beta + u_2 \cos\beta = v_1 \cos\beta \imps u_1 \tan\beta = v_1 - u_2 \label{03} \tag{3}
+	\end{equation}
+	Similarily, 
+	\begin{equation}
+		u_1 \sin\beta - u_2 \cos\beta = v_2 \cos\beta \imps u_1 \tan\beta = v_2 + u_2 \label{04} \tag{4}
+	\end{equation}
+	By Energy conservation,
+	\begin{equation}
+		mgl(1-\sin\beta) = \frac{1}{2}m(u_1^2 + u_2^2) + \frac{1}{2}mv_1^2 + mv_2^2 \imps 2gl(1-\sin\beta) = (u_1^2 + u_2^2) + v_1^2 + 2v_2^2 \label{05} \tag{5}
+	\end{equation}
+	By momentum conservation along the x-axis,
+	\begin{equation}
+		m u_2 + m v_1 = 2m v_2 \imps u_2 + v_1 = 2 v_2 \label{06} \tag{6}
+	\end{equation}
+	\sss{a.}
+	At this moment $\beta=0$,
+	\begin{align*}
+		v_1&=u_2=-v_2=0 \quad \quad \bqty{\because \eqref{03}, \eqref{04}, \eqref{06}}
+	\end{align*}
+	Using \eqref{05},
+	\begin{align*}
+		2gl(1-0) &= (u_1^2 + 0) + 0 + 0 \imps u_1^2=2gl
+	\end{align*}
+	Hence, \\
+	The speed of the top bead when it reaches the ground is , $$u=\sqrt{u_1^2+u_2^2} \imps u=\sqrt{2gl}\h$$
+	\sss{b.}
+	At the instant the angle between the two rods is $90^{\circ}$, $\beta=\dfrac{\pi}{4}$,
+	\begin{align*}
+		u_1&=v_1-u_2=v_2+u_2 \quad \quad \bqty{\because \eqref{03}, \eqref{04}}
+	\end{align*}
+	By \eqref{06},
+	\begin{align*}
+		2v_2=u_2 + v_2+2u_2 \imps v_2= 3u_2
+	\end{align*}
+	Using \eqref{05},
+	\begin{align*}
+		2gl\lt(1-\frac{1}{\sqrt{2}}\rt) &= ((v_2+u_2)^2 + u_2^2) + (v_2+2u_2)^2 + 2v_2^2 \\
+		2gl\lt(1-\frac{1}{\sqrt{2}}\rt) &= \qty(\qty(\frac{4v_2}{3})^2 + \qty(\frac{v_2}{3})^2) + \qty(\frac{5v_2}{3})^2 + 2v_2^2 \\
+		18gl\lt(1-\frac{1}{\sqrt{2}}\rt) &= (16+1+25+18)v_2^2 \\
+		\imps v_2&=\sqrt{\frac{18gl}{60}\lt(1-\frac{1}{\sqrt{2}}\rt)}
+	\end{align*}
+	Hence, \\
+	The speed of the sphere of mass $2m$ at the instant the angle between the two rods is $90^{\circ}$ is , 
+	$$v_2=\sqrt{\frac{3gl}{10}\lt(1-\frac{1}{\sqrt{2}}\rt)}\h$$
+	}
+	\wa
+\end{document}

@@ -1,0 +1,151 @@
+# PC2193 EXPERIMENTAL PHYSICS
+# MAGNETIC MOMENT IN MAGNETIC FIELD - ALL EXPERIMENTAL DATA
+# ============================================================
+
+# EXPERIMENTAL CONDITIONS:
+# - Helmholtz coils: 154 turns (N = 154)
+# - Conversion factor K = 11 cm (to convert dial readings to torque)
+# - Torque T = K × F, where F is in mN and T is in mNcm
+# - Maximum Helmholtz current: 3A (continuous operation)
+
+# ============================================================
+# EXPERIMENT 1: Torque vs Helmholtz Current
+# ============================================================
+# Conditions:
+# - 3 loops
+# - 5.00A constant loop current (IL)
+# - 11.98 cm diameter (range: 11.95-12.00 cm)
+# - α = 90° (±1°)
+
+IH(A)	F1(mN)	F2(mN)	F3(mN)	Favg(mN)	T(mNcm)
+0.00	0.00	0.00	0.00	0.00		0.00
+0.50	0.70	0.60	0.65	0.65		7.15
+1.00	1.10	1.10	1.10	1.10		12.10
+1.50	1.65	1.60	1.60	1.62		17.82
+2.00	2.20	2.20	2.15	2.18		23.98
+2.50	2.70	2.70	2.70	2.70		29.70
+2.82	3.05	3.10	3.05	3.07		33.77
+
+# ============================================================
+# EXPERIMENT 2: Torque vs Number of Loops
+# ============================================================
+# Conditions:
+# - 5.00A constant loop current (IL)
+# - 11.98 cm diameter (119.8 mm)
+# - α = 90° (±1°)
+# - 2.50A constant Helmholtz current (IH)
+
+n	F1(mN)	F2(mN)	F3(mN)	Favg(mN)	T(mNcm)
+1	0.90	0.90	0.90	0.90		9.90
+2	1.80	1.80	1.80	1.80		19.80
+3	2.70	2.65	2.70	2.68		29.48
+
+# ============================================================
+# EXPERIMENT 3: Torque vs Angle
+# ============================================================
+# Conditions:
+# - 5.00A constant loop current (IL)
+# - 11.98 cm diameter (119.8 mm)
+# - 3 loops
+# - 2.50A constant Helmholtz current (IH)
+
+α(°)	F1(mN)	F2(mN)	F3(mN)	Favg(mN)	sin(α)	T(mNcm)
+0	0.20	0.25	0.20	0.22		0.000	2.42
+15	1.00	0.95	0.90	0.95		0.259	10.45
+30	1.55	1.60	1.50	1.55		0.500	17.05
+45	2.05	2.00	2.15	2.07		0.707	22.77
+60	2.50	2.45	2.45	2.47		0.866	27.17
+75	2.70	2.70	2.65	2.68		0.966	29.48
+90	2.70	2.70	2.70	2.70		1.000	29.70
+
+# ============================================================
+# EXPERIMENT 4: Torque vs Loop Diameter
+# ============================================================
+# Conditions:
+# - 5.00A constant loop current (IL)
+# - 2.50A constant Helmholtz current (IH)
+# - α = 90° (±1°)
+# - 1 loop
+
+d(cm)	d1(cm)	d2(cm)	d3(cm)	dmean(cm)	F1(mN)	F2(mN)	F3(mN)	Favg(mN)	T(mNcm)
+6.00	6.00	6.00	6.00	6.00		0.20	0.30	0.20	0.23		2.53
+8.47	8.45	8.50	8.45	8.47		0.50	0.50	0.50	0.50		5.50
+11.98	11.95	12.00	12.00	11.98		2.70	2.70	2.70	2.70		29.70
+
+# ============================================================
+# EXPERIMENT 5: Torque vs Loop Current
+# ============================================================
+# Conditions:
+# - 2.50A constant Helmholtz current (IH)
+# - α = 90° (±1°)
+# - 11.98 cm diameter (119.8 mm)
+# - 3 loops
+
+IL(A)	F1(mN)	F2(mN)	F3(mN)	Favg(mN)	T(mNcm)
+0.00	0.00	0.00	0.00	0.00		0.00
+1.00	0.60	0.60	0.60	0.60		6.60
+2.00	1.15	1.10	1.10	1.12		12.32
+3.00	1.70	1.70	1.70	1.70		18.70
+4.00	2.20	2.20	2.25	2.22		24.42
+5.00	2.70	2.65	2.70	2.68		29.48
+
+# ============================================================
+# EXPERIMENT 6: Unknown Loop Area Measurement
+# ============================================================
+# Conditions:
+# - 5.00A constant loop current (IL)
+# - 2.50A constant Helmholtz current (IH)
+# - α = 90° (±2°)
+# - ~1 loop
+# - Star-shaped loop (area to be determined)
+
+F1(mN)	F2(mN)	F3(mN)	Favg(mN)	T(mNcm)
+0.85	0.85	0.85	0.85		9.35
+
+# ============================================================
+# ERROR SOURCES IDENTIFIED:
+# ============================================================
+# 1. Placement of loop (alignment in magnetic field)
+# 2. Loop drift over time
+# 3. Swinging/oscillation of loop
+# 4. Zero value/measured value calibration drift
+# 5. Non-planar loops assumption
+# 6. Resistance/torque by connecting wires
+
+# ============================================================
+# IMPORTANT NOTES:
+# ============================================================
+# - All torque values calculated using T = K × F where K = 11 cm
+# - Helmholtz coils have N = 154 turns
+# - Coil radius R for Helmholtz constant calculation
+# - Maximum continuous current for Helmholtz coils: 3A
+# - All diameter measurements: 11.98 cm = 119.8 mm
+# - Angles measured with ±1-2° uncertainty
+# - Multiple measurements (F1, F2, F3) taken to reduce random errors
+# - Star-shaped loop area to be calculated using experimental Helmholtz constant
+
+# ============================================================
+# THEORETICAL RELATIONS:
+# ============================================================
+# Torque: |T| = c × IH × n × IL × |A| × sin(α)
+# Helmholtz constant: c = (8μ₀N)/(5√5R) where N=154
+# Magnetic moment: m = I × n × A
+# For circular loop: A = πd²/4
+
+# ============================================================
+# ERROR SOURCES IDENTIFIED:
+# ============================================================
+# 1. Placement of loop
+# 2. Loop drift over time
+# 3. Swinging of loop
+# 4. Zero value/measured value calibration
+# 5. Planar loops assumption
+# 6. Resistance by wire
+
+# ============================================================
+# NOTES:
+# ============================================================
+# - All torque values calculated using T = K × F where K = 11 cm
+# - Angles in degrees, converted to radians for calculations
+# - Multiple measurements taken to reduce random errors
+# - Star-shaped loop area to be calculated using experimental Helmholtz constant

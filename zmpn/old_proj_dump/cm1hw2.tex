@@ -1,0 +1,140 @@
+\documentclass{report}
+
+\input{latex-templates/preamble}
+\input{latex-templates/macros}
+\input{latex-templates/letterfonts}
+\usepackage{physics}
+\usepackage{lipsum}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{wrapfig}
+\setlength{\fboxsep}{1pt} % Space between image and border
+\setlength{\fboxrule}{0.5pt} % Border thickness
+
+\title{\Huge{PC2032 Classical Mechanics 1}\\Homework Assignment 2}
+\author{\huge{Parth Bhargava}}
+\date{}
+
+\begin{document}
+	\maketitle
+	
+	\pbm{}{
+	A projectile is fired up an incline (incline angle $\varphi$) with an initial speed $v_i$ at an angle $\theta_i$ with respect to the horizontal $(\theta_i > \varphi)$, as shown below.\\
+	\dia{0.4}{rdf}
+	\linebreak
+	(a) Show that the projectile travels a distance $d$ up the incline, where $$d=\frac{2v_i^2\cos{\theta_i}\sin(\theta_i-\varphi)}{\mathrm{g}\cos^2{\varphi}}$$
+	(b) For what angle of $\theta_i$ is $d$ a maximum, and what is the maximum value?
+	}
+	\sol{}{
+	
+	\udia{0.6}{rdf4}
+	\subsubsection{(a)} 
+	Here,
+	\begin{equation} 
+		d\cos{\varphi}=(v_i\cos\theta_i)\cdot t \imps t = \frac{d\cos\varphi}{v_i\cos\theta_i} \label{eq:11}\\
+	\end{equation}
+	Similarily,
+	\begin{equation}
+		d\sin\varphi = v_i\sin\theta_i\cdot t - \frac{g}{2}t^2 \label{eq:12}\\
+	\end{equation}
+	Hence,
+	\begin{align*}
+		&d\sin\varphi=v_{i}\sin\theta_{i}\frac{d\cos\varphi}{v_i\cos\theta_i}-\frac{g}{2}\frac{d^{2}\cos^{2}\varphi}{v_{i}^{2}\cos^{2}\theta_{i}} \kyukifir{eq:11}{eq:12}\\
+		\imps &\sin\varphi=\frac{\sin\theta_{i}\cos\varphi}{\cos\theta_{i}}-\frac{gd}{2}\frac{\cos^{2}\varphi}{v_{i}^{2}\cos^{2}\theta_{i}}\\
+		\imps &\frac{gd}{2v_{i}^{2}}\frac{\cos^{2}\varphi}{\cos^2\theta_{i}}=\frac{\sin\theta_{i}\cos\varphi}{\cos\theta_{i}}-\sin\varphi\\
+		\imps &d=\frac{2v_{i}^{2}\cos\theta_{i}}{g\cos^{2}\varphi}(\sin\theta_{i}\cos\varphi-\sin\varphi\cos\theta_{i})\\
+		\imps & \boxed{d=\frac{2v_{i}^{2}\cos\theta_{i}\sin(\theta_{i}-\varphi)}{g\cos^{2}\varphi}}
+	\end{align*}
+	\subsubsection{(b)}
+	To maximize $d$ with respect to $\theta_i$,
+	\begin{align*}
+		&\pdv{d}{\theta_i}=0\imps \frac{2v_{i}^{2}}{g\cos^{2}\varphi}[-\sin\theta_{i}\sin(\theta_{i}-\varphi)+\cos\theta_{i}\cos(\theta_{i}-\varphi)]=0\\
+		&\imps\cos\theta_{i}\cos(\theta_{i}-\varphi)=\sin\theta_{i}\sin(\theta_{i}-\varphi)\\
+		&\imps\cot(\theta_{i}-\varphi)=\tan\theta_{i}\imps\cot(\theta_{i}-\varphi)=\cot(\frac{\pi}{2}-\theta_{i})\\
+		&\imps\theta_{i}-\varphi=\frac{\pi}{2}-\theta_{i}\quad[\because\theta_{i},(\theta_{i}-\varphi)\in\Big[0,\frac{\pi}{2}\Big)]\\
+		&\imps\boxed{\theta_{i}=\frac{\pi}{4}+\frac{\varphi}{2}}
+	\end{align*}
+	Hence,
+	\begin{align*}
+		d_{\max}&=\frac{2v_{i}^{2}\cos\left(\frac{\pi}{4}+\frac{\varphi}{2}\right)\sin\left(\frac{\pi}{4}-\frac{\varphi}{2}\right)}{g\cos^{2}\varphi}\\
+		&=\frac{2v_{i}^{2}\sin^{2}\left(\frac{\pi}{4}-\frac{\varphi}{2}\right)}{g\cos^{2}\varphi} \quad \big[\because \sin\pqty{\frac{\pi}{4}-\frac{\varphi}{2}} = \cos\pqty{\frac{\pi}{4}+\frac{\varphi}{2}}\big]\\
+		&=\frac{v_{i}^{2}\left(1-\cos\left(\frac{\pi}{2}-\varphi\right)\right)}{g\cos^{2}\varphi} \quad \big[\because \sin^2x = \frac{1-\cos2x}{2}\big]\\
+		&\imps d_{\max}=\frac{v_{i}^{2}\left(1-\sin\varphi\right)}{g\cos^{2}\varphi} = \frac{v_{i}^{2}\left(1-\sin\varphi\right)}{g(1-\sin \varphi)(1+\sin \varphi)} \imps \boxed{d_{\max}=\frac{v_{i}^{2}}{g(1+\sin \varphi)}} \\
+	\end{align*}
+	
+	}
+	
+	\pbm{}{
+	Two balls are fired from ground level, a distance $d$ apart. The right one
+	is fired vertically with speed $v$. You wish to simultaneously fire the left one at the appropriate velocity $\va{u}$ so that it collides with the right ball when they reach their highest point.
+	\udia{0.5}{rdf2}
+	(a) What should $\va{u}$ be (give the horizontal and vertical components)?\\
+	(b) Given $d$, what should $v$ be so that the speed $u$ is minimum?
+	}
+	\sol{}{
+	\udia{1}{rdf5}
+	\subsubsection{(a)} 
+	Since $H_{max}$ is the same for both of them,
+	\begin{equation} 
+		H= \frac{u_y^2}{2g} = \frac{u_y^2}{2g} \imps u_y=v \label{eq:21}\\
+	\end{equation}
+	For the left ball,
+	\begin{equation}
+		2d = \frac{2u_yu_x}{g} \imps u_x= \frac{gd}{v} \label{eq:22}\\
+	\end{equation}
+	Hence,
+	\begin{equation*}
+		\boxed{\va{u}=\frac{gd}{v}\vu{i}+v\vu{j}} \kyukifir{eq:21}{eq:22}
+	\end{equation*}
+	\subsubsection{(b)}
+	To minimize $u$ with respect to $v$,
+	\begin{align*}
+		&\pdv{\abs{\va{u}}}{v}=0\\
+		\imps &\pdv{v}\sqrt{\pqty{\frac{gd}{v}}^2+v^2}=0\\
+		\imps &\pqty{\frac{-2g^2d^2}{v^3}+2v}=0\\
+		\imps &v=\frac{g^2d^2}{v^3} \imps v^2=gd \imps \boxed{v=\sqrt{gd}}\\
+	\end{align*}
+	}
+	
+	\pbm{}{
+	A stone, attached to one end of an inelastic string whirls around in a vertical circle of 1.0 m radius. The tension in the string when the stone is at the bottom of the circle is found to be four times the tension in the string when the stone is at the top. Find the velocity of the stone when it is at the top of the circle.
+	}
+	\sol{}{
+	\dia{0.4}{rdf6}
+	\linebreak
+	By conservation of energy,
+	\begin{equation}
+		\frac{1}{2}mv_1^2 = \frac{1}{2}mv_2^2+mgH \imps v_1^2 = v_2^2 + 4gR \label{eq:31}\\
+	\end{equation}
+	At the bottom of the loop,
+	\begin{equation}
+		4T-mg = \frac{mv_1^2}{R} \imps T= \frac{m}{4}\pqty{g+\frac{v_1^2}{R}} \label{eq:32}\\
+	\end{equation}
+	At the top of the loop,
+	\begin{align*}
+		&\frac{mv_2^2}{R}=T+mg \\ \imps & \frac{v_2^2}{R}=\frac{1}{4}\pqty{g+\frac{v_1^2}{R}} + g \kyuki{eq:32}\\
+		\imps & \frac{v_2^2}{R} = \frac{5g}{4} +\frac{v_1^2}{4R}\\ \imps & \frac{v_2^2}{R} = \frac{5g}{4} +\frac{v_2^2+4gR}{4R} \kyuki{eq:31}\\
+		\imps & \frac{3v_2^2}{4R} = \frac{5g}{4} + g \imps \frac{3v_2^2}{R} = 9g \imps \boxed{v_2 = \sqrt{3gR}} \xlongrightarrow[R=1]{g=9.8 m/s^2} \boxed{v_2 = \sqrt{3\cdot 9.8 \cdot 1} \approx 5.4 \ m/s}\\
+	\end{align*}
+	}
+	
+	\pbm{}{
+	Starting with negligible velocity, a body slides down from the top of a
+	frictionless spherical dome. At what position does the body lose contact with the
+	dome?
+	}
+	\sol{}{
+	\udia{1}{rdf7}
+	The ball loses contact from the spherical dome at the point where the component of its weight towards the centre of the dome can no longer act as the centripetal force.\\
+	By conservation of energy, 
+	\begin{equation}
+		\frac{1}{2}mu^2 +mgR = \frac{1}{2}mv^2+mgR\cos{\varphi} \imps v^2 = 2gR(1-\cos{\varphi}) \quad [\because u^2 \approx 0]\label{eq:one}\\
+	\end{equation}
+	Now at the point of final contact,
+	\begin{align*}
+		&\frac{mv^2}{R}=mg\cos{\varphi_0} \imps 2g(1-\cos{\varphi_0})=g\cos{\varphi_0} \quad [\because \eqref{eq:one}] \\
+		&\imps 3\cos{\varphi_0}=2 \imps \boxed{\varphi_0 = \cos[-1](\frac{2}{3})}\\
+	\end{align*}
+	}
+	
+\end{document}

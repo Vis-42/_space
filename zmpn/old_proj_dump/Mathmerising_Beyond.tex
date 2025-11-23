@@ -1,0 +1,1187 @@
+\documentclass{report}
+
+\input{latex-templates/preamble}
+\input{latex-templates/macros}
+\input{latex-templates/letterfonts}
+\usepackage{physics}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{wrapfig}
+\setlength{\fboxsep}{1pt} % Space between image and border
+\setlength{\fboxrule}{0.5pt} % Border thickness
+
+\title{\Huge{Mathmerising: Beyond JEE}}
+\author{\huge{Parth Bhargava}}
+\date{\today}
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+	
+	\chapter{Elliptic Integrals}
+	\section{\wa}
+	Consider an ellipse with the parametric equations:
+	$$
+	x = a \cos \theta, \quad y = b \sin \theta
+	$$
+	where $a$ and $b$ are the semi-major and semi-minor axes, respectively. The differential elements are given by:
+	$$
+	\dd x = -a \sin \theta \, \dd \theta, \quad \dd y = b \cos \theta \, \dd \theta
+	$$
+	The arc length $L$ of the ellipse can be calculated as follows:
+	\begin{align*}
+		L &= 4 \int_0^{\pi/2} \sqrt{\lt(\dv{x}{\theta}\rt)^2 + \lt(\dv{y}{\theta}\rt)^2} \, \dd \theta \\
+		&= 4 \int_0^{\pi/2} \sqrt{a^2 \sin^2 \theta + b^2 \cos^2 \theta} \, \dd \theta \\
+		&= 4 \int_0^{\pi/2} \sqrt{a^2 \sin^2 \theta + (a^2 - a^2 e^2) \cos^2 \theta} \, \dd \theta \quad \lt[\because e^2 = 1 - \frac{b^2}{a^2} \text{ for an ellipse}\rt]\\
+		&= 4a \int_0^{\pi/2} \sqrt{1 - e^2 \cos^2 \theta} \, \dd \theta\\
+		&= 4a \int_0^{\pi/2} \sqrt{1 - e^2 \sin^2 \theta} \, \dd \theta  \quad \lt[\because \int_0^{\pi/2} f(x) \, \dd x = \int_0^{\pi/2} f\lt(\frac{\pi}{2} - x\rt) \, \dd x \rt]
+	\end{align*}
+	
+	\section{\wa}
+	
+	\subsection*{Incomplete Elliptic Integral of the First Kind}
+	The incomplete elliptic integral of the first kind is given by:
+	$$
+	F(\varphi, k) = \int_0^\varphi \frac{\dd \theta}{\sqrt{1 - k^2 \sin^2 \theta}}, \quad 0 < k < 1
+	$$
+	
+	\subsection*{Complete Elliptic Integral of the First Kind}
+	The complete elliptic integral of the first kind is given by:
+	$$
+	F(k) = \int_0^{\pi/2} \frac{\dd \theta}{\sqrt{1 - k^2 \sin^2 \theta}}, \quad 0 < k < 1
+	$$
+	
+	\subsection*{Incomplete Elliptic Integral of the Second Kind}
+	The incomplete elliptic integral of the second kind is given by:
+	$$
+	E(\varphi, k) = \int_0^\varphi \sqrt{1 - k^2 \sin^2 \theta} \, \dd \theta, \quad 0 < k < 1
+	$$
+	
+	\subsection*{Complete Elliptic Integral of the Second Kind}
+	The complete elliptic integral of the second kind is given by:
+	$$
+	E(k) = \int_0^{\pi/2} \sqrt{1 - k^2 \sin^2 \theta} \, \dd \theta, \quad 0 < k < 1
+	$$
+	
+	\nt{Elliptic integrals cannot be solved analytically, so we solve them using series expansions.}
+	
+	\section{\wa}
+	\subsection*{Solving the Complete Elliptic Integral of the First Kind}
+	The complete elliptic integral of the first kind is given by:
+	$$
+	F(k) = \int_0^{\pi/2} \frac{\dd \theta}{\sqrt{1 - k^2 \sin^2 \theta}}, \quad 0 < k < 1
+	$$
+	We can expand this integral using a series expansion:
+	\begin{align*}
+		F(k) &= \int_0^{\pi/2} \sum_{m=0}^{\infty} \binom{-\frac{1}{2}}{m} (-1)^m k^{2m} \sin^{2m} \theta \, \dd \theta \\
+		&= \sum_{m=0}^{\infty} \binom{-\frac{1}{2}}{m} (-1)^m k^{2m} \int_0^{\pi/2} \sin^{2m} \theta \, \dd \theta \tag{1} \label{1}
+	\end{align*}
+	Here, we use the binomial coefficient identity:
+	$$
+	\binom{-\frac{1}{2}}{m} = \frac{(-\frac{1}{2})!}{m! (-\frac{1}{2} - m)!} = \frac{\Gamma(\frac{1}{2})}{m! \Gamma(\frac{1}{2} - m)}
+	$$
+	where $\Gamma(n) = (n-1)!$.
+	Furthermore, we use the integral identity:
+	$$
+	\int_0^{\pi/2} \cos^{2\alpha-1} \theta \sin^{2\beta-1} \theta \, \dd \theta = \frac{\Gamma(\alpha) \Gamma(\beta)}{2 \Gamma(\alpha + \beta)}
+	$$
+	with $\alpha = \frac{1}{2}$ and $\beta = m + \frac{1}{2}$:
+	$$
+	\int_0^{\pi/2} \sin^{2m} \theta \, \dd \theta = \frac{\Gamma(\frac{1}{2}) \Gamma(m + \frac{1}{2})}{2 \Gamma(m + 1)}
+	$$
+	Substituting these values in \eqref{1}, we get:
+	\begin{align*}
+		F(k) &= \sum_{m=0}^{\infty} \frac{\Gamma(\frac{1}{2})}{\Gamma(m+1) \Gamma(\frac{1}{2} - m)} (-1)^m k^{2m} \frac{\Gamma(\frac{1}{2}) \Gamma(m + \frac{1}{2})}{2 \Gamma(m + 1)} \\
+		&= \sum_{m=0}^{\infty} \frac{(-1)^m k^{2m} \Gamma(m + \frac{1}{2})}{2 \Gamma(\frac{1}{2} - m) (\Gamma(m + 1))^2} \tag{2} \label{2}
+	\end{align*}
+	where $\Gamma(\frac{1}{2}) = \sqrt{\pi}$.
+	Finally, we use the reflection formula for the Gamma function:
+	$$
+	\Gamma(z) \Gamma(1 - z) = \frac{\pi}{\sin \pi z}
+	$$
+	with $z = m + \frac{1}{2}$:
+	$$
+	\Gamma(\frac{1}{2} + m) \Gamma(\frac{1}{2} - m) = \frac{\pi}{\sin((m\pi + \frac{\pi}{2}))} = \frac{\pi}{\cos(m\pi)}
+	$$
+	Thus, we have:
+	$$
+	\Gamma(\frac{1}{2} - m) = \frac{\pi}{\Gamma(\frac{1}{2} + m) \cos(m\pi)}
+	$$
+	Substituting the Above Result in \eqref{2}, the complete elliptic integral of the first kind can be expressed as:
+	$$
+	F(k) = \sum_{m=0}^{\infty} \frac{(-1)^m k^{2m} (\Gamma(m + \frac{1}{2}))^2 \cos(m\pi)}{2 (\Gamma(m+1))^2} \cdot \frac{\pi}{(\Gamma(m+1))^2}
+	$$
+	Simplifying this, we get:
+	\begin{equation}
+		F(k) = \sum_{m=0}^{\infty} \frac{(-1)^m k^{2m}}{2} \lt( \frac{\Gamma(m + \frac{1}{2})}{\Gamma(m+1)} \rt)^2 \tag{3} \label{3}
+	\end{equation}
+	where $\cos(m\pi) = (-1)^m$.
+	Now, using the identity:
+	$$
+	2^m \sqrt{\pi} \Gamma\lt(\frac{1}{2} + m\rt) = (2m-1)!!
+	$$
+	we have:
+	$$
+	\Gamma\lt(\frac{1}{2} + m\rt) = \frac{\sqrt{\pi}}{2^m} (2m-1)!!
+	$$
+	Substituting this result in \eqref{3}, we get:
+	$$
+	F(k) = \sum_{m=0}^{\infty} \frac{k^{2m}}{2} \cdot \frac{\pi}{2} \lt( \frac{(2m-1)!!}{(2m)!} \rt)^2
+	$$
+	Since $2^m m! = (2m)!$, we can further simplify:
+	$$
+	F(k) = \frac{\pi}{2} \sum_{m=0}^{\infty} k^{2m} \lt( \frac{(2m-1)!!}{(2m)!} \rt)^2
+	$$
+	Thus, the complete elliptic integral of the first kind can be written as:
+	$$
+	\boxed{F(k) = \int_0^{\pi/2} \frac{\dd \theta}{\sqrt{1 - k^2 \sin^2 \theta}} = \frac{\pi}{2} \lt( 1 + \lt(\frac{1}{2}\rt)^2 k^2 + \lt(\frac{1 \cdot 3}{2 \cdot 4}\rt)^2 k^4 + \cdots \rt)}
+	$$
+	
+	\section{\wa}
+	\subsection*{Solving the Complete Elliptic Integral of the Second Kind}
+	The complete elliptic integral of the second kind is given by:
+	$$
+	E(k) = \int_0^{\pi/2} \sqrt{1 - k^2 \sin^2 \theta} \, \dd \theta, \quad 0 < k < 1
+	$$
+	We can expand this integral using a series expansion:
+	\begin{align*}
+		E(k) &= \int_0^{\pi/2} \sum_{m=0}^{\infty} \binom{\frac{1}{2}}{m} (-1)^m k^{2m} \sin^{2m} \theta \, \dd \theta \\
+		&= \sum_{m=0}^{\infty} \binom{\frac{1}{2}}{m} (-1)^m k^{2m} \int_0^{\pi/2} \sin^{2m} \theta \, \dd \theta
+	\end{align*}
+	Similar to the previous discussion, we use the integral identity:
+	$$
+	\int_0^{\pi/2} \sin^{2m} \theta \, \dd \theta = \frac{\Gamma(\frac{1}{2}) \Gamma(m + \frac{1}{2})}{2 \Gamma(m + 1)}
+	$$
+	and the binomial coefficient identity:
+	$$
+	\binom{\frac{1}{2}}{m} = \frac{(\frac{1}{2})!}{m! (\frac{1}{2} - m)!} = \frac{\Gamma(\frac{3}{2})}{\Gamma(m+1) \Gamma(\frac{3}{2} - m)}
+	$$
+	Thus, putting these expressions in the original equation gives:
+	\begin{align*}
+		E(k) &= \sum_{m=0}^{\infty} (-1)^m k^{2m} \cdot \frac{\Gamma(\frac{1}{2}) \Gamma(m + \frac{1}{2})}{\Gamma(m+1) \Gamma(\frac{3}{2} - m)} \cdot \frac{\Gamma(\frac{1}{2}) \Gamma(m + \frac{1}{2})}{2 \Gamma(m + 1)} \\
+		&= \sum_{m=0}^{\infty} (-1)^m k^{2m} \frac{1}{4} \lt( \frac{\Gamma(\frac{1}{2})}{\Gamma(m+1)} \rt)^2 \cdot \frac{\Gamma(m + \frac{1}{2})}{\Gamma(\frac{3}{2} - m) \cdot (\frac{1}{2} - m)}
+	\end{align*}
+	where $\Gamma(\frac{3}{2}) = \frac{1}{2} \Gamma(\frac{1}{2})$.
+	Again, using the reflection formula for the Gamma function:
+	$$
+	\Gamma(z) \Gamma(1 - z) = \frac{\pi}{\sin \pi z}
+	$$
+	with $z = m + \frac{1}{2}$:
+	$$
+	\Gamma(m + \frac{1}{2}) \Gamma(\frac{1}{2} - m) = \frac{\pi}{\sin((m\pi + \frac{\pi}{2}))} = \frac{\pi}{(-1)^m \Gamma(m + \frac{1}{2})}
+	$$
+	Thus, we have:
+	$$
+	\Gamma(\frac{1}{2} - m) = \frac{\pi}{(-1)^m \Gamma(m + \frac{1}{2})}
+	$$
+	Simplifying this, we get:
+	\begin{align*}
+		F(k) &= \sum_{m=0}^{\infty} \frac{k^{2m}}{4 (\frac{1}{2} - m)} \lt( \frac{\Gamma(m + \frac{1}{2})}{\Gamma(m+1)} \rt)^2 \\
+		&= \sum_{m=0}^{\infty} \frac{k^{2m}}{4 (\frac{1}{2} - m)} \lt( \frac{\sqrt{\pi} (2m-1)!!}{2^m m!} \rt)^2 \\
+		&= \frac{\pi}{2} \sum_{m=0}^{\infty} \frac{k^{2m}}{1 - 2m} \lt( \frac{(2m-1)!!}{(2m)!!} \rt)^2
+	\end{align*}
+	Thus, the complete elliptic integral of the second kind can be written as:
+	$$
+	\boxed{F(k) = \int_0^{\pi/2} \sqrt{1 - k^2 \sin^2 \theta} \, \dd \theta = \frac{\pi}{2} \lt( 1 - \lt(\frac{1}{2}\rt)^2 k^2 - \lt(\frac{1 \cdot 3}{2 \cdot 4}\rt)^2 k^4 - \cdots \rt)}
+	$$
+	
+	\section{\wa}
+	\subsection*{Arc Length of an Ellipse}
+	
+	The arc length $ L $ of an ellipse with semi-major axis $ a $ and eccentricity $ e $ is given by:
+	$$
+	L = 4a \int_0^{\pi/2} \sqrt{1 - e^2 \sin^2 \theta} \, \dd \theta
+	$$
+	Using the series expansion for the complete elliptic integral of the second kind, we get:
+	$$
+	L = 2a\pi \lt( \sum_{m=0}^{\infty} \frac{e^{2m}}{1 - 2m} \lt( \frac{(2m-1)!!}{(2m)!!} \rt)^2 \rt)
+	$$
+	
+	\chapter{Gaussian Integral}
+	\section{\wa}
+	\subsection*{To Visualize the Graph of $ f(x) = e^{-x^2} $}
+	
+	The function $ f(x) = e^{-x^2} $ has the following properties:
+	$$
+	f'(x) = -2x e^{-x^2} = 0 \iff x = 0
+	$$
+	$$
+	f(x) \big|_{x=0} = 1, \quad \lim_{x \to \infty} f(x) = 0
+	$$
+	
+	\section{\wa}
+	\subsection*{Evaluation of Gaussian's Integral}
+	
+	Let $ I = \int_{-\infty}^{\infty} e^{-x^2} \, \dd x $. Then,
+	$$
+	I = \int_{-\infty}^{\infty} e^{-y^2} \, \dd y
+	$$
+	Consider,
+	$$
+	I^2 = \lt( \int_{-\infty}^{\infty} e^{-x^2} \, \dd x \rt) \lt( \int_{-\infty}^{\infty} e^{-y^2} \, \dd y \rt)
+	$$
+	$$
+	= \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} e^{-(x^2 + y^2)} \, \dd x \, \dd y
+	$$
+	Converting to polar coordinates, $ \dd x \, \dd y = r \, dr \, \dd \theta $:
+	$$
+	I^2 = \int_0^{2\pi} \int_0^{\infty} e^{-r^2} r \, dr \, \dd \theta
+	$$
+	Let $ t = r^2 $, then $ \dd t = 2r \, dr $:
+	$$
+	I^2 = \int_0^{2\pi} \lt( \frac{1}{2} \int_0^{\infty} e^{-t} \, \dd t \rt) \dd \theta
+	$$
+	$$
+	= \frac{1}{2} \lt( \int_0^{2\pi} \dd \theta \rt) \lt( \int_0^{\infty} e^{-t} \, \dd t \rt)
+	$$
+	Evaluating the integrals:
+	$$
+	I^2 = \pi \lt[ -e^{-t} \rt]_0^{\infty} \imps I^2 = \pi \imps I = \sqrt{\pi}
+	$$
+	Thus, we have:
+	$$
+	\int_{-\infty}^{\infty} e^{-x^2} \, \dd x = \sqrt{\pi}
+	$$
+	
+	\chapter{The Basel Problem}
+	The Basel problem involves the sum of the reciprocals of the squares of the natural numbers:
+	$$
+	1 + \frac{1}{4} + \frac{1}{9} + \frac{1}{16} + \frac{1}{25} + \cdots = \frac{\pi^2}{6}
+	$$
+	\section{\wa}
+	Let a function be defined as:
+	$$
+	\zeta(z) = \sum_{n=1}^{\infty} \frac{1}{n^z}
+	$$
+	So we have to show $\zeta(2) = \frac{\pi^2}{6}$.
+	Consider,
+	$$
+	\zeta(2) = \sum_{n=1}^{\infty} \frac{1}{n^2}
+	$$
+	Now,
+	\begin{align*}
+		1 \cdot 2 &< 2^2 < 2 \cdot 3 \quad \imps \quad \frac{1}{2} > \frac{1}{2^2} > \frac{1}{2 \cdot 3} \\
+		2 \cdot 3 &< 3^2 < 3 \cdot 4 \quad \imps \quad \frac{1}{2 \cdot 3} > \frac{1}{3^2} > \frac{1}{3 \cdot 4} \\
+		&\vdots \\
+		(n-1)n &< n^2 < n(n+1) \quad \imps \quad \frac{1}{n(n-1)} > \frac{1}{n^2} > \frac{1}{n(n+1)}
+	\end{align*}
+	Thus,
+	\begin{gather*}
+		1 + \frac{1}{1 \cdot 2} + \frac{1}{2 \cdot 3} + \cdots + \frac{1}{n(n-1)} > 1 + \frac{1}{2^2} + \frac{1}{3^2} + \cdots + \frac{1}{n^2} > 1 + \frac{1}{2 \cdot 3} + \frac{1}{3 \cdot 4} + \cdots + \frac{1}{n(n+1)}\\
+		1 + \lt( \frac{1}{1} - \frac{1}{2} \rt) + \lt( \frac{1}{2} - \frac{1}{3} \rt) + \cdots + \lt( \frac{1}{n-1} - \frac{1}{n} \rt)> 1 + \frac{1}{2^2} + \frac{1}{3^2} + \cdots + \frac{1}{n^2}> 1 + \lt( \frac{1}{2} - \frac{1}{3} \rt) + \lt( \frac{1}{3} - \frac{1}{4} \rt) + \cdots + \lt( \frac{1}{n} - \frac{1}{n+1} \rt)\\
+		1 + 1 - \frac{1}{n} > 1 + \frac{1}{2^2} + \frac{1}{3^2} + \cdots + \frac{1}{n^2} > 1 + 1 - \frac{1}{n+1}\\
+		\lim_{n \to \infty} 2 - \frac{1}{n} > \lim_{n \to \infty} \sum_{k=1}^{n} \frac{1}{k^2} > \lim_{n \to \infty} 2 - \frac{1}{n+1}\\
+		2 > \zeta(2) > \frac{3}{2}
+	\end{gather*}
+	This was all that was known about $\zeta(2)$ until Euler gave a solution.
+	\section{\wa}
+	Euler proposed that whatever is valid for a finite polynomial must also be valid for an infinite polynomial:
+	$$
+	p(x) = c \prod_{i} (1 - \frac{x}{\alpha_i}) \quad [\because \alpha_i \text{ are the roots of } p(x)]
+	$$
+	Now, consider the Taylor series expansion of $\sin x$:
+	$$
+	\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \cdots
+	$$
+	For $\sin x = 0$, we have $x = n\pi$ for $n \in \mathbb{Z}$. Thus, $x = 0, \pm \pi, \pm 2\pi, \ldots$.
+	So, we can write:
+	\begin{align*}
+		\sin x &= c x \lt(1 - \frac{x}{\pi}\rt) \lt(1 + \frac{x}{\pi}\rt) \lt(1 - \frac{x}{2\pi}\rt) \lt(1 + \frac{x}{2\pi}\rt) \cdots\\
+		\sin x &= c x \lt(1 - \frac{x^2}{\pi^2}\rt) \lt(1 - \frac{x^2}{(2\pi)^2}\rt) \lt(1 - \frac{x^2}{(3\pi)^2}\rt) \cdots\\
+		\frac{\sin x}{x} &= c \lt(1 - \frac{x^2}{\pi^2}\rt) \lt(1 - \frac{x^2}{(2\pi)^2}\rt) \lt(1 - \frac{x^2}{(3\pi)^2}\rt) \cdots\\
+		\frac{\sin x}{x} &= \lt(1 - \frac{x^2}{\pi^2}\rt) \lt(1 - \frac{x^2}{(2\pi)^2}\rt) \lt(1 - \frac{x^2}{(3\pi)^2}\rt) \cdots \quad \quad \lt[\because \lim_{x \to 0} \frac{\sin x}{x} = 1 \Rightarrow c = 1 \rt]
+	\end{align*}
+	Comparing the coefficients of $x^2$ on both sides:
+	\begin{align*}
+		\frac{-1}{3!} &= \lt(-\frac{1}{\pi^2} - \frac{1}{(2\pi)^2} - \frac{1}{(3\pi)^2} - \cdots \rt)\\
+		\frac{1}{3!} &= \frac{1}{\pi^2} \lt(\frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2} + \cdots \rt)\\
+		\frac{1}{6} &= \frac{1}{\pi^2} \zeta(2)\\
+		\imps \zeta(2) &= \frac{\pi^2}{6}\\
+	\end{align*}
+	
+	\chapter{Special Functions and their Properties}
+	\section{\wa}
+	\subsection*{Gamma Function}
+	The Gamma function is defined as:
+	$$
+	\Gamma(z) = \int_0^{\infty} x^{z-1} e^{-x} \, \dd x
+	$$
+	Here,
+	$$
+	\Gamma(z+1) = \int_0^{\infty} x^z e^{-x} \, \dd x = \int_0^{\infty} -x^z d(e^{-x}) \, \dd x
+	$$
+	\begin{align*}
+		&= \lt[ -x^z e^{-x} \rt]_0^{\infty} + \int_0^{\infty} z x^{z-1} e^{-x} \, \dd x \\
+		&= (0 + 0) + z \int_0^{\infty} x^{z-1} e^{-x} \, \dd x \\
+		\imps \Gamma(z+1) &= z \Gamma(z)
+	\end{align*}
+	For $ z = n $ for $ n \in \mathbb{Z} $:
+	$$
+	\Gamma(n+1) = n \Gamma(n) = n (n-1) (n-2) (n-3) \cdots \Gamma(1)
+	$$
+	Clearly from the equation for $ \Gamma(z) $,
+	$$
+	\Gamma(1) = \int_0^{\infty} x^0 e^{-x} \, \dd x = \int_0^{\infty} e^{-x} \, \dd x
+	$$
+	$$
+	= \lt[ -e^{-x} \rt]_0^{\infty} \imps \Gamma(1) = 1
+	$$
+	Hence for $ n \in \mathbb{Z} $,
+	$$
+	\boxed{\Gamma(n+1) = n!}
+	$$
+	
+	\section{\wa}
+	\subsection*{Beta Function}
+	The Beta function is defined as:
+	$$
+	B(x, y) = \int_0^1 t^{x-1} (1-t)^{y-1} \, \dd t \quad [\because \text{Re}(x), \text{Re}(y) > 0]
+	$$
+	
+	\section{\wa}
+	\subsection*{Symmetry Property of Beta Function}
+	
+	$$
+	B(x, y) = \int_0^1 t^{x-1} (1-t)^{y-1} \, \dd t
+	$$
+	$$
+	= \int_0^1 (1-t)^{x-1} t^{y-1} \, \dd t
+	$$
+	$$
+	\imps B(x, y) = B(y, x)
+	$$
+	
+	\section{\wa}
+	\subsection*{Transformation to Polar Coordinates}
+	
+	Let $ t = \sin^2 \theta \Rightarrow \dd t = 2 \sin \theta \cos \theta \, \dd \theta $.
+	Thus,
+	$$
+	B(x, y) = \int_0^{\pi/2} (\sin^2 \theta)^{x-1} (\cos^2 \theta)^{y-1} \cdot 2 \sin \theta \cos \theta \, \dd \theta
+	$$
+	$$
+	= 2 \int_0^{\pi/2} \sin^{2x-2} \theta \cos^{2y-2} \theta \cdot 2 \sin \theta \cos \theta \, \dd \theta
+	$$
+	$$
+	= 2 \int_0^{\pi/2} \sin^{2x-1} \theta \cos^{2y-1} \theta \, \dd \theta
+	$$
+	
+	\section{\wa}
+	\subsection*{Derivation of $B(x,y)$ in Terms of Gamma Functions using a Recurrence Relation}
+	\begin{align*}
+		B(x, y) &= \int_0^1 t^{x-1} (1-t)^{y-1} \, \dd t\\
+		&= \int_0^1 t^{x-1} \frac{d}{\dd t} \lt( \frac{(1-t)^y}{-y} \rt) \, \dd t\\
+		&= \lt[ t^{x-1} \frac{(1-t)^y}{-y} \rt]_0^1 - \int_0^1 (x-1) t^{x-2} (1-t)^y \, \dd t\\
+		&= 0 + \frac{(x-1)}{y} \int_0^1 t^{x-2} (1-t)^y \, \dd t\\
+		&= \frac{(x-1)}{y} B(x-1, y+1)\\
+		&= \frac{(x-1)(x-2)}{y(y+1)} B(x-2, y+2)\\
+		&= \frac{(x-1)(x-2) \cdots}{y(y+1) \cdots} B(x-(x-1), y+(x-1))
+	\end{align*}
+	Here,
+	$$
+	B(1, y + x - 1) = \int_0^1 t^0 (1-t)^{y+x-2} \, \dd t = \lt[ -\frac{(1-t)^{y+x-1}}{y+x-1} \rt]_0^1 = \frac{1}{y+x-1}
+	$$
+	So,
+	$$
+	B(x, y) = \frac{(x-1)! (y-1)!}{(y+x-1)!} \imps B(x, y) = \frac{\Gamma(x) \Gamma(y)}{\Gamma(x+y)}
+	$$
+	
+	\section{\wa}
+	\subsection*{Derivation of $B(x, y)$ in Terms of Gamma Functions Using Double Integrals}
+	The above result can also be derived using double integrals.
+	$$
+	\Gamma(x) = \int_0^{\infty} u^{x-1} e^{-u} \, du \quad \text{and} \quad \Gamma(y) = \int_0^{\infty} v^{y-1} e^{-v} \, dv
+	$$
+	$$
+	\imps \Gamma(x) \cdot \Gamma(y) = \int_0^{\infty} \int_0^{\infty} u^{x-1} v^{y-1} e^{-(u+v)} \, du \, dv
+	$$
+	Let $ u = zt $ and $ v = z(1-t) $, then:
+	$$
+	|J| = \left| \begin{matrix}
+		t & z \\
+		1-t & -z
+	\end{matrix} \right| = | -zt - z(1-t) | = z
+	$$
+	Using this transformation:
+	$$
+	\Gamma(x) \cdot \Gamma(y) = \int_{z=0}^{\infty} \int_{t=0}^{1} z^{x+y-2} t^{x-1} (1-t)^{y-1} e^{-z} z \, dz \, \dd t
+	$$
+	$$
+	= \lt( \int_{z=0}^{\infty} z^{x+y-1} e^{-z} \, dz \rt) \lt( \int_{t=0}^{1} t^{x-1} (1-t)^{y-1} \, \dd t \rt)
+	$$
+	$$
+	= \Gamma(x+y) \cdot B(x, y)
+	$$
+	$$
+	\imps B(x, y) = \frac{\Gamma(x) \Gamma(y)}{\Gamma(x+y)}
+	$$
+	
+	\chapter{Maclaurin Series}
+	The Maclaurin series expansion of a function $ f(x) $ is given by:
+	$$
+	f(x+a) = f(a) + f'(a)x + \frac{f''(a)}{2!} x^2 + \cdots
+	$$
+	$$
+	\imps f(x+a) = \sum_{n=0}^{\infty} \frac{f^n(a)}{n!} x^n
+	$$
+	\chapter{Catenary Problem}
+	\section{\wa}
+	\subsection*{Finding the Arc Length of a Catenary}
+	
+	For the elements $ s $:
+	$$
+	T \cos \theta = T_0 \quad \text{and} \quad T \sin \theta = 2gs
+	$$
+	$$
+	\tan \theta = \frac{2gs}{T_0}
+	$$
+	Let $\frac{2g}{T_0} = \alpha$, then:
+	\begin{equation}
+		\tan \theta = \alpha s \imps \frac{\dd y}{\dd x} = \alpha s - a \tag{1} \label{11}
+	\end{equation}
+	To find the arc length of a curve, we use:
+	\begin{equation}
+		\frac{ds}{\dd x} = \sqrt{1 + \lt( \frac{\dd y}{\dd x} \rt)^2} \tag{2}
+	\end{equation}
+	Using \eqref{11}, we have:
+	$$
+	\frac{d^2y}{\dd x^2} = \alpha \frac{ds}{\dd x}
+	$$
+	$$
+	\imps \frac{d^2y}{\dd x^2} = \frac{\alpha}{a} \sqrt{1 + \lt( \frac{\dd y}{\dd x} \rt)^2} \quad [\because (2)]
+	$$
+	Let $\frac{\dd y}{\dd x} = z$, then:
+	$$
+	\frac{dz}{\dd x} = \frac{\alpha}{a} \sqrt{1 + z^2} \imps \int \frac{dz}{\sqrt{1 + z^2}} = \int \frac{\alpha}{a} \dd x
+	$$
+	$$
+	\imps \sinh^{-1}(z) = \frac{x}{a} + c \imps z = \sinh \lt( \frac{x}{a} + c \rt)
+	$$
+	$$
+	\imps \frac{\dd y}{\dd x} = \sinh \lt( \frac{x}{a} + c \rt) \imps y = a \cosh \lt( \frac{x}{a} + c \rt) + k
+	$$
+	Since $\left. \frac{\dd y}{\dd x} \right|_{x=0} = 0 \imps \sinh(c) = 0 \imps c = 0$
+	Also, as the catenary is symmetric about the $y$-axis, $y$ is an even function $\imps k = 0$
+	Hence,
+	$$
+	y = a \cosh \lt( \frac{x}{a} \rt)
+	$$
+	Also, from \eqref{11}:
+	$$
+	\frac{\dd y}{\dd x} = s \imps s = a z = a \sinh \lt( \frac{x}{a} \rt) \imps s = a \sinh \lt( \frac{x}{a} \rt)
+	$$
+	
+	\section{\wa}
+	\subsection*{Minimizing Potential Energy of a Hanging Cable}
+	
+	Alternatively, we can rediscover this shape when we try to minimize the potential energy of a hanging cable.
+	Consider a small element $ ds $ of the cable:
+	$$
+	dm = 2g \, ds
+	$$
+	$$
+	dU = dm \cdot gy \imps dU = 2gy \, ds
+	$$
+	$$
+	dU = 2gy \sqrt{1 + \lt( \frac{\dd y}{\dd x} \rt)^2} \, \dd x
+	$$
+	The total potential energy $ U $ is given by:
+	$$
+	U = \int_{A}^{B} 2gy \sqrt{1 + \lt( y' \rt)^2} \, \dd x \imps g = y \sqrt{1 + \lt( y' \rt)^2}
+	$$
+	By Euler-Lagrange's equation (when $ L $ is dependent on a single variable):
+	\begin{align*}
+		L - y' \frac{\partial L}{\partial y'} &= \text{constant}\\
+		y \sqrt{1 + (y')^2} - y' \cdot \frac{y}{2\sqrt{1 + (y')^2}} \cdot 2y' &= a\\
+		y \sqrt{1 + (y')^2} - \frac{y (y')^2}{\sqrt{1 + (y')^2}} &= a\\
+		\frac{y}{\sqrt{1 + (y')^2}} &= a\\
+		\frac{y^2}{a^2} &= 1 + (y')^2\\
+		\frac{\dd y}{\dd x} &= \sqrt{\frac{y^2 - a^2}{a^2}}\\
+		\int \frac{\dd y}{\sqrt{\lt( \frac{y}{a} \rt)^2 - 1}} &= \int \dd x\\
+		a \cosh^{-1} \lt( \frac{y}{a} \rt) &= x + c \quad [\because y = a \imps x = 0 \imps c = 0]\\
+		\imps y &= a \cosh \lt( \frac{x}{a} \rt)
+	\end{align*}
+	
+	\chapter{The Jacobian Determinant}
+	\section{\wa}
+	\subsection*{Changing Variables in Integration}
+	
+	For changing the variables in integration:
+	$$
+	\iint_{R(x,y)} F(x, y) \, dA = \iint_{R(u,v)} F(f(u,v), g(u,v)) |J| \, du \, dv
+	$$
+	where $ x = f(u,v) $ and $ y = g(u,v) $.5
+	Here, $ J $ is the Jacobian determinant. This follows similarly for triple integrals:
+	$$
+	\iiint_{R(x,y,z)} F(x, y, z) \, \dd x \, \dd y \, dz = \iiint_{R(u,v,w)} F(f(u,v,w), g(u,v,w), h(u,v,w)) |J| \, du \, dv \, dw
+	$$
+	
+	\section{\wa}
+	\subsection*{Why do we need the Jacobian?}
+	The elemental area ($dA$) is a small square that undergoes some linear transformation under the change of variable. Since $dA$ is an infinitesimal element, any transformation on it can be shown as a linear one, but when the total transformation itself is not linear, the Jacobian determinant is a function of $u$ \& $v$ so that the linear transformation is not the same for each $dA$. By the very definition of derivatives, we use them to find the nearest linear transformation at a point.
+	The Jacobian determinant $ J(u,v) $ is given by:
+	$$
+	J(u,v) = \begin{vmatrix}
+		\frac{\partial x}{\partial u} & \frac{\partial x}{\partial v} \\
+		\frac{\partial y}{\partial u} & \frac{\partial y}{\partial v}
+	\end{vmatrix}
+	$$
+	
+	\section{\wa}
+	\subsection*{Jacobian Determinant and Coordinate Transformations}
+	And, by the very definition of a determinant of a matrix, the Jacobian determinant gives the scaling of area due to the linear transformation:
+	$$
+	J = |J(u,v)| = \begin{vmatrix}
+		\frac{\partial x}{\partial u} & \frac{\partial x}{\partial v} \\
+		\frac{\partial y}{\partial u} & \frac{\partial y}{\partial v}
+	\end{vmatrix}
+	$$
+	\sss{Converting from Rectangular to Polar Coordinates}
+	For converting from rectangular to polar coordinates:
+	$$
+	\iint_R F(x,y) \, \dd x \, \dd y
+	$$
+	we have $ x = r \cos \theta $ and $ y = r \sin \theta $.
+	The Jacobian determinant is:
+	$$
+	J = |J(r,\theta)| = \begin{vmatrix}
+		\frac{\partial x}{\partial r} & \frac{\partial x}{\partial \theta} \\
+		\frac{\partial y}{\partial r} & \frac{\partial y}{\partial \theta}
+	\end{vmatrix} = \begin{vmatrix}
+		\cos \theta & -r \sin \theta \\
+		\sin \theta & r \cos \theta
+	\end{vmatrix}
+	$$
+	$$
+	= r \cos^2 \theta + r \sin^2 \theta \imps J = r
+	$$
+	Hence,
+	$$
+	\iint_R F(x,y) \, \dd x \, \dd y = \iint_R F(r \cos \theta, r \sin \theta) \, r \, dr \, \dd \theta
+	$$
+	
+	\sss{Converting from Rectangular to Spherical Coordinates}
+	For converting from rectangular to spherical coordinates:
+	$$
+	\iiint_R F(x,y,z) \, \dd x \, \dd y \, dz
+	$$
+	we have $ x = r \sin \phi \cos \theta $, $ y = r \sin \phi \sin \theta $, $ z = r \cos \phi $.
+	The Jacobian determinant is:
+	$$
+	|J(r,\phi,\theta)| = \begin{vmatrix}
+		\sin \phi \cos \theta & r \cos \phi \cos \theta & -r \sin \phi \sin \theta \\
+		\sin \phi \sin \theta & r \cos \phi \sin \theta & r \sin \phi \cos \theta \\
+		\cos \phi & -r \sin \phi & 0
+	\end{vmatrix}
+	$$
+	The Jacobian determinant $ J $ is given by:
+	\begin{align*}
+		J &= \sin \phi \cos \theta \lt( 0 + r^2 \sin^2 \phi \cos^2 \theta \rt) - r \cos^2 \phi \cos \theta \lt( 0 - r \sin^2 \phi \cos^2 \theta \rt) \\
+		&\quad + r \sin^2 \phi \sin \theta \lt( r \sin^2 \phi \sin \theta + r \cos^2 \phi \sin \theta \rt) \\
+		&= r^2 \sin^3 \phi \cos^2 \theta + r^2 \cos^2 \phi \cos^2 \theta \sin \phi + r \sin^4 \phi \sin \theta (r \sin \theta) \\
+		&= r^2 \sin^3 \phi \cos^2 \theta + r^2 \sin^3 \phi \sin^2 \theta \\
+		&\imps \boxed{J = r^2 \sin \phi}
+	\end{align*}
+	Hence,
+	$$
+	\iiint_R F(x, y, z) \, \dd x \, \dd y \, dz = \iiint_R F(r \sin \phi \cos \theta, r \sin \phi \sin \theta, r \cos \phi) \, r^2 \sin \phi \, dr \, d\phi \, \dd \theta
+	$$
+	
+	
+	
+	\chapter{Multivariable Optimization}
+	For $z = f(x, y)$,
+	\begin{align*}
+		z_x &= \pdv{f}{x} = f_x = 0 \\
+		z_y &= \pdv{f}{y} = f_y = 0
+	\end{align*}
+	These conditions give us the critical points (Maxima, Minima, Saddle points).
+	Suppose we get the point $(a, b)$, then
+	\begin{align*}
+		A &= z_{xx} = f_{xx} = \eval{\pdv[2]{f}{x}}_{(a,b)} \\
+		B &= z_{yy} = f_{yy} = \eval{\pdv[2]{f}{y}}_{(a,b)} \\
+		C &= z_{xy} = z_{yx} = f_{xy} = f_{yx} = \eval{\pdv[2]{f}{x}{y}}_{(a,b)}
+	\end{align*}
+	We define
+	$$
+	H = \begin{vmatrix}
+		f_{xx} & f_{xy} \\
+		f_{yx} & f_{yy}
+	\end{vmatrix} = AB - C^2
+	$$
+	Then, to identify $(a, b)$,
+	\begin{align*}
+		H < 0 &\imps \text{saddle pt.} \\
+		H > 0 &\imps 
+		\begin{cases}
+			A = f_{xx} > 0 \imps \text{Minima} \\
+			A = f_{xx} < 0 \imps \text{Maxima}
+		\end{cases} \\
+		H = 0 &\imps \text{can't say}
+	\end{align*}
+	The idea behind the second derivative test to identify min, max \& saddle:
+	Consider the Maclaurin series,
+	$$
+	f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}(x-a)^n \quad [x = a + h, h \to 0]
+	$$
+	
+	$$
+	\imps f(x) = f(a) + f'(a)(x-a) + \frac{f''(a)}{2!}(x-a)^2 + \dotsb
+	$$
+	
+	$$
+	\imps f(x) - f(a) = \frac{f''(a)}{2!}(x-a)^2 + \dotsb \approx 0
+	$$
+	Here,
+	\begin{enumerate}
+		\item[(i)] $f''(a) > 0 \imps f(x) - f(a) > 0 \imps f(x) > f(a) \imps x = a \text{ is a minima}$\\
+		\item[(ii)] $f''(a) < 0 \imps f(x) - f(a) < 0 \imps f(x) < f(a) \imps x = a$ is a point of maxima.\\
+		\item[(iii)] $f''(a) = 0 \imps$ test is inconclusive.\\
+	\end{enumerate}
+	
+	\nt{Moreover, we cannot use $f'''(a)$ from the Maclaurin series as $(x-a)^3$ will have an effect on sign of $f'''(a)(x-a)^3$.}
+	Applying the second derivative test for a function in two variables, $z = f(x, y)$ for a critical point $(a, b)$,
+	$$
+	f(x, y) = \sum_{i=0}^{\infty} \sum_{j=0}^{\infty} \frac{1}{i!j!} \lt(\pdv[i+j]{f}{x^i}{y^j}\rt)_{(a,b)} (x-a)^i (y-b)^j
+	$$
+	
+	\begin{align*}
+		&= f(a, b) + f_x(a, b)(x-a) + f_y(a, b)(y-b) \\
+		&+ \frac{f_{xx}(a, b)}{2!}(x-a)^2 + \frac{f_{yy}(a, b)}{2!}(y-b)^2 \\
+		&+ f_{xy}(a, b)(x-a)(y-b) + \dotsb
+	\end{align*}
+	
+	$$
+	\imps f(x, y) - f(a, b) = \frac{A}{2}(x-a)^2 + \frac{B}{2}(y-b)^2 + C(x-a)(y-b) + \dotsb \approx 0
+	$$
+	
+	$$
+	\imps f(x, y) - f(a, b) = \frac{1}{2}(y-b)^2 \lt[ A\lt(\frac{x-a}{y-b}\rt)^2 + 2C\lt(\frac{x-a}{y-b}\rt) + B \rt]
+	$$
+	where for $At^2 + 2Ct + B$ ($\equiv Q(t)$),
+	
+	\begin{enumerate}
+		\item[(i)] $A > 0$ \& $D < 0 \imps Q(t) > 0 \; \forall t \in \mathbb{R}$ \\
+		$\imps f(x, y) - f(a, b) > 0 \imps f(x, y) > f(a, b)$ \\
+		$\imps (a, b)$ is a point of minima.
+		
+		\item[(ii)] $A < 0$ \& $D < 0 \imps Q(t) < 0 \; \forall t \in \mathbb{R}$ \\
+		$\imps f(x, y) - f(a, b) < 0 \imps f(x, y) < f(a, b)$ \\
+		$\imps (a, b)$ is a point of maxima.
+		
+		\item[(iii)] $D > 0 \imps$ saddle pt.
+	\end{enumerate}
+	Note that $D < 0 \imps 4C^2 - 4AB < 0 \imps AB - C^2 > 0 \imps H > 0$
+	
+	\chapter{Hessian Matrix and Optimization for $f(x,y,z)$}
+	
+	\section{\wa}
+	For $f(x_1, x_2, \dots, x_n)$, to find the critical points,
+	\begin{enumerate}
+		\item[(i)] $\pdv{f}{x_1} = 0$, $\pdv{f}{x_2} = 0$, \dots, $\pdv{f}{x_n} = 0$ \\
+		Gives $(a_1, a_2, \dots, a_n)$.
+		\item[(ii)] $f_{11} = \pdv[2]{f}{x_1}$, $f_{12} = \pdv[2]{f}{x_1}{x_2}$, $f_{13} = \pdv[2]{f}{x_1}{x_3}$, \dots
+		We define the Hessian Matrix as,
+		$$
+		\mathbf{H} = 
+		\begin{bmatrix}
+			f_{11} & f_{12} & f_{13} \\
+			f_{21} & f_{22} & f_{23} \\
+			f_{31} & f_{32} & f_{33}
+		\end{bmatrix}
+		\quad \text{for 3 variables.}
+		$$
+		Or simply,
+		$$
+		H_{ij} = f_{ij} = \eval{\pdv[2]{f}{x_i}{x_j}}_{(a_1, a_2, \dots, a_n)}
+		$$
+		
+		Then we define $H = |\mathbf{H}| \equiv \det(\mathbf{H})$.
+		
+		For this, at $(a_1, a_2, \dots, a_n)$,
+		
+		\begin{enumerate}
+			\item[(1)] $H < 0 \imps$ saddle point.
+			
+			\item[(2)] $H > 0 \imps
+			\begin{cases}
+				f_{11} > 0 \imps \text{local minima} \\
+				f_{11} < 0 \imps \text{local maxima}
+			\end{cases}
+			$
+			\item[(3)] $H = 0 \imps$ test is inconclusive.
+		\end{enumerate}
+	\end{enumerate}
+	
+	\section{\wa}
+	Find the minimum/maximum of $f(x, y, z) = x^3 + y^3 + z^3 - 9xy - 9xz + 27x$
+	We have,
+	\begin{align*}
+		\pdv{f}{x} &= 0 \imps 3x^2 - 9y - 9z + 27 = 0 \imps x^2 = 3(y + z) - 9 \tag{1} \label{21} \\
+		\pdv{f}{y} &= 0 \imps 3y^2 - 9x = 0 \imps y^2 = 3x \tag{2} \label{22} \\
+		\pdv{f}{z} &= 0 \imps 3z^2 - 9x = 0 \imps z^2 = 3x \tag{3} \label{23}
+	\end{align*}
+	Using \eqref{22} \& \eqref{23}, either $y = z$ or $y = -z$
+	\begin{enumerate}
+		\item[(i)] For $y = z$, using \eqref{21},
+		\begin{align*}
+			x^2 &= -9 + 6y \\
+			y^4 &= 9(6y - 9) \quad [\because \eqref{22}] \\
+			y^4 - 54y + 81 &= 0 \\
+			y^2(y^2 - 9) + (3y - 9)^2 &= 0 \\
+			(y - 3)(y^3 + 3y^2 + 9y - 27) &= 0
+		\end{align*}
+		We have $y = z = 3$ \& $x = 3$ which gives a critical point $(3, 3, 3)$.
+		\item[(ii)] For $y = -z$, using \eqref{21},
+		$$
+		x^2 = -9 \imps \text{No real solutions.}
+		$$
+	\end{enumerate}
+	Hence for $(3, 3, 3)$,
+	\begin{align*}
+		f_{xx} &= \pdv[2]{f}{x} = 6x \imps \eval{f_{xx}}_{(3,3,3)} = 18 \\
+		f_{xy} &= \pdv[2]{f}{x}{y} = -9 \imps \eval{f_{xy}}_{(3,3,3)} = -9 \\
+		f_{yy} &= \pdv[2]{f}{y} = 6y \imps \eval{f_{yy}}_{(3,3,3)} = 18 \\
+		f_{yz} &= \pdv[2]{f}{y}{z} = 0 \imps \eval{f_{yz}}_{(3,3,3)} = 0 \\
+		f_{zz} &= \pdv[2]{f}{z} = 6z \imps \eval{f_{zz}}_{(3,3,3)} = 18 \\
+		f_{zx} &= \pdv[2]{f}{z}{x} = -9 \imps \eval{f_{zx}}_{(3,3,3)} = -9
+	\end{align*}
+	This gives,
+	\begin{align*}
+		\mathbf{H} &= 
+		\begin{bmatrix}
+			f_{xx} & f_{xy} & f_{xz} \\
+			f_{yx} & f_{yy} & f_{yz} \\
+			f_{zx} & f_{zy} & f_{zz}
+		\end{bmatrix}_{(3,3,3)} \\
+		\mathbf{H} &= 
+		\begin{bmatrix}
+			18 & -9 & -9 \\
+			-9 & 18 & 0 \\
+			-9 & 0 & 18
+		\end{bmatrix} \\
+		\det(\mathbf{H}) &= 18^3 + 9(9 \times 18) - 9(9 \times 18)\\
+		H &= 18^3 - 18(18 \times 9) = 18^3 > 0\\
+		\imps H &> 0 \; \therefore (3, 3, 3) \text{ is a minimum.}
+	\end{align*}
+	
+	\chapter{Boundary Curves and Absolute Extrema}
+	\section{\wa}
+	\subsection*{Steps to Find Absolute Max/Min Values}
+	\begin{enumerate}
+		\item Determine all critical points of $f(x, y)$ in $R$ and evaluate $f$ at these points.
+		\item Determine the maximum and minimum values achieved by $f(x, y)$ over the boundary curves of $R$.
+		\item Select the largest and smallest values of $f(x, y)$ attained at the points examined.
+	\end{enumerate}
+	
+	\section{\wa}
+	\subsection*{Example Problem}
+	Find the absolute max/min values of $f(x, y) = x^2 + xy + y^2$ over the circular region $R = \{(x, y) \mid x^2 + y^2 \leq 1\}$.
+	
+	\sss{Step 1: Finding Critical Points}
+	Here, [for step 1]
+	\begin{align*}
+		\pdv{f}{x} &= 0 \imps 2x + y = 0 \\
+		\pdv{f}{y} &= 0 \imps x + 2y = 0
+	\end{align*}
+	Solving these equations simultaneously:
+	$$
+	A: (0, 0) \imps f(A_2) = 0
+	$$
+	
+	\sss{Step 2: Evaluating on the Boundary}
+	For the region $R = \{(x, y) \mid x^2 + y^2 \leq 1\}$, the boundary curve is given by $x^2 + y^2 = 1$. Subsequently, any point on the boundary can be given as $(\cos\theta, \sin\theta)$.\\
+	Hence,
+	\begin{align*}
+		f(\cos\theta, \sin\theta) &= \cos^2\theta + \sin^2\theta + \sin\theta\cos\theta \\
+		&= 1 + \frac{\sin 2\theta}{2}
+	\end{align*}
+	
+	So on the boundary,
+	$$
+	f_{\text{min}} = 1 - \frac{1}{2} = \frac{1}{2} \quad (\theta = \frac{3\pi}{4}, \frac{7\pi}{4})
+	$$
+	$$
+	f_{\text{max}} = 1 + \frac{1}{2} = \frac{3}{2} \quad (\theta = \frac{\pi}{4}, \frac{5\pi}{4})
+	$$
+	
+	\sss{Step 3: Selecting Largest and Smallest Values}
+	Finally (for step 3), for the function in the given region:
+	$$
+	f_{\text{max}} = \frac{3}{2} \quad \text{at} \quad \lt(\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\rt)
+	$$
+	$$
+	f_{\text{min}} = 0 \quad \text{at} \quad (0, 0)
+	$$
+	
+	\chapter{Liebniz Integral Theorem}
+	\thm{Differentiation of an Integral with Variable Limits}{
+	$$
+	\frac{d}{\dd x} \int_{g(x)}^{h(x)} f(x, t) \, \dd t = \pdv{h(x)}{x} f(x, h(x)) - \pdv{g(x)}{x} f(x, g(x)) + \int_{g(x)}^{h(x)} \pdv{f(x, t)}{x} \, \dd t
+	$$
+	}
+	
+	\pf{Proof of Theorem}{
+	
+	Let $F(x) = \int_{g(x)}^{h(x)} f(x, t) \, \dd t$
+	\begin{align*}
+		F(x + \delta x) &= \int_{g(x + \delta x)}^{h(x + \delta x)} f(x + \delta x, t) \, \dd t\\
+		F(x + \delta x) &= \int_{g(x + \delta x)}^{g(x)} f(x + \delta x, t) \, \dd t + \int_{g(x)}^{h(x)} f(x + \delta x, t) \, \dd t + \int_{h(x)}^{h(x + \delta x)} f(x + \delta x, t) \, \dd t\\
+		F(x + \delta x) - F(x) &= \int_{g(x + \delta x)}^{g(x)} f(x + \delta x, t) \, \dd t + \int_{h(x)}^{h(x + \delta x)} f(x + \delta x, t) \, \dd t + \int_{g(x)}^{h(x)} (f(x + \delta x, t) - f(x, t)) \, \dd t\\
+		\lim_{\delta x \to 0} \frac{F(x + \delta x) - F(x)}{\delta x} &= \int_{g(x)}^{h(x)} \lim_{\delta x \to 0} \frac{f(x + \delta x, t) - f(x, t)}{\delta x} \, \dd t
+		+ \lim_{\delta x \to 0} \lt[ \int_{g(x)}^{h(x + \delta x)} f(x + \delta x, t) \, \dd t \rt] \lt( \frac{1}{\delta x} [h(x + \delta x) - h(x)] \rt)\\
+		& \quad - \lim_{\delta x \to 0} \lt[ \int_{g(x + \delta x)}^{g(x)} f(x + \delta x, t) \, \dd t \rt] \lt( \frac{1}{\delta x} [g(x + \delta x) - g(x)] \rt)\\ \\
+		\imps F'(x) &= \int_{g(x)}^{h(x)} \pdv{f(x, t)}{x} \, \dd t + [f(x, h(x))] \cdot h'(x) - [f(x, g(x))] \cdot g'(x)
+	\end{align*}
+	}
+	
+	\chapter{Catalan Numbers}
+	\subsection*{Catalan Sequence}
+	
+	The Catalan sequence is given by: $1, 1, 2, 5, 14, 42, \dots$
+	The $k$-th term is given by,
+	$$
+	C_k = \frac{\binom{2k}{k}}{k+1}
+	$$
+	
+	\section{\wa}
+	\thm{}{Every Catalan Number is an Integer}
+	\pf{Proof}{
+	We have,
+	$$
+	\lt[ \binom{2k}{k} - \binom{2k}{k-1} \rt] \in \mathbb{Z}^+
+	$$
+	\begin{align*}
+		&= \frac{2k!}{k!k!} - \frac{2k!}{(k-1)!(k+1)!} \\
+		&= \frac{2k!}{k!(k-1)!} \lt( \frac{1}{k} - \frac{1}{k+1} \rt) \\
+		&= \frac{2k!}{k!k!} \cdot \frac{1}{k+1} = C_k \in \mathbb{Z}^+
+	\end{align*}
+	}
+	
+	\section{\wa}
+	\pbm{}{
+	Suppose there is a sequence consisting of $n$ +1's and $n$ -1's, $a_1, a_2, a_3, \dots, a_{2n}$. Then prove the number of possible sequences in which no initial string has more -1's than +1's is $C_n$.
+	}
+	
+	\pf{Proof}{
+	The problem statement can be rephrased as follows:
+	$$
+	a_1 + a_2 + \dots + a_k \geq 0 \quad \forall k = 1, 2, 3, \dots, 2n
+	$$
+	$$
+	\imps \sum_{i=0}^{k} a_i \geq 0 \quad \forall k \in \mathbb{N}: k < 2n
+	$$
+	The number of possible sequences = $\binom{2n}{n} \equiv B_n$
+	Out of these $A_n$ is the number of acceptable sequences that satisfy our condition, and $U_n ( = B_n - A_n )$ is the number of unacceptable sequences.
+	For an unacceptable sequence, $a_1, a_2, \dots, a_{2n}$ with $n$ +1's and $n$ -1's,
+	$$
+	\exists k : \lt( \sum_{i=0}^{k} a_i > 0 \rt) \land \lt( \sum_{i=0}^{m} a_i \geq 0 \; \forall \; m \in \mathbb{N}: m < k \rt)
+	$$
+	(i.e., the smallest value for which the partial sum becomes negative)
+	Since this partial sum becomes negative for the first time, we can conclude:
+	\begin{enumerate}
+		\item[(i)] $\sum_{i=0}^{k-1} a_i = 0$
+		\item[(ii)] $k \in \text{Odd}$
+		\item[(iii)] The sequence has $\frac{k-1}{2}$ +1's and $\frac{k-1+1}{2} = \frac{k+1}{2}$ -1's.
+	\end{enumerate}
+	Let the remaining sequence be $a_{k+1}, a_{k+2}, \dots, a_{2n}$, with
+	$$
+	\lt( n - \frac{k-1}{2} \rt) \text{+1's} \quad \& \quad \lt( n - \frac{k+1}{2} \rt) \text{-1's}
+	$$
+	Now define a new sequence $b_1, b_2, \dots, b_k, b_{k+1}, b_{k+2}, \dots, b_{2n}$ such that
+	$$
+	b_i = 
+	\begin{cases}
+		-a_i & \text{for } i = 1, 2, \dots, k \\
+		a_i & \text{for } i = k+1, k+2, \dots, 2n
+	\end{cases}
+	$$
+	Every sequence under this condition can be formed using the process we just followed. Total possible no. of sequences with $n+1$ +1's and $n-1$ -1's = $U_n$
+	$$
+	U_n = \binom{2n}{n-1} \imps A_n = B_n - U_n = \binom{2n}{n} - \binom{2n}{n-1} = C_n
+	$$
+	}
+	
+	\chapter{Fourier Series}
+	\section{\wa}
+	\subsection*{Derivation of Heat Equation: $\pdv[2]{\theta}{x} = \frac{1}{k}\pdv{\theta}{t}$}
+	Consider a rod with density $\rho$, cross-sectional area $A$.
+	\begin{align*}
+		Q_n &= mc\dd{\theta} \quad \imps \quad Q_n = (\rho A\dd x)c\dd{\theta} \\
+		&\imps Q_n = \rho Ac \dd x \dd \theta
+	\end{align*}
+	\begin{equation}
+		\imps \dv{Q_n^*}{t} = \rho Ac \dd x \dv{\theta}{t} \tag{1}
+	\end{equation}
+	Net heat flow in element:
+	But also, 
+	\begin{equation}
+		Q_n^* = -\lm A \dv{\theta}{x} \tag{2}
+	\end{equation}
+	So,
+	\begin{align*}
+		dQ_n^* &= Q_{out}^* - Q_{in}^* \\
+		\text{For the element,} \quad \dv{Q_n^*}{t} &= -\rho Ac \dd x \dv{\theta}{t} \\
+		\dv{dQ_n^*}{x} &= -\rho Ac \dv{\theta}{t} \\
+		\dv{}{x}(-\lm A \dv{\theta}{x}) &= -\rho Ac \dv{\theta}{t} \\
+		\lm \pdv[2]{\theta}{x} &= \rho c \dv{\theta}{t} \quad \lt[\text{Let } \frac{\rho c}{\lm} = \frac{1}{k}\rt] \\
+		\pdv[2]{\theta}{x} &= \frac{1}{k} \dv{\theta}{t}
+	\end{align*}
+	Since $\theta = \theta(x,t)$, we write:
+	$$
+	\boxed{\pdv[2]{\theta}{x} = \frac{1}{k} \pdv{\theta}{t}} \quad k > 0
+	$$
+	
+	\section{\wa}
+	\subsection*{Solving the Heat Equation}
+	\sss{Initial Conditions}
+	$$
+	\left.
+	\begin{aligned}
+		\theta(0,t) &= \theta(L,t) = 0 \\
+		\theta(x,0) &= f(x)
+	\end{aligned}
+	\right\} \text{initial conditions}
+	$$
+	\sss{Differential Equation}
+	The differential equation describing the system is:
+	$$
+	\pdv[2]{\theta}{x} = \frac{1}{k} \pdv{\theta}{t}
+	$$
+	To solve this equation, Fourier assumed initially that $\theta(x,t) = f(x) \cdot g(t)$.
+	\begin{align*}
+		\imps \pdv[2]{\theta}{x} &= f''(x) \cdot g(t) & \pdv{\theta}{t} &= f(x) \cdot g'(t) \\
+		\imps f''(x) \cdot g(t) &= \frac{1}{k} f(x) \cdot g'(t)
+	\end{align*}
+	Since the left-hand side (LHS) and right-hand side (RHS) are independent of each other, they can only be equal if:
+	$$
+	\frac{f''(x)}{f(x)} = \frac{g'(t)}{kg(t)} = -\lambda
+	$$
+	where $-\lambda$ is a constant independent of both $x$ and $t$.
+	Thus,
+	\begin{equation}
+		f''(x) + \lambda f(x) = 0 \tag{1}
+	\end{equation}
+	And,
+	$$
+	\frac{g'(t)}{kg(t)} = -\lambda \imps \int \frac{dg(t)}{g(t)} = \int -\lambda k \dd t
+	$$
+	$$
+	\imps \ln(g(t)) = -\lambda kt + C \imps g(t) = e^{-\lambda kt + C}
+	$$
+	$$
+	\imps g(t) = Ae^{-\lambda kt} \quad (\lambda > 0)
+	$$
+	As $t \to \infty$, $\theta$ is constant over time and is equal to 0. So $\lambda$ must be a positive constant.
+	Since $\lambda > 0$, we can write the solution to the differential equation (1) as:
+	$$
+	f(x) = B \sin(\sqrt{\lambda} x) + C \cos(\sqrt{\lambda} x)
+	$$
+	Since $f(0) = f(L) = 0 \imps C = 0$ and $f(L) = B \sin(\sqrt{\lambda} L) = 0$
+	
+	\sss{Eigenvalues and Solutions}
+	
+	$$
+	B \sin(\sqrt{\lambda} L) = 0 \imps \sqrt{\lambda} L = n\pi \imps \lambda = \frac{n^2 \pi^2}{L^2}
+	$$
+	Since there are no values of $n$, we get $\infty$ values of $\lambda$, such that:
+	$$
+	\lambda_n = \frac{n^2 \pi^2}{L^2}, \quad n \in \mathbb{Z}
+	$$
+	The $\infty$ values of $\lambda$ are called eigenvalues, and they generate solutions to the equation:
+	$$
+	f''(x) + \lambda_n f(x) = 0
+	$$
+	with initial conditions $f(0) = f(L) = 0$.
+	Hence,
+	$$
+	f(x) = B \sin\lt(\frac{n\pi x}{L}\rt) \quad \text{and} \quad g(t) = A \exp\lt(-k \frac{n^2 \pi^2}{L^2} t\rt)
+	$$
+	Thus,
+	$$
+	\theta_n(x,t) = b_n \sin\lt(\frac{n\pi x}{L}\rt) \exp\lt(-k \frac{n^2 \pi^2}{L^2} t\rt)
+	$$
+	At $t=0$,
+	$$
+	\theta_n(x,0) = f(x) = b_n \sin\lt(\frac{n\pi x}{L}\rt)
+	$$
+	Thus, we get a solution to the heat equation when the initial condition is a sine function. But this is not necessarily true in reality as the initial function describing the temperature gradient over space can be anything.\\
+	At this point, Fourier thought:
+	$$
+	\theta(x,t) = \sum_{n=1}^{N} \theta_n(x,t)
+	$$
+	$$
+	= \sum_{n=1}^{N} b_n \sin\lt(\frac{n\pi x}{L}\rt) \exp\lt(-k \frac{n^2 \pi^2}{L^2} t\rt)
+	$$
+	$$
+	\imps \theta(x,0) = f(x) = \sum_{n=1}^{N} b_n \sin\lt(\frac{n\pi x}{L}\rt)
+	$$
+	This would require us to describe $f(x)$ as a sum of sine functions.
+	
+	\section{\wa}
+	\subsection*{Fourier's Conjecture}
+	Fourier conjectured that for any $f(x)$, we can write:
+	$$
+	f(x) = \sum_{n=1}^{\infty} b_n \sin\lt(\frac{n\pi x}{L}\rt)
+	$$
+	This led to the development of Fourier Analysis.
+	
+	\section{\wa}
+	\subsection*{General Fourier Series}
+	For a periodic function $f(x)$ with period $T = 2\pi$,
+	$$
+	f(x) = \frac{a_0}{2} + \sum_{n=1}^{\infty} a_n \cos(nx) + \sum_{n=1}^{\infty} b_n \sin(nx)
+	$$
+	where,
+	$$
+	a_0 = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \, \dd x
+	$$
+	$$
+	a_k = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos(kx) \, \dd x \quad : k \in \mathbb{N}
+	$$
+	$$
+	b_k = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin(kx) \, \dd x \quad : k \in \mathbb{N}
+	$$
+	
+	\section{\wa}
+	\subsection*{Orthogonality}
+	Every harmonic contributes uniquely to form a basis set, which simply means that the inner product of any two harmonics is zero. This property is called orthogonality.
+	Suppose we take a function $f(x)$ with period $T = 2\pi$, then:
+	$$
+	\int_{0}^{2\pi} \sin(mx) \sin(nx) \, \dd x = 0 \quad \forall m \neq n
+	$$
+	\begin{align*}
+		&= \frac{1}{2} \int_{0}^{2\pi} \lt[ \cos((m-n)x) - \cos((m+n)x) \rt] \, \dd x \\
+		&= \frac{1}{2} \lt[ \frac{\sin((m-n)x)}{m-n} - \frac{\sin((m+n)x)}{m+n} \rt]_{0}^{2\pi} \\
+		&= 0
+	\end{align*}
+	Similarly,
+	$$
+	\int_{0}^{2\pi} \cos(mx) \cos(nx) \, \dd x = 0 \quad \forall m \neq n
+	$$
+	
+	\section{\wa}
+	\subsection*{Coefficients of General Fourier Series}
+	The general Fourier series for a function $f(x)$ is given by:
+	$$
+	f(x) = \frac{a_0}{2} + \sum_{n=1}^{\infty} a_n \cos(nx) + \sum_{n=1}^{\infty} b_n \sin(nx)
+	$$
+	To find the coefficients, we integrate both sides over one period $[-\pi, \pi]$:
+	\begin{align*}
+		\int_{-\pi}^{\pi} f(x) \, \dd x &= \int_{-\pi}^{\pi} \lt( \frac{a_0}{2} + \sum_{n=1}^{\infty} a_n \cos(nx) + \sum_{n=1}^{\infty} b_n \sin(nx) \rt) \dd x \\
+		&= \frac{a_0}{2} \int_{-\pi}^{\pi} \dd x + \sum_{n=1}^{\infty} a_n \int_{-\pi}^{\pi} \cos(nx) \, \dd x + \sum_{n=1}^{\infty} b_n \int_{-\pi}^{\pi} \sin(nx) \, \dd x \\
+		&= \frac{a_0}{2} (2\pi) + \sum_{n=1}^{\infty} a_n (0) + \sum_{n=1}^{\infty} b_n (0) \\
+		&= a_0 \pi
+	\end{align*}
+	Thus,
+	$$
+	\boxed{a_0 = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \, \dd x}
+	$$
+	Next, we find the coefficient $a_k$ by multiplying both sides by $\cos(kx)$ and integrating over $[-\pi, \pi]$:
+	\begin{align*}
+		\int_{-\pi}^{\pi} f(x) \cos(kx) \, \dd x &= \int_{-\pi}^{\pi} \lt( \frac{a_0}{2} \cos(kx) + \sum_{n=1}^{\infty} a_n \cos(nx) \cos(kx) + \sum_{n=1}^{\infty} b_n \sin(nx) \cos(kx) \rt) \dd x \\
+		&= \frac{a_0}{2} \int_{-\pi}^{\pi} \cos(kx) \, \dd x + \sum_{n=1}^{\infty} a_n \int_{-\pi}^{\pi} \cos(nx) \cos(kx) \, \dd x + \sum_{n=1}^{\infty} b_n \int_{-\pi}^{\pi} \sin(nx) \cos(kx) \, \dd x
+	\end{align*}
+	
+	\sss{Case I: $k \neq n$}
+	
+	$$
+	\int_{-\pi}^{\pi} \sin(nx) \cos(kx) \, \dd x = 0 \quad (\text{odd function})
+	$$
+	
+	$$
+	\int_{-\pi}^{\pi} \cos(nx) \cos(kx) \, \dd x = \sum_{n=1}^{\infty} a_n \int_{-\pi}^{\pi} \frac{\sin((k+n)x) + \sin((k-n)x)}{2(k+n)(k-n)} \, \dd x = 0
+	$$
+	
+	\sss{Case II: $k = n$}
+	
+	\begin{align*}
+		\int_{-\pi}^{\pi} f(x) \cos(kx) \, \dd x &= a_k \int_{-\pi}^{\pi} \cos^2(kx) \, \dd x \\
+		&= a_k \int_{-\pi}^{\pi} \frac{1 + \cos(2kx)}{2} \, \dd x \\
+		&= a_k \lt[ \frac{x}{2} + \frac{\sin(2kx)}{4k} \rt]_{-\pi}^{\pi} \\
+		&= a_k \pi
+	\end{align*}
+	Thus,
+	$$
+	\boxed{\int_{-\pi}^{\pi} f(x) \cos(kx) \, \dd x = a_k \pi}
+	$$
+	To find the coefficient $b_k$, we multiply both sides of the Fourier series by $\sin(kx)$ and integrate over $[-\pi, \pi]$:
+	\begin{align*}
+		\int_{-\pi}^{\pi} f(x) \sin(kx) \, \dd x &= \frac{a_0}{2} \int_{-\pi}^{\pi} \sin(kx) \, \dd x + \sum_{n=1}^{\infty} a_n \int_{-\pi}^{\pi} \cos(nx) \sin(kx) \, \dd x \\
+		&+ \sum_{n=1}^{\infty} b_n \int_{-\pi}^{\pi} \sin(nx) \sin(kx) \, \dd x
+	\end{align*}
+	The first term on the right-hand side is zero because the integral of $\sin(kx)$ over a full period is zero. The second term is also zero due to orthogonality of sine and cosine functions. The third term will only be non-zero when $n = k$:
+	\begin{align*}
+		\int_{-\pi}^{\pi} f(x) \sin(kx) \, \dd x &= b_k \int_{-\pi}^{\pi} \sin^2(kx) \, \dd x \\
+		&= b_k \int_{-\pi}^{\pi} \frac{1 - \cos(2kx)}{2} \, \dd x \\
+		&= b_k \lt[ \frac{x}{2} - \frac{\sin(2kx)}{4k} \rt]_{-\pi}^{\pi} \\
+		&= b_k \pi
+	\end{align*}
+	Thus,
+	$$
+	\boxed{b_k = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin(kx) \, \dd x}
+	$$
+	
+	\section{\wa}
+	\subsection*{Odd and Even Functions}
+	For an odd function $f_1(x)$, $a_0 = 0$ and $a_n = 0$. Therefore,
+	$$
+	f_1(x) = \sum_{n=1}^{\infty} b_n \sin(nx)
+	$$
+	For an even function $f_2(x)$, $b_n = 0$. Therefore,
+	$$
+	f_2(x) = \frac{a_0}{2} + \sum_{n=1}^{\infty} a_n \cos(nx)
+	$$
+	
+	\section{\wa}
+	\subsection*{Fourier Series Representation}
+	If $f(x)$ is defined on $[-L, L]$ and is periodic with period $T = 2L$, then $f$ has a Fourier series representation given by:
+	$$
+	f(x) = \frac{a_0}{2} + \sum_{n=1}^{\infty} \lt( a_n \cos\lt(\frac{n\pi x}{L}\rt) + b_n \sin\lt(\frac{n\pi x}{L}\rt) \rt)
+	$$
+	where,
+	$$
+	a_0 = \frac{1}{L} \int_{-L}^{L} f(x) \, \dd x
+	$$
+	and for $k \in \mathbb{N}$,
+	$$
+	a_k = \frac{1}{L} \int_{-L}^{L} f(x) \cos\lt(\frac{k\pi x}{L}\rt) \, \dd x, \quad b_k = \frac{1}{L} \int_{-L}^{L} f(x) \sin\lt(\frac{k\pi x}{L}\rt) \, \dd x
+	$$
+	
+	\section{\wa}
+	\section*{Fourier Series for a Function Changing Over Time}
+	For a function $f(t)$ changing over time with period $T$,
+	$$
+	f(t) = \frac{a_0}{2} + \sum_{n=1}^{\infty} a_n \cos(n\omega t) + \sum_{n=1}^{\infty} b_n \sin(n\omega t)
+	$$
+	where,
+	$$
+	a_0 = \frac{2}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) \, \dd t
+	$$
+	$$
+	a_k = \frac{2}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) \cos(k\omega t) \, \dd t \quad : k \in \mathbb{N}
+	$$
+	$$
+	b_k = \frac{2}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) \sin(k\omega t) \, \dd t \quad : k \in \mathbb{N}
+	$$
+	
+	\section{\wa}
+	\subsection*{Complex Form of Fourier Series}
+	Finally, Fourier series are clearer to use in complex form. Take $f(x)$ to be defined on $[-L, L]$ and periodic with $T = 2L$,
+	$$
+	f(x) = \sum_{n=-\infty}^{\infty} c_n \exp\lt(i \frac{n\pi x}{L}\rt)
+	$$
+	where,
+	$$
+	c_n = \frac{1}{2L} \int_{-L}^{L} f(x) \cdot \exp\lt(-i \frac{n\pi x}{L}\rt) \, \dd x
+	$$
+	Again, for using this for a function in time, we substitute $\frac{x\pi}{L} = (2\pi)x \imps \omega t$:
+	$$
+	f(t) = \sum_{n=-\infty}^{\infty} c_n \exp(i n \omega t)
+	$$
+	where,
+	$$
+	c_n = \frac{1}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) \cdot \exp(-i n \omega t) \, \dd t
+	$$
+	
+\end{document}

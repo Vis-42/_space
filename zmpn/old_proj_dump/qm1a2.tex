@@ -1,0 +1,525 @@
+\documentclass{report}
+
+\input{latex-templates/preamble}
+\input{latex-templates/macros}
+\input{latex-templates/letterfonts}
+\setlength{\parindent}{0pt}
+\usepackage{physics, siunitx}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{wrapfig}
+\usepackage{pgfplots}
+\usepackage{longtable}
+\setlength{\fboxsep}{4pt} % Space between image and border
+\setlength{\fboxrule}{0.5pt} % Border thickness
+
+\title{\Huge{\textbf{PC2130}}\\ \su{g}{Quantum Mechanics I} \\ {\huge \su{r}{Assignment 2}}}
+\author{\huge{Parth Bhargava}\\ } %A0310667E
+\date{\today}
+
+\begin{document}
+	\maketitle
+
+  \pbm{}{
+	Consider a quantum harmonic oscillator of mass $m$ moving in a one - dimensional world, say the $x$-axis. The quantum dynamics of the particle is governed by the \su{r}{\textit{Schrödinger Equation}},
+	\begin{align*}
+	    i\hbar \pdv{\psi}{t} &= -\frac{\hbar^2}{2m} \pdv[2]{\psi}{x} + \frac{1}{2} m\omega^2 x^2 \psi
+	\end{align*}
+	where $\psi = \psi(x, t)$ is its normalised wavefunction. Suppose at time $t = 0$,
+	\begin{align*}
+	    \psi(x, 0) = \frac{1}{\sqrt{\sqrt{2\pi}\sigma_0}} \exp\left(\frac{ip_0 x}{\hbar}\right) \exp\left(-\frac{(x - x_0)^2}{4\sigma_0^2}\right)
+	\end{align*}
+	determine $\psi(x, t)$ for time $t > 0$. Here, $\omega, p_0, \sigma_0, x_0 \in \mathbb{R}$.
+	\begin{enumerate}
+		\item[a.] Using Ehrenfest's theorem, determine
+		\begin{enumerate}
+		    \item[(i)] $\ev{x}_t$, the expectation value of the position,
+		    \item[(ii)] $\ev{p}_t$, the expectation value of the linear momentum
+		\end{enumerate}
+		of the quantum particle at time $t > 0$.
+		\item[b.] \textit{Energy eigenvalue problem}. Write down the associated \su{r}{energy eigenvalue equation} and solve it, i.e., determine the  \su{b}{energy eigenvalues} $E$ and corresponding \su{b}{energy eigenfunctions} $u_E = u_E(x)$. Note also that $E \geq 0$. (Why?)
+		\item[c.] Using \su{r}{MATHEMATICA}, or otherwise, determine $\psi(x, t)$ for time $t > 0$. Note that you need to pick appropriate values for $\omega, p_0, \sigma_0, x_0, m$ and $\hbar$.
+		\item[d.] Hence, simulate and describe the dependence of $|\psi(x, t)|^2$ on time $t$. Reconcile your simulation with the results in (a).
+		\item[e.] Express the \su{r}{\textit{Schrödinger Equation}} for the quantum harmonic oscillator in the \su{r}{linear momentum representation}, and solve it to obtain $\phi(p, t)$ for time $t > 0$. Hence, simulate and describe the dependence of $|\phi(p, t)|^2$ on time $t$. Use the same appropriate values for $\omega, p_0, \sigma_0, x_0, m$ and $\hbar$ in (c). Reconcile your simulation with the results in (a).
+		\item[f.] Compare and contrast the behaviour of $|\psi(x, t)|^2$ and $|\phi(p, t)|^2$ over time. What can you conclude?
+	\end{enumerate}
+	}
+
+\wb
+  \sol{}{
+  \wa
+  \sss{(a)}\\
+  We know that,
+$$
+\dv{t} \ev{x} = \frac{\ev{p}}{m} \quad \text{ and } \quad
+\dv{t} \ev{p} = -\ev{\dv{V}{x}}
+$$
+
+Now,
+\begin{align*}
+-\ev{\dv{V}{x}}
+&= -\int_{-\infty}^{\infty} \psi^* \dv{x} \left( \frac{1}{2} m \omega^2 x^2 \right) \psi \dd{x} = -m \omega^2 \int_{-\infty}^{\infty} \psi^* x \psi \dd{x} = -m \omega^2 \ev{x}.
+\end{align*}
+
+Thus,\\
+$$
+\begin{cases}
+\dps{\dv{t} \ev{x} &= \dfrac{\ev{p}}{m}} \\ \\
+\dps{\dv{t} \ev{p} &= -m \omega^2 \ev{x}} \\
+\end{cases}
+\imps \dv[2]{t} \ev{x} = -\omega^2 \ev{x} \imps \ev{x} &= A \cos(\omega t) + B \sin(\omega t)
+$$\\
+
+Given the initial wavefunction:
+\[
+\psi(x,0) = \frac{1}{\sqrt{\sqrt{2\pi} \sigma_0}}
+\exp\left( \frac{i}{\hbar} p_0 x \right)
+\exp\left( -\frac{(x - x_0)^2}{4 \sigma_0^2} \right),
+\]
+
+we get the initial conditions:
+\[
+\ev{x}_0 = x_0, \qquad
+\dv{t} \ev{x}_0 = \frac{\ev{p_0}}{m} = \frac{p_0}{m}.
+\]
+
+Therefore,
+\begin{align*}
+\ev{x}_t &= x_0 \cos(\omega t) + \frac{p_0}{\omega m} \sin(\omega t), \\
+\ev{p}_t &= m \dv{t} \ev{x}
+= p_0 \cos(\omega t) - x_0 \omega m \sin(\omega t).
+\end{align*}
+
+  \wa
+  \sss{(b)}\\
+  The associated energy eigenvalue equation for a quantum harmonic oscillator is:
+\begin{align*}
+&-\frac{\hbar^{2}}{2 m} \frac{\partial^{2} u_E}{\partial x^{2}}+\frac{1}{2} m \omega^{2} x^{2} u_E = E u_E
+\end{align*}
+
+To solve this equation, I'll use the ladder operator method, which provides an elegant approach to finding both eigenvalues and eigenfunctions.
+
+\subsubsection*{Introducing Ladder Operators}
+
+\begin{align*}
+\widehat{a} &= \sqrt{\frac{m \omega}{2 \hbar}}\left(\widehat{x}+\frac{i}{m \omega} \widehat{p}\right) \\
+\widehat{a}^{\dagger} &= \sqrt{\frac{m \omega}{2 \hbar}}\left(\widehat{x}-\frac{i}{m \omega} \widehat{p}\right)
+\end{align*}
+
+First, let's verify that these operators satisfy the commutation relation:
+
+\begin{align*}
+[\widehat{a}, \widehat{a}^{\dagger}] &= \left[\sqrt{\frac{m \omega}{2 \hbar}}\left(\widehat{x}+\frac{i}{m \omega} \widehat{p}\right), \sqrt{\frac{m \omega}{2 \hbar}}\left(\widehat{x}-\frac{i}{m \omega} \widehat{p}\right)\right] \\
+&= \frac{m \omega}{2 \hbar}\left[\widehat{x}+\frac{i}{m \omega} \widehat{p}, \widehat{x}-\frac{i}{m \omega} \widehat{p}\right] \\
+&= \frac{m \omega}{2 \hbar}\left([\widehat{x}, \widehat{x}] + \frac{i}{m \omega}[\widehat{x}, -\widehat{p}] + \frac{i}{m \omega}[\widehat{p}, \widehat{x}] + \frac{i^2}{(m \omega)^2}[\widehat{p}, \widehat{p}]\right) \\
+&= \frac{m \omega}{2 \hbar}\left(0 + \frac{i}{m \omega}(-i\hbar) + \frac{i}{m \omega}(i\hbar) + 0\right) \\
+&= \frac{m \omega}{2 \hbar}\left(\frac{\hbar}{m \omega} + \frac{-\hbar}{m \omega}\right) + \frac{2i\hbar}{2\hbar} \\
+&= 1
+\end{align*}
+
+\subsubsection*{Expressing Hamiltonian Using Ladder Operators}
+
+Now, I'll express the Hamiltonian in terms of these ladder operators:
+
+\begin{align*}
+\widehat{H} &= \frac{\widehat{p}^{2}}{2 m}+\frac{1}{2} m \omega^{2} \widehat{x}^{2} \\
+\end{align*}
+
+First, I need to express $\widehat{x}$ and $\widehat{p}$ in terms of $\widehat{a}$ and $\widehat{a}^{\dagger}$:
+
+\begin{align*}
+\widehat{x} &= \sqrt{\frac{\hbar}{2 m \omega}}\left(\widehat{a}+\widehat{a}^{\dagger}\right) \\
+\widehat{p} &= -i \sqrt{\frac{m\hbar \omega}{2}}\left(\widehat{a}-\widehat{a}^{\dagger}\right)
+\end{align*}
+
+Substituting these into the Hamiltonian:
+
+\begin{align*}
+\widehat{H} &= \frac{1}{2m}\left(-i \sqrt{\frac{m\hbar \omega}{2}}\right)^2\left(\widehat{a}-\widehat{a}^{\dagger}\right)^2 + \frac{1}{2}m\omega^2\left(\sqrt{\frac{\hbar}{2 m \omega}}\right)^2\left(\widehat{a}+\widehat{a}^{\dagger}\right)^2 \\
+&= \frac{1}{2m}\left(\frac{-i^2 m\hbar \omega}{2}\right)\left(\widehat{a}^2 - \widehat{a}\widehat{a}^{\dagger} - \widehat{a}^{\dagger}\widehat{a} + (\widehat{a}^{\dagger})^2\right) + \frac{1}{2}m\omega^2\left(\frac{\hbar}{2 m \omega}\right)\left(\widehat{a}^2 + \widehat{a}\widehat{a}^{\dagger} + \widehat{a}^{\dagger}\widehat{a} + (\widehat{a}^{\dagger})^2\right) \\
+&= \frac{\hbar\omega}{4}\left(\widehat{a}^2 - \widehat{a}\widehat{a}^{\dagger} - \widehat{a}^{\dagger}\widehat{a} + (\widehat{a}^{\dagger})^2\right) + \frac{\hbar\omega}{4}\left(\widehat{a}^2 + \widehat{a}\widehat{a}^{\dagger} + \widehat{a}^{\dagger}\widehat{a} + (\widehat{a}^{\dagger})^2\right) \\
+&= \frac{\hbar\omega}{4}\left(2\widehat{a}^2 + 2(\widehat{a}^{\dagger})^2\right) \\
+&= \frac{\hbar\omega}{2}\left(\widehat{a}^{\dagger}\widehat{a} + \widehat{a}\widehat{a}^{\dagger}\right)
+\end{align*}
+
+Using the commutation relation $[\widehat{a}, \widehat{a}^{\dagger}] = 1$, we have $\widehat{a}\widehat{a}^{\dagger} = \widehat{a}^{\dagger}\widehat{a} + 1$, so:
+
+\begin{align*}
+\widehat{H} &= \frac{\hbar\omega}{2}\left(\widehat{a}^{\dagger}\widehat{a} + \widehat{a}^{\dagger}\widehat{a} + 1\right) \\
+&= \hbar\omega\left(\widehat{a}^{\dagger}\widehat{a} + \frac{1}{2}\right)
+\end{align*}
+
+\subsubsection*{Finding Commutation Relations for the Number Operator}
+
+Let's define the number operator $\widehat{N} = \widehat{a}^{\dagger}\widehat{a}$ and find its commutation relations with $\widehat{a}$ and $\widehat{a}^{\dagger}$:
+
+\begin{align*}
+[\widehat{N}, \widehat{a}] &= [\widehat{a}^{\dagger}\widehat{a}, \widehat{a}] \\
+&= \widehat{a}^{\dagger}[\widehat{a}, \widehat{a}] + [\widehat{a}^{\dagger}, \widehat{a}]\widehat{a} \\
+&= 0 + (-1)\widehat{a} \\
+&= -\widehat{a}
+\end{align*}
+
+And similarly:
+
+\begin{align*}
+[\widehat{N}, \widehat{a}^{\dagger}] &= [\widehat{a}^{\dagger}\widehat{a}, \widehat{a}^{\dagger}] \\
+&= \widehat{a}^{\dagger}[\widehat{a}, \widehat{a}^{\dagger}] + [\widehat{a}^{\dagger}, \widehat{a}^{\dagger}]\widehat{a} \\
+&= \widehat{a}^{\dagger} \cdot 1 + 0 \\
+&= \widehat{a}^{\dagger}
+\end{align*}
+
+\subsubsection*{Eigenvalue Problem for the Number Operator}
+
+Now, let's consider the eigenvalue equation for the number operator:
+
+\begin{align*}
+\widehat{N}|n\rangle = n|n\rangle
+\end{align*}
+
+where $|n\rangle$ is an eigenstate of $\widehat{N}$ and $n$ is the corresponding eigenvalue. Let's determine the action of $\widehat{a}$ and $\widehat{a}^{\dagger}$ on these eigenstates.
+
+For $\widehat{a}^{\dagger}|n\rangle$, we have:
+
+\begin{align*}
+\widehat{N}(\widehat{a}^{\dagger}|n\rangle) &= (\widehat{N}\widehat{a}^{\dagger})|n\rangle \\
+&= ([\widehat{N}, \widehat{a}^{\dagger}] + \widehat{a}^{\dagger}\widehat{N})|n\rangle \\
+&= \widehat{a}^{\dagger}|n\rangle + \widehat{a}^{\dagger}(n|n\rangle) \\
+&= (n+1)(\widehat{a}^{\dagger}|n\rangle)
+\end{align*}
+
+This shows that $\widehat{a}^{\dagger}|n\rangle$ is an eigenstate of $\widehat{N}$ with eigenvalue $(n+1)$.
+
+Similarly, for $\widehat{a}|n\rangle$:
+
+\begin{align*}
+\widehat{N}(\widehat{a}|n\rangle) &= (\widehat{N}\widehat{a})|n\rangle \\
+&= ([\widehat{N}, \widehat{a}] + \widehat{a}\widehat{N})|n\rangle \\
+&= -\widehat{a}|n\rangle + \widehat{a}(n|n\rangle) \\
+&= (n-1)(\widehat{a}|n\rangle)
+\end{align*}
+
+This shows that $\widehat{a}|n\rangle$ is an eigenstate of $\widehat{N}$ with eigenvalue $(n-1)$.
+
+Therefore:
+
+\begin{align*}
+\widehat{a}^{\dagger}|n\rangle &= c_+|n+1\rangle \quad \text{(raising operator)} \\
+\widehat{a}|n\rangle &= c_-|n-1\rangle \quad \text{(lowering operator)}
+\end{align*}
+
+where $c_+$ and $c_-$ are constants to be determined.
+
+\subsubsection*{Finding the Ground State}
+
+Since eigenvalues of $\widehat{N}$ represent physical quantities (energy levels), they must be non-negative. Therefore, there must be a lowest state $|0\rangle$ such that:
+
+\begin{align*}
+\widehat{a}|0\rangle = 0
+\end{align*}
+
+This means $c_- = 0$ for $n = 0$. This state $|0\rangle$ is the ground state.
+
+\subsubsection*{Determining the Constants $c_+$ and $c_-$}
+
+To find $c_+$, we use the normalization condition and the commutation relation:
+
+\begin{align*}
+\langle n|\widehat{a}\widehat{a}^{\dagger}|n\rangle &= |c_+|^2\langle n+1|n+1\rangle = |c_+|^2 \\
+\langle n|\widehat{a}\widehat{a}^{\dagger}|n\rangle &= \langle n|(\widehat{a}^{\dagger}\widehat{a} + 1)|n\rangle = \langle n|\widehat{N}|n\rangle + \langle n|n\rangle = n + 1
+\end{align*}
+
+Therefore, $|c_+|^2 = n + 1$, and we can choose $c_+ = \sqrt{n+1}$.
+
+Similarly, for $c_-$:
+
+\begin{align*}
+\langle n|\widehat{a}^{\dagger}\widehat{a}|n\rangle &= |c_-|^2\langle n-1|n-1\rangle = |c_-|^2 \\
+\langle n|\widehat{a}^{\dagger}\widehat{a}|n\rangle &= \langle n|\widehat{N}|n\rangle = n
+\end{align*}
+
+Therefore, $|c_-|^2 = n$, and we can choose $c_- = \sqrt{n}$.
+
+So, our ladder operators act as follows:
+
+\begin{align*}
+\widehat{a}^{\dagger}|n\rangle &= \sqrt{n+1}|n+1\rangle \\
+\widehat{a}|n\rangle &= \sqrt{n}|n-1\rangle
+\end{align*}
+
+\subsubsection*{Energy Eigenvalues}
+
+Since $\widehat{H} = \hbar\omega(\widehat{N} + \frac{1}{2})$, the energy eigenvalues are:
+
+\begin{align*}
+\widehat{H}|n\rangle &= \hbar\omega\left(\widehat{N} + \frac{1}{2}\right)|n\rangle \\
+&= \hbar\omega\left(n + \frac{1}{2}\right)|n\rangle \\
+&= E_n|n\rangle
+\end{align*}
+
+Therefore, the energy eigenvalues are:
+
+\begin{align*}
+E_n = \hbar\omega\left(n + \frac{1}{2}\right) \quad \text{for } n = 0, 1, 2, \ldots
+\end{align*}
+
+The ground state energy is $E_0 = \dfrac{\hbar\omega}{2} > 0$.
+
+\subsubsection*{Energy Eigenfunctions in Position Representation}
+
+To find the position representation of the energy eigenfunctions, I'll first determine the ground state wavefunction $u_0(x) = \langle x|0\rangle$.
+
+From $\widehat{a}|0\rangle = 0$, we have in position representation:
+
+\begin{align*}
+\langle x|\widehat{a}|0\rangle &= 0 \\
+\sqrt{\frac{m\omega}{2\hbar}}\left(x + \frac{i\hbar}{m\omega}\frac{d}{dx}\right)u_0(x) &= 0 \\
+\frac{d}{dx}u_0(x) &= -\frac{m\omega}{\hbar}x u_0(x)
+\end{align*}
+
+Solving this differential equation:
+
+\begin{align*}
+\frac{du_0(x)}{u_0(x)} &= -\frac{m\omega}{\hbar}x dx \\
+\ln(u_0(x)) &= -\frac{m\omega}{2\hbar}x^2 + C \\
+u_0(x) &= A \e{-\frac{m\omega}{2\hbar}x^2}
+\end{align*}
+
+The normalization constant $A$ is determined by:
+
+\begin{align*}
+\int_{-\infty}^{\infty} |u_0(x)|^2 dx &= 1 \\
+\int_{-\infty}^{\infty} A^2 \e{-\frac{m\omega}{\hbar}x^2} dx &= 1
+\end{align*}
+
+Using the Gaussian integral formula $\int_{-\infty}^{\infty} \e{-ax^2} dx = \sqrt{\dfrac{\pi}{a}}$:
+
+\begin{align*}
+A^2 \sqrt{\frac{\pi\hbar}{m\omega}} &= 1 \\
+A &= \left(\frac{m\omega}{\pi\hbar}\right)^{1/4}
+\end{align*}
+
+Therefore, the ground state wavefunction is:
+
+\begin{align*}
+u_0(x) = \left(\frac{m\omega}{\pi\hbar}\right)^{1/4} \e{-\frac{m\omega}{2\hbar}x^2}
+\end{align*}
+
+For higher energy states, we can use the raising operator:
+
+\begin{align*}
+|n\rangle = \frac{1}{\sqrt{n!}}(\widehat{a}^{\dagger})^n|0\rangle
+\end{align*}
+
+In position representation:
+
+\begin{align*}
+u_n(x) &= \langle x|n\rangle \\
+&= \frac{1}{\sqrt{n!}}\langle x|(\widehat{a}^{\dagger})^n|0\rangle \\
+&= \frac{1}{\sqrt{n!}}\left(\sqrt{\frac{m\omega}{2\hbar}}\left(x - \frac{\hbar}{m\omega}\frac{d}{dx}\right)\right)^n u_0(x)
+\end{align*}
+
+This expression can be related to Hermite polynomials $H_n(\xi)$ where $\xi = \sqrt{\dfrac{m\omega}{\hbar}}x$:
+
+\begin{align*}
+u_n(x) = \left(\frac{m\omega}{\pi\hbar}\right)^{1/4} \frac{1}{\sqrt{2^n n!}} H_n\left(\sqrt{\frac{m\omega}{\hbar}}x\right) \e{-\frac{m\omega}{2\hbar}x^2}
+\end{align*}
+
+where $H_n(\xi)$ are the Hermite polynomials defined by:
+
+\begin{align*}
+H_n(\xi) = (-1)^n e^{\xi^2} \frac{d^n}{d\xi^n}e^{-\xi^2}
+\end{align*}
+
+\subsubsection*{Why $E \geq 0$?}
+
+The energy eigenvalues are $E_n = \hbar\omega(n + \frac{1}{2})$ where $n = 0, 1, 2, ...$. Since $\hbar > 0$ and $\omega > 0$, the minimum energy (ground state energy) is $E_0 = \frac{\hbar\omega}{2} > 0$.
+
+Physically, this zero-point energy is a manifestation of the Heisenberg uncertainty principle. Even in the ground state, the particle cannot be completely at rest because that would violate the uncertainty principle:
+
+\begin{align*}
+\Delta x \Delta p \geq \frac{\hbar}{2}
+\end{align*}
+
+The energy is composed of kinetic and potential energy:
+
+\begin{align*}
+E = \langle\frac{p^2}{2m}\rangle + \langle\frac{1}{2}m\omega^2 x^2\rangle
+\end{align*}
+
+Both terms are always positive as they involve squares, and the uncertainty principle ensures they cannot both be zero simultaneously.\\
+  \wa
+  \sss{(c)}\\
+  We need to find:
+\begin{align*}
+\psi(x,t) = \langle x|\psi(t)\rangle = \langle x|\hat{U}(t)|\psi(0)\rangle
+\end{align*}
+
+Using the completeness of the energy eigenbasis:
+\begin{align*}
+\psi(x,t) &= \langle x|\hat{U}(t)\sum_{n}|n\rangle\langle n|\psi(0)\rangle \\
+&= \langle x|\sum_{n}\hat{U}(t)|n\rangle\langle n|\psi(0)\rangle \\
+&= \sum_{n}\langle x|\exp\left(-\frac{i}{\hbar}\hat{H}t\right)|n\rangle\langle n|\psi(0)\rangle \\
+&= \sum_{n}\exp\left(-\frac{i}{\hbar}E_n t\right)\langle x|n\rangle\langle n|\psi(0)\rangle \\
+&= \sum_{n}\exp\left[-i\left(n+\frac{1}{2}\right)\omega t\right]u_n(x)\langle n|\psi(0)\rangle
+\end{align*}
+
+where:
+\begin{align*}
+\langle n|\psi(0)\rangle &= \int_{-\infty}^{\infty}u_n^*(x)\psi(x,0)dx \\
+&= \int_{-\infty}^{\infty}u_n^*(x)\frac{1}{\sqrt{\sqrt{2\pi}\sigma_0}}\exp\left(\frac{i}{\hbar}p_0 x\right)\exp\left[-\frac{1}{4\sigma_0^2}(x-x_0)^2\right]dx
+\end{align*}
+
+To determine $\psi(x,t)$ numerically, we need to choose appropriate values for $\omega$, $p_0$, $\sigma_0$, $x_0$, $m$, and $\hbar$.
+
+  \wa
+  \sss{(d)}\\
+
+  \begin{centering}
+  \su{r}{Simulation done using Python}\\
+  \end{centering}
+  \udia{0.9}{rdf112}
+
+  Using the solution from part (c), we can now simulate the probability density $|\psi(x,t)|^2$ over time. The Python code provides functionality to animate this evolution.
+
+The probability density $|\psi(x,t)|^2$ maintains a Gaussian-like shape throughout its evolution, but exhibits several key behaviors:
+\begin{enumerate}
+    \item Oscillatory Motion: The center of the probability density oscillates with frequency $\omega$ between the classical turning points. This corresponds exactly to the expectation value of position derived in part (a):
+    \begin{align*}
+    \langle x \rangle_t = x_0 \cos(\omega t) + \frac{p_0}{m\omega}\sin(\omega t)
+    \end{align*}
+
+    \item Width Oscillation: The width of the distribution oscillates between expansion and contraction. When the wavepacket is near the classical turning points, it is at its narrowest, corresponding to maximal position certainty and momentum uncertainty.
+
+    \item Shape Preservation: For a coherent state (which our initial wavefunction approximates for specific parameter values), the Gaussian shape is largely preserved during evolution, though there may be minor deformations due to anharmonic components in the initial state.
+\end{enumerate}
+The simulation confirms the theoretical expectations from Ehrenfest's theorem: the center of the wavepacket follows the classical trajectory of a harmonic oscillator
+. Additionally, we observe that the probability density peaks at the stationary points of the classical simple harmonic oscillator trajectory.
+
+The reconciliation with part (a) is particularly evident: when we plot the expectation value $\langle x \rangle_t$ against time, it traces a sinusoidal path identical to the classical solution, confirming Ehrenfest's theorem for this system.\\
+  \wa
+  \sss{(e)}\\
+To express the Schrödinger equation in the momentum representation, we need to transform the position representation Hamiltonian:
+\begin{align*}
+\hat{H} = \frac{\hat{p}^2}{2m} + \frac{1}{2}m\omega^2\hat{x}^2
+\end{align*}
+
+In the momentum representation, the operators transform as:
+\begin{align*}
+\hat{x} &\rightarrow i\hbar\frac{\partial}{\partial p} \\
+\hat{p} &\rightarrow p
+\end{align*}
+
+Therefore, the Schrödinger equation in momentum space becomes:
+\begin{align*}
+i\hbar\frac{\partial\phi(p,t)}{\partial t} = \frac{p^2}{2m}\phi(p,t) + \frac{1}{2}m\omega^2\left(i\hbar\frac{\partial}{\partial p}\right)^2\phi(p,t)
+\end{align*}
+
+Where $\phi(p,t)$ is the wavefunction in momentum space.
+
+To derive this transformation explicitly, we consider how $\hat{x}$ acts in momentum space:
+\begin{align*}
+\langle p|\hat{x}|\psi(t)\rangle &= \langle p|\int_{-\infty}^{\infty}|x\rangle\langle x|dx\hat{x}|\psi(t)\rangle \\
+&= \int_{-\infty}^{\infty}\langle p|x\rangle\langle x|\hat{x}|\psi(t)\rangle dx \\
+&= \int_{-\infty}^{\infty}\langle p|x\rangle x\psi(x,t) dx \\
+&= \frac{1}{\sqrt{2\pi\hbar}}\int_{-\infty}^{\infty}e^{-\frac{i}{\hbar}px}x\psi(x,t) dx \\
+&= \frac{1}{\sqrt{2\pi\hbar}}\int_{-\infty}^{\infty}i\hbar\frac{\partial}{\partial p}e^{-\frac{i}{\hbar}px}\psi(x,t) dx \\
+&= i\hbar\frac{\partial}{\partial p}\left(\frac{1}{\sqrt{2\pi\hbar}}\int_{-\infty}^{\infty}e^{-\frac{i}{\hbar}px}\psi(x,t) dx\right) \\
+&= i\hbar\frac{\partial}{\partial p}\phi(p,t)
+\end{align*}
+
+Thus, $\hat{x}$ in momentum space is $i\hbar\frac{\partial}{\partial p}$
+
+.
+
+Similar to the position representation, we can solve this equation by expanding in energy eigenstates:
+\begin{align*}
+\phi(p,t) &= \sum_{n=0}^{\infty}\langle n|\psi(0)\rangle e^{-i\omega(n+\frac{1}{2})t}u_n(p)
+\end{align*}
+
+Where $u_n(p)$ are the energy eigenfunctions in momentum space:
+\begin{align*}
+u_n(p) = \left(\frac{1}{\pi\hbar m\omega}\right)^{1/4}\frac{1}{\sqrt{2^n n!}}H_n\left(\frac{p}{\sqrt{\hbar m\omega}}\right)e^{-\frac{p^2}{2\hbar m\omega}}
+\end{align*}
+
+For the ground state, we have:
+\begin{align*}
+u_0(p) = \left(\frac{1}{\pi\hbar m\omega}\right)^{1/4}e^{-\frac{p^2}{2\hbar m\omega}}
+\end{align*}
+
+This can be verified by solving:
+\begin{align*}
+\langle p|\hat{a}|0\rangle &= 0 \\
+\left(i\frac{\sqrt{\hbar m\omega}}{\sqrt{2}}\frac{\partial}{\partial p} + \frac{i}{\sqrt{2\hbar m\omega}}p\right)u_0(p) &= 0
+\end{align*}
+
+Which gives us the momentum space ground state wavefunction
+.
+
+The time-evolved wavefunction in momentum space is:
+\begin{align*}
+\phi(p,t) = \sum_{n=0}^{N-1}c_n u_n(p)\e{-i\omega(n+\frac{1}{2})t}
+\end{align*}
+
+Where the coefficients $c_n$ are the same as in the position representation.
+
+Simulating $|\phi(p,t)|^2$ over time reveals complementary behavior to $|\psi(x,t)|^2$:
+\begin{enumerate}
+    \item When the position wavepacket is at its narrowest (at classical turning points), the momentum distribution is at its widest, showing the uncertainty principle in action.
+
+    \item The center of the momentum distribution oscillates according to:
+    \begin{align*}
+    \langle p\rangle_t = p_0\cos(\omega t) - m\omega x_0\sin(\omega t)
+    \end{align*}
+
+    \item At the stationary points of the classical trajectory, $|\phi(p,t)|^2$ approaches a more uniform distribution, indicating maximum momentum uncertainty.
+\end{enumerate}
+This behavior perfectly reconciles with the position-space results and confirms the uncertainty principle: as position certainty increases, momentum uncertainty must also increase, and vice versa.
+
+  \wa
+  \sss{(f)}\\
+  \renewcommand{\arraystretch}{3}
+	\begin{longtable}{| l | p{8cm} | p{8cm} |}
+	    \hline
+	    \textbf{Characheristic} & \textbf{Position-Space Probability Density} & \textbf{Momentum-Space Probability Density} \\
+	    \hline
+	    \endfirsthead
+	    \hline
+	    \textbf{Characheristic} & \textbf{Position-Space Probability Density} & \textbf{Momentum-Space Probability Density} \\
+	    \hline
+	    \endhead
+	    \hline
+	    \endfoot
+	    \hline
+	    Equation
+	    & $$|\psi(x,t)|^2 = \left(\frac{m\omega}{\pi\hbar}\right)^{1/2} \e{-\frac{m\omega}{\hbar}(x - x_0 \cos\omega t)^2}$$
+	    & $$|\phi(p,t)|^2 = \left(\frac{1}{\pi m\hbar\omega}\right)^{1/2} \e{-\frac{(p - p_0 \cos\omega t)^2}{m\hbar\omega}}$$ \\
+	    \hline
+	    Behaviour
+	    & Gaussian centered at \( x_0 \cos\omega t \), oscillating with frequency \( \omega \)
+	    & Gaussian centered at \( p_0 \cos\omega t \), oscillating with frequency \( \omega \)\\
+	    \hline
+	    Width
+	    & Constant \( \sigma_x = \sqrt{\dfrac{\hbar}{2m\omega}} \)
+	    & Constant \( \sigma_p = \sqrt{\dfrac{\hbar m\omega}{2}} \) \\
+	    \hline
+	\end{longtable}
+
+Comparing the position and momentum probability densities:
+
+1. $|\psi(x,t)|^2$ maintains a coherent Gaussian-like form for all $t \geq 0$ and peaks at the stationary points of the classical simple harmonic oscillator trajectory.
+
+2. At these stationary points, $|\phi(p,t)|^2$ becomes a more uniform distribution, indicating higher uncertainty in momentum.
+
+3. Conversely, when $|\psi(x,t)|^2$ is spread out (high position uncertainty), $|\phi(p,t)|^2$ becomes more localized (low momentum uncertainty).
+
+4. This oscillation between certainty in position vs. momentum is a direct demonstration of the Heisenberg uncertainty principle $\Delta x \Delta p \geq \frac{\hbar}{2}$.
+
+5. The center of $|\psi(x,t)|^2$ follows $\langle x \rangle_t$, while the center of $|\phi(p,t)|^2$ follows $\langle p \rangle_t$.
+
+This behavior illustrates the complementary nature of position and momentum in quantum mechanics and confirms our theoretical predictions from Ehrenfest's theorem in part (a).\\
+
+
+  \wa
+  }
+\end{document}

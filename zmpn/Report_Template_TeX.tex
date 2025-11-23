@@ -1,0 +1,164 @@
+\documentclass[a4paper,11pt]{article}
+
+% Packages
+\usepackage[margin=2cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{cite}
+\usepackage{url}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+
+% Page setup
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+% Section formatting
+\titleformat{\section}{\large\bfseries}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.5em}{}
+
+% Title page information
+\title{\textbf{Title of Experiment}}
+\author{Submitter's Name (Matric No.)}
+\date{Experiment A, DD-MMM-YYYY}
+
+\begin{document}
+
+\maketitle
+
+% Guidelines box
+\begin{center}
+\fbox{\begin{minipage}{0.9\textwidth}
+\textbf{\underline{Guidelines and Reminders}}
+\begin{itemize}
+\item \textit{Use normal margins (2.0-2.5 cm); standard font type with readable size (e.g. Times New Roman 12 pt).}
+\item \textit{The total report length (sections 2-6) should be approximately 800-1500 words.}
+\item \textit{The report should include 2-6 Figures. Each figure may have multiple sub-panels and/or multiple curves.}
+\item \textit{Number all pages, sections, equations, figures, and tables.}
+\item \textit{First page: include the title of experiment, submitter's name (date), submission details (e.g. expt A, date)}
+\item \textit{Write only what you understand - avoid unsupported claims or interpretations copied without thought}
+\item \textit{Extract quantitative results from every experiment, using physics-based fitting functions where possible}
+\item \textit{Include uncertainties with all reported values; present your figures clearly and concisely}
+\end{itemize}
+\end{minipage}}
+\end{center}
+
+\section{Abstract}
+The abstract should be a single paragraph (no more than 150 words). The abstract should provide:
+\begin{itemize}
+\item An opening sentence that states the question/problem addressed by the experiment
+\item Enough background content to give context to the experiment
+\item A brief statement of primary quantitative results with uncertainties
+\item A short concluding sentence
+\end{itemize}
+\textbf{Note:} Written last but appears first; self-contained with no references to figures or equations.
+
+\section{Background and Objectives}
+The report should start with a brief introduction covering:
+\begin{itemize}
+\item Physical phenomenon being investigated and its significance
+\item Theoretical background including relevant formulas and equations
+\item Specific aims and objectives of your experiment
+\item Context: why this measurement matters and how it fits into broader physics
+\end{itemize}
+Provide sufficient background to make the report understandable to technical readers. Avoid excessive historical descriptions and technological applications.
+
+\section{Experimental Methods}
+This section should provide sufficient information to allow replication of your results:
+\begin{itemize}
+\item \textbf{Experimental Design:} Describe objectives, design, and prespecified components
+\item \textbf{Apparatus:} Include photograph of experimental setup, and, if useful, a labeled schematic
+\item \textbf{Procedures:} Written in past tense, third person
+\item \textbf{Equipment specifications:} Include instrument uncertainties and calibration details
+\item \textbf{Safety considerations:} Note any special precautions taken
+\end{itemize}
+% Example figure placeholder
+% \begin{figure}[H]
+% \centering
+% \includegraphics[width=0.7\textwidth]{experimental_setup.jpg}
+% \caption{Experimental setup showing [describe key components]}
+% \label{fig:setup}
+% \end{figure}
+
+\section{Results and Analysis}
+This will be the main section of your report. Present your experimental findings in figures (and tables, if needed) with appropriate analysis, including fitting and uncertainties.
+\subsection*{Data Presentation Requirements}
+\begin{itemize}
+\item Show raw data first, then analyzed results
+\item All data must be presented either in main text or supplementary materials
+\item \textbf{Error bars required on all key experimental results}
+\item Consolidate related datasets as curves within single panel, or panels within single figures
+\item Call out figures in numerical order (cannot reference Fig. 3 before Fig. 2)
+\end{itemize}
+\subsection*{Figure Requirements}
+\begin{itemize}
+\item Font size: 75-100\% of main text size
+\item Data representation: Experimental data as dots/points with error bars; fitted curves as lines
+\item Plot ranges: Use meaningful x,y ranges; employ semi-log or log-log scales when appropriate
+\item Labels: Clear axis labels with units, legends for multiple datasets
+\item Captions: Descriptive captions explaining what figures show
+\end{itemize}
+\subsection*{Content Organization}
+\begin{itemize}
+\item Divide into descriptive subsections for different experimental themes
+\item Subheadings should be brief phrases ($\leq$10 words)
+\item Include sample calculations where helpful
+\item Justify fitting procedures and choice of fitting functions
+\item Display equations should be numbered: (1), (2), etc.
+\item Error analysis: include clear descriptions of statistical methods, uncertainty propagation calculations, identification of dominant error sources, sufficient detail for result verification
+\end{itemize}
+
+% Example equation
+% The relationship between variables A and B is given by:
+% \begin{equation}
+% A = k \cdot B^n
+% \label{eq:power_law}
+% \end{equation}
+% where $k$ is the proportionality constant and $n$ is the power law exponent.
+% Example figure with data
+% \begin{figure}[H]
+% \centering
+% \includegraphics[width=0.8\textwidth]{data_plot.pdf}
+% \caption{Experimental data (points with error bars) and theoretical fit (solid line). The fit yields $k = (2.3 \pm 0.1) \times 10^{-3}$ and $n = 1.95 \pm 0.05$.}
+% \label{fig:data}
+% \end{figure}
+
+\section{Discussion}
+Interpret your results and evaluate their significance:
+\begin{itemize}
+\item \textbf{Physical interpretation:} What do your results mean physically?
+\item \textbf{Comparison with theory:} Compare measured values with expectations
+\item \textbf{Error analysis:} Identify, quantify, and rank uncertainty sources
+\item \textbf{Explain discrepancies:} Provide quantitative explanations (avoid vague "human error")
+\item \textbf{Limitations:} Discuss limitations of your results and interpretation
+\item \textbf{Future improvements:} Steps for potential enhancements
+\end{itemize}
+
+\section{Conclusion}
+Provide a concluding paragraph that:
+\begin{itemize}
+\item Restates objectives and how they were addressed
+\item Summarizes key findings with measured values and uncertainties, final quantitative results
+\item Suggests potential extensions or applications
+\end{itemize}
+
+\section{References}
+Numbered list of all sources cited in the report.
+
+\section{Annex (Optional)}
+Include auxiliary information that:
+\begin{itemize}
+\item Contains control or supplemental experiments
+\item Offers additional observations or hypotheses, description of artifacts etc.
+\item Can be referenced in main report as ``see Annex''
+\end{itemize}
+
+\end{document}

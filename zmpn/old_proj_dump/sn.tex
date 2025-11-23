@@ -1,0 +1,143 @@
+\documentclass[landscape, 8pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{geometry}
+\geometry{a4paper, margin=0.5in}
+\usepackage{physics}
+\usepackage{enumitem}
+
+\title{Formulas for PC2032}
+\author{Parth Bhargava}
+\date{}
+
+\begin{document}
+	\begin{multicols}{4}
+		\maketitle
+		\section*{I Kinematics}
+		\begin{enumerate}[label=\arabic*., leftmargin=*, itemsep=0.5em]
+			\item For a point or for a translational motion of a rigid body (integral \(\rightarrow\) area under a graph):
+			\begin{align*}
+				\va{v} &= \dv{\va{x}}{t}\qc \va{x} = \int \va{v} \dd t \quad\left(x=\int v_{x} \dd t \text { etc. }\right) \\
+				\va{a} &= \dv{\va{v}}{t} = \dv[2]{\va{x}}{t}\qc \vb = \int \va{a} \dd t \\
+				t &= \int v_{x}^{-1} \, \dd x = \int a_{x}^{-1} \, \dd v_{x}\qc x = \int \frac{v_{x}}{a_{x}} \, \dd v_{x} \\
+				\intertext{If $a=$ Const., then previous integrals can be found easily, e.g.}
+				x &= v_0 t + \frac{1}{2} a t^2 = \frac{v^2 - v_0^2}{2a}
+			\end{align*}
+			\item Rotational motion - analogous to the translational one: \(\omega=\mathrm{d} \varphi / \mathrm{d} t, \varepsilon=\mathrm{d} \omega / \mathrm{d} t\);
+			\[
+			\va{a}=\va{\tau} \mathrm{d} v / \mathrm{d} t+\va{n} v^{2} / R
+			\]
+			\item Curvilinear motion - same as point 1 , but vectors are to be replaced by linear velocities, accelerations and path lengths.
+			\item Motion of a rigid body. a) \(v_{A} \cos \alpha=\) \(v_{B} \cos \beta ; \va{v}_{A}, \va{v}_{B}\) - velocities of pts. \(A\) and \(B ; \alpha, \beta\) - angles formed by \(\va{v}_{A}, \va{v}_{B}\) with line \(A B\). b) The instantaneous center of rotation ( \(\neq\) center of curvature of material pt. trajectories!) can be found as the intersection pt. of perpendiculars to \(\va{v}_{A}\) and \(\va{v}_{B}\), or (if \(\va{v}_{A}, \va{v}_{B} \perp A B\) ) as the intersection pt. of \(A B\) with the line connecting endpoints of \(\va{v}_{A}\) and \(\va{v}_{B}\).
+			\item Non-inertial reference frames:
+			\(\va{v}_{2}=\va{v}_{0}+\va{v}_{1}, \va{a}_{2}=\va{a}_{0}+\va{a}_{1}+\omega^{2} \va{R}+\va{a}_{C o r}\)
+			Note: \(\va{a}_{C o r} \perp \va{v}_{1}, \va{\omega} ; \va{a}_{C o r}=0\) if \(\va{v}_{1}=0\).
+			\item[6*.] Ballistic problem: reachable region
+			\[
+			y \leq v_{0}^{2} /(2 g)-g x^{2} / 2 v_{0}^{2}
+			\]
+			
+			For an optimal ballistic trajectory, initial and final velocities are perpendicular.
+			\item For finding fastest paths, Fermat's and Huygens's principles can be used.
+			\item To find a vector (velocity, acceleration), it is enough to find its direction and a projection to a single (possibly inclined) axes.
+		\end{enumerate}
+		
+		\section*{II Mechanics}
+		\begin{enumerate}[label=\arabic*., leftmargin=*, itemsep=0.5em]
+			\item For a 2 D equilibrium of a rigid body: 2 eqns. for force, 1 eq. for torque. 1 (2) eq. for force can be substituted with 1 (2) for torque. Torque is often better - "boring" forces can be eliminated by a proper choice of origin. If forces are applied only to 2 points, the (net) force application lines coincide; for 3 points, the 3 lines meet at a single point.
+			\item Normal force and friction force can be combined into a single force, applied to the contact point under angle \(\arctan \mu\) with respect to the normal force.
+			\item Newton's \(2^{\text {nd }}\) law for transl. and rot. motion:
+			\[
+			\va{F}=m \va{a}, \va{M}=I \va{\varepsilon} \quad(\va{M}=\va{r} \times \va{F}) .
+			\]...
+			For 2D geometry \(\va{M}\) and \(\va{\varepsilon}\) are essentially scalars and \(M=F l=F_{t} r\), where \(l\) is the arm of a force
+			\item Generalized coordinates. Let the system's state be defined by a single parameter \(\xi\) and its time derivative \(\dot{\xi}\) so that the pot. energy \(\Pi=\Pi(\xi)\) and kin. en. \(K=\mu \dot{\xi}^{2} / 2\); then \(\mu \ddot{\xi}=-\mathrm{d} \Pi(\xi) / \mathrm{d} \xi\). (Hence for transl. motion: force is the derivative of pot. en.)
+			\item If the system consists of mass points \(m_{i}\) :
+			\[
+			\begin{aligned}
+				\va{r}_{c} & =\sum m_{i} \va{r}_{i} / \sum m_{j}, \va{P}=\sum m_{i} \va{v}_{i} \\
+				\va{L} & =\sum m_{i} \va{r}_{i} \times \va{v}_{i}\qc K=\sum m_{i} v_{i}^{2} / 2
+			\end{aligned}
+			\]
+			\[
+			I_{z}=\sum m_{i}\left(x_{i}^{2}+y_{i}^{2}\right)=\int\left(x^{2}+y^{2}\right) \mathrm{d} m
+			\]
+			\item In a frame where the mass center's velocity is \(\va{v}_{c}\) (index \(c\) denotes quantities rel. to the mass center):
+			\[
+			\begin{gathered}
+				\va{L}=\va{L}_{c}+M_{\Sigma} \va{R}_{c} \times \va{v}_{c}, K=K_{c}+M_{\Sigma} v_{c}^{2} / 2 \\
+				\va{P}=\va{P}_{c}+M_{\Sigma} \va{v}_{c}
+			\end{gathered}
+			\]
+			\item Steiner's theorem is analogous ( \(b\) - distance of the mass center from rot. axis): \(I=I_{c}+m b^{2}\).
+			\item With \(\va{P}\) and \(\va{L}\) from pt. 5 , Newton's \(2^{\text {nd }}\) law:
+			\[
+			\va{F}_{\Sigma}=\mathrm{d} \va{P} / \mathrm{d} t\qc \va{M}_{\Sigma}=\mathrm{d} \va{L} / \mathrm{d} t
+			\]
+			\item[9*.] Additionally to pt. 5 , the mom. of inertia rel. to the \(z\)-axis through the mass center can be found as \(I_{z 0}=\sum_{i, j} m_{i} m_{j}\left[\left(x_{i}-x_{j}\right)^{2}+\left(y_{i}-\right.\right.
+			\left(.\left.y_{j}\right)^{2}\right] / 2 M_{\Sigma}\).
+			\item Mom. of inertia rel. to the origin \(\theta=\) \(\sum m_{i} \va{r}_{i}^{2}\) is useful for calculating \(I_{z}\) of 2 D bodies or bodies with central symmetry using \(2 \theta=\) \(I_{x}+I_{y}+I_{z}\).
+			\item Physical pendulum with a reduced length \(\tilde{l}:\)
+			\[
+			\begin{gathered}
+				\omega^{2}(l)=g /(l+I / m l), \\
+				\omega(l)=\omega(\tilde{l}-l)=\sqrt{g / \tilde{l}\qc \tilde{l}=l+I / m l}
+			\end{gathered}
+			\]
+			\item Coefficients for the momenta of inertia: cylinder \(\frac{1}{2}\), solid sphere \(\frac{2}{5}\), thin spherical shell \(\frac{2}{3}, \operatorname{rod} \frac{1}{12}\left(\right.\) rel. to endpoint \(\left.\frac{1}{3}\right)\), square \(\frac{1}{6}\).
+			\item Often applicable conservation laws: energy (elastic bodies, no friction),
+			momentum (no net external force; can hold only along one axis),
+			angular momentum (no net ext. torque, e.g. the arms of ext. forces are 0 (can be written rel. to 2 or 3 pts., then substitutes conservation of lin. mom.).
+			\item Additional forces in non-inertial frames of ref.: inertial force \(-m \va{a}\), centrifugal force \(m \omega^{2} \va{R}\) and Coriolis force \({ }^{*} 2 m \va{v} \times \va{\Omega}\) (better to avoid it; being \(\perp\) to the velocity, it does not create any work).
+			\item Tilted coordinates: for a motion on an inclined plane, it is often practical to align axes along and \(\perp\) to the plane; gravit. acceleration has then both \(x\) - and \(y\)-components. Axes may also be oblique (not \(\perp\) to each other), but then with \(\va{v}=v_{x} \va{e}_{x}+v_{y} \va{e}_{y}, v_{x} \neq\) to the \(x\)-projection of \(\va{v}\).
+			\item Collision of 2 bodies: conserved are a) net momentum, b) net angular mom., c) angular
+			mom. of one of the bodies with respect to the impact point, d) total energy (for elastic collisions); in case of friction, kin. en. is conserved only along the axis \(\perp\) to the friction force. Also: e) if the sliding stops during the impact, the final velocities of the contact points will have equal projections to the contact plane; f) if sliding doesn't stop, the momentum delivered from one body to the other forms angle \(\arctan \mu\) with the normal of the contact plane.
+			\item Every motion of a rigid body can be repre sented as a rotation around the instantaneous center of rotation \(C\) (in terms of velocities of the body points). NB! Distance of a body point \(P\) from \(C \neq\) to the radius of curvature of the trajectory of \(P\).
+			\item Tension in a string: for a massive hanging string, tension's horizontal component is constant and vertical changes according to the string's mass underneath. Pressure force (per unit length) of a string resting on a smooth surface is determined by its radius of curvature and tension: \(N=T / R\). Analogy: surface tension pressure \(p=2 \sigma / R\); to derive, study the pressure force along the diameter.
+			\item Liquid surface takes equipot. shape (neglecting \(\sigma\) ); in incompr. liquid, \(p=p_{0}-w\), \(w\)-vol. dens. of pot. en. (for a gas, see X-6).
+			\item Bernoulli law for incompr. fluid:
+			\[
+			p+\frac{1}{2} \rho v^{2}+\rho \varphi=\text { const } ;
+			\]
+			in homog. field, the gravit. potential \(\varphi=g h\). For gas of specific heat \(c_{p}[\mathrm{~J} / \mathrm{kg}]\),
+			\[
+			\frac{1}{2} v^{2}+c_{p} T=\text { const. }
+			\]
+			
+			\item[21*.] Momentum continuity by straight streamlines: \(p+\rho v^{2}=\) const.
+			\item[22*.] Adiabatic invariant: if the relative change of the parameters of an oscillating system is small during one period, the area of the loop drawn on the phase plane (ie. in \(p-x\) coordinates) is conserved with a very high accuracy.
+			\item For studying stability use a) principle of minimum potential energy or b) principle of small virtual displacement.
+			\item[24*.] Virial theorem for finite movement:
+			a) If \(F \propto|\va{r}|\), then \(\langle K\rangle=\langle\Pi\rangle\) (time averages); b) If \(F \propto|\va{r}|^{-2}\), then \(2\langle K\rangle=-\langle\Pi\rangle\).
+			\item Tsiolkovsky rocket equation \(\Delta v=u \ln \frac{M}{m}\).
+		\end{enumerate}
+		
+		\section*{III Oscillations and waves}
+		\begin{enumerate}[label=\arabic*., leftmargin=*, itemsep=0.5em]
+			\item Damped oscillator:
+			\[
+			\ddot{x}+2 \gamma \dot{x}+\omega_{0}^{2} x=0\left(\gamma<\omega_{0}\right) .
+			\]...
+			Solution of this equation is (cf. I.2.):
+			\[
+			x=x_{0} e^{-\gamma t} \sin \left(t \sqrt{\omega_{0}^{2}-\gamma^{2}}-\varphi_{0}\right)
+			\]
+			\item Eq. of motion for a system of coupled oscillators: \(\ddot{x}_{i}=\sum_{j} a_{i j} x_{j}\).
+			\item A system of \(N\) coupled oscillators has \(N\) different eigenmodes when all the oscillators oscillate with the same frequency \(\omega_{i}, x_{j}=\) \(x_{j 0} \sin \left(\omega_{i} t+\varphi_{i j}\right)\), and \(N\) eigenfrequencies \(\omega_{i}\) (which can be multiple, \(\omega_{i}=\omega_{j}\) ). General solution (with \(2 N\) integration constants \(X_{i}\) and \(\phi_{i}\) ) is a superposition of all the eigenmotions
+			\[
+			x_{j}=\sum_{i} X_{i} x_{j 0} \sin \left(\omega_{i} t+\varphi_{i j}+\phi_{i}\right)
+			\]
+			\item If a system described with a generalized coordinate \(\xi\) (cf IV-2) and \(K=\mu \dot{\xi}^{2} / 2\) has an equilibrium state at \(\xi=0\), for small oscillations \(\Pi(\xi) \approx \kappa \xi^{2} / 2\left[\right.\) where \(\left.\kappa=\Pi^{\prime \prime}(0)\right]\) so that \(\omega^{2}=\kappa / \mu\).
+			\item The phase of a wave at pt. \(x, t\) is \(\varphi=\) \(k x-\omega t+\varphi_{0}\), where \(k=2 \pi / \lambda\) is a wave vector. The value at \(x, t\) is \(a_{0} \cos \varphi=\Re a_{0} e^{i \varphi}\). The phase velocity is \(v_{f}=\nu \lambda=\omega / k\) and group velocity \(v_{g}=d \omega / d k\).
+			\item For linear waves (electromagn. w., smallamplit. sound- and water w.) any pulse can be considered as a superpos. of sinusoidal waves; a standing w . is the sum of two identical counterpropagating w.:
+			\(e^{i(k x-\omega t)}+e^{i(-k x-\omega t)}=2 e^{-i \omega t} \cos k x\).
+			\item Speed of sound in a gas
+			\(c_{s}=\sqrt{(\partial p / \partial \rho)_{\text {adiab }}}=\sqrt{\gamma p / \rho}=\bar{v} \sqrt{\gamma / 3}\).
+			\item Speed of sound in elastic material \(c_{s}=\) \(\sqrt{E / \rho}\).
+			\item Sp. of waves in shallow ( \(h \ll \lambda\) ) water: \(v=\sqrt{g h}\); in a string: \(v=\sqrt{T / \rho_{\text {lin }}}\).
+			\item Doppler's effect: \(\nu=\nu_{0} \frac{1+v_{\|} / c_{s}}{1-u_{\|} / c_{s}}\)
+			\item Huygens' principle: wavefront can be constructed step by step, placing an imaginary wave source in every point of previous wave front. Results are curves separated by distance \(\Delta x=c_{s} \Delta t\), where \(\Delta t\) is time step and \(c_{s}\) is the velocity in given point. Waves travel perpendicular to wavefront.
+		\end{enumerate}
+	\end{multicols}
+\end{document}

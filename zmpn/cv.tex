@@ -1,0 +1,138 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+
+\pagestyle{empty}
+% Set colors
+\definecolor{headerblue}{RGB}{30, 60, 90}
+\definecolor{sectiongray}{RGB}{240, 240, 240}
+
+% Section title in shaded box
+\newtcolorbox{sectionbox}{
+  colback=sectiongray,
+  colframe=white,
+  boxrule=0pt,
+  arc=2mm,
+  left=3pt,
+  right=3pt,
+  top=2pt,
+  bottom=2pt,
+  enlarge left by=0cm,
+  enlarge right by=0cm,
+}
+
+% Section formatting (spacing)
+\titleformat{\section}{\large\bfseries\color{headerblue}}{}{0em}{}[\vspace{-0.5em}]
+\titlespacing{\section}{0pt}{1em plus 0.2em minus 0.2em}{0.5em}
+
+% Compact bullets
+\setlist[itemize]{noitemsep, topsep=0pt, left=1.2cm, label=\textbullet, font=\small}
+
+% Reduce paragraph spacing
+\setlength{\parskip}{0.3em}
+
+\begin{document}
+
+%=======================
+% Name & Contact
+%=======================
+\begin{center}
+    {\LARGE \textbf{Parth Bhargava}}\\[2mm]
+    Email: \href{mailto:bhargava.parth07@gmail.com}{bhargava.parth07@gmail.com} $|$ Phone: +65 9121 7298  \\ LinkedIn: \href{https://www.linkedin.com/in/parth-bhargava-6819b124a/}{https://www.linkedin.com/in/parth-bhargava-6819b124a/}
+\end{center}
+
+\vspace{2mm}
+
+%=======================
+% Education
+%=======================
+\begin{sectionbox}
+\section*{Education}
+\end{sectionbox}
+
+\textbf{National University of Singapore} \hfill Aug 2024 -- May 2028
+
+Bachelor of Science (Hons) in Physics \hfill \textbf{CAP: 4.43}
+
+%=======================
+% Academic Courses
+%=======================
+\begin{sectionbox}
+\section*{Academic Courses}
+\end{sectionbox}
+
+\begin{itemize}
+    \item \textbf{Year 1 (Completed):} Classical Mechanics I, Electromagnetism I, Quantum Mechanics I, Mathematical Methods in Physics I
+    \item \textbf{Year 2 Semester 1 (Taking):} Classical Mechanics II, Experimental Physics I, Mathematical Methods in Physics II
+\end{itemize}
+
+%=======================
+% Projects
+%=======================
+\begin{sectionbox}
+\section*{Projects}
+\end{sectionbox}
+
+\textbf{Quantum Wavepacket Visualization} \hfill Jan 2025 -- Mar 2025
+
+Developed interactive visualizations of quantum phenomena in Python
+\begin{itemize}
+    \item 3D simulation of a quantum wavepacket traversing a potential barrier
+    \item Quantum harmonic oscillator dynamics
+\end{itemize}
+
+%=======================
+% Skills
+%=======================
+\begin{sectionbox}
+\section*{Skills}
+\end{sectionbox}
+
+\textbf{Technical Skills}
+\begin{itemize}
+    \item Proficient in \LaTeX\ for technical documents and papers
+    \item Skilled in Python for data analysis, visualization, and algorithm development
+    \item Experienced in SQL for database querying and data extraction
+\end{itemize}
+
+% \textbf{Transferable Skills}
+% \begin{itemize}
+%     \item Strong analytical thinking and problem-solving
+%     \item Effective written and verbal communication
+%     \item Detail-oriented with organizational capabilities
+%     \item Quick learner, able to grasp new concepts efficiently
+% \end{itemize}
+
+%=======================
+% Achievements
+%=======================
+\begin{sectionbox}
+\section*{Achievements}
+\end{sectionbox}
+
+\begin{itemize}
+    \item \textbf{BITSAT: 321/390}, strong proficiency in Physics, Chemistry, and Mathematics
+    \item \textbf{JEE Mains: 99.14 percentile} (Top 1\% of 2 million candidates)
+    \item \textbf{JEE Advanced Rank: 9112}, exceptional problem-solving abilities
+    \item Awarded \textbf{Silver Medal} in International Aerospace Olympiad
+    \item \textbf{IISER Aptitude Test Rank: 357}
+\end{itemize}
+
+%=======================
+% Interests
+%=======================
+\begin{sectionbox}
+\section*{Interests}
+\end{sectionbox}
+
+\begin{itemize}
+\item \textbf{Computational Physics and Machine Learning:} Physics-informed neural networks, scientific computing, and data-driven approaches to modeling complex physical systems
+\item \textbf{Experimental and Theoretical Integration:} Laboratory techniques in condensed matter physics, instrumentation development, and bridging experimental data with computational models
+\end{itemize}
+
+\end{document}

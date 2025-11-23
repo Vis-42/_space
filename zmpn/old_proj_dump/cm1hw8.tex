@@ -1,0 +1,181 @@
+\documentclass{report}
+
+\input{latex-templates/preamble}
+\input{latex-templates/macros}
+\input{latex-templates/letterfonts}
+\usepackage{multicol}
+\usepackage{physics}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{wrapfig}
+\usepackage{pgfplots}
+
+\setlength{\fboxsep}{1pt} % Space between image and border
+\setlength{\fboxrule}{0.5pt} % Border thickness
+
+\setlength{\columnsep}{20pt} % Adjust space between columns
+\setlength{\columnseprule}{1pt}% Thickness of vertical line
+
+\title{\Huge{PC2032 Classical Mechanics 1}\\Homework Assignment 8}
+\author{\huge{Parth Bhargava}\\ AO310667E}
+\date{}
+
+\begin{document}
+	\maketitle
+	
+	\pbm{}{
+	A small ball bounces down from a staircase. The ball hits each step at the same position and bounces to the same height as shown in the figure below. Assume the height and width of each step are both $L$. The coefficient of restitution of each collision is $e$.
+	\begin{enumerate}
+		\item[a.] Find the velocity of the ball right after each collision.
+		\item[b.] Find the bounce height $H$ in the figure.
+	\end{enumerate}
+	\udia{0.4}{rdf60}
+	}
+	\sol{}{
+	\udia{0.4}{rdf70}
+	\sss{a.}
+	Applying conservation of energy in the y-direction, along path $C_1$,
+	\begin{align*}
+		mg(L+H)&=\frac{1}{2}mv_y^2 \imps v_y=\sqrt{2g(L+H)} \label{01} \tag{1}
+	\end{align*}
+	Applying conservation of energy in the y-direction, along path $C_2$,
+	\begin{align*}
+		mgH&=\frac{1}{2}mu_y^2 \imps u_y=\sqrt{2gH} \label{02} \tag{2}
+	\end{align*}
+	Since the ball travels a horizontal distance $L$ between each bounce,
+	\begin{align*}
+		t_{C_1} + t_{C_2} &= \frac{L}{u_x} \imps \frac{v_y}{g} + \frac{u_y}{g} = \frac{L}{u_x} \imps u_x = \frac{Lg}{u_y+v_y}
+	\end{align*}
+	The horizontal component of the ball's velocity is constant throughout the motion.\\ So we can use \eqref{01} \& \eqref{02} in the above expression to get, 
+	\begin{align*}
+		u_x &=v_x = \frac{L\sqrt{g}}{\sqrt{2}\lt(\sqrt{H}+\sqrt{L+H}\rt)} \label{03} \tag{3}
+	\end{align*}
+	Hence, according to \eqref{01},\eqref{02} and \eqref{03},
+	\begin{align*}
+		v&=\frac{L\sqrt{g}}{\sqrt{2}\lt(\sqrt{H}+\sqrt{L+H}\rt)}\vu*{x} + \sqrt{2g(L+H)} \vu*{y}\h \\
+		u&=\frac{L\sqrt{g}}{\sqrt{2}\lt(\sqrt{H}+\sqrt{L+H}\rt)}\vu*{x} + \sqrt{2gH} \vu*{y}\h
+	\end{align*}
+	\sss{b.}
+	By definition of the coefficient of restitution,
+	\begin{align*}
+		e&=\frac{\sqrt{2gH}}{\sqrt{2g(L+H)}} \imps H = e^2 (L+H) \imps H = \frac{Le^2}{1-e^2}\h
+	\end{align*}
+	}
+	\wa
+	\pagebreak
+	
+	\pbm{}{
+	A ball is rolling down from the top of a rough spherical dome with negligible initial velocity and angular velocity. Show that the ball must slide before losing the contact with the dome.
+	}
+	\sol{}{
+	\udia{0.5}{rdf73}
+	\sss{}
+	Force equation: 
+	\begin{align*}
+		mg\sin\theta - f_r = m \dv{v}{t} \label{04} \tag{4}
+	\end{align*}
+	Torque equation:
+	\begin{align*}
+		f_{r}r &= \mcI \dv{\omega}{t} = \frac{2}{5}mr^2 \dv{\omega}{t} \imps f_{r} = \frac{2}{5}mr \dv{\omega}{t} \label{05} \tag{5}
+	\end{align*}
+	Friction force constraint:
+	\begin{align*}
+		f_r &\le \mu N \label{06} \tag{6}\\
+	\end{align*}
+	Circular motion equation:
+	\begin{align*}
+		N - mg\cos\theta &= -\frac{mv^2}{R+r} \label{07} \tag{7}
+	\end{align*}
+	Here \eqref{04}, \eqref{05},\eqref{06} and \eqref{07} are always true.\\
+	In particular before slipping,
+	\begin{align*}
+		mg\sin\theta &=  m \dv{v}{t} +f_r \\
+		&= m \dv{v}{t} +\frac{2}{5}mr \dv{\omega}{t} \\
+		mg\sin\theta &= \dfrac{7}{5} m \dv{v}{t} \\
+		\imps \dv{v}{t} &= \dfrac{5}{7}g\sin\theta \\
+		\imps r\dv{\omega}{t}&= \dfrac{5}{7}g\sin\theta \\ 
+		\imps f_{r} &= \dfrac{2}{7}mg\sin\theta
+	\end{align*}
+	So before slipping $f_r$ will maintain $\dfrac{2}{7}mg\sin\theta$ while $N$ starts to decrease. So at some point when $N$ is less than $\dfrac{2}{7}\dfrac{mg\sin\theta}{\mu}$, \eqref{05} will 'break down'. That is $f_r$ will be smaller than $\dfrac{2}{7}mg\sin\theta$ and we have $r\dfrac{d\omega}{dt} < \dfrac{dv}{dt} \implies $ The ball starts to slip.\\
+	
+	
+%	If no slipping,
+%	\begin{align*}
+%		v &= r\omega \imps \dv{v}{t} = r \dv{\omega}{t}
+%	\end{align*}
+%	But when $N = 0$, $f_{r} = 0$ also!
+%	\begin{align*}
+%		\Rightarrow \dv{\omega}{t} \rightarrow 0 \quad \text{whereas} \quad \dv{v}{t} \rightarrow g\sin\theta
+%	\end{align*}
+
+%	But when $N$ at some point before $N\to0$, $N<\dfrac{2}{7}\dfrac{mg\sin\theta}{\mu}$\\
+%	Which means $f_{r}$ will be less than $\dfrac{2}{7}mg\sin\theta$, therefore,
+%	\begin{align*}
+%		\dv{\omega}{t} &= \frac{5}{7}m f_{r}< \dv{v}{t} 
+%	\end{align*}
+%	and slipping occurs.\\
+	}
+	\wa
+	\pagebreak
+	
+	\pbm{}{
+	A cylinder of length $L$ and radius $R$ has a weight $W$ . Two cords are wrapped around the cylinder, one near each end, and the cord ends are attached to hooks on the ceiling. The cylinder is held horizontally with the two cords exactly vertical and is then released. See the figure on the next page. Find
+	\udia{0.3}{rdf61}
+	\begin{enumerate}
+		\item[a.] the tension in each cord as they unwind and
+		\item[b.] the linear acceleration of the cylinder as it falls.
+	\end{enumerate}
+	}
+	\sol{}{
+	Let point $A$ correspond to the instantaneous axis of rotation for the cylinder. Hence,
+	\begin{align*}
+		\va{\tau}=\va{r}\times \va{F}&= \mathcal{I} \va{\alpha}
+		\imps MgR=\lt(\frac{3MR^2}{2}\rt)\lt(\frac{a}{R}\rt) \imps a = \frac{2g}{3} \h
+	\end{align*}
+	For the FBD of the cylinder,
+	\begin{align*}
+		Mg-2T&=Ma \imps 2T = Mg - \frac{2Mg}{3} \imps T =\frac{Mg}{6} \imps T = \frac{W}{6} \h
+	\end{align*}
+	\udia{0.2}{rdf72}
+	\sss{a.} The tension in each cord as they unwind is $T = \dfrac{W}{6}$.
+	\sss{b.} The linear acceleration of the cylinder as it falls is $a = \dfrac{2g}{3}$.\\
+	}
+	\wa
+	
+	\pbm{}{
+	A uniform, solid cylinder with mass $M$ and radius $2R$ rests on a horizontal tabletop. A string is attached by a yoke to a frictionless axle through the centre of the cylinder so that the cylinder can rotate about the axle. The string runs over a disk-shaped pulley with mass $M$ and radius $R$ that is mounted on a frictionless axle through its centre. A block of mass $M$ is suspended from the free end of the string. The string does not slip over the pulley surface, and the cylinder rolls without slipping on the table top. Find the magnitude of the acceleration of the block after the system is released from rest by two methods:
+	\begin{enumerate}
+		\item[a.] using energy conservation,
+		\item[b.] the dynamic method using forces and torques.
+	\end{enumerate}
+	\textit{Hint: the tension in the section of string parallel to the table top is not the
+	same as that in the vertical section suspending the block. Why?}
+	\udia{0.5}{rdf62}
+	}
+	\sol{}{
+	\udia{0.75}{rdf71}
+	\sss{a. Using energy conservation,}
+	\begin{align*}
+		\f Mv^2 + \f \qty(\f M(2R)^2)\qty(\frac{v}{2R})^2 + \f \qty(\f MR^2)\qty(\frac{v}{R})^2 + \f Mv^2 & = Mgx\\
+		\f v^2 + \frac{1}{4} v^2 + \frac{1}{4} v^2 + \f v^2 &= gx \imps v=\sqrt{\frac{2gx}{3}}
+	\end{align*}
+	Since $v \propto \sqrt{x} $, the acceleration of the block is constant, so
+	\begin{align*}
+		v^2&=2ax \imps \frac{2gx}{3}=2ax \imps a=\frac{g}{3}\h
+	\end{align*}
+	\sss{b.Using torques and forces,}
+	For the cylinder, about the instantaneous axis of rotation,
+	\begin{align*}
+		2T_2R&=\lt(\f M (2R)^2 + M (2R)^2 \rt)\lt(\frac{a}{2R}\rt) \imps T_2=\frac{3}{2}Ma
+	\end{align*}
+	For the pulley,
+	\begin{align*}
+		(T_1-T_2)R&=\qty(\f MR^2)\qty(\frac{a}{R}) \imps T_1 - T_2 = \frac{Ma}{2} \imps T_1 - \frac{3}{2}Ma = \frac{Ma}{2} \imps T_1 = 2Ma
+	\end{align*}
+	For the block,
+	\begin{align*}
+		Mg-T_1&=Ma \imps Mg-2Ma=Ma \imps a=\frac{g}{3}\h
+	\end{align*}
+	}
+	\wa
+\end{document}

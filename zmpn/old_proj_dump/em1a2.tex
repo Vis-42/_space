@@ -1,0 +1,189 @@
+\documentclass{report}
+
+\input{latex-templates/preamble}
+\input{latex-templates/macros}
+\input{latex-templates/letterfonts}
+\usepackage{physics, siunitx}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{wrapfig}
+\usepackage{pgfplots}
+\setlength{\fboxsep}{4pt} % Space between image and border
+\setlength{\fboxrule}{0.5pt} % Border thickness
+
+\title{\Huge{PC2031 Electricity and Magnetism 1}\\Assignment 2}
+\author{\huge{Parth Bhargava}\\ AO310667E}
+\date{}
+
+\begin{document}
+	\maketitle
+	
+	\pbm{}{
+	\begin{enumerate}
+		\item[a.] Consider a circular loop of radius $R$ and uniform line charge density $\lm$ lying in the $xy$-plane.
+		\udia{0.25}{rdf38}
+		The centre of the loop is the origin. Find the electric field at an arbitrary point along the $z$-axis.
+		\item[b.] Repeat the calculations for a circular disk of radius $R$ and uniform
+		surface charge density $\sigma$.
+		\udia{0.3}{rdf39}
+		Check your answers for the limiting cases $R \to \infty$ and $z \gg R$.
+	\end{enumerate}
+	
+	
+	}
+	\sol{}{
+	\sss{(a)}
+	\dia{0.4}{rdf41}
+	For an elemental segment of the loop,
+	$$\dd Q=\lm R \dd \phi$$
+	Due to which,
+	$$\dd E=\frac{k\dd Q}{R^2\csc^2\theta}$$
+	By symmetry, it can be established that the contribution of $\dd E \sin\theta$ will cancel out as $\phi$ goes from 0 to $2\pi$ and the total electric field at P will point along the $z$-axis.\\
+	Consequently,
+	\begin{align*}
+		|\vb{E}|&=\int_0^{2\pi}\frac{\dd E}{\dd \phi}\cos\theta  \dd \phi \\
+		&=\frac{k\lm R}{R^2\csc^2\theta}\cos\theta \qty(\int_0^{2\pi}\dd \phi) \\
+		&=\frac{2k\pi\lm \sin^2\theta}{R}\cos\theta  \\
+		&=\frac{2k\pi\lm \qty(\frac{R^2}{z^2+R^2})}{R}\frac{z}{\sqrt{z^2+R^2}} \\
+	\end{align*}
+	$$\imps \boxed{\vb{E}=\frac{1}{4\pi\eps}\frac{Qz}{\pqty{z^2+R^2}^{3/2}} \vu*{z}}\h$$
+	where $Q=2\pi R \lm$ is the total charge on the loop.\\
+	\wa
+	\sss{(b)}
+	\dia{0.4}{rdf42}
+	For an elemental loop in the disc,
+	$$\dd Q = \sigma \cdot 2\pi r \dd r$$
+	Due to which,\textit{(in reference to the result in part (a))}
+	$$\dd E=\frac{1}{4\pi\eps}\frac{z \dd Q}{\pqty{z^2+r^2}^{3/2}}=\frac{kz \dd Q}{\pqty{z^2+r^2}^{3/2}}$$
+	By symmetry, it can be established that each contribution of $\dd E$ and subsequently the total electric field at P will point along the $z$-axis.\\
+	Hence,
+	\begin{align*}
+		|\vb{E}|&=\int_0^{R}\frac{\dd E}{\dd r} \dd r \\
+		&=\int_0^{R}\frac{kz \sigma \cdot 2\pi r}{\pqty{z^2+r^2}^{3/2}} \dd r \\
+		&= \sigma \pi k z \int_0^{R} \frac{2r}{\pqty{z^2+r^2}^{3/2}} \dd r \\
+		&= \sigma \pi k z \int_0^{R} \frac{1}{\pqty{z^2+r^2}^{3/2}} \dd{(z^2+r^2)} \\
+		&= \sigma \pi k z \qty[-\frac{2}{\pqty{z^2+r^2}^{1/2}}]_0^R \\
+		&= \frac{1}{4 \pi \eps } 2\sigma \pi z \qty[-\frac{1}{\pqty{z^2+R^2}^{1/2}}+\frac{1}{z}] 
+	\end{align*}
+	$$\imps \boxed{\vb{E}=\frac{\sigma}{2\eps} \pqty{1-\frac{z}{\pqty{z^2+R^2}^{1/2}}} \vu*{z}}\h$$
+	\sss{For the limiting cases,}
+	\begin{enumerate}
+		\item For $R \to \infty$,
+		$$\frac{z}{\pqty{z^2+R^2}^{1/2}} \approx 0 \imps \vb{E}=\frac{\sigma}{2\eps} \vu*{z}$$
+		which is equivalent to the electric field due to a charged infinite sheet. \\Additionally, it is important to note that the electric field attains a constant value at all points in space.
+		\item For $z \gg R$,
+		\begin{align*}
+			&\frac{z}{\pqty{z^2+R^2}^{1/2}}= \frac{1}{\pqty{1+\qty(\dfrac{R}{z})^2}^{1/2}} \approx \frac{1}{\pqty{1+\dfrac{1}{2}\qty(\dfrac{R}{z})^2}}= \frac{2z^2}{\pqty{2z^2+R^2}}\\
+			\imps &\vb{E}=\frac{\sigma}{2\eps} \pqty{1-\frac{2z^2}{\pqty{2z^2+R^2}}} \vu*{z}\\
+			&\vb{E}=\frac{\sigma}{2\eps} \pqty{\frac{R^2}{2z^2+R^2}} \vu*{z}\\
+			&\vb{E}=\frac{1}{4\pi\eps} \pqty{\frac{\pi R^2 \sigma}{z^2}} \vu*{z} && \lt[\because z \gg R \to 2z^2+R^2 \approx 2z^2 \rt]\\
+			\imps &\vb{E}=\frac{kQ}{z^2} \vu*{z} && \lt[ \because Q=\pi R^2 \sigma \rt]
+		\end{align*}
+		which is equivalent to the electric field due to a point charge $Q=\pi R^2 \sigma $ at a distance $z$.
+	\end{enumerate}
+	\wa
+	}
+	
+	\pbm{}{
+	Four charged spheres are connected by strings of equal length.
+	\udia{0.4}{rdf40}
+	The system is in equilibrium. Determine $\tan\theta$ and express it in terms of $Q$ and $q$.
+	}
+	\sol{}{
+	\sss{On charge Q,}
+	By Coulomb's Law,
+	\begin{align*}
+		F_1=\frac{kQ^2}{4x^2\cos^2\theta}+\frac{2kQq}{x^2}\cos\theta
+	\end{align*}
+	By Lami's Theorem,
+	\begin{align*}
+		\frac{F_1}{\sin2\theta}=\frac{T}{\sin(\pi-\theta)}\imps
+		F_1\sin\theta=T(2\sin\theta\cos\theta)\imps
+		\cos\theta=\frac{F_1}{2T} \tag{1} \label{1}
+	\end{align*}
+	\udia{0.7}{rdf43}
+	\sss{On charge q,}
+	By Coulomb's Law,
+	\begin{align*}
+		F_2=\frac{kq^2}{4x^2\sin^2\theta}+\frac{2kQq}{x^2}\sin\theta
+	\end{align*}
+	By Lami's Theorem,
+	\begin{align*}
+		\frac{F_2}{\sin(\pi-2\theta)}=\frac{T}{\sin(\frac{\pi}{2}+\theta)}\imps
+		F_2\cos\theta=T(2\sin\theta\cos\theta)\imps
+		\sin\theta=\frac{F_2}{2T} \tag{2} \label{2}
+	\end{align*}
+	\sss{By \eqref{1} and \eqref{2},}
+	\begin{align*}
+		\frac{F_1}{\cos\theta}&=\frac{F_2}{\sin\theta}\\
+		\frac{kQ^2}{4x^2\cos^3\theta}+\frac{2kQq}{x^2}&=\frac{kq^2}{4x^2\sin^3\theta}+\frac{2kQq}{x^2}\\
+		\frac{Q^2}{\cos^3\theta}&=\frac{q^2}{\sin^3\theta}\\
+		\frac{\sin^3\theta}{\cos^3\theta}&=\frac{q^2}{Q^2}
+	\end{align*}
+	$$\imps \boxed{\tan\theta=\qty(\frac{q^2}{Q^2})^{1/3}}\h$$
+	}
+	\wa
+	
+	\pbm{}{
+	A very long cylindrical rod with a radius of 4.50 cm carries a uniformly distributed positive charge density $\lm= 17.00$ nC per centimeter. A Cartesian coordinate system is established such that the center of the rod is at $(x,y)=(0,0)$. A cylindrical cavity with a radius of 2.15 cm is drilled through the rod, with its center positioned at $(x,y)= (0.50, 1.50)$ cm. Determine the electric field (in N/C) at the point $(x,y)= (-2.85, 3.28)$ cm.
+	}
+	\sol{}{
+	
+	\udia{0.7}{rdf49}
+	\sss{Electric field inside an infinitely long charged cylinder}
+	Given an infinitely long cylinder of radius \(R\) with a uniform volume charge density \(\rho\) (in C/m\(^3\)), consider a point inside the cylinder at a radial distance \(r\) (with \(r < R\)).\\
+	 Owing to the cylindrical symmetry of the configuration, the electric field is radial, written as \(\vb{E} = E(r) \vu*{r}\), and depends solely on \(r\) without any variation along the axial (\(z\)) or angular (\(\theta\)) directions. \\
+	 To analyze the field using Gauss’s law, a cylindrical Gaussian surface coaxial with the charged cylinder is chosen, having a radius \(r\) and a length \(L\).
+	The total flux through the Gaussian surface is:
+	\begin{align*}
+		\oint \vb{E} \cdot \dd{\vb{A}} &= \frac{Q_{\text{enc}}}{\eps_0} \imps
+		\underbrace{E(r) \cdot 2\pi r L}_{\text{Curved surface}} + \underbrace{0 + 0}_{\text{End caps}} = \frac{\rho \cdot \pi r^2 L}{\eps_0} && [ \because Q_{\text{enc}} = \rho V = \rho \pi r^2 L ]\\ \\
+		\imps E(r) &= \frac{\rho \pi r^2 L}{2\pi r L \eps_0} =\frac{\rho r}{2\eps_0} \imps \boxed{\vb{E} = \frac{\rho r}{2\eps_0} \vu*{r}}
+	\end{align*}
+	
+	\sss{Electric Field outside an infinitely long charged cylinder}
+	Given an infinitely long cylinder of radius \(R\) with a uniform volume charge density \(\rho\) (in C/m\(^3\)), consider a point outside the cylinder at a radial distance \(r\) (with \(r > R\)). \\
+	Owing to the cylindrical symmetry of the configuration, the electric field is radial, written as \(\vb{E} = E(r) \vu*{r}\), and depends solely on \(r\) without any variation along the axial (\(z\)) or angular (\(\theta\)) directions.\\
+	To analyze the field using Gauss’s law, a cylindrical Gaussian surface coaxial with the charged cylinder is chosen, having a radius \(r\) and a length \(L\). \\
+	The total flux through the Gaussian surface is: 
+	\begin{align*}
+		\oint \vb{E} \cdot \dd{\vb{A}} &= \frac{Q_{\text{enc}}}{\eps_0} \imps
+		\underbrace{E(r) \cdot 2\pi r L}_{\text{Curved surface}} + \underbrace{0 + 0}_{\text{End caps}} = \frac{\rho \cdot \pi R^2 L}{\eps_0} && [ \because Q_{\text{enc}} = \rho V = \rho \pi R^2 L ]\\ \\
+		\imps E(r) &= \frac{\rho \pi R^2 L}{2\pi r L \eps_0} =\frac{\rho r}{2\eps_0} \imps \boxed{\vb{E} = \frac{\rho R^2}{2 \eps_0 r} \vu*{r}}
+	\end{align*}
+	
+	\sss{Solving the cavity problem}
+	\udia{0.7}{rdf48}
+	Now in the case of the rod under examination, to determine the electric field at point $P$, we use the superposition principle. Instead of directly analyzing the field due to the rod with a cavity, we model the cavity as a superposition of charge distributions:
+	\begin{enumerate}
+		\item Original Rod: Assume the rod is uniformly charged with volume charge density $\rho$.
+		\item Negative Charge Equivalent of the Cavity: The cavity can be treated as if it were filled with a uniform charge density $\rho$, and then we superimpose an equal and opposite (negative) charge density in the same region to effectively create an empty cavity.
+	\end{enumerate}
+	Without taking the cavity under consideration, $\rho = \dfrac{\lm}{\pi R^2}$ where $\lm$ is the linear charge density.\\
+	At point P,
+	\begin{align*}
+		\vb{E}_{\text{total}} &= \vb{E}_{\text{rod}} + \vb{E}_{\text{cavity}} \\
+		\vb{E}_{\text{total}} &= \frac{\rho}{2 \eps_0} \lt( x_p \vu*{i} + y_p \vu*{j} \rt) -\frac{\rho a^2}{2 \eps_0 (l)^2} \lt( l_x \vu*{i} + l_y \vu*{j} \rt)\\
+		\vb{E}_{\text{total}} &=\frac{\lm}{2 \eps_0 \pi R^2} \lt( x_p \vu*{i} + y_p \vu*{j} \rt) -\frac{\lm a^2}{2 \eps_0 \pi R^2 (l)^2} \lt( l_x \vu*{i} + l_y \vu*{j} \rt) \\
+		&= \frac{\lm}{2 \eps_0 \pi R^2} \Bigg[ \lt( x_p \vu*{i} + y_p \vu*{j} \rt) - \frac{a^2}{l^2} \lt( l_x \vu*{i} + l_y \vu*{j} \rt) \Bigg]\\
+		\vb{E}_{\text{total}} &= \frac{\lm}{2 \eps_0 \pi R^2} \qty(\qty[ x_p - \frac{a^2 l_x}{l^2} ] \vu*{i} + \qty[ y_p - \frac{a^2 l_y}{l^2} ] \vu*{j})
+	\end{align*}
+	Given numerical values:
+	\begin{align*}
+		R &= \SI{0.045}{m} &&a = \SI{0.0215}{m} && x_p = \SI{-0.0285}{m},\\
+		y_p &= \SI{0.0328}{m} &&x_c = \SI{0.005}{m} &&y_c = \SI{0.015}{m}\\
+		l_x &= -0.0285 - 0.005 = \SI{-0.0335}{m} &&l_y = 0.0328 - 0.015 = \SI{0.0178}{m} &&\lm = \SI{1.70e-6}{C/m}  
+	\end{align*}
+	We get,
+	\begin{align*}
+		\vb{E}_{\text{total}} = \frac{1.70 \times 10^{-6}}{2 \times 8.85 \times 10^{-12} \times \pi \times 0.045^2} 
+		\qty(
+			\qty[ -0.0285 - \frac{0.0215^2 \times (-0.0335)}{(-0.0335)^2 + 0.0178^2} ] \vu*{i} 
+			+ \qty[ 0.0328 - \frac{0.0215^2 \times 0.0178}{(-0.0335)^2 + 0.0178^2} ] \vu*{j}
+		)
+	\end{align*}
+	$$
+	\imps \boxed{\vb{E}_{\text{total}}=(-2.68 \times 10^5 \vu*{i} + 4.09 \times 10^5 \vu*{j})~\mathrm{N/C}}\h$$
+	\wa
+	}
+\end{document}

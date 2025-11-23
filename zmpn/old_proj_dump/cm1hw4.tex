@@ -1,0 +1,228 @@
+\documentclass{report}
+
+\input{latex-templates/preamble}
+\input{latex-templates/macros}
+\input{latex-templates/letterfonts}
+\usepackage{physics}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{wrapfig}
+\usepackage{pgfplots}
+\setlength{\fboxsep}{1pt} % Space between image and border
+\setlength{\fboxrule}{0.5pt} % Border thickness
+
+\title{\Huge{PC2032 Classical Mechanics 1}\\Homework Assignment 4}
+\author{\huge{Parth Bhargava}\\ AO310667E}
+\date{}
+
+\begin{document}
+	\maketitle
+	
+	\pbm{}{
+	A 15.0 kg stone slides down a snow-covered hill, leaving point A with a
+	speed of 10.0 m.s. There is no friction on the hill between points A and B, but
+	there is friction on the level ground at the bottom of the hill, between B and the
+	wall. After entering the rough horizontal region, the stone travels 100 m and then
+	runs into a very long, light spring with force constant 2.00 N/m. The coefficients
+	of kinetic and static friction between the stone and the horizontal ground are 0.20
+	and 0.80, respectively. \\
+	\udia{0.6}{rdf26}
+	\begin{enumerate}
+		\item[a.] What is the speed of the stone when it reaches point B?\\
+		\item[b.] How far will the stone compress the spring?\\
+		\item[c.] Will the stone move again after it has been stopped by the spring?\\
+	\end{enumerate}
+	}
+	\sol{}{
+	\sss{a.}
+	Applying the conservation of energy at points A and B,
+	\begin{align*}
+		mg(0)+\frac{1}{2}mv_1^2&=mg(20)+\frac{1}{2}m(10)^2\\
+		\frac{1}{2}v_1^2&=g(20)+\frac{1}{2}(10)^2\\
+		v_1^2&=40g+(10)^2
+	\end{align*}
+	$$\imps \boxed{v_1=\sqrt{40g+100} \xlongrightarrow{g=9.8 \ \unt{m/s}^2} v_1 \approx \sqrt{492} \ \unt{m/s}\approx 22.2 \  \unt{m/s}}$$
+	\udia{1}{rdf27}
+	
+	\wa
+	\sss{b.}
+	For the journey after point B, the stone will experience a constant force opposing its motion (due to kinetic friction).\\
+	At a distance 'x' from B,
+	\begin{align*}
+		v^2 &=v_1^2 + 2 \pqty{\frac{-f_k}{m}}x\\
+		&=40g+100 - 2 \pqty{\frac{\mu_kmg}{m}}x \quad [\because \textbf{(a)}]\\
+		&=40g+100 - 2 \mu_kgx\\
+		&=40\cdot 9.8 +100 - 2 \cdot  0.2 \cdot 9.8 \cdot x \ \quad [\because g=9.8 \ \unt{m}/\unt{s}^2 \ \& \ \mu_k=0.2]
+	\end{align*}
+	\begin{equation}
+		\imps v=\sqrt{492-3.92x} \ \unt{m/s} \quad \unt{where $x$ is in metres} \  \label{11}
+	\end{equation}
+	At a distance $x=100m$ from B, using \eqref{11},
+	$$v_2=\sqrt{492-392}=\sqrt{100}$$
+	\begin{equation}
+		\imps v_2 = 10 \ \unt{m/s}  \label{12}
+	\end{equation}
+	After this the stone comes in contact with the spring. As the spring compresses by 'y', some of the the kinetic energy of the stone is lost as heat due to friction while some is stored in the spring.
+	\begin{align*}
+		\frac{1}{2}mv_2^2&=\frac{1}{2}ky^2 + f_ky\\
+		ky^2 +2f_ky-mv_2^2&=0\\
+		2y^2 +2 \cdot 0.2 \cdot 15 \cdot 9.8 \cdot y - 15 \cdot 100 &= 0 \kyuki{11}\\
+		y^2 + 29.4 \cdot y - 750 &= 0 \\
+		\imps y&= \frac{- 29.4 \pm \sqrt{29.4^2+4\cdot 1 \cdot 750}}{2} \\
+		&= \frac{- 29.4 \pm \sqrt{3,864.36}}{2} \\
+		&= \frac{- 29.4 + 62.2}{2} \quad [\because y > 0] \\
+		\imps &\boxed{y=16.4 \ \unt{m}}
+	\end{align*}
+	
+	\wa
+	\sss{c.}
+	At the maximum compression of the spring, the stone becomes motionless and hereafter, the friction force is static. Thus,\\
+	1. Force exerted by the spring at maximum compression ($y = 16.4 \, \unt{m}$):
+	$$F_{spring} = ky = 2.00 \, \unt{N/m} \cdot 16.4 \, \unt{m} = 32.8 \, \unt{N}$$
+	2. Maximum static friction force:
+	$$f_s = \mu_s mg = 0.80 \cdot 15.0 \, \unt{kg} \cdot 9.8 \, \unt{m/s}^2 = 117.6 \, \unt{N}$$
+	Since $F_{spring} = 32.8 \, \unt{N} < f_s = 117.6 \, \unt{N}$, the force exerted by the spring is not enough to overcome the maximum static friction force. Therefore, the stone will not move again after it has been stopped by the spring.
+	}
+	\wa
+	\pagebreak
+	
+	\pbm{}{
+	A proton of mass m moves in one dimension. The potential energy function
+	is $U(x)=\frac{\alpha}{x^2}-\frac{\beta}{x}$, where $\alpha$ and $\beta$ are positive constants. The proton is released
+	from rest at $x_0=\frac{\alpha}{\beta}$.
+	\begin{enumerate}
+		\item[a.] Show that $U(x)$ can be written as $$U(x)=\frac{\alpha}{x_0^2}\bqty{\pqty{\frac{x_0}{x}}^2-\pqty{\frac{x_0}{x}}}$$
+		Graph $U(x)$. Calculate $U(x_0)$ and thereby locate the point $x_0$ on the graph.\\
+		\item[b.] Calculate $v(x)$ the speed of the proton as a function of position. Graph $v(x)$ and give a qualitative description of the motion.\\
+		\item[c.] For what value of $x$ is the speed of the proton a maximum? What is the value
+		of that maximum speed?\\
+		\item[d.] What is the force on the proton at the point in part (c)\\
+		\item[e.] Let the proton be released instead at $x_1=\frac{3\alpha}{\beta}$. Locate the point $x_1$ on the
+		graph of $U(x)$. Calculate $v(x)$ and give a qualitative description of the motion.\\
+		\item[f.] For each release point ($x = x_0$ and $x = x_1$), what are the maximum and
+		minimum values of $x$ during the motion?\\
+	\end{enumerate}
+	}
+	\sol{}{
+	\sss{a.} 
+	Here,
+	\begin{align*}
+		U(x) &= \frac{\alpha}{x^2} - \frac{\beta}{x}\\
+		&= \frac{\alpha x_0^2}{x^2 x_0^2} - \frac{\beta x_0}{x x_0}\\
+		&= \frac{\alpha x_0^2}{x^2 x_0^2} - \frac{\alpha}{x x_0} \quad \lt[\because x_0=\frac{\alpha}{\beta} \rightarrow \beta x_0 = \alpha\rt]\\
+		&= \frac{\alpha}{x_0^2} \lt( \frac{x_0^2}{x^2} - \frac{x_0}{x} \rt)
+	\end{align*}
+	\begin{equation}
+		\hspace{-4cm}\imps U(x)= \frac{\alpha}{x_0^2} \lt[ \lt( \frac{x_0}{x} \rt)^2 - \lt( \frac{x_0}{x} \rt) \rt] \label{21}
+	\end{equation}
+	\qed
+	\udia{0.7}{rdf29}
+	
+	\wa
+	\sss{b.}
+	Using conservation of energy,
+	\begin{align*}
+		0 + \frac{\alpha}{x_0^2} \lt[ \lt( \frac{x_0}{x_0} \rt)^2 - \lt( \frac{x_0}{x_0} \rt) \rt] &= \frac{1}{2}mv^2 + \lt( \frac{\alpha}{x^2} - \frac{\beta}{x} \rt) \kyuki{21}\\
+		0 &= \frac{1}{2}mv^2 + \lt( \frac{\alpha}{x^2} - \frac{\beta}{x} \rt)\\
+		\frac{1}{2}mv^2 &= \lt(\frac{\beta}{x} - \frac{\alpha}{x^2}  \rt)\\
+		v^2 &= \frac{2}{m} \lt(\frac{\beta}{x} - \frac{\alpha}{x^2}  \rt)
+	\end{align*}
+	\begin{equation}
+		\imps v(x) = \sqrt{\frac{2}{m} \lt(\frac{\beta}{x} - \frac{\alpha}{x^2}  \rt)} \label{22}
+	\end{equation}
+	\udia{0.8}{rdf28}
+	When the proton is released from $x_0$, it will move outward indefinitely, with its speed initially increasing rapidly to reach a maximum value then subsequently decreasing asymptotically to zero as $x \to \infty$.
+	
+	\wa
+	\sss{c.}
+	Since $v\geq0$, the maxima of $v(x)$ corresponds to the maxima of $v^2(x)$, 
+	$$ v^2(x) = \frac{2}{m} \lt( \frac{\beta}{x}-\frac{\alpha}{x^2} \rt) \imps v^2(x) = \frac{2}{m} f(x) \quad \lt[ \unt{where, } f(x) = \frac{\beta}{x}-\frac{\alpha}{x^2} \rt] $$
+	Maximizing $f(x)$,
+	\begin{align*}
+		f'(x)= 0 \imps \dv{x} \lt( \frac{\beta}{x}-\frac{\alpha}{x^2} \rt) =0 \imps \frac{2\alpha}{x^3} - \frac{\beta}{x^2} =0 \imps \frac{\beta}{x^2} = \frac{2\alpha}{x^3} \imps \beta x = 2\alpha \imps x = \frac{2\alpha}{\beta}\\
+	\end{align*}
+	Substituing this into \eqref{22} gives us,
+	\begin{align*}
+		v_{\max} &= \sqrt{\frac{2}{m} \lt( \frac{\beta}{\frac{2\alpha}{\beta}}-\frac{\alpha}{\lt( \frac{2\alpha}{\beta} \rt)^2} \rt)}
+		= \sqrt{\frac{2}{m} \lt(\frac{\beta^2}{2\alpha}- \frac{\alpha \beta^2}{4\alpha^2} \rt)}\\
+		&= \sqrt{\frac{2}{m} \lt( \frac{\beta^2}{2\alpha}-\frac{\beta^2}{4\alpha} \rt)}= \sqrt{\frac{2}{m} \lt( \frac{\beta^2}{4\alpha} \rt)}
+	\end{align*}
+	\begin{equation}
+		\hspace{-2cm}\imps v_{\max} = \frac{\beta}{\sqrt{2m\alpha}} \label{23}
+	\end{equation}
+	
+	\wa
+	\sss{d.}
+	At $\dps{x = \frac{2\alpha}{\beta}}$,
+	\begin{align*}
+		U(x) &= \frac{\alpha}{x^2} - \frac{\beta}{x} \imps \dv{U}{x} = -\frac{2\alpha}{x^3} + \frac{\beta}{x^2}\\ \\
+		\imps \eval{\dv{U}{x}}_{x = \frac{2\alpha}{\beta}}&=-\frac{2\alpha}{\lt( \frac{2\alpha}{\beta} \rt)^3} + \frac{\beta}{\lt( \frac{2\alpha}{\beta} \rt)^2} = -\frac{2\alpha \beta^3}{8\alpha^3} + \frac{\beta^3}{4\alpha^2} = -\frac{\beta^3}{4\alpha^2} + \frac{\beta^3}{4\alpha^2}\\ \\
+		\imps \eval{\dv{U}{x}}_{x = \frac{2\alpha}{\beta}}&= 0
+	\end{align*}
+	Hence, force $ F $ is given by,
+	$$ 
+	F = -\dv{U}{x} \imps {F}_{x = \frac{2\alpha}{\beta}}=-\eval{\dv{U}{x}}_{x = \frac{2\alpha}{\beta}} \imps {F}_{x = \frac{2\alpha}{\beta}}=0 
+	$$
+	
+	\wa
+	\sss{e.}
+	At $ x_1 = \frac{3\alpha}{\beta} $:
+	\begin{equation*}
+		E = U(x_1) = \frac{\alpha}{\lt( \frac{3\alpha}{\beta} \rt)^2} - \frac{\beta}{\frac{3\alpha}{\beta}} = \frac{\alpha \beta^2}{9\alpha^2} - \frac{\beta^2}{3\alpha} = \frac{\beta^2}{9\alpha} - \frac{\beta^2}{3\alpha} \imps E = -\frac{2\beta^2}{9\alpha}
+	\end{equation*}
+	Using conservation of energy,
+	\begin{align*}
+		E &= \frac{1}{2}mv^2 + U(x)\\
+		-\frac{2\beta^2}{9\alpha} &= \frac{1}{2}mv^2 + \lt( \frac{\alpha}{x^2} - \frac{\beta}{x} \rt)\\
+		\frac{1}{2}mv^2 &= -\frac{2\beta^2}{9\alpha} - \lt( \frac{\alpha}{x^2} - \frac{\beta}{x} \rt)\\
+		v^2 &= -\frac{4\beta^2}{9m\alpha} + \frac{2}{m} \lt(\frac{\beta}{x} - \frac{\alpha}{x^2} \rt)
+	\end{align*}
+	\udia{0.6}{rdf31}
+	The particle will oscillate between turning points with $E = -\frac{2\beta^2}{9\alpha}$ as shown above in the $U(x)$ vs. $x$ graph.
+	
+	\wa
+	\sss{f.}
+	\paragraph{Case 1:}
+	
+	At $x_0 = \dfrac{\alpha}{\beta}$, the total energy $E$ is zero.
+	To find the turning points, solve $U(x) = E$:
+	\begin{equation*}
+		\frac{\alpha}{x^2} - \frac{\beta}{x} = 0 \imps \frac{1}{x} \lt( \frac{\alpha}{x} - \beta \rt) = 0 \imps x=
+		\begin{cases}
+			\dfrac{1}{x} = 0 &\imps x \to \infty \\ \\
+			\dfrac{\alpha}{x} - \beta = 0 &\imps x = \dfrac{\alpha}{\beta}\\
+		\end{cases}
+	\end{equation*}
+	Thus, the only finite turning point is $x = \dfrac{\alpha}{\beta}$, and the other "turning point" is at infinity.\\ \\
+	When the proton is released at $x_0 = \dfrac{\alpha}{\beta}$, it has just enough energy to escape to infinity.  The motion is unbounded.
+	
+	\paragraph{Case 2:}
+	
+	At $x_1 = \dfrac{3\alpha}{\beta}$, the total energy $E$ is:
+	$$
+	E = U(x_1) = \frac{\alpha}{x_1^2} - \frac{\beta}{x_1} = \frac{\alpha}{\lt(\frac{3\alpha}{\beta}\rt)^2} - \frac{\beta}{\frac{3\alpha}{\beta}} = \frac{\alpha \beta^2}{9\alpha^2} - \frac{\beta^2}{3\alpha} = \frac{\beta^2}{9\alpha} - \frac{\beta^2}{3\alpha} = -\frac{2\beta^2}{9\alpha} \imps E = -\frac{2\beta^2}{9\alpha}
+	$$
+	To find the turning points, solve $U(x) = E$ :
+	\begin{align*}
+		\frac{\alpha}{x^2} - \frac{\beta}{x} &= -\frac{2\beta^2}{9\alpha} \\
+		\alpha - \beta x &= -\frac{2\beta^2}{9\alpha} x^2 \\
+		\frac{2\beta^2}{9\alpha} x^2 - \beta x + \alpha &= 0 \\
+		\imps x &= \frac{-(-\beta) \pm \sqrt{(-\beta)^2 - 4\lt(\frac{2\beta^2}{9\alpha}\rt)(\alpha)}}{2\lt(\frac{2\beta^2}{9\alpha}\rt)} \quad [\because \text{Quadratic Formula}]\\
+		&=\frac{9\alpha}{4\beta^2} \pqty{\beta \pm \sqrt{\beta^2-\frac{8\beta^2}{9}}} \\
+		&= \frac{9\alpha}{4\beta^2}\pqty{\beta \pm \sqrt{\frac{\beta^2}{9}}} \\
+		&= \frac{9\alpha}{4\beta^2}\pqty{\beta \pm \frac{\beta}{3}}\\ \\
+		\imps x&=
+		\begin{cases}
+			\dfrac{9\alpha}{4\beta^2}\pqty{\beta + \dfrac{\beta}{3}} &= \dfrac{9\alpha}{4\beta^2}\pqty{\dfrac{4\beta}{3}} = \dfrac{3\alpha}{\beta}\\ \\
+			\dfrac{9\alpha}{4\beta^2}\pqty{\beta - \dfrac{\beta}{3}} &= \dfrac{9\alpha}{4\beta^2}\pqty{\dfrac{2\beta}{3}} = \dfrac{3\alpha}{2\beta}\\
+		\end{cases}
+	\end{align*}
+	Thus, the turning points are:
+	$$
+	x_{\text{min}} = \frac{3\alpha}{2\beta}, \quad x_{\text{max}} = \frac{3\alpha}{\beta}.\\
+	$$
+	When the proton is released at $x_1 = \dfrac{3\alpha}{\beta}$, it oscillates between $x_{\text{min}} = \dfrac{3\alpha}{2\beta}$ and $x_{\text{max}} = \dfrac{3\alpha}{\beta}$. The motion is bounded.
+	\wa
+	}
+	
+\end{document}

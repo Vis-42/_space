@@ -1,0 +1,192 @@
+\documentclass{report}
+
+\input{latex-templates/preamble}
+\input{latex-templates/macros}
+\input{latex-templates/letterfonts}
+\usepackage{physics}
+\usepackage{lipsum}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{wrapfig}
+\setlength{\fboxsep}{1pt} % Space between image and border
+\setlength{\fboxrule}{0.5pt} % Border thickness
+
+\title{\Huge{PC2032 Classical Mechanics 1}\\Homework Assignment 3}
+\author{\huge{Parth Bhargava}\\ AO310667E}
+\date{}
+
+\begin{document}
+	\maketitle
+	
+	\pbm{}{
+	A right triangular wedge of mass $M$ and angle $\theta$, supporting a block of mass $m$ on its side, rests on a horizontal table, as shown in the diagram below. \\
+	\udia{0.4}{rdf17}
+	What horizontal force $F$ must be applied to the system to keep m stationary relative to the wedge? Assume that all contacts are frictionless.
+	}
+	\sol{}{
+	In the non-inertial frame of the accelerating wedge, there is a pseud-force acting on the block of mass $m$ corresponding to the acceleration of the non-inertial frame, with its direction in the opposite direction of the acceleration.\\
+	The acceleration of the frame is,
+	$$a=\frac{F}{M+m}$$
+	Thus,
+	$$F_{pseudo}= \frac{mF}{M+m} $$
+	\udia{0.6}{rdf19}
+	The forces in green in the above diagram show us the forces experienced by the block $m$ in the non-inertial frame of the wedge and the components of these forces tangential and normal to the surface of the wedge are shown in blue.\\
+	Consequently, for the block to remain stationary, the net force on the block in this frame must quate to zero. Here, the normal force between the surfaces will be 
+	$$N=\frac{mF\sin\theta}{M+m}+mg \cos\theta$$
+	and the tangential components equate to give us
+	\begin{align*}
+		&\frac{mF\cos\theta}{M+m}= mg \sin\theta \\
+		\imps & \boxed{F= (M+m)g \tan \theta }\\
+	\end{align*}
+	
+	}
+	
+	\pbm{}{
+	A wedge with mass M rests on a frictionless, horizontal table top. A block with mass m is placed on the wedge. There is no friction between the block and the wedge. The system is released from rest.
+	\udia{0.3}{rdf20}
+	\begin{enumerate}
+		\item[a.] Calculate the acceleration of the wedge and the horizontal and vertical components of the acceleration of the block.\\
+		\item[b.] Do your answers to part (a) reduce to the correct results when M is very large?\\
+		\item[c.] As seen by a stationary observer, what is the shape of the trajectory of the block?\\
+	\end{enumerate}
+	}
+	\sol{}{
+	\subsubsection{(a)} 
+	\udia{1}{rdf21}
+	After drawing the Free-Body Diagram for both of them, we can write Newton's Equation along each co-rdinate for each object.
+	\begin{align} 
+		&MA=N\sin\alpha \label{eq:21}\\
+		&ma_x=N\sin\alpha \label{eq:22}\\
+		&ma_y=mg-N\cos\alpha \label{eq:23}
+	\end{align}
+	By \eqref{eq:21} and \eqref{eq:22},
+	\begin{equation} 
+		MA=ma_x \label{eq:24}
+	\end{equation}
+	Here, there is an a neccesary relation between $a_x,a_y$ and $A$ such that the block is always in contact with the wedge.
+	\udia{0.65}{rdf22}
+	With reference to the above diagram, the two yellow distances must be equal. Thus,
+	\begin{equation} 
+		\frac{1}{2}At^2\sin\alpha=\frac{1}{2}a_yt^2\cos\alpha-\frac{1}{2}a_xt^2\sin\alpha \imps A+a_x=a_y\cot\alpha \label{eq:25}
+	\end{equation}
+	Using \eqref{eq:22} and \eqref{eq:23},
+	\begin{align*}
+		&ma_x\cos\alpha+ma_y\sin\alpha=mg\sin\alpha\\
+		\imps& a_x\cot\alpha + a_y=g\\
+		\imps& a_x\cot\alpha + (A+a_x)\tan\alpha =g \kyuki{eq:25}\\
+		\imps& \frac{MA}{m}(\cot\alpha+\tan\alpha) + A\tan\alpha =g \kyuki{eq:24}\\
+		\imps& A\pqty{\frac{M}{m}(\cot^2\alpha+1) + 1} =g\cot\alpha\\
+		\imps& A\pqty{\frac{M}{m}\csc^2\alpha + 1} =g\cot\alpha\\
+		\imps& \boxed{A=\frac{mg \cot\alpha}{m+M\csc^2\alpha}}\\
+	\end{align*}
+	Substituting for $A$ in \eqref{eq:24},
+	\begin{align*}
+		&ma_x= M \frac{mg \cot\alpha}{m+M\csc^2\alpha} \\
+		\imps& \boxed{a_x=\frac{Mg \cot\alpha}{m+M\csc^2\alpha}}\\
+	\end{align*}
+	$$$$
+	Subsequently, using the values of $A$ and $a_x$ in \eqref{eq:25},
+	\begin{align*}
+		&a_y\cot\alpha=\frac{mg \cot\alpha}{m+M\csc^2\alpha}+\frac{Mg \cot\alpha}{m+M\csc^2\alpha} \\
+		\imps& \boxed{a_y=\frac{(M+m)g}{m+M\csc^2\alpha}}\\
+	\end{align*}
+	
+	\subsubsection{(b)}
+	Now for $M\gg m$, we can assume $$\boxed{A \approx0}$$ and consequently the acceleration $a$ of the block of mass $m$ will be parallel to the slope of the wedge.
+	\udia{0.65}{rdf23}
+	Examining the motion of the block, we see
+	\begin{equation}
+	\sum F =ma \imps mg\sin\alpha =ma \imps a=g\sin\alpha \label{eq:26}
+	\end{equation}
+	In reference to the diagram, using \eqref{eq:26}
+	$$
+	\begin{cases}
+		a_x=a\cos\alpha & \imps \boxed{a_x=g\sin\alpha\cos\alpha} \\ \\
+		a_y=a\sin\alpha & x \imps \boxed{a_y=g\sin^2\alpha} 
+	\end{cases}
+	$$
+	Revisiting the results of the previous section, when $M\gg m$ then $m+M\csc^2\alpha \approx M\csc^2\alpha$ and subsequently
+	$$
+	\begin{cases}
+		A=\dfrac{mg \cot\alpha}{M\csc^2\alpha} & \imps \boxed{A \approx0} \quad [\because M\gg m] \\ \\
+		a_x=\dfrac{Mg \cot\alpha}{M\csc^2\alpha} & \imps \boxed{a_x=g\sin\alpha\cos\alpha} \\ \\
+		a_y=\dfrac{(M+m)g}{M\csc^2\alpha} & \imps \boxed{a_y=g\sin^2\alpha} \quad [\because M\gg m]
+	\end{cases}
+	$$
+	Hence, the answers to part (a) reduce to the correct results when $M$ is very large.
+	\pagebreak
+	
+	\subsubsection{(c)}
+	We know that,
+	$$a_x=\frac{Mg \cot\alpha}{m+M\csc^2\alpha} \qc a_y=\frac{(M+m)g}{m+M\csc^2\alpha}$$
+	So acceleration is constant with respect to time for given values of $M,m$ and $\alpha$.\\
+	Assume the position of the block at $t=0$ is the origin of the observer's frame ,thereafter examining the motion along each axes separately gives
+	$$
+	\begin{cases}
+		v_x= \int_0^t a_x \dd t & \imps v_x=a_xt \imps x=\int_0^t v_x \dd t \imps \boxed{x=\frac{a_xt^2}{2}} \\ \\
+		v_y= \int_0^t a_y \dd t & \imps v_y=a_yt \imps y=\int_0^t v_y \dd t \imps \boxed{y=\frac{a_yt^2}{2}} 
+	\end{cases}
+	$$
+	Using the two equations, we can write $y$ as a function of $x$,
+	$$y=\frac{a_y}{a_x}x \imps \boxed{y=\cot\alpha\pqty{1+\frac{m}{M}} x}$$
+	Hence, a stationary observer will see the block follow a straight line.
+	\\
+	}
+	
+	\pbm{}{
+	A driver encounters a large tilted parking lot, where the angle of the ground with respect to the horizontal is $\theta$. The driver wishes to drive in a circle of radius $R$ at constant speed. The coefficient of friction between the tires and the ground is $\mu$.
+	\begin{enumerate}
+		\item[a.] What is the largest speed the driver can have if he wants to avoid slipping?\\
+		\item[b.] What is the largest speed the driver can have, assuming he is concerned only with whether or not he slips at one of the “side” points on the circle (that is, halfway between the top and bottom points; see figure below)?\\
+	\end{enumerate}
+	\udia{0.35}{rdf18}
+	}
+	\pagebreak
+	\sol{}{
+	The Free-Body Diagram of the car gives us the following,
+	\udia{1}{rdf24}
+	\udia{0.6}{rdf25}
+	Let $W=mg\sin\theta$, then the friction force $f$ has tangetial component $f_t$ and radial component $f_r$ such that,
+	\begin{align}
+		|f| \leq \mu N &= \mu mg\cos\theta \label{eq:31}\\
+		W\cos\alpha+f_r&=\frac{mv^2}{R} \label{eq:32}\\
+		f_t&=W\sin\alpha
+	\end{align}
+	\subsubsection{a.}
+	When the speed reaches its maximum value $(v)$, the frictional force $f$ also attains its upper limit.\\ Subsequently, using \eqref{eq:31}
+	\begin{align*}
+		&f_{r}+W\cos\alpha=\frac{mv^{2}}{R}\imps f_{r}=\frac{mv^{2}}{R}-W\cos\alpha\\
+		&f_{t}=W\sin\alpha\\
+		&\therefore|f|^{2}=\left(\frac{mv^{2}}{R}-W\cos\alpha\right)^{2}+W^{2}\sin^{2}\alpha\\
+		&=\frac{m^{2}v^{4}}{R^{2}}-2W\frac{mv^{2}}{R}\cos\alpha+W^{2}\cos^{2}\alpha+W^{2}\sin^{2}\alpha
+	\end{align*}
+	\begin{equation}
+		\imps \boxed{|f|^2=W^{2}+\frac{m^{2}v^{4}}{R^{2}}-2W\frac{mv^{2}}{R}\cos\alpha} \label{eq:33}
+	\end{equation}
+	Subsequently, $|f|^2$ is maximum for $\cos\alpha=-1$,
+	\begin{align*}
+		|f_{m}|^2&=W^{2}+\frac{m^{2}v^{4}}{R^{2}}+2W\frac{mv^{2}}{R}\\
+		&=\pqty{W+\frac{mv^{2}}{R}}^2\\
+		\imps |f_{m}|&=W+\frac{mv^{2}}{R} = mg\sin\theta +\frac{mv^{2}}{R}\\
+	\end{align*}
+	Substituting this result in \eqref{eq:31},
+	\begin{align*}
+		|f|& \leq \mu mg\cos\theta\\
+		mg\sin\theta +\frac{mv^{2}}{R}& \leq \mu mg\cos\theta\\
+		\frac{mv^{2}}{R}& \leq \mu mg\cos\theta-mg\sin\theta\\
+		\frac{v^{2}}{R}& \leq  g(\mu\cos\theta-\sin\theta)\\
+		v& \leq \sqrt{ Rg(\mu\cos\theta-\sin\theta)}\\
+	\end{align*}
+	\subsubsection{b.}
+	For $\alpha=\frac{\pi}{2} \text{ or } \alpha=\frac{3\pi}{2} \Rightarrow \cos\alpha=0$, so \eqref{eq:33} implies
+	$$|f|^2=W^{2}+\frac{m^{2}v^{4}}{R^{2}}=\pqty{mg\sin\theta}^{2}+\frac{m^{2}v^{4}}{R^{2}}$$
+	Using \eqref{eq:31},
+	\begin{align*}
+		\pqty{mg\sin\theta}^{2}+\frac{m^{2}v^{4}}{R^{2}} & \leq \pqty{\mu mg\cos\theta}^2\\
+		\frac{v^{4}}{R^{2}} & \leq \pqty{\mu g\cos\theta}^2 -\pqty{g\sin\theta}^{2}\\
+		v^{4} & \leq R^2g^2 \pqty{\pqty{\mu \cos\theta}^2 -\pqty{\sin\theta}^{2}}\\
+		v & \leq \sqrt[4]{R^2g^2 \pqty{\pqty{\mu \cos\theta}^2 -\pqty{\sin\theta}^{2}}}
+	\end{align*}
+	}	
+	
+\end{document}

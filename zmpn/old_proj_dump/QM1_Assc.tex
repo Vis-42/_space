@@ -1,0 +1,210 @@
+\documentclass{report}
+
+\input{latex-templates/preamble}
+\input{latex-templates/macros}
+\input{latex-templates/letterfonts}
+\setlength{\parindent}{0pt}
+\usepackage{physics, siunitx}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{wrapfig}
+\usepackage{pgfplots}
+\usepackage{longtable}
+\setlength{\fboxsep}{4pt} % Space between image and border
+\setlength{\fboxrule}{0.5pt} % Border thickness
+
+\title{\Huge{\textbf{PC2130}}\\ \su{g}{Quantum Mechanics I} \\ {\huge \su{r}{Assignment 2}}}
+\author{\huge{Parth Bhargava}\\ } %A0310667E
+\date{\today}
+
+\begin{document}
+	\maketitle
+	
+  \pbm{}{
+	Consider a quantum harmonic oscillator of mass $m$ moving in a one - dimensional world, say the $x$-axis. The quantum dynamics of the particle is governed by the \su{r}{\textit{Schrödinger Equation}},
+	\begin{align*}
+	    i\hbar \pdv{\psi}{t} &= -\frac{\hbar^2}{2m} \pdv[2]{\psi}{x} + \frac{1}{2} m\omega^2 x^2 \psi
+	\end{align*}
+	where $\psi = \psi(x, t)$ is its normalised wavefunction. Suppose at time $t = 0$,
+	\begin{align*}
+	    \psi(x, 0) = \frac{1}{\sqrt{\sqrt{2\pi}\sigma_0}} \exp\left(\frac{ip_0 x}{\hbar}\right) \exp\left(-\frac{(x - x_0)^2}{4\sigma_0^2}\right)
+	\end{align*}
+	determine $\psi(x, t)$ for time $t > 0$. Here, $\omega, p_0, \sigma_0, x_0 \in \mathbb{R}$.
+	\begin{enumerate}
+		\item[a.] Using Ehrenfest's theorem, determine
+		\begin{enumerate}
+		    \item[(i)] $\ev{x}_t$, the expectation value of the position,
+		    \item[(ii)] $\ev{p}_t$, the expectation value of the linear momentum
+		\end{enumerate}
+		of the quantum particle at time $t > 0$.
+		\item[b.] \textit{Energy eigenvalue problem}. Write down the associated \su{r}{energy eigenvalue equation} and solve it, i.e., determine the  \su{b}{energy eigenvalues} $E$ and corresponding \su{b}{energy eigenfunctions} $u_E = u_E(x)$. Note also that $E \geq 0$. (Why?)
+		\item[c.] Using \su{r}{MATHEMATICA}, or otherwise, determine $\psi(x, t)$ for time $t > 0$. Note that you need to pick appropriate values for $\omega, p_0, \sigma_0, x_0, m$ and $\hbar$.
+		\item[d.] Hence, simulate and describe the dependence of $|\psi(x, t)|^2$ on time $t$. Reconcile your simulation with the results in (a).
+		\item[e.] Express the \su{r}{\textit{Schrödinger Equation}} for the quantum harmonic oscillator in the \su{r}{linear momentum representation}, and solve it to obtain $\phi(p, t)$ for time $t > 0$. Hence, simulate and describe the dependence of $|\phi(p, t)|^2$ on time $t$. Use the same appropriate values for $\omega, p_0, \sigma_0, x_0, m$ and $\hbar$ in (c). Reconcile your simulation with the results in (a).
+		\item[f.] Compare and contrast the behaviour of $|\psi(x, t)|^2$ and $|\phi(p, t)|^2$ over time. What can you conclude?
+	\end{enumerate}
+	}
+
+\wb
+  \sol{}{
+  \wa
+  # Quantum Harmonic Oscillator in a One-Dimensional World
+
+Consider a quantum harmonic oscillator of mass $m$ moving in a one-dimensional world, specifically along the $x$-axis. The quantum dynamics of the particle is governed by the Schrödinger equation:
+
+\begin{align*}
+i\hbar\frac{\partial\psi}{\partial t} = -\frac{\hbar^2}{2m}\frac{\partial^2\psi}{\partial x^2} + \frac{1}{2}m\omega^2 x^2 \psi
+\end{align*}
+
+where $\psi = \psi(x,t)$ is its normalized wavefunction. At time $t=0$, the wavefunction is given by:
+
+\begin{align*}
+\psi(x,0) = \frac{1}{\sqrt{\sqrt{2\pi}\sigma_0}}\exp\left(\frac{i}{\hbar}p_0 x\right)\exp\left[-\frac{1}{4\sigma_0^2}(x-x_0)^2\right]
+\end{align*}
+
+where $\omega, p_0, \sigma_0, x_0 \in \mathbb{R}$.
+
+## (a) Using Ehrenfest's theorem to determine expectation values
+
+### (i) Expectation value of position $\langle x \rangle_t$
+### (ii) Expectation value of linear momentum $\langle p \rangle_t$
+
+According to Ehrenfest's theorem, the expectation values of operators follow classical equations of motion. For the quantum harmonic oscillator, we have:
+
+\begin{align*}
+\frac{d}{dt}\langle x\rangle_t &= \frac{d}{dt}\langle\psi(t)|\hat{x}|\psi(t)\rangle \\
+&= \frac{i}{\hbar}\langle\psi(t)|[\hat{H},\hat{x}]|\psi(t)\rangle \\
+&= \frac{1}{m}\langle p\rangle_t
+\end{align*}
+
+This follows because:
+\begin{align*}
+i\hbar\frac{d}{dt}|\psi(t)\rangle &= \hat{H}|\psi(t)\rangle \\
+[\hat{x},\hat{p}] &= i\hbar \\
+[\hat{H},\hat{x}] &= -\frac{i\hbar}{m}\hat{p}
+\end{align*}
+
+Similarly, for momentum:
+\begin{align*}
+\frac{d}{dt}\langle p\rangle_t &= \frac{d}{dt}\langle\psi(t)|\hat{p}|\psi(t)\rangle \\
+&= \frac{i}{\hbar}\langle\psi(t)|[\hat{H},\hat{p}]|\psi(t)\rangle \\
+&= -m\omega^2\langle x\rangle_t
+\end{align*}
+
+since $[\hat{H},\hat{p}] = i\hbar m\omega^2\hat{x}$.
+
+Combining these equations, we get:
+\begin{align*}
+\frac{d^2}{dt^2}\langle x\rangle_t + \omega^2\langle x\rangle_t = 0
+\end{align*}
+
+This is the differential equation for simple harmonic motion. The general solution is:
+\begin{align*}
+\langle x\rangle_t &= \langle x\rangle_0\cos\omega t + \frac{1}{m\omega}\langle p\rangle_0\sin\omega t \\
+&= x_0\cos\omega t + \frac{p_0}{m\omega}\sin\omega t
+\end{align*}
+
+And for the momentum:
+\begin{align*}
+\langle p\rangle_t &= m\frac{d}{dt}\langle x\rangle_t \\
+&= p_0\cos\omega t - m\omega x_0\sin\omega t
+\end{align*}
+
+## (b) Energy eigenvalue problem
+
+
+## (c) Determining $\psi(x,t)$ for time $t > 0$
+
+
+## (d) Simulation and description of $|\psi(x,t)|^2$ over time
+
+The probability density $|\psi(x,t)|^2$ represents the probability of finding the particle at position $x$ at time $t$. For the quantum harmonic oscillator with the given initial state, several key observations can be made:
+
+1. The center of the probability distribution follows the classical trajectory:
+   \begin{align*}
+   \langle x \rangle_t = x_0\cos(\omega t) + \frac{p_0}{m\omega}\sin(\omega t)
+   \end{align*}
+
+2. The distribution maintains a coherent Gaussian-like form for all $t \geq 0$.
+
+3. The distribution peaks at the stationary points of the classical simple harmonic oscillator (as per Ehrenfest's theorem).
+
+4. The width of the distribution may oscillate over time, reflecting the quantum nature of the system.
+
+These observations are consistent with the results obtained in part (a) using Ehrenfest's theorem.
+
+## (e) Schrödinger equation in momentum representation
+
+
+
+## (f) Comparison of $|\psi(x,t)|^2$ and $|\phi(p,t)|^2$ over time
+
+
+\section*{(e) Schrödinger Equation in Momentum Representation}
+
+The Schrödinger equation in momentum space is derived by representing position as a differential operator. In momentum space:
+\[
+\hat{x}_{op} = i\hbar\frac{\partial}{\partial p}, \quad \hat{p}_{op} = p
+\]
+Substituting into the Hamiltonian:
+\[
+\hat{H} = \frac{p^2}{2m} + \frac{1}{2}m\omega^2\left(i\hbar\frac{\partial}{\partial p}\right)^2
+\]
+Simplifying the potential term:
+\[
+\frac{1}{2}m\omega^2\left(-\hbar^2\frac{\partial^2}{\partial p^2}\right) = -\frac{1}{2}m\omega^2\hbar^2\frac{\partial^2}{\partial p^2}
+\]
+This gives the momentum-space Schrödinger equation:
+\begin{align*}
+i\hbar\frac{\partial}{\partial t}\phi(p,t) = \left[\frac{p^2}{2m} - \frac{1}{2}m\omega^2\hbar^2\frac{\partial^2}{\partial p^2}\right]\phi(p,t)
+\end{align*}
+
+The eigenvalue equation \(\hat{H}v_n(p) = E_nv_n(p)\) is solved using ladder operators adapted for momentum space:
+\[
+\hat{a}_p = \sqrt{\frac{\hbar m\omega}{2}}\frac{\partial}{\partial p} + \frac{p}{\sqrt{2\hbar m\omega}}, \quad \hat{a}_p^\dagger = -\sqrt{\frac{\hbar m\omega}{2}}\frac{\partial}{\partial p} + \frac{p}{\sqrt{2\hbar m\omega}}
+\]
+These satisfy \([\hat{a}_p, \hat{a}_p^\dagger] = 1\). The ground state \(v_0(p)\) satisfies:
+\[
+\hat{a}_pv_0(p) = 0 \implies \left(\sqrt{\frac{\hbar m\omega}{2}}\frac{\partial}{\partial p} + \frac{p}{\sqrt{2\hbar m\omega}}\right)v_0(p) = 0
+\]
+Solving this differential equation:
+\[
+\frac{\partial v_0}{\partial p} = -\frac{p}{\hbar m\omega}v_0 \implies v_0(p) = A\exp\left(-\frac{p^2}{2\hbar m\omega}\right)
+\]
+Normalization gives:
+\[
+v_0(p) = \left(\frac{1}{\pi\hbar m\omega}\right)^{1/4}\exp\left(-\frac{p^2}{2\hbar m\omega}\right)
+\]
+
+Higher states are generated using the raising operator:
+\[
+v_n(p) = \frac{1}{\sqrt{n!}}(\hat{a}_p^\dagger)^n v_0(p) = \frac{1}{\sqrt{2^n n!}}\left(\frac{1}{\pi\hbar m\omega}\right)^{1/4}H_n\left(\frac{p}{\sqrt{\hbar m\omega}}\right)\exp\left(-\frac{p^2}{2\hbar m\omega}\right)
+\]
+
+The general solution combines eigenstates with time-dependent phases:
+\[
+\phi(p,t) = \sum_{n=0}^\infty \langle v_n|\phi(0)\rangle \exp\left[-i\left(n+\frac{1}{2}\right)\omega t\right]v_n(p)
+\]
+The expansion coefficients are determined by the initial condition:
+\[
+\langle v_n|\phi(0)\rangle = \int_{-\infty}^\infty v_n^*(p)\phi(p,0)dp
+\]
+For our Gaussian initial state \(\psi(x,0)\), the momentum-space initial condition is:
+\[
+\phi(p,0) = \frac{1}{\sqrt{\sqrt{2\pi}\sigma_p}}\exp\left(-\frac{i}{\hbar}x_0p\right)\exp\left[-\frac{1}{4\sigma_p^2}(p-p_0)^2\right]
+\]
+where \(\sigma_p = \hbar/(2\sigma_0)\). The time-evolved wavefunction becomes:
+\[
+\phi(p,t) = e^{-i\omega t/2}\sum_{n=0}^\infty \frac{1}{\sqrt{n!}}\left(\frac{\alpha}{\sqrt{2}}\right)^n H_n\left(\frac{p-p_{cl}(t)}{\sqrt{\hbar m\omega}}\right)\exp\left[-\frac{(p-p_{cl}(t))^2}{2\hbar m\omega}\right]
+\]
+where \(p_{cl}(t) = p_0\cos\omega t - m\omega x_0\sin\omega t\) follows the classical momentum trajectory, and \(\alpha\) contains initial displacement parameters.
+
+The momentum expectation value evolves as:
+\[
+\langle p\rangle_t = p_0\cos\omega t - m\omega x_0\sin\omega t
+\]
+which matches the classical equation from part (a).
+
+  \wa
+  }
+\end{document}

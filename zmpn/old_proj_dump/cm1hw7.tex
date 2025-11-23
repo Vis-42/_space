@@ -1,0 +1,117 @@
+\documentclass{report}
+
+\input{latex-templates/preamble}
+\input{latex-templates/macros}
+\input{latex-templates/letterfonts}
+\usepackage{multicol}
+\usepackage{physics}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{wrapfig}
+\usepackage{pgfplots}
+
+\setlength{\fboxsep}{1pt} % Space between image and border
+\setlength{\fboxrule}{0.5pt} % Border thickness
+
+\setlength{\columnsep}{20pt} % Adjust space between columns
+\setlength{\columnseprule}{1pt}% Thickness of vertical line
+
+\title{\Huge{PC2032 Classical Mechanics 1}\\Homework Assignment 7}
+\author{\huge{Parth Bhargava}\\ AO310667E}
+\date{}
+
+\begin{document}
+	\maketitle
+	
+	\pbm{}{
+	A stick of length $L$ and mass $M$ has a linear density proportional to the distance from one end. Calculate the moment of inertia of the rod about an axis through the light end of the rod perpendicular to the rod. What about the moment of inertia about the axis through the heavy end?
+	}
+	\sol{}{
+	\sss{About an axis through the light end of the rod perpendicular to the rod,}
+	\udia{0.6}{rdf65}
+	Here
+	$$\int_0^L \veps x\dd x = M \imps \frac{\veps L^2}{2}=M \imps \veps= \frac{2M}{L^2}$$
+	The moment of inertia is given by
+	\begin{equation*}
+		\mathcal{I}_1=\int_0^M x^2 \dd m = \int_0^L x^2 \frac{2M}{L^2} x\dd x = \frac{2M}{L^2} \lt[\frac{L^4}{4}\rt] = \frac{ML^2}{2}\h
+	\end{equation*}
+	\sss{About an axis through the heavy end of the rod perpendicular to the rod,}
+	\udia{0.6}{rdf66}
+	The moment of inertia is given by
+	\begin{equation*}
+		\mathcal{I}_2=\int_0^M y^2 \dd m = \int_0^L y^2 \frac{2M}{L^2} (l-y)\dd y = \frac{2M}{L^2} \lt[L \cdot \frac{L^3}{3}-\frac{L^4}{4}\rt] = \frac{ML^2}{6}\h
+	\end{equation*}
+	}
+	\wa
+	\newpage
+	\pbm{}{
+	A rod has mass $M$ and length $L$. Calculate the moment of inertia of the rod about an axis which is passing through its centre of mass and forming an angle $\theta$ to the rod.
+	\udia{0.2}{rdf57}
+	}
+	\sol{}{
+	\udia{0.3}{rdf64}
+	The moment of inertia is given by
+	\begin{equation*}
+		\mathcal{I}=\int_0^M r^2 \dd m= \int_{-L/2}^{\/2} (x\sin\theta)^2 \frac{M}{L} \dd x = \frac{M\sin^2\theta}{L} \lt[\frac{L^3}{3 \cdot 8} +\frac{L^3}{3 \cdot 8}\rt] = \frac{ML^2\sin^2\theta}{12}\h
+	\end{equation*}
+	}
+	\wa
+	
+	\pbm{}{
+	A chain of mass $M$ and length $L$ is coiled up on the edge of a frictionless table. A very small length at one end is pushed off the edge and starts to fall under the force of gravity, pulling more and more of the chain off the table. Assume that the velocity of each element remains zero until it is jerked into motion with the velocity of the falling section. Find the velocity when a length $x$ has fallen off.
+	}
+	\sol{}{
+	\udia{0.3}{rdf67}
+	Assuming the tabletop is defined as the reference point with zero gravitational potential, the elemental piece of the chain of mass $\dd m$ and length $\dd y$ has total mechanical energy given by
+	\begin{equation*}
+		\dd \EE =\frac{1}{2}v^2\dd m - gy\dd m = \qty(\frac{1}{2}v^2 - gy) \dd m = \qty(\frac{v^2}{2} - gy)\frac{M}{L} \dd y
+	\end{equation*}
+	Applying Energy conservation for the entire chain
+	\begin{align*}
+		\int \dd \EE &=0\\
+		\int_0^x \qty(\frac{v^2}{2} - gy)\frac{M}{L} \dd y&=0\\
+		\int_0^x \frac{v^2}{2} \dd y&=\int_0^x gy \dd y && [\because \text{$v$ is independent of $y$}]\\ 
+		\frac{v^2x}{2} &=\frac{gx^2}{2} \\
+		\imps v&=\sqrt{gx}\h
+	\end{align*}
+	
+	}
+	\wa
+	
+	\pbm{}{
+	Two friends are carrying a 200 kg crate up a flight of stair. The crate is 1.25 m long and 0.50 m high, its center of gravity is its center. The stairs make a $45^{\circ}$ angle with respect to the floor. The crate is also carried at a $45^{\circ}$ so that the bottom side is parallel to the slope of the stairs. If the force each person applies is vertical, what is the magnitude of each of these forces? Is it best to be the person above or below on the stairs?
+	\udia{0.3}{rdf56}
+	}
+	\sol{}{
+	By balancing forces we have,
+	\begin{align*}
+		F_1+F_2&=mg \label{01} \tag{1}
+	\end{align*}
+	\udia{0.7}{rdf63}
+	\sss{}
+	By balancing torques we have,
+	\begin{align*}
+		F_1\cos(\frac{\pi}{4}-\varphi)l=F_2\cos(\frac{\pi}{4}+\varphi)l\Rightarrow &F_1\sin(\frac{\pi}{4}+\varphi)=F_2\cos(\frac{\pi}{4}+\varphi)\Rightarrow
+		F_2=F_1\tan(\frac{\pi}{4}+\varphi)\\ \\ \Rightarrow
+		F_2&=F_1\lt(\frac{1+\tan\varphi}{1-\tan\varphi}\rt) \label{02} \tag{2}\\
+	\end{align*}
+	From \eqref{02}, we can already see that $F_2 > F_1$ for $\varphi \in \lt(0,\frac{\pi}{2}\rt)$.\\
+	Using \eqref{01} and \eqref{02},
+	\begin{align*}
+		F_1 + F_1\lt(\frac{1+\tan\varphi}{1-\tan\varphi}\rt) &= mg\\
+		F_1\lt(\frac{2}{1-\tan\varphi}\rt)&=mg\\
+		F_1&=\frac{mg\lt(1-\tan\varphi\rt)}{2}\h
+	\end{align*}
+	Substituting the numerical values [taking $g =9.80 \text{ ms}^{-2}$ (3 s.f.)]
+	\begin{align*}
+		F_1&=\frac{200 \times 9.80 \times \lt(1-\frac{0.50}{1.25}\rt)}{2} =980 \times \lt(1-\frac{2}{5}\rt)\Rightarrow F_1=588 \text{N (upto 3 s.f.)}\h
+	\end{align*}
+	Subsequently,
+	\begin{align*}
+		F_2&=F_1\lt(\frac{1+\tan\varphi}{1-\tan\varphi}\rt)=588 \times \lt(\frac{1+\frac{2}{5}}{1-\frac{2}{5}}\rt)=588 \times \frac{7}{3}\Rightarrow 
+		F_2=1372 \text{N} \rightarrow F_2=1370 \text{N (upto 3 s.f.)} \h
+	\end{align*}
+	Since $F_2>F_1$, it is better to be the person below the stairs if you want to relieve the other person from the heavier lifting, or it is better to be the person above the stairs if you want to relieve yourself from the heavier lifting.
+	}
+	\wa
+\end{document}

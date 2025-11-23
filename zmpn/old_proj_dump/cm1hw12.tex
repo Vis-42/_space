@@ -1,0 +1,175 @@
+\documentclass{report}
+
+\input{latex-templates/preamble}
+\input{latex-templates/macros}
+\input{latex-templates/letterfonts}
+\setlength{\parindent}{0pt}
+\usepackage{physics, siunitx}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{wrapfig}
+\usepackage{pgfplots}
+\setlength{\fboxsep}{4pt} % Space between image and border
+\setlength{\fboxrule}{0.5pt} % Border thickness
+
+\title{\Huge{\textbf{PC2032}}\\ \su{g}{Classical Mechanics I} \\ {\huge \su{r}{Homework 12}}}
+\author{\huge{Parth Bhargava}\\ } %A0310667E
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\pbm{}{
+A pendulum consists of a mass m and a massless stick of length l (see Figure). The pendulum support oscillates horizontally with a position given by 
+$$x(t) = A \cos(\omega t)$$ 
+What is the general solution for the angle of the pendulum as a function of time? \\
+\textit{You may leave the constants that depend on initial conditions unspecified.}
+\udia{0.2}{rdf110}
+}
+\wb
+\sol{}{
+\wa
+\dia{0.4}{rdf111}
+Let \( x_m \) and \( y_m \) be the \( x \) and \( y \) positions of the mass \( m \), respectively.
+$$
+\begin{cases}
+    x_m = x(t) + \ell \sin\theta &\imps \dot{x}_m = \dot{x} + \ell \dot{\theta} \cos\theta \\
+    y_m = -\ell \cos\theta &\imps \dot{y}_m = \ell \dot{\theta} \sin\theta\\
+\end{cases}
+$$
+Here,
+\begin{align*}
+ v_m &= \sqrt{\dot{x}_m^2 + \dot{y}_m^2} \\
+    \imps  v_m^2 &= \dot{x}_m^2 + \dot{y}_m^2 \\
+    &= \dot{x}^2 + 2\ell \dot{x} \dot{\theta} \cos\theta + \ell^2 \dot{\theta}^2 \cos^2\theta + \ell^2 \dot{\theta}^2 \sin^2\theta \\
+    &= \dot{x}^2 + 2\ell \dot{x} \dot{\theta} \cos\theta + \ell^2 \dot{\theta}^2
+\end{align*}
+
+The Lagrangian of the system is given by,
+
+\begin{align*}
+\mathcal{L} &= T - U \\
+&= \lt(\frac{1}{2} m v_m^2\rt) - \lt(-mg\ell \cos\theta\rt)\\
+&= \frac{1}{2} m \dot{x}^2 + m\ell \dot{x} \dot{\theta} \cos\theta + \frac{1}{2} m \ell^2 \dot{\theta}^2 + mg\ell \cos\theta\\
+\end{align*}
+
+The Euler-Lagrange Equations in terms of $\theta$ give us,
+\begin{align*}
+\dv{t} \left( \pdv{\mathcal{L}}{\dot{\theta}} \right) = \pdv{\mathcal{L}}{\theta}\imps&
+\dv{t} \left( m\ell \dot{x} \cos\theta + m\ell^2 \dot{\theta} \right) = -m\ell \dot{x} \dot{\theta} \sin\theta - mg\ell \sin\theta \\
+\imps& m\ell \cos\theta \ddot{x} - m\ell \dot{x} \dot{\theta} \sin\theta  + m\ell^2 \ddot{\theta} = -m\ell \dot{x} \dot{\theta} \sin\theta - mg\ell \sin\theta \\
+\imps& g\sin\theta + \ddot{x} \cos\theta + \ell \ddot{\theta} = 0
+\end{align*}
+
+Since \( x(t) = A \cos(\omega t) \Rightarrow \ddot{x} = -A\omega^2 \cos(\omega t) \), 
+\[
+g \sin\theta - A\omega^2 \cos(\omega t) \cos\theta + \ell \ddot{\theta} = 0
+\]
+
+For small angles, $\cos\theta \approx 1$ and $\sin\theta \approx \theta$, which gives,
+\begin{align*}
+\ell \ddot{\theta} + g\theta &= A\omega^2 \cos(\omega t) \imps \ddot{\theta} + \frac{g}{\ell} \theta = \frac{A}{\ell} \omega^2 \cos(\omega t)
+\end{align*}
+
+This is the equation of a driven oscillator.
+
+\[
+\therefore \theta(t) = \frac{A}{\ell} \cdot \frac{\omega^2}{\frac{g}{\ell} - \omega^2} \cos(\omega t) + D \cos\left( \sqrt{\frac{g}{\ell}} t + \varphi \right)\h
+\]
+
+Where \( D \) and \( \varphi \) are constants to be determined.
+}
+\wb
+\pagebreak
+
+\pbm{}{
+Two masses $m_1$ and $m_2$ are connected by a massless rope in which a massless spring (with spring constant $k$) is inserted. The rope passes over a massless, smooth pulley. The mass $m_1$ slides on a frictionless horizontal surface, while the mass $m_2$ hangs vertically. When the spring is in its relaxed state, the total length of the spring-rope system is $l$.
+Find suitable generalized coordinates to describe the motion of the two masses,allowing for elongation or compression of the spring.
+Construct the Lagrangian and derive the appropriate Euler-Lagrange equations.
+\udia{0.4}{rdf109}
+}
+\wb
+\sol{}{
+\wa
+\dia{0.4}{rdf91}
+For the entire system,
+\begin{align*}
+	T &= \f m_1 \dot{x}^2 + \f m_2 \dot{y}^2 \\
+	V &= \f k (x + y - l)^2 - m_2 g y \\
+	\mcL &= \f \lt[ m_1 \dot{x}^2 + m_2 \dot{y}^2 - k(x + y - l)^2 + 2m_2 g y \right]
+\end{align*}
+The Euler-Lagrange Equations in terms of $x$ give us,
+\begin{align*}
+	\dv{t} \lt( \pdv{\mcL}{\dot{x}} \right) &= \pdv{\mcL}{x}
+	\imps \f \dv{t} \lt( 2 m_1 \dot{x} \right) 
+	= \f \lt[ -2k(x + y - l) \right]
+	\imps m_1 \ddot{x} = -k(x + y - l)\h
+\end{align*}
+Similarily, the Euler-Lagrange Equations in terms of $y$ give us,
+\begin{align*}
+	\dv{t} \lt( \pdv{\mcL}{\dot{y}} \right) &= \pdv{\mcL}{y}
+	\imps \f \dv{t} \lt( 2 m_2 \dot{y} \right) 
+	= \f \lt[ -2k(x + y - l) + 2 m_2 g \right]
+	\imps m_2 \ddot{y} = -k(x + y - l) + m_2 g\h
+\end{align*}
+}
+\wb
+\pagebreak
+
+\pbm{}{
+A uniform rod of length $2L$ and mass $M$ is suspended from a fixed horizontal table by a length $l$, inextensible rope (whose mass is negligible), as shown in the lt figure. A constant horizontal force $F$ is applied at the free end of the rod, causing the system to move as depicted in the right figure. Let’s choose $\theta$ and $\varphi$ as the generalized coordinates.
+\udia{0.7}{rdf92}
+\begin{enumerate}
+	\item[1.] Write down the coordinates of the CM of the rod using $\theta$ and $\varphi$. What is the velocity of the CM?
+	\item[2.] Recall that the kinetic energy of the rod can be written as the sum of the translational kinetic energy of the center of mass $T_{\text{CM}}$ and the rotational kinetic energy $T_{\text{rot}}$  Write down the total kinetic energy.
+	\item[3.] Since the force F is constant and acts along the same direction, you can regard it as a potential similar to gravity in the horizontal direction. Write down the total potential energy.
+	\item[4.] Write down the Lagrangian of this system and derive its equations of motion.
+\end{enumerate}
+}
+\wb
+\sol{}{
+\wb
+\udia{0.9}{rdf106}
+The total kinetic eneregy is given as,
+\begin{align*}
+T &= T_{\text{rot}} + T_{\text{CM}} = \f \lt( \frac{ML^2}{3} \rt) \dot{\varphi}^2 + \f M \vb{\dot{Q}}^2_{CM} \imps T = \lt( \frac{ML^2}{6} \rt) \dot{\varphi}^2 + \f M \lt[l^2\dot{\theta}^2 +L^2\dot{\varphi}^2 +2lL\dot{\theta}\dot{\varphi}\cos (\theta-\varphi)\rt]
+\end{align*}
+
+The total potential energy is given as,
+\begin{align*}
+V= - Mg \left( l \cos\theta + L \cos\varphi \right) - F \left( l \sin\theta + 2L \sin\varphi \right)
+\end{align*}
+
+Hence, the lagrangian of the system is given as follows,
+\begin{align*}
+	\mcL &= T-V\\
+	\imps \mcL &= \lt( \frac{ML^2}{6} \rt) \dot{\varphi}^2 + \f M \lt[l^2\dot{\theta}^2 +L^2\dot{\varphi}^2 +2lL\dot{\theta}\dot{\varphi}\cos (\theta-\varphi)\rt] + Mg \left( l \cos\theta + L \cos\varphi \right) + F \left( l \sin\theta + 2L \sin\varphi \right)
+\end{align*}
+
+For each generalized coordinate \( q \), the Euler-Lagrange equation is:
+\[
+\dv{t}\left(\pdv{\mcL}{\dot{q}}\right) - \pdv{\mcL}{q} = 0
+\]
+
+Thus, the Euler-Lagrange Equations in terms of $\varphi$ give us,
+  \begin{align*}
+    &\dv{t} \left( \pdv{\mcL}{\dot{\varphi}} \right) = \pdv{\mcL}{\varphi} \\ \\
+    \imps& \dv{t} \left[ \frac{4ML^2}{3}\dot{\varphi} + MlL\dot{\theta}\cos(\theta-\varphi) \right] = MlL\dot{\theta}\dot{\varphi}\sin(\theta-\varphi) - MgL\sin\varphi + 2FL\cos\varphi \\
+    \imps& \frac{4ML^2}{3}\ddot{\varphi} + MlL\ddot{\theta}\cos(\theta-\varphi) -MlL\dot{\theta}^2\sin(\theta-\varphi)
+    = - MgL\sin\varphi + 2FL\cos\varphi \\
+    \imps& \ddot{\varphi} = \frac{3}{4L}\left[-l\ddot{\theta}\cos(\theta-\varphi) + l\dot{\theta}^2\sin(\theta-\varphi) - g\sin\varphi + \frac{2F}{M}\cos\varphi\right] \h \tag{1} \label{01} 
+  \end{align*}
+  Similarily, the Euler-Lagrange Equations in terms of $\theta$ give us,
+  \begin{align*}
+    & \dv{t} \left( \pdv{\mcL}{\dot{\theta}} \right) = \pdv{\mcL}{\theta} \\ \\
+    \imps& \dv{t} \left[ Ml^2\dot{\theta} + MlL\dot{\varphi}\cos(\theta-\varphi) \right] = -MlL\dot{\theta}\dot{\varphi}\sin(\theta-\varphi) - Mgl\sin\theta + Fl\cos\theta \\
+    \imps& Ml^2\ddot{\theta} + MlL\ddot{\varphi}\cos(\theta-\varphi) + MlL\dot{\varphi}^2\sin(\theta-\varphi) =  - Mgl\sin\theta + Fl\cos\theta \\
+    \imps& \ddot{\theta} = \frac{1}{l }\left[-L\ddot{\varphi}\cos(\theta-\varphi) - L\dot{\varphi}^2\sin(\theta-\varphi) - g\sin\theta + \frac{F}{M}\cos\theta\right] \h \tag{2} \label{02}
+  \end{align*}
+Therefore, \eqref{01} and \eqref{02} give us the equations of motion for the given system. \\
+}
+\wb
+\pagebreak
+
+\end{document}

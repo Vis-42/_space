@@ -1,0 +1,167 @@
+\documentclass{report}
+
+\input{latex-templates/preamble}
+\input{latex-templates/macros}
+\input{latex-templates/letterfonts}
+\usepackage{multicol}
+\usepackage{physics}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{wrapfig}
+\usepackage{pgfplots}
+
+\setlength{\fboxsep}{1pt} % Space between image and border
+\setlength{\fboxrule}{0.5pt} % Border thickness
+
+\setlength{\columnsep}{20pt} % Adjust space between columns
+\setlength{\columnseprule}{1pt}% Thickness of vertical line
+
+\title{\Huge{PC2032 Classical Mechanics 1}\\Homework Assignment 10}
+\author{\huge{Parth Bhargava}\\ AO310667E}
+\date{}
+
+\begin{document}
+	\maketitle
+	
+	\pbm{}{
+	A uniform rod of weight $F_g$ and length $L$ is supported at its ends by a frictionless trough as shown in the figure below.
+	\udia{0.5}{rdf75}
+	\begin{enumerate}
+		\item[a.] Show that the centre of gravity of the rod must be vertically over point $O$ when the rod is in equilibrium.
+		\item[b.] Determine the equilibrium value of the angle $\theta$.
+	\end{enumerate}
+	}
+	\sol{}{
+	\udia{1}{rdf83}
+	\sss{a.}
+	Since the vector sum of all forces acting on the rod is zero, they must intersect at a single point. This ensures the forces are concurrent, satisfying the equilibrium condition.\\
+	As we get a rectangle $BDCO$, we see that by the parallelogram law of vector addition, $F_g$ must lie on the diagonal formed by the normal forces $N_1$ and $N_2$ such that their vector sum in 0.\\
+	Hence, the centre of gravity of the rod, through which $F_g$ is acting, is vertically over point $O$, since the diagonal of rectangle $BDCO$ passed through both these points.\\
+	\wa
+	\sss{b.}
+	Using Lami's Theorem,
+	\begin{align*}
+		\frac{N_1}{\sin(120^{\circ})}=\frac{N_2}{\sin(150^{\circ})} \imps N_1 \sin(30^{\circ}) = N_2 \sin(60^{\circ}) \imps N_1 = \sqrt{3}N_2 \tag{1} \label{01}
+	\end{align*}
+	Analysing the torque on the rod for equilibrium,
+	\begin{align*}
+		N_1 \sin(90^{\circ}-\theta) \frac{L}{2} &= N_2 \sin(\theta) \frac{L}{2}\\
+		\sqrt{3} N_2 \cos\theta &= N_2 \sin\theta \kyuki{01} \\
+		\tan \theta &= \sqrt{3} \imps \theta = \frac{\pi}{3} = 60^{\circ}\h
+	\end{align*}
+	}
+	\wa
+	
+	\pbm{}{
+	Global warming is a cause for concern because even small changes in the Earth’s temperature can have significant consequences. For example, if the Earth’s polar ice caps were to melt entirely, the resulting additional water in the oceans would flood many coastal cities such as Singapore! By how much will the melting affect the length of a day? You may model the polar ice as having a total mass of 2.3 × $10^{19}$ kg and forming two flat disks of radius 6.0 × $10^5$ m and assume that the water spreads into an unbroken thin spherical shell after it melts. The mass of Earth = 5.98×$10^{24}$ kg, radius of Earth = 6370km, moment of inertia for a spherical shell about any axis through its CM is $\dfrac{2}{3}MR^2$.
+	}
+	\sol{}{
+	\udia{0.7}{rdf82}
+	\sss{}
+	By conservation of angular momentum,
+	\begin{align*}
+		I_1 \omega_1 &= I_2 \omega_2 \imps I_1 \qty(\frac{2\pi}{T_1}) = I_2 \qty(\frac{2\pi}{T_2}) \imps T_2 = T_1 \frac{I_2}{I_1} \\
+		\Delta T &= T_2 - T_1 = T_1 \qty(\frac{I_2 - I_1}{I_1}) \\
+		&= T_1 \qty(\frac{\frac{4}{3} m R_e^2 + \frac{2}{5} M_e R_e^2 - m r^2 - \frac{2}{5} M_e R_e^2}{m r^2 + \frac{2}{5} M_e R_e^2}) \\
+		&= \frac{5 T_1}{3} \qty(\frac{4 m R_e^2 - 3 m r^2}{5 m r^2 + 2 M_e R_e^2}) \\
+		&= \frac{5 T_1}{3} \qty(\frac{4 \qty(\frac{R_e}{r})^2 - 3}{2 \qty(\frac{M_e}{m}) \qty(\frac{R_e}{r})^2 + 5})
+	\end{align*}
+	Given,
+	\begin{align*}
+		\frac{M_e}{m} &= \frac{5.98 \times 10^{24} \times 2}{2.3 \times 10^{19}} = 5.2 \times 10^5 \\
+		\qty(\frac{R_e}{r})^2 &= \qty(\frac{6370 \times 10^3}{6 \times 10^5})^2 \approx (10.61)^2 \approx 113 \\
+		T &= 24 \text{ hours} = 86400 \text{ s}
+	\end{align*}
+	Hence,
+	\begin{align*}
+		\Delta T &= \frac{5 \times 86400}{3} \qty(\frac{4 \times 113 - 3}{2 \times 5.2 \times 10^5 \times 113 + 5}) \imps \Delta T \approx 0.55 \text{ s,  (upto 2 s.f.)} \h
+	\end{align*}
+	
+	}
+	\wa
+	
+	\pbm{}{
+	A uniform rod of length $L$, pivoted at one end, is set into small oscillations in a vertical plane.
+	\begin{enumerate}
+		\item[a.] Find the period of oscillation.
+		\item[b.] Find also the two positions on which a point mass $M$ can be attached to the rod without affecting its period of oscillation.
+		\item[c.] If the rod (without the point mass $M$ ) is pivoted not at one end, but at a point a distance $y < L/2$ from the centre of the rod, find the value of $y$ for which the period of oscillation is minimum.
+	\end{enumerate}
+	}
+	\sol{}{
+	\udia{0.4}{rdf81}
+	\sss{a.}
+	The Lagrangian of the system is given as follows,
+	\begin{align*}
+	    \mathcal{L} &= T - V = \int_0^M \frac{1}{2} (dm)(x\dot{\theta})^2 - (dm)gx(1-\cos\theta)\\
+	    &= \int_0^L \frac{1}{2} (\lambda dx)(x\dot{\theta})^2 - (\lambda dx)gx\frac{\theta^2}{2} && \lt[\text{As } \theta \ll 1 \to 1 - \cos\theta \approx \frac{\theta^2}{2} \rt]\\
+	    &= \frac{\lambda}{2} \int_0^L (x^2\dot{\theta}^2 - gx\theta^2) dx \\
+	    &= \frac{M}{2L} \left( \frac{L^3 \dot{\theta}^2}{3} - \frac{gL^2\theta^2}{2} \right) && \lt[\because \lm=\frac{M}{L} \rt]\\
+	    &= \frac{ML}{12} (2L\dot{\theta}^2 - 3g\theta^2)
+	\end{align*}
+	Applying Euler-Lagrange Equation,
+	\begin{align*}
+		\dv{t} \left( \pdv{\mathcal{L}}{\dot{\theta}} \right) &= \pdv{\mathcal{L}}{\theta} \\
+	    \frac{ML}{12} \frac{d}{dt}(4L\dot{\theta}) &= \frac{ML}{12} (-6g\theta) \\
+	    \ddot{\theta} &= -\frac{3g}{2L} \theta
+	\end{align*}
+	This is equivalent to a harmonic oscillator with,
+	$$\omega^2 = \frac{3g}{2L} \imps \tau = \frac{2\pi}{\omega} = 2\pi \sqrt{\frac{2L}{3g}}\h$$
+	\wa
+	\sss{b.}
+	Following the equation $$\ddot{\theta} = -\frac{3g}{2L} \theta$$
+	We can treat the oscillating rod to be a point-mass pendulum with an effective string length $\dfrac{2L}{3}$.\\
+	Hence, the point mass $M$ can be added at $l=\dfrac{2L}{3}$ or at $l=0$ and the period of the oscillation will be left unchanged.\\
+	\wa
+	\sss{c.}
+	The Lagrangian of the system is given as follows,
+	\begin{align*}
+	    \mathcal{L} &= T - V = \int_0^M \frac{1}{2} (dm)(x\dot{\theta})^2 - (dm)gx(1-\cos\theta)\\
+	    &= \int_{-y}^{L-y} \frac{1}{2} (\lambda dx)(x\dot{\theta})^2 - (\lambda dx)gx\frac{\theta^2}{2} && \lt[\because \theta \ll 1 \to 1 - \cos\theta \approx \frac{\theta^2}{2} \rt]\\
+	    &= \frac{\lambda}{2} \int_{-y}^{L-y} (x^2\dot{\theta}^2 - gx\theta^2) dx \\
+	    &= \frac{M}{2L} \left( \frac{((L-y)^3+y^3) \dot{\theta}^2}{3} - \frac{g((L-y)^2-y^2)\theta^2}{2} \right) && \lt[\because \lm=\frac{M}{L} \rt]\\
+	    &= \frac{M}{12L} \Big[2(L^3-3Ly(L-y))\dot{\theta}^2 - 3(L^2-2Ly)g\theta^2\Big]
+	\end{align*}
+	Applying Euler-Lagrange Equation,
+	\begin{align*}
+		\dv{t} \left( \pdv{\mathcal{L}}{\dot{\theta}} \right) &= \pdv{\mathcal{L}}{\theta} \\
+	    \frac{M}{12L} \dv{t} (4(L^3-3Ly(L-y))\dot{\theta}) &= \frac{M}{12L} (-6(L^2-2Ly)g\theta) \\
+	    \ddot{\theta} &= -\frac{3g(L^2-2Ly)}{2(L^3-3Ly(L-y))} \theta 
+	\end{align*}
+	This is equivalent to a harmonic oscillator with,
+	$$\omega^2 = \frac{3g(L^2-2Ly)}{2(L^3-3Ly(L-y))} \imps \tau = \frac{2\pi}{\omega} = 2\pi \sqrt{\frac{2(L^3-3Ly(L-y))}{3g(L^2-2Ly)}}\h$$
+	Since $\tau$ is always a positive quantity, we can minimize $\tau^2$ to minimize $\tau$, \begin{align*}
+		\pdv{\tau^2}{y}=0 \imps \pdv{y} \qty(\frac{2(L^3-2y^3-3Ly(L-y))}{3g(L^2-2Ly)})&=0\\
+		{2(L^3-3Ly(L-y))}\pdv{y}({3g(L^2-2Ly)})&={3g(L^2-2Ly)}\pdv{y}({2(L^3-3L^2y+3Ly^2)})\\
+		{2(L^3-3Ly(L-y))}({-6gL)})&={3g(L^2-2Ly)}({-6L^2+12Ly})\\
+		{2(L^2-3y(L-y))}&={3(L-2y)}({L-2y})\\
+		2L^2-6yL+6y^2&=3L^2-12Ly+12y^2\\
+		6y^2-6Ly+L^2&=0\\
+		\imps y&=\frac{6L \pm \sqrt{36L^2-24L^2}}{12} = \qty(\f \pm \frac{1}{\sqrt{12}})L
+	\end{align*}
+	Here $y$ is the distance from the pivot of the rod.\\
+	If we redefine $y$ as the distance from the cetre of the rod, the minima occurs at $$y=\frac{L}{2\sqrt{3}}\h$$
+	}
+	\wa
+	
+	\pbm{}{
+	Two solid cylinders connected along their common axis by a short, light rod having radius $R$ and total mass $M$ , and rest on a horizontal tabletop. A spring with force constant $k$ has one end attached to a clamp and the other end attached to a frictionless ring at the centre of mass of the cylinders. The cylinders are pulled to the left a distance $x$, which stretches the spring, and released. There is sufficient friction between the tabletop and the cylinders for the cylinders to roll without slipping as they move back and forth on the end of the spring. Show that the motion of the centre of mass of the cylinders is simple harmonic, and calculate its period in terms of $M$ and $k$.
+	\udia{0.5}{rdf74}
+	}
+	\sol{}{
+	The Lagrangian of the system is given as follows,
+	\begin{align*}
+	    \mathcal{L} &= T - V = \f M \dot{x}^2 + \f \lt(\f MR^2\rt)\lt(\frac{\dot{x}}{R}\rt)^2 - \f kx^2\\
+	    &= \frac{3}{4}M \dot{x}^2 - \f kx^2 
+	\end{align*}
+	Applying Euler-Lagrange Equation,
+	\begin{align*}
+		\dv{t} \left( \pdv{\mathcal{L}}{\dot{x}} \right) &= \pdv{\mathcal{L}}{x} \imps
+	    \dv{t} (\frac{3}{2}M \dot{x}) = kx \imps
+	    \ddot{x} = -\frac{2k}{3M} x
+	\end{align*}
+	This is equivalent to a harmonic oscillator with,
+	$$\omega^2 = \frac{2k}{3M} \imps \tau = \frac{2\pi}{\omega} = 2\pi \sqrt{\frac{3M}{2k}}\h$$
+	}
+	\wa
+\end{document}

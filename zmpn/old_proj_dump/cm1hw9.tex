@@ -1,0 +1,220 @@
+\documentclass{report}
+
+\input{latex-templates/preamble}
+\input{latex-templates/macros}
+\input{latex-templates/letterfonts}
+\usepackage{multicol}
+\usepackage{physics}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{wrapfig}
+\usepackage{pgfplots}
+
+\setlength{\fboxsep}{1pt} % Space between image and border
+\setlength{\fboxrule}{0.5pt} % Border thickness
+
+\setlength{\columnsep}{20pt} % Adjust space between columns
+\setlength{\columnseprule}{1pt}% Thickness of vertical line
+
+\title{\Huge{PC2032 Classical Mechanics 1}\\Homework Assignment 9}
+\author{\huge{Parth Bhargava}\\ AO310667E}
+\date{}
+
+\begin{document}
+	\maketitle
+	
+	\pbm{}{
+	A block of mass $m$ is revolving with linear speed $v_1$ in a circle of radius $r_1$ on a frictionless horizontal surface. The string is slowly pulled from below until the radius of the circle in which the block is revolving is reduced to $r_2$.
+	\begin{enumerate}
+		\item[a.] Calculate the tension $T$ in the string as a function of $r$, the distance of the block from the hole. Your answer will be in terms of the initial velocity $v_1$ and the radius $r_1$.
+		\item[b.] Use
+		$$W=\int_{r_1}^{r_2}\vec{T}(r)\dd\vec{r}$$
+		to calculate the work done by $T$ when $r$ changes from $r_1$ to $r_2$.
+		\item[c.] Compare the results of part (b) to the change in the kinetic energy of the block.
+	\end{enumerate}
+	}
+	\sol{}{
+	\udia{0.4}{rdf80}
+	\sss{a.}
+	For circular motion,
+	\begin{align*}
+		T&=\frac{mv^2}{r}=\frac{L^2}{mr^3}=\frac{m^2v_1^2r_1^2}{mr^3} \imps T=\frac{mv_1^2r_1^2}{r^3} \imps \vec{T}(r)= -\frac{mv_1^2r_1^2}{r^3} \hat{r} \h
+	\end{align*}
+	\sss{b.}
+	The work done by tension is given by,
+	\begin{align*}
+		W&=\int_{r_1}^{r_2}\vec{T}(r)\dd\vec{r}= \int_{r_1}^{r_2}-\frac{mv_1^2r_1^2}{r^3}\dd r \imps W= mv_1^2r_1^2 \lt[\frac{1}{2r^2}\rt]_{r_1}^{r_2} \imps W=\frac{mv_1^2r_1^2}{2} \lt[\frac{1}{r_2^2} - \frac{1}{r_1^2}\rt]\h
+	\end{align*}
+	\sss{c.}
+	The change in kinetic energy is given by,
+	\begin{align*}
+		\Delta \sE_K &= \f mv_2^2 -\f mv_1^2 = \f \frac{L^2}{mr_2^2} - \f \frac{L^2}{mr_1^2} = \f \frac{mv_1^2r_1^2}{r_2^2} - \f \frac{mv_1^2r_1^2}{r_1^2} \imps \Delta \sE_K = \frac{mv_1^2r_1^2}{2} \lt[\frac{1}{r_2^2} - \frac{1}{r_1^2}\rt] = W \h
+	\end{align*}
+	}
+	\wa
+	
+	\pagebreak
+	\pbm{}{
+	A satellite initially moves around the Earth in a circular orbit of radius $r$. Suddenly, an explosion breaks the satellite into two pieces, with mass $m$ and $4m$. Immediately after the explosion the smaller piece of mass $m$ is stationary with respect to the Earth and falls directly toward the Earth.
+	\begin{enumerate}
+		\item[a.] What is the speed $v_0$ of the satellite before the explosion?
+		\item[b.] What is the speed of the larger piece immediately after the explosion?
+		\item[c.] Because of the increase in its speed, this larger piece now moves in a new elliptical orbit. Find the distance away from the centre of the Earth when it reaches the other end of the ellipse.
+	\end{enumerate}
+	}
+	\sol{}{
+	\udia{1}{rdf79}
+	\sss{a.}
+	For circular motion of the satellite,
+	\begin{align*}
+		\mcF_g&=\frac{(5m)v_0^2}{r} \imps v_0^2=\frac{r}{5m}\frac{G M_e (5m)}{r^2} \imps v_0=\sqrt{\frac{G M_e}{r}} \h
+	\end{align*}
+	\sss{b.}
+	By conservation of angular momentum,
+	\begin{align*}
+		5mv_0r&=4mv_1r+0 \imps v_1=\frac{5}{4}v_0 \imps v_1=\frac{5}{4}\sqrt{\frac{GM_e}{r}}\h
+	\end{align*}
+	\sss{c.}
+	The total energy of the body of mass $4m$ is given by,
+	\begin{align*}
+		\mfE&=\f (4m) v_1^2 - \frac{GM_e(4m)}{r}\\
+		&=\f (4m) \lt(\frac{25}{16}\frac{GM_e}{r}\rt) - \frac{GM_e(4m)}{r}\\
+		&=-\frac{7}{8}\frac{GM_em}{r}
+	\end{align*}
+	When the body is at the opposite side of the elliptical orbit, at a distance of $\mcR$ from Earth,
+	\begin{align*}
+		\mfE&=\f (4m) v_2^2 - \frac{GM_e(4m)}{\mcR}\\
+		&=\f (4m) \lt(\frac{v_1r}{\mcR}
+		\rt)^2 - \frac{GM_e(4m)}{\mcR} && \lt[\because (4m)v_1r=(4m)v_2\mcR\rt]\\
+		&=\f (4m) \lt(\frac{r}{\mcR}
+		\rt)^2\lt(\frac{25}{16}\frac{GM_e}{r}\rt) - \frac{GM_e(4m)}{\mcR} \\
+		-\frac{7}{8}\frac{GM_em}{r}&=\frac{GM_em}{8\mcR}\lt(25\frac{r}{\mcR}-32\rt)\\
+		-7\frac{\mcR}{r}&=\lt(25\frac{r}{\mcR}-32\rt)\\
+	\end{align*}
+	Let $\dfrac{r}{\mcR}=x$,
+	\begin{align*}
+		-\frac{7}{x}=\lt(25x-32\rt)\imps 25x^2-32x+7=0 \imps (x-1)(25x-7)=0
+	\end{align*}
+	Since the orbit is elliptical and not circular, 
+	\begin{align*}
+		x=\frac{7}{25} \imps \frac{r}{\mcR}= \frac{7}{25} \imps \mcR= \frac{25r}{7}\h
+	\end{align*}
+	}
+	\wa
+	
+	\pagebreak
+	\pbm{}{
+	A sphere of matter, mass $M$ , radius $a$, has a concentric cavity, radius $b$ as shown in cross section below.
+	\udia{0.4}{rdf68}
+	\begin{enumerate}
+		\item[a.] Sketch the gravitational force $F$ exerted by the sphere on a particle of mass $m$, located a distance $r$ from the centre of the sphere, as a function of $r$ in the range $0\leq r\leq \infty$. Consider points $r = 0, b, a, \text{and} \infty$ in particular.
+		\item[b.] Sketch the corresponding curve for the potential energy $U(r)$ of the system.
+	\end{enumerate}
+	}
+	\sol{}{
+	\udia{0.4}{rdf76}
+	\sss{a.}
+	Consider the conservative vector field $g$ that gives us the gravitational strength per unit mass. For this field, we can apply the Gauss Law to give us,
+	\begin{align*}
+		\div \va{g} &= -4\pi G \rho \quad \quad \text{where, }\rho \text{  is the mass density}\\
+		OR\\
+		\oint \va{g}\cdot\dd s &= -4\pi G M_{enc}
+	\end{align*}
+	For Gaussian surfaces with radii \( r_1, r_2, r_3 \) respectively,  
+	\begin{align*}
+		g_1 (4\pi r_1^2) &= 0 \imps g_1 = 0 \\
+		g_2 (4\pi r_2^2) &= - 4\pi G \left( \frac{4\pi}{3} \right) (r_2^3 - b^3) \left( \frac{M}{(4\pi/3)(a^3 - b^3)} \right) \imps g_2 = \frac{GM}{a^3 - b^3} \left( \frac{b^3 - r_2^3}{r_2^2} \right) \\
+		g_3 (4\pi r_3^2) &= -4\pi GM \imps g_3 = -\frac{GM}{r_3^2}
+	\end{align*}
+	Specifically,
+	\begin{enumerate}
+		\item $r =0 \imps g_1 = 0 \imps \mcF_g(0) = mg =0$
+		\item $r_1=b \text{ and } r_2=b \imps g_2 = g_1= 0 \imps \mcF_g(b) = mg =0$
+		\item $r_2=a \text{ and } r_3=a \imps g_2 = g_3= -\dfrac{GM}{a^2} \imps \mcF_g(a) = mg =-\dfrac{GMm}{a^2}$
+		\item $r \to \infty \imps g_3 = 0 \imps \mcF_g(r)\eval_{r\to\infty} = mg =0$
+	\end{enumerate}
+	Hence,
+	$$
+	\mcF_g(r)= mg = 
+		\begin{cases}
+		0 &\qc 0< r \leq b\\
+		\dfrac{GMm}{a^3 - b^3} \lt( \dfrac{b^3 - r^3}{r^2} \rt) &\qc b<r \leq a\\
+		-\dfrac{GMm}{r^2} &\qc a<r< \infty \\
+	\end{cases}
+	$$
+	Here the '-' sign represents that the force is attractive and points opposit to the position vector $\va{r}$.\\
+	Thus the graph looks like:
+	\udia{0.8}{rdf78}
+	\sss{b.}
+	The scalar potential field \( \mcU (r) \) corresponding to the force field \( \mcF_g (r) \) is given by,
+	\begin{align*}
+		\mcU (r) &= \int_{\infty}^{r} \mcF_g (r) \cdot \dd r
+	\end{align*}
+	Subsequently, we can write,
+	$$
+	\mcU (r) =
+	\begin{cases}
+		C_1 & \qc 0 < r \leq b \\[10pt]
+		-\dfrac{GMm}{a^3 - b^3} \left( \dfrac{b^3}{r} - \dfrac{r^2}{2} \right) + C_2 & \qc b < r \leq a \\[10pt]
+		-\dfrac{GMm}{r} + C_3 & \qc a < r \leq \infty
+	\end{cases}
+	$$
+	Applying the conditions that $\mcU (a)$ and $\mcU (b)$ must approach the same values from both sides and $\mcU (r)$ is equal to 0 as $r \to \infty$,
+	$$
+	\mcU (r) =
+	\begin{cases}
+		- \dfrac{3 GMm (a + b)}{2(a^2 + ab + b^2)} & \text{if } 0 < r \leq b, \\
+		\dfrac{GMm}{a^3 - b^3} \left( \dfrac{b^3}{r} + \dfrac{1}{2} r^2 - \dfrac{b^3}{a} - \dfrac{1}{2} a^2 \right) - \dfrac{GMm}{a} & \text{if } b < r \leq a, \\
+		- \dfrac{GMm}{r} & \text{if } a < r < \infty.
+	\end{cases}
+	$$
+	Thus the graph looks like:
+	\udia{0.8}{rdf77}
+	}
+	\wa
+	
+	\pagebreak
+	\pbm{}{
+	A thin, uniform rod has length $L$ and mass $M$ . A small uniform sphere of mass $m$ is placed a distance $x$ from one end of the rod.
+	\begin{enumerate}
+		\item[a.] Calculate the gravitational potential energy of the rod-sphere system. Take the potential energy to be zero when the rod and sphere are infinitely far apart.
+		Show that your answer reduces to the expected results when x is much larger than L. \textit{Hint: Use the power series expansion,}
+		$$\ln(1+x)=x-\frac{x^2}{2} +\frac{x^3}{3} -\frac{x^4}{4} + \cdots \quad (\text{for }|x| < 1)$$
+		\item[b.] Use $F_x = -\dv{U}{x}$ to find the magnitude and direction of the gravitational force exerted on the sphere by the rod. Show that your answer reduces to the expected results when $x$ is much larger than $L$.
+	\end{enumerate}
+	\udia{0.7}{rdf69}
+	}
+	\sol{}{
+	\sss{a.}
+	Consider a small mass element \( dm \) of the rod at a distance \( s \) from the end closest to the sphere. The gravitational potential energy due to this element is:
+	\[
+	dU = -\frac{G m \, dm}{r}, \quad \text{where } r = x + s.
+	\]
+	The linear mass density of the rod is \( \lambda = \dfrac{M}{L} \), so \( dm = \lambda \, ds = \dfrac{M}{L} \, ds \). \\ 
+	Integrating over the entire rod,
+	\begin{align*}
+		U &= -\frac{G M m}{L} \int_0^L \frac{ds}{x + s}\\
+		U &= -\frac{G M m}{L} \ln\left(\frac{x+L}{x}\right)\h
+	\end{align*}
+	For \( x \gg L \),
+	\[
+	\ln\left(\frac{x+L}{x}\right) = \ln\left(1 + \frac{L}{x}\right) \approx \frac{L}{x} + \frac{L^2}{2x^2} + \cdots.
+	\]
+	Thus,
+	\[
+	U \approx -\frac{G M m}{L} \left(\frac{L}{x}\right) = -\frac{G M m}{x},
+	\]
+	which matches the point-mass result.
+	\sss{b.}
+	The gravitational force is obtained as follows,
+	\begin{align*}
+		F_x &= -\frac{dU}{dx} = -\frac{d}{dx} \left(-\frac{G M m}{L} \ln\left(\frac{x+L}{x}\right)\right) = \frac{G M m}{L} \left(\frac{1}{x} - \frac{1}{x + L}\right)\imps F_x = -\frac{G M m}{x(x + L)}\h
+	\end{align*} 
+	For \( x \gg L \), this reduces to:
+	\[
+	F_x \approx -\frac{G M m}{x^2}
+	\]
+	consistent with Newton's law of gravitation for a point mass.\\
+	}
+	\wa
+\end{document}

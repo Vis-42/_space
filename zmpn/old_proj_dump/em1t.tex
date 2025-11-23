@@ -1,0 +1,359 @@
+\documentclass{report}
+
+\input{latex-templates/preamble}
+\input{latex-templates/macros}
+\input{latex-templates/letterfonts}
+\usepackage{physics}
+\usepackage{lipsum}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{wrapfig}
+\usepackage{enumitem}
+\setlength{\fboxsep}{1pt} % Space between image and border
+\setlength{\fboxrule}{0.5pt} % Border thickness
+
+\title{\Huge{PC2031 Electricity and Magnetism 1}\\Tutorials}
+\author{\huge{Parth Bhargava}}
+\date{\today}
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+	
+	\chapter{Vector Calculus}
+	\qs{}{
+	Given that,
+	
+	$$\vb{r}=x\vu*{x}+y\vu*{y}+z\vu*{z},\quad r=|\vb{r}|=\sqrt{x^2+y^2+z^2}$$
+	
+	and
+	
+	$$\vb{r^{\prime}}=x^{\prime}\vu*{x}+y^{\prime}\vu*{y}+z^{\prime}\vu*{z},\quad r^{\prime}=|\vb{r^{\prime}}|=\sqrt{x^{\prime2}+y^{\prime2}+z^{\prime2}}$$
+	
+	show that
+	
+	$$\grad\pqty{\frac1{|\vb{r}-\vb{r^{\prime}}|}}=-\frac{\vb{r}-\vb{r^{\prime}}}{|\vb{r}-\vb{r^{\prime}}|^3}$$
+	
+	
+	Hence, deduce that
+	
+	$$\grad\times\pqty{\frac{\vb{r}-\vb{r^{\prime}}}{|\vb{r}-\vb{r^{\prime}}|^3}}=0$$
+	}
+	\sol{}{
+	Here,
+	\begin{align*}
+		\frac{1}{\abs{\vb{r} - \vb{r}'}} &= \left[ (x - x')^2 + (y - y')^2 + (z - z')^2 \right]^{-1/2} \\
+		\grad \pqty{\frac{1}{\abs{\vb{r} - \vb{r}'}}} &= \vu*{x} \lt( -\frac{1}{2} \rt) \left[ (x - x')^2 + (y - y')^2 + (z - z')^2 \right]^{-3/2} 2 (x - x') \\
+		&\quad + \vu*{y} \lt( -\frac{1}{2} \rt) \left[ (x - x')^2 + (y - y')^2 + (z - z')^2 \right]^{-3/2} 2 (y - y') \\
+		&\quad + \vu*{z} \lt( -\frac{1}{2} \rt) \left[ (x - x')^2 + (y - y')^2 + (z - z')^2 \right]^{-3/2} 2 (z - z') \\
+		&= -\vu*{x} \frac{(x - x')}{\abs{\vb{r} - \vb{r}'}^3} - \vu*{y} \frac{(y - y')}{\abs{\vb{r} - \vb{r}'}^3} - \vu*{z} \frac{(z - z')}{\abs{\vb{r} - \vb{r}'}^3} = -\frac{\vb{r} - \vb{r}'}{\abs{\vb{r} - \vb{r}'}^3} \\
+		\therefore \grad \lt( \frac{1}{\abs{\vb{r} - \vb{r}'}} \rt) &= -\frac{\vb{r} - \vb{r}'}{\abs{\vb{r} - \vb{r}'}^3}
+	\end{align*}
+	\qed\\
+	Hence,
+	$$\curl \lt( \frac{\vb{r} - \vb{r}'}{\abs{\vb{r} - \vb{r}'}^3} \rt)= -\curl \lt[ \grad \lt( \frac{1}{\abs{\vb{r} - \vb{r}'}} \rt) \rt] = 0$$
+	\qed
+	}
+	
+	\qs{}{
+	Calculate the line integral of the function $\vb{v}=x^2\vu*{x}+2yz\vu*{y}+y^2\vu*{z}$ from the
+	origin to the point $(1, 1, 1)$ by three different routes:\\
+	\begin{enumerate}
+		\item[a.] $(0, 0, 0) \to (1, 0, 0) \to (1, 1, 0) \to (1, 1, 1)$\\
+		\item[b.] $(0, 0, 0) \to (0, 0, 1) \to (0, 1, 1) \to (1, 1, 1)$\\
+		\item[c.] The direct straight line.\\
+		\item[d.] What is the line integral around the closed loop that goes out along path (a) and then goes back along path (b)?\\
+	\end{enumerate}
+	}
+	\sol{}{
+	$$
+	\vb{v} = x^2 \vu{x} + 2yz \vu{y} + y^2 \vu{z}, \quad \dd{\vb{\ell}} = \dd{x} \vu{x} + \dd{y} \vu{y} + \dd{z} \vu{z}\\
+	$$
+	\wa
+
+	\sss{a.} $(0,0,0) \to (1,0,0)$, along $x$-axis
+	
+	$$
+	\int \vb{v} \cdot \dd{\vb{\ell}} = \int_0^1 v_x \dd{x} = \int_0^1 x^2 \dd{x} = \frac{1}{3}
+	$$
+	
+	$(1,0,0) \to (1,1,0)$, along $y$-axis
+	
+	$$
+	\int \vb{v} \cdot \dd{\vb{\ell}} = \int_0^1 v_y \dd{y} = \int_0^1 2yz \dd{y} = 0, \quad \because z=0 \text{ along the line from } (1,0,0) \to (1,1,0)
+	$$
+	
+	$(1,1,0) \to (1,1,1)$, along $z$-axis
+	
+	$$
+	\int \vb{v} \cdot \dd{\vb{\ell}} = \int_0^1 v_z \dd{z} = \int_0^1 y^2 \dd{z} = y^2 \int_0^1 \dd{z} = 1, \quad \because y=1 \text{ along the line from } (1,1,0) \to (1,1,1)
+	$$
+	
+	$\therefore$ total $\int \vb{v} \cdot \dd{\vb{\ell}} = \frac{1}{3} + 0 + 1 = \frac{4}{3}\\$
+	\wa
+	
+	\sss{b.} $(0,0,0) \to (0,0,1)$, along $z$-axis
+	
+	$$
+	\int \vb{v} \cdot \dd{\vb{\ell}} = \int_0^1 v_z \dd{z} = \int_0^1 y^2 \dd{z} = 0, \quad \because y=0 \text{ along the line from } (0,0,0) \to (0,0,1)
+	$$
+	
+	$(0,0,1) \to (0,1,1)$, along $y$-axis
+	
+	$$
+	\int \vb{v} \cdot \dd{\vb{\ell}} = \int_0^1 v_y \dd{y} = \int_0^1 2yz \dd{y} = 2z \int_0^1 y \dd{y} = 2 \left( \frac{1}{2} \right) = 1, \quad \because z=1 \text{ along the line from } (0,0,1) \to (0,1,1)
+	$$
+	
+	$(0,1,1) \to (1,1,1)$, along $x$-axis
+	
+	$$
+	\int \vb{v} \cdot \dd{\vb{\ell}} = \int_0^1 v_x \dd{x} = \int_0^1 x^2 \dd{x} = \frac{1}{3}
+	$$
+	
+	$\therefore$ total $\int \vb{v} \cdot \dd{\vb{\ell}} = 0 + 1 + \frac{1}{3} = \frac{4}{3}\\$
+	\wa
+	
+	\sss{c.} The direct straight line from $(0,0,0) \to (1,1,1)$
+	
+	$$
+	\int \vb{v} \cdot \dd{\vb{\ell}} = \int \left( x^2 \vu{x} + 2yz \vu{y} + y^2 \vu{z} \right) \cdot \left( \dd{x} \vu{x} + \dd{y} \vu{y} + \dd{z} \vu{z} \right) = \int \left( x^2 \dd{x} + 2yz \dd{y} + y^2 \dd{z} \right)
+	$$
+	
+	At any point on the line from $(0,0,0) \to (1,1,1)$, $x=y=z$. Thus, $\dd{x} = \dd{y} = \dd{z}$
+	
+	$$
+	\therefore \int \vb{v} \cdot \dd{\vb{\ell}} = \int \left( x^2 \dd{x} + 2yz \dd{y} + y^2 \dd{z} \right) = \int_0^1 \left( 4x^2 \dd{x} \right) = \frac{4}{3}\\
+	$$
+	\wa
+	
+	\sss{d.} along path (a) and back along reversed path (b)
+	
+	$$
+	\int \vb{v} \cdot \dd{\vb{\ell}} = \underbrace{\int \vb{v} \cdot \dd{\vb{\ell}}}_{\text{along path (a)}} + \underbrace{\int \vb{v} \cdot \dd{\vb{\ell}}}_{\text{reversed path (b)}} = \frac{4}{3} - \frac{4}{3} = 0\\
+	$$
+	\wa
+	}
+	
+	\qs{}{
+	\begin{enumerate}
+		\item[a.] Show that 
+		$$\int_S\grad T\times\dd\vb{a}=-\oint_CT\dd\vb{\ell}$$
+		Hint: Let $\vb{A}=\vb{c}T$ in Stokes’ theorem\\
+		\item[b.] Hence, show that
+		$$\oint(\vb{c}\cdot \vb{r})\operatorname{d\vb{\ell}}=\vb{a}\times \vb{c},$$
+		
+		
+		for any constant vector $\vb{c}.$ \\
+		Hint: Let $T= \vb{c}\cdot \vb{r}$
+	\end{enumerate}
+	
+	}
+	\sol{}{
+	
+	}
+	
+	\qs{}{
+	Calculate the divergence and curl of the following vector functions:
+	\begin{enumerate}
+		\item[a.] $v_a=x^2\vu*{\vb{x}}+3xz^2\vu*{\vb{y}}-2xz\vu*{\vb{z}}$\\
+		\item[b.] $\vb{v}_b= y^2\vu*{\vb{x}} + ( 2xy+ z^2) \vu*{\vb{y}} + 2yz\vu*{\vb{z}}$\\
+		\item[c.] Which of the vectors can be expressed as the gradient of a scalar? Find a scalar function that does the job.\\
+		\item[d.] Which vector can be expressed as the curl of a vector? Find such a vector.\\
+	\end{enumerate}
+	}
+	\sol{}{
+	
+	}
+	
+	\chapter{Electrostatics}
+	\qs{}{
+	Consider a hemispherical shell of radius $R$ and uniform surface charge density $\sigma$ in the region $z\geq0.$ The center of the hemispherical shell is the origin.
+	\udia{0.3}{rdf8}
+	Find the electric field at the center of the hemispherical shell. Repeat the calculations for a solid hemisphere of radius $R$ and uniform volume charge density $\rho$.
+	}
+	\sol{}{
+		
+	}
+	
+	\qs{}{
+	If the electric field in some region is given (in spherical coordinates) by the expression
+	$$\vb{E}\lt(\vb{r}\rt)=\frac kr\lt(3\vb{\vu*{r}}+2\sin\theta\cos\theta\sin\vb{\phi}\vb{\vu*{\theta}}+\sin\theta\cos\vb{\phi}\vb{\vu*{\phi}}\rt),$$
+	
+	for some constant $k$, what is the charge density?
+	}
+	\sol{}{
+		
+	}
+	
+	\qs{}{
+	Consider a semi-infinite hollow cylindrical shell with radius $R$ and uniform surface charge density $\sigma$ extending from $z=-\infty$ to $z=0$ along the $z$-axis. The cylindrical axis of the cylindrical shell is the $z$-axis. Find the electric field at an arbitrary point along the $+z$-axis. Repeat the calculations for a semi-infınite solid cylinder with radius $R$ and uniform volume charge density $\rho$.
+	}
+	\sol{}{
+		
+	}
+	
+	\qs{}{
+	A long coaxial cable carries a uniform volume charge density $\rho,\rho>0$, on the inner cylinder of radius $a$ and a uniform surface charge density on the outer cylindrical shell of radius $b,b>a.$
+	\udia{0.3}{rdf9}
+	This surface charge density is negative and is of just right magnitude that
+	the cable as a whole is electrically neutral. Find $\vb{E}(\vb{r})$ everywhere.
+	}
+	\sol{}{
+		
+	}
+	
+	\chapter{Magnetostatics}
+	\qs{}{
+	Starting from the divergence theorem, show that
+	$$\iiint_V\curl \vb{A} \ \dd v=\oiint\dd \vb{a}\times \vb{A}$$
+	}
+	\sol{}{
+		
+	}
+	
+	\qs{}{
+	A square wire loop of size $2a\times2a$ lies in the $xy$ plane with its center at the origin and sides parallel to the $x$ and $y$ axes. The current $I$ flows counter- clockwise around the loop as viewed from the $+z$-axis.
+	\udia{0.3}{rdf10}
+	Find the magnetic field at an arbitrary point on the z-axis.		
+	}
+	\sol{}{
+		
+	}
+	
+	\qs{}{
+	A circular cylindrical solenoid of finite length $L$ and radius $a$ is coaxial with the $z$-axis extending from $z=-L/2$ to $z=L/2$. The solenoid has $N$ tight wound turns and each turn carries current $I$.
+	\udia{0.4}{rdf11}
+	The current flows counter-clockwise as viewed from the $z$-axis. Find the magnetic field at an arbitrary point along the $z$-axis.
+	}
+	\sol{}{
+		
+	}
+	
+	\qs{}{
+	A long coaxial cable, coaxial with the $z$-axis, consists of a central conductor of radius $a$ and an outer conductor of inner radius $b$ and outer radius $c$.
+	\udia{0.2}{rdf12}
+	The central conductor carries a current $I$ in the $+z$ direction and the outer conductor carries the return current $I$ in the $-z$ direction. The currents are uniformly distributed in the conductors. There is an insulating material between the conductors. Find the magnetic field everywhere.
+	}
+	\sol{}{
+		
+	}
+	
+	\qs{}{
+		A plane wire loop of irregular shape is situated so that part of it is in a uniform magnetic field $B$. In the figure below, the field occupies the shaded region, and points perpendicular to the plane of the loop.
+		\udia{0.3}{rdf13}
+		The loop carries a current $I$. Show that the net magnetic force on the loop is $F=IBw$, where $w$ is the chord subtended. What is the direction of the force?
+	}
+	\sol{}{
+		
+	}
+	
+	\chapter{Potentials}
+	\qs{}{
+	An inverted hemispherical bowl of radius $R$ carries a uniform surface charge density $\sigma$. Find the electrostatic scalar potential difference between the “north pole” and the center.	
+	}
+	\sol{}{
+		
+	}
+	
+	\qs{}{
+	A sphere of radius $R$ carries a volume charge density $\rho\pqty{\vb{r}}=\alpha r$ where $\alpha$ is a positive constant. Find the electrostatic total energy of the configuration.	
+	}
+	\sol{}{
+		
+	}
+	
+	\qs{}{
+	A disk of radius $a$ carries a uniform surface charge density $\sigma$.
+	\begin{enumerate}
+		\item[a.] Find the electrostatic scalar potential at any point on the symmetry axis of the disk.
+		\item[b.] Find the electrostatic scalar potential at any point on the rim of the disk.
+		\nt{$$\int_{\phi=0}^{2\pi}\int_{w=0}^1\frac{w}{\sqrt{1+w^2-2w\cos\phi}}\dd w\dd \phi=4$$}
+		\item[c.] Find the electrostatic total energy of the disk.
+	\end{enumerate}
+	}
+	\sol{}{
+		
+	}
+	
+	\qs{}{
+	Find the magnetic vector potential of an infinite uniform surface current $\vb{K}\pqty{\vb{r}}=K\vu*{x}$ flowing over the $xy$ plane.
+	\udia{0.3}{rdf14}
+	}
+	\sol{}{
+		
+	}
+	
+	\qs{}{
+	What current density would produce the vector potential,  $\vb{A}=k\vu*{\phi}$(where $k$ is a constant), in cylindrical coordinates?
+	}
+	\sol{}{
+		
+	}
+	
+	\chapter{Electrodynamics}
+	\qs{}{
+	A long solenoid with radius $a$ and $n$ turns per unit length carries a time-dependent current $I(t)$ in the $\vu*{\phi}$ direction. Find the electric field at a distance $s$ from the axis in the quasistatic approximation.	
+	}
+	\sol{}{
+		
+	}
+	
+	\qs{}{
+	An alternating current $I(t)= I_0 \cos(\omega t)$ flows along a long straight wire in the $+z$ direction and returns along a coaxial conducting tube of radius $a$.
+	\begin{enumerate}
+		\item Assuming that the field goes to zero as $s \to \infty$, find $\vb{E}(s,t)$ in the
+		quasistatic approximation.\\
+		\item Find the displacement current density $J_d(\vb{r},t)$ and the total displacement current $I_d(t)$.\\
+	\end{enumerate}
+	}
+	\sol{}{
+		
+	}
+	
+	\qs{}{
+	An infinite cylinder of radius $R$ carries a uniform surface charge $\sigma$. We propose to set it spinning about its axis, at a final angular velocity $\omega_f$. How much work will this take, per unit length? Do it two ways, and compare your answers:
+	\begin{enumerate}
+		\item Find the magnetic field and the induced electric field (in the quasistatic approximation), inside and outside the cylinder, in terms of $\omega , \dot{\omega}$ and $s$ (the distance from the axis). Calculate the torque you must exert, and from that obtain the work done per unit length $W=\int N \dd \phi$\\
+		\item Use $$\frac{1}{2\mu_0}\int B^2 \dd v$$ to determine the energy stored in the resulting magnetic field.\\
+	\end{enumerate}
+	}
+	\sol{}{
+		
+	}
+	
+	\qs{}{
+	A perfectly conducting spherical shell of radius $a$ rotates about the z axis with angular velocity $\omega$, in a uniform magnetic field $\vb{B}=B_0\vu*{z}$. Calculate the emf developed between the “north pole” and the equator.	
+	}
+	\sol{}{
+		
+	}
+	
+	\chapter{Multipole Expansions}
+	\qs{}{
+	A solid sphere, of radius $R$, is centered at the origin. The “northern” hemisphere carries a uniform charge density $\rho_0$ and the “southern” hemisphere a uniform charge density $-\rho_0$. Find the asymptotic electrostatic field $\vb{E}(r,\theta)$ where $r \gg R$.	
+	}
+	\sol{}{
+		
+	}
+	
+	\qs{}{
+	An electric dipole $p_1=p_0\vu*{z}$ is fixed at the origin. Find the work required to bring another dipole $p_2=p_0\vu*{z}$ at $(0,0,z_0)$.
+	\udia{0.4}{rdf15}
+	What is the force on the dipole $p_2$?
+	}
+	\sol{}{
+		
+	}
+	
+	\qs{}{
+	A uniform volume current density $\vb{J}=J_0\vu*{z}$ fills a slab straddling the $yz$ plane from $x=-a$ to $x=+a$.\\
+	\udia{0.3}{rdf16}
+	A magnetic dipole $\vb{m}=m_0\vu*{x}$ is situated at the origin. Find the force on the dipole. Repeat the calculation for a dipole pointing in the $y$-direction: $\vb{m}=m_0\vu*{y}$.
+	}
+	\sol{}{
+		
+	}
+	
+	 
+	
+\end{document}

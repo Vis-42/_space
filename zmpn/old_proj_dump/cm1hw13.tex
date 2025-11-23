@@ -1,0 +1,264 @@
+\documentclass{report}
+
+\input{latex-templates/preamble}
+\input{latex-templates/macros}
+\input{latex-templates/letterfonts}
+\setlength{\parindent}{0pt}
+\usepackage{physics, siunitx}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{wrapfig}
+\usepackage{pgfplots}
+\setlength{\fboxsep}{4pt} % Space between image and border
+\setlength{\fboxrule}{0.5pt} % Border thickness
+
+\title{\Huge{\textbf{PC2032}}\\ \su{g}{Classical Mechanics I} \\ {\huge \su{r}{Homework 13}}}
+\author{\huge{Parth Bhargava}\\ A0310667E}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\pbm{}{
+The equation of a transverse wave travelling in a string is given by
+$$y = 0.20 \sin (0.1\pi x - 400\pi t)$$
+where $x$ and $y$ are in centimetres and $t$ in seconds.
+\begin{enumerate}
+  \item[(a)] Find the amplitude, frequency and wavelength of the wave.
+  \item[(b)] Find the maximum transverse speed of a particle in the wave.
+  \item[(c)] If the tension on the string is 20 N, find the average power propagating along the string.
+\end{enumerate}
+}
+\wb
+\sol{}{
+\wa
+\sss{(a)}\\
+For a wave equation in the standard form 
+$y = 0.20 \sin (0.1\pi x - 400\pi t)$
+,we can directly identify:
+\begin{enumerate}
+  \item Amplitude: $A=0.20 \text{ cm}$\\
+  \item Wave number: $k=0.1 \pi \text{ cm}^{-1}$\\
+  \item Angular frequency: $ω=400 \pi \text{ rad/s}$\\
+\end{enumerate}
+From the given parameters, we can calculate:
+\begin{align*}
+\text{Frequency} &= \frac{\omega}{2\pi} = \frac{400\pi}{2\pi} = 200  \text{Hz} \\
+\text{Wavelength} &= \frac{2\pi}{k} = \frac{2\pi}{0.1\pi} = 20  \text{cm}
+\end{align*}
+\wa
+\sss{(b)}\\
+To find the maximum transverse speed, we need to compute the derivative of displacement with respect to time:
+
+\begin{align*}
+v_y &= \frac{\partial y}{\partial t} \\
+&= \frac{\partial}{\partial t}[0.20 \sin (0.1 \pi x-400 \pi t)] \\
+&= 0.20 \cdot (-400\pi) \cdot \cos (0.1 \pi x-400 \pi t) \\
+&= -80\pi \cos (0.1 \pi x-400 \pi t)
+\end{align*}
+
+The maximum speed occurs when $\cos (0.1 \pi x -400 \pi t)= \pm 1$ giving:
+
+\begin{align*}
+|v_y|_{\text{max}} &= 80\pi , \text{cm/s} \\
+&= 80 \cdot 3.14159 , \text{cm/s} \\
+&\approx 251.3 , \text{cm/s}
+\end{align*}
+\wa
+\sss{(c)}\\
+Given that the tension in the string is $T=20$ N, we can find the average power using:
+
+\begin{align*}
+P_{\text{avg}} &= \frac{1}{2}\mu\omega^2A^2v
+\end{align*}
+
+First, we need to calculate the wave speed:
+\begin{align*}
+v &= \frac{\omega}{k} = \frac{400\pi}{0.1\pi} = 4000 , \text{cm/s} = 40 , \text{m/s}
+\end{align*}
+
+For a string under tension $T$, the wave speed is related to the linear mass density $\mu$ by:
+\begin{align*}
+v &= \sqrt{\frac{T}{\mu}} \\
+\Rightarrow \mu &= \frac{T}{v^2} = \frac{20 , \text{N}}{(40 , \text{m/s})^2} = \frac{20}{1600} = 0.0125 , \text{kg/m}
+\end{align*}
+
+Now, calculating the average power:
+\begin{align*}
+P_{\text{avg}} &= \frac{1}{2}\mu\omega^2A^2v \\
+&= \frac{1}{2} \cdot 0.0125 , \text{kg/m} \cdot (400\pi , \text{rad/s})^2 \cdot (0.0020 , \text{m})^2 \cdot 40 , \text{m/s} \\
+&= \frac{1}{2} \cdot 0.0125 \cdot 160000\pi^2 \cdot 4 \times 10^{-6} \cdot 40 \\
+&= 0.5 \cdot 0.0125 \cdot 160000 \cdot 4 \times 10^{-6} \cdot 40 \cdot \pi^2 \\
+&= 0.5 \cdot 0.0125 \cdot 160000 \cdot 4 \times 10^{-6} \cdot 40 \cdot 9.87 \\
+&= 0.5 \cdot 0.0125 \cdot 160000 \cdot 160 \times 10^{-6} \cdot 9.87 \\
+&= 0.5 \cdot 0.0125 \cdot 25.6 \cdot 9.87 \\
+&= 0.5 \cdot 0.0125 \cdot 253 \\
+&\approx 1.58 , \text{W}
+\end{align*}
+}
+\wb
+\pagebreak
+
+\pbm{}{
+Two loudspeakers , $A$ and $B$, radiate sound uniformly in all directions in air at $20^{\circ}$C. The acoustic power output from $A$ is $8.00 \times 10^{-4}$ W, and from $B$ is $6.00 \times 10^{-5}$ W. Both loudspeakers are vibrating in phase at a frequency of 172 Hz.
+\udia{0.5}{rdf108}
+\begin{enumerate}
+  \item[(a)] Determine the difference in phase of the two signals at a point $C$ along the line joining $A$ and $B$, 4.00 m from $A$ and 3.00 m from $B$.  
+  \item[(b)] Determine the intensity and sound intensity level at $C$.
+  \begin{enumerate}
+  \item[i.] from speaker $A$ if speaker $B$ is turned off, and
+  \item[ii.] from speaker $B$ if speaker $A$ is turned off.
+  \end{enumerate}
+  \item[(c)] With both speakers on, what are the intensity and sound intensity level at $C$?
+\end{enumerate}
+}
+\wb
+\sol{}{
+\wa
+\sss{(a)}\\
+The speed of sound in air at $20^{\circ}$C is approximately 343 m/s. We can calculate the wavelength:
+
+\begin{align*}
+\lambda &= \frac{v}{f} = \frac{343 , \text{m/s}}{172 , \text{Hz}} = 1.994 , \text{m}
+\end{align*}
+
+The path difference between the two sources to point $C$ is:
+\begin{align*}
+\Delta d &= d_B - d_A = 3.00 , \text{m} - 4.00 , \text{m} = -1.00 , \text{m}
+\end{align*}
+
+The phase difference is given by:
+\begin{align*}
+\Delta \phi &= \frac{2\pi}{\lambda} \times \Delta d \\
+&= \frac{2\pi}{1.994 , \text{m}} \times (-1.00 , \text{m}) \\
+&= -2\pi \times 0.5015 \\
+&= -\pi \times 1.003 \\
+&\approx -\pi , \text{rad} = -180°
+\end{align*}
+\wa
+\sss{(b)}\\
+\subsection*{i. From Speaker $A$ Only}
+
+The intensity from speaker $A$ at point $C$:
+\begin{align*}
+I_A &= \frac{P_A}{4\pi d_A^2} \\
+&= \frac{8.00 \times 10^{-4} , \text{W}}{4\pi \times (4.00 , \text{m})^2} \\
+&= \frac{8.00 \times 10^{-4}}{4\pi \times 16.0} \\
+&= \frac{8.00 \times 10^{-4}}{201.06} \\
+&\approx 3.98 \times 10^{-6} , \text{W/m}^2
+\end{align*}
+
+The sound intensity level:
+\begin{align*}
+\beta_A &= 10 \log\left(\frac{I_A}{I_0}\right) \\
+&= 10 \log\left(\frac{3.98 \times 10^{-6}}{10^{-12}}\right) \\
+&= 10 \log(3.98 \times 10^6) \\
+&= 10 \times 6.6 \\
+&\approx 66 , \text{dB}
+\end{align*}
+
+\subsection*{ii. From Speaker $B$ Only}
+
+The intensity from speaker $B$ at point $C$:
+\begin{align*}
+I_B &= \frac{P_B}{4\pi d_B^2} \\
+&= \frac{6.00 \times 10^{-5} , \text{W}}{4\pi \times (3.00 , \text{m})^2} \\
+&= \frac{6.00 \times 10^{-5}}{4\pi \times 9.0} \\
+&= \frac{6.00 \times 10^{-5}}{113.1} \\
+&\approx 5.31 \times 10^{-7} , \text{W/m}^2
+\end{align*}
+
+The sound intensity level:
+\begin{align*}
+\beta_B &= 10 \log\left(\frac{I_B}{I_0}\right) \\
+&= 10 \log\left(\frac{5.31 \times 10^{-7}}{10^{-12}}\right) \\
+&= 10 \log(5.31 \times 10^5) \\
+&= 10 \times 5.73 \\
+&\approx 57.3 , \text{dB}
+\end{align*}
+
+\wa
+\sss{(c)}\\
+For two coherent sources with intensities $I_1$ and $I_2$ and phase difference $\Delta \phi$, the combined intensity is:
+\begin{align*}
+I_{\text{total}} = I_1 + I_2 + 2\sqrt{I_1 \times I_2} \times \cos(\Delta\phi)
+\end{align*}
+
+With $\Delta \phi \approx \pi$ (out of phase) $\to \cos (\Delta \phi)=-1$:
+\begin{align*}
+I_{\text{total}} &= I_A + I_B - 2\sqrt{I_A \times I_B} \\
+&= 3.98 \times 10^{-6} + 5.31 \times 10^{-7} - 2\sqrt{3.98 \times 10^{-6} \times 5.31 \times 10^{-7}} \\
+&= 3.98 \times 10^{-6} + 5.31 \times 10^{-7} - 2 \times 1.455 \times 10^{-6} \\
+&= 4.51 \times 10^{-6} - 2.91 \times 10^{-6} \\
+&= 1.60 \times 10^{-6} , \text{W/m}^2
+\end{align*}
+
+The combined sound intensity level:
+\begin{align*}
+\beta_{\text{total}} &= 10 \log\left(\frac{I_{\text{total}}}{I_0}\right) \\
+&= 10 \log\left(\frac{1.60 \times 10^{-6}}{10^{-12}}\right) \\
+&= 10 \log(1.60 \times 10^6) \\
+&= 10 \times 6.20 \\
+&\approx 62.0 , \text{dB}
+\end{align*}
+
+Note that due to destructive interference, the combined intensity level (62.0 dB) is less than the intensity level from speaker $A$ alone (66 dB)
+}
+\wb
+\pagebreak
+
+\pbm{}{
+Horseshoe bats emit sounds from their nostrils and then listen to the frequency of the sound reflected from their prey to determine the prey’s speed. If a horseshoe bat flying at speed $v_{\text{bat}}$ emits sound of frequency $f_{\text{bat}}$, the sound it hears reflected from an insect flying toward the bat has a higher frequency $f_{\text{refl}}$. What is the speed of the insect?
+}
+\wb
+\sol{}{
+\wb
+\udia{0.8}{rdf113}
+In this scenario, we have a double Doppler effect:
+\begin{enumerate}
+  \item The bat (moving source) emits sound that the insect (moving observer) receives\\
+  \item  The insect (now a moving source) reflects the sound, which the bat (moving observer) receives\\
+\end{enumerate}
+
+For a sound wave with frequency $f_{\text{bat}}$ emitted by a bat moving with speed $v_{\text{bat}}$, the frequency received by an insect moving toward the bat with speed $v_{\text{insect}}$, is:
+
+\begin{align*}
+f_{\text{insect}} &= f_{\text{bat}} \times \frac{v + v_{\text{insect}}}{v - v_{\text{bat}}}
+\end{align*}
+
+where $v$ is the speed of sound.
+
+After reflection, the frequency heard by the bat is:
+\begin{align*}
+f_{\text{refl}} &= f_{\text{insect}} \times \frac{v + v_{\text{bat}}}{v - v_{\text{insect}}}
+\end{align*}
+
+Substituting the first equation into the second:
+\begin{align*}
+f_{\text{refl}} &= f_{\text{bat}} \times \frac{v + v_{\text{insect}}}{v - v_{\text{bat}}} \times \frac{v + v_{\text{bat}}}{v - v_{\text{insect}}}
+\end{align*}
+
+Hence,
+\begin{align*}
+  \frac{f_{\text{refl}}\left(v - v_{\text{bat}}\right)}{f_{\text{bat}}\left(v + v_{\text{bat}}\right)} &= \frac{v + v_{\text{insect}}}{v - v_{\text{insect}}} \\
+    \frac{f_{\text{refl}}\left(v - v_{\text{bat}}\right) + f_{\text{bat}}\left(v + v_{\text{bat}}\right)}{f_{\text{refl}}\left(v - v_{\text{bat}}\right) - f_{\text{refl}}\left(v + v_{\text{bat}}\right)} &= \frac{2v}{2v_{\text{insect}}} &&
+    \lt[\because \frac{N_1}{D_1} = \frac{N_2}{D_2} \Rightarrow \frac{N_1 + D_1}{N_1 - D_1} = \frac{N_2 + D_2}{N_2 - D_2}\rt] \\
+    \imps \quad v_{\text{insect}} &= \frac{v \left( f_{\text{refl}}(v - v_{\text{bat}}) - f_{\text{refl}}(v + v_{\text{bat}}) \right)}{f_{\text{refl}}(v - v_{\text{bat}}) + f_{\text{refl}}(v + v_{\text{bat}})}
+\end{align*}
+
+Let $\dfrac{f_{\text{refl}}+f_{\text{bat}}}{f_{\text{refl}}-f_{\text{bat}}}=\mu$, then
+\begin{align*}
+  \boxed{v_{\text{insect}} = \frac{v(v - \mu v_{\text{bat}})}{\mu v - v_{\text{bat}}}\h}
+\end{align*}
+This formula gives the speed of the insect flying toward the bat. We can verify this makes sense by checking a special case: if $v_{\text{bat}}=0$ (stationary bat), then:
+
+\begin{align*}
+v_{\text{insect}} &= \frac{v^2}{\mu v} = \frac{v}{\mu}
+\end{align*}
+Which matches the standard formula for the Doppler effect from a moving reflector
+}
+\wb
+\pagebreak
+
+\end{document}

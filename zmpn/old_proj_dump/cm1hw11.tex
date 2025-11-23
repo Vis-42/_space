@@ -1,0 +1,219 @@
+\documentclass{report}
+
+\input{latex-templates/preamble}
+\input{latex-templates/macros}
+\input{latex-templates/letterfonts}
+\usepackage{multicol}
+\usepackage{physics}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{wrapfig}
+\usepackage{pgfplots}
+
+\setlength{\fboxsep}{1pt} % Space between image and border
+\setlength{\fboxrule}{0.5pt} % Border thickness
+
+\setlength{\columnsep}{20pt} % Adjust space between columns
+\setlength{\columnseprule}{1pt}% Thickness of vertical line
+
+\title{\Huge{PC2032 Classical Mechanics 1}\\Homework Assignment 11}
+\author{\huge{Parth Bhargava}\\ AO310667E}
+\date{}
+
+\begin{document}
+	\maketitle
+	
+
+\pbm{}{
+Imagine a hole is drilled through the centre of the Earth to the other side.
+\begin{enumerate}
+	\item[a.] Write Newton's law of gravitation for an object at the distance $r$ from the centre of the Earth, and show that the force is of Hooke's law form $F = -kr$, where the effective force constant is $k = \frac{4}{3} \pi \rho Gm$. Here $\rho$ is the density of the Earth assumed uniform and $G$ is the gravitational constant.
+	\item[b.] Show that a sack of mail dropped into the hole will execute simple harmonic motion if it moves without friction. When will it arrive at the other side of the Earth?
+\end{enumerate}
+}
+\sol{}{
+\sss{a.}
+\udia{0.5}{rdf84}
+Assuming a uniform density $\rho$ for the Earth, the mass enclosed within a sphere of radius $r$ is given by $M(r) = \rho \times \frac{4}{3} \pi r^3$. According to Newton's law of gravitation, the force on an object of mass $m$ at a distance $r$ from the center of the Earth is:
+\[
+F = -G \frac{m M(r)}{r^2} = -G \frac{m (\rho \frac{4}{3} \pi r^3)}{r^2} = - \left( \frac{4}{3} \pi \rho Gm \right) r\h
+\]
+This is of the form $F = -kr$, where the effective force constant is $k = \frac{4}{3} \pi \rho Gm$.\\
+\wa
+\sss{b.}
+\udia{0.5}{rdf85}
+The equation of motion for the sack of mail is given by $m \ddot{r} = F = -kr$, where $k = \frac{4}{3} \pi \rho Gm$. This can be written as:
+\[
+\ddot{r} + \frac{k}{m} r = 0 \imps \ddot{r} + \omega^2 r = 0
+\]
+where $\omega^2 = \dfrac{k}{m} = \dfrac{4}{3} \pi \rho G$. This is the equation for simple harmonic motion with angular frequency $\omega = \sqrt{\dfrac{4}{3} \pi \rho G}$.
+
+The period of this motion is $T = \dfrac{2\pi}{\omega} = 2 \sqrt{\dfrac{3\pi}{4\rho G}}$. The time it takes to reach the other side of the Earth is half the period, so:
+\[
+t = \frac{T}{2} = \sqrt{\frac{3\pi}{4 \rho G}}\h
+\]
+}
+\wa
+\pagebreak
+\pbm{}{
+A spring with $k = 2.00 \, \text{N/m}$ and an attached bob oscillates in a viscous medium. The first maximum, of $+5.00 \, \text{cm}$ from the equilibrium position, is observed at $t = 2.00 \, \text{s}$ and the next maximum, of $+4.90 \, \text{cm}$, occurs at $t = 3.00 \, \text{s}$. What will the position of the bob be at $3.50 \, \text{s}$ and at $4.20 \, \text{s}$? What was its position at $t = 0.00 \, \text{s}$?
+}
+\sol{
+The amplitude of a damped oscillation decreases exponentially with time: $A(t) = A_0 e^{-\gamma t}$, where $\gamma$ is the damping constant. We have two maxima:
+\[
+A(2.00) = A_0 e^{-2\gamma} = 5.00 \, \text{cm}
+\]
+\[
+A(3.00) = A_0 e^{-3\gamma} = 4.90 \, \text{cm}
+\]
+Dividing the first equation by the second:
+\[
+\frac{5.00}{4.90} = \frac{A_0 e^{-2\gamma}}{A_0 e^{-3\gamma}} = e^{\gamma} \imps \gamma = \ln\left(\frac{5.00}{4.90}\right) \approx 0.0202 \, \text{s}^{-1}
+\]
+Now we can find $A_0$:
+\[
+A_0 = 5.00 \, \text{cm} \times e^{2\gamma} = 5.00 \times e^{2 \times 0.0202} \approx 5.206 \, \text{cm}
+\]
+The time difference between two consecutive maxima is the period $T = 3.00 \, \text{s} - 2.00 \, \text{s} = 1.00 \, \text{s}$.\\ The angular frequency is $$\omega = \frac{2\pi}{T} = 2\pi \, \text{rad/s}$$
+The position of the bob can be written as $x(t) = A(t) \cos(\omega t + \phi) = A_0 e^{-\gamma t} \cos(\omega t + \phi)$\\
+Assuming the maxima occur at the cosine peak, we can take $\omega t + \phi = 2n\pi$. \\For the first maximum at $t=2.00 \, \text{s}$, let's assume $$\omega(2.00) + \phi = 2\pi \imps 4\pi + \phi = 2\pi \imps \phi = -2\pi$$
+Then $x(t) = 5.206 e^{-0.0202 t} \cos(2\pi t - 2\pi) = 5.206 e^{-0.0202 t} \cos(2\pi t)$
+\udia{0.4}{rdf86}
+\udia{1}{rdf90}
+\sss{Hence,}
+At $t = 3.50 \, \text{s}$:
+\begin{align*}
+  x(3.50) &= 5.206 e^{-0.0202 \times 3.50} \cos(2\pi \times 3.50) = 5.206 e^{-0.0707} \cos(7\pi) \\ &\approx 5.206 \times 0.9318 \times (-1) \\ \imps x(3.50) &\approx -4.85\, \text{cm, (3 s.f.)}\h
+\end{align*}
+At $t = 4.20 \, \text{s}$:
+\begin{align*}
+	x(4.20) &= 5.206 e^{-0.0202 \times 4.20} \cos(2\pi \times 4.20) = 5.205 e^{-0.08484} \cos(8.4\pi) \\ 
+	&\approx 5.206 \times 0.9186 \times \cos(0.4\pi) \\
+	&\approx 5.206 \times 0.9186 \times 0.3090 \\
+	\imps x(4.20) &\approx 1.48 \, \text{cm, (3 s.f.)}\h
+\end{align*}
+At $t = 0.00 \, \text{s}$:
+\begin{align*}
+	x(0.00) &= 5.206 e^{0} \cos(0) = 5.21 \, \text{cm, (3 s.f.)}\h
+\end{align*}
+}
+\wa
+\pagebreak
+\pbm{}{
+In class we have obtained the equation of motion for a damped oscillator using Newton's Laws. We will now find the equation of motion using Lagrangian mechanics.\\
+Consider a block of mass $m$ attached to a spring of stiffness $k$ sitting on a horizontal table.
+\begin{enumerate}
+  \item[a.] Write down the lagrangain $\mcL$ of the system
+  \item[b.] The block experiences a resistive force, which can be expressed as a potential $U = -\f \gamma \dot{x}^2$, where $\gamma$ is the damping coefficient.his dissipative force can be
+incorporated into the E-L equations as follows:
+    $$\dv{t}\lt( \pdv{\mcL}{\dot{x}} \rt) - \pdv{\mcL}{x} = \pdv{U}{\dot{x}} $$
+\end{enumerate}
+Using the Euler-Lagrange equation, find the equations of motion.
+}
+\sol{
+\sss{a.}
+The Lagrangian of the system is given as:
+\begin{align*}
+\mcL &= T - V 
+   = \f m \dot{x}^2 - \f k x^2 
+\end{align*}
+\sss{b.}
+The Euler-Lagrange Equation:
+\begin{align*}
+\dv{t}\lt( \pdv{\mcL}{\dot{x}} \rt) - \pdv{\mcL}{x} &= \pdv{U}{\dot{x}}  
+   \imps \dv{t} \lt( m \dot{x} \rt) - (-kx) = -\gamma \dot{x} 
+   \imps m \ddot{x} + \gamma \dot{x} + kx = 0\h
+\end{align*}
+This is the equation of motion for the damped oscillator.\\
+\udia{0.5}{rdf87}
+}
+\wa
+\pagebreak
+\pbm{}{
+Consider two particles of masses $m_1 = m_2 = m$ confined to move along the x-axis, with positions $x_1, x_2$. These masses are connected by a spring, whose relaxed length is $l$.
+\begin{enumerate}
+	\item[a.] Write down the Lagrangian in terms of $x_1, x_2$.
+	\item[b.] Rewrite the Lagrangian in terms of $X = \f (x_1 + x_2)$ and $x = x_2 - x_1 - l$
+	\item[c.] Find the equations of motion for $X$ and $x$ using $m_1 = m_2 = 2 \, \text{kg}$ and $k = 2 \, \text{N/m}$
+\end{enumerate}
+}
+\sol{
+\udia{0.8}{rdf88}
+\sss{a.}
+The kinetic energy of the system is $$T = \f m_1 \dot{x}_1^2 + \f m_2 \dot{x}_2^2 = \f m (\dot{x}_1^2 + \dot{x}_2^2)$$
+The potential energy of the spring is $$V = \f k (x_2 - x_1 - l)^2$$
+The Lagrangian is $$L = T - V = \f m (\dot{x}_1^2 + \dot{x}_2^2) - \f k (x_2 - x_1 - l)^2$$
+\wa
+\sss{b.}
+From the definitions, we have $x_1 = X - \f(x+l)$ and $x_2 = X + \f(x+l)$.
+Then $\dot{x}_1 = \dot{X} - \f\dot{x}$ and $\dot{x}_2 = \dot{X} + \f\dot{x}$.
+Substituting these into the kinetic energy:
+\begin{align*}
+T &= \f m \left( \left(\dot{X} - \f\dot{x}\right)^2 + \left(\dot{X} + \f\dot{x}\right)^2 \right) \\
+&= \f m \left( \dot{X}^2 - \dot{X}\dot{x} + \frac{1}{4}\dot{x}^2 + \dot{X}^2 + \dot{X}\dot{x} + \frac{1}{4}\dot{x}^2 \right) \\
+&= \f m \left( 2\dot{X}^2 + \f\dot{x}^2 \right) = m \dot{X}^2 + \frac{1}{4} m \dot{x}^2
+\end{align*}
+The potential energy is $V = \f k x^2$.
+The Lagrangian in terms of $X$ and $x$ is:
+\[
+L = m \dot{X}^2 + \frac{1}{4} m \dot{x}^2 - \f k x^2
+\]
+\wa
+\sss{c.}
+Given $m = m_1 = m_2 = 2 \, \text{kg}$ and $k = 2 \, \text{N/m}$\\
+The Lagrangian is $$L = 2 \dot{X}^2 + \f \dot{x}^2 - x^2$$
+Applying the Euler-Lagrange Equation for $X$:
+\begin{align*}
+	\dv{t} \lt(\pdv{L}{\dot{X}}\rt) &= \pdv{L}{X} \imps \dv{t} (4 \dot{X}) = 0 \imps \ddot{X} = 0 \h
+\end{align*}
+Similarily for $x$:
+\begin{align*}
+	\dv{t} \lt(\pdv{L}{\dot{x}}\rt) &= \pdv{L}{x} \imps \dv{t} (\dot{x}) = -2x \imps \ddot{x} = -2x \h
+\end{align*}
+The equation of motion for $x$ is $\ddot{x} - (-2x) = 0 \imps \ddot{x} + 2x = 0$.\\
+}
+\wa
+\pagebreak
+\pbm{Bonus}{
+For a ball thrown up in the air, guess a solution of the form $y(t) = a_2 t^2 + a_1 t + a_0$, given that $y(0) = y(T) = 0$.
+\begin{enumerate}
+	\item[a.] Using this form of $y$, write down the kinetic and potential energies of the ball.
+	\item[b.] Hence, write down the Lagrangian and find the action $S$ over the given time duration.
+	\item[c.] For $a_2 = -g/2$, show that the value of the action is a minima.
+\end{enumerate}
+}
+\sol{
+\sss{a.}
+Given 
+$$y(t) = a_2 t^2 + a_1 t + a_0$$
+From $y(0) = 0$, we get 
+$$a_0 = 0$$
+From $y(T) = 0$, we get 
+$$a_2 T^2 + a_1 T = 0 \imps a_1 = -a_2 T$$
+So, 
+$$y(t) = a_2 t^2 - a_2 T t = a_2 t (t - T) \imps \dot{y}(t) = 2 a_2 t - a_2 T = a_2 (2t - T)$$\\
+The kinetic and potential energies of the ball are 
+$$K = \f m \dot{y}^2 = \f m a_2^2 (2t - T)^2 \quad \quad V = m g y = m g a_2 t (t - T)$$
+\wa
+\sss{b.}
+The Lagrangian is $$L = T - V = \f m a_2^2 (2t - T)^2 - m g a_2 t (t - T)$$
+The action $S$ is thus given by,
+\begin{align*}
+	S &= \int_0^T L dt = \int_0^T \left[ \f m a_2^2 (2t - T)^2 - m g a_2 t (t - T) \right] dt \\
+	&= \f m a_2^2 \int_0^T (4t^2 - 4tT + T^2) dt - m g a_2 \int_0^T (t^2 - Tt) dt \\
+	&= \f m a_2^2 \left[ \frac{4}{3} t^3 - 2t^2 T + T^2 t \right]_0^T - m g a_2 \left[ \frac{1}{3} t^3 - \f T t^2 \right]_0^T \\
+	&= \f m a_2^2 \left( \frac{4}{3} T^3 - 2T^3 + T^3 \right) - m g a_2 \left( \frac{1}{3} T^3 - \f T^3 \right) \\
+	&= \f m a_2^2 \left( \frac{4 - 6 + 3}{3} T^3 \right) - m g a_2 \left( \frac{2 - 3}{6} T^3 \right) \\
+	&= \frac{1}{6} m a_2^2 T^3 + \frac{1}{6} m g a_2 T^3\\
+	S &= \frac{mT^3}{6}\lt(a_2^2 + ga_2\rt)\h
+\end{align*}
+\wa
+\sss{c.}
+To extremize action,
+\begin{align*}
+	\dv{S}{ta_2} &= 0 \imps \dv{t} \lt(\frac{mT^3}{6}\lt(a_2^2 + ga_2\rt)\rt) = 0 \imps \frac{mT^3}{6}\lt(2a_2 + g\rt) =0 \imps 2a_2 + g = 0 \imps a_2=-\frac{g}{2}\h
+\end{align*}
+Thus, for $a_2=-\dfrac{g}{2}$, the action is indeed a minimum.\\
+}
+	\wa
+\end{document}

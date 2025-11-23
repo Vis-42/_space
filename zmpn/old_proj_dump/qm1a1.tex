@@ -1,0 +1,373 @@
+\documentclass{report}
+
+\input{latex-templates/preamble}
+\input{latex-templates/macros}
+\input{latex-templates/letterfonts}
+\usepackage{physics}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{wrapfig}
+\setlength{\fboxsep}{3pt} % Space between image and border
+\setlength{\fboxrule}{0.5pt} % Border thickness
+
+\title{\Huge{\textbf{PC2130}}\\ \su{g}{Quantum Mechanics I} \\ {\huge \su{r}{Assignment 1}}}
+\author{\huge{Parth Bhargava}\\ }
+\date{\today}
+
+\begin{document}
+	\maketitle
+	\pbm{}{
+	Consider a quantum particle of mass $m$ moving freely in a one-dimesional world, say the x-axis. The quantum dynamics of the particle is governed by the \su{r}{\textit{Schrödinger Equation}},\\
+	$$ i\hbar\pdv{\psi}{t}=-\frac{\hbar^2}{2m}\pdv[2]{\psi}{x} $$
+	where $\psi= \psi (x,t)$ is its normalised wavefunction. Suppose at time $t=0$,
+	$$\psi(x,0)=\frac{1}{\sqrt{\sqrt{2\pi}\sigma_0}}\exp \pqty{\frac{i}{\hbar}p_0x}\exp\bqty{-\frac{1}{4\sigma_0^2}(x-x_0)^2}$$
+	determine $\psi(x,t)$ for time $t > 0$. Here, $p_0,\sigma_0,x_0 \in \RR$
+
+	\begin{enumerate}
+		\item[a.] Verify that $\psi(x, 0)$ is normalised.
+		\item[b.] Determine
+		\begin{enumerate}
+			\item[i.] $\ev{x}_0$ the expectation value of, and
+			\item[ii.] $\Delta x(0)$ the uncertainty in
+		\end{enumerate}
+		the position of the quantum particle at time $t=0$.
+		\item[c.] Determine
+		\begin{enumerate}
+			\item[i.] $\ev{p}_0$ the expectation value of, and
+			\item[ii.] $\Delta p(0)$ the uncertainty in
+		\end{enumerate}
+		the linear momentum of the quantum particle at time $t=0$.
+		\item[d.] Express $\psi(x, 0)$ in terms of $u_p=u_p(x)$, the linear momentum eigenfunctions:
+		$$\psi(x, 0)=\qmi\phi(p, 0)u_p(x)\dd p$$
+		where $\phi(p, 0)$ is to be determined.
+		\item[e.] Show that $\phi(p, 0)$ is normalised and it yields the same answers to $\ev{p}_0$ and $\Delta p(0)$ in problem 3.
+		$\phi(p, 0)$ is the wavefunction in the \su{r}{linear momentum representation}, of the quantum particle
+		at time $t=0$, i.e., $\bra{p}\ket{\psi(0)}:=\phi(p, 0)$
+		\item[f.] \textit{Energy eigenvalue problem.}
+		Write down the associated \su{r}{energy eigenvalue equation} and solve it, i.e., determine the \su{b}{energy eigenvalues} $E$ and corresponding \su{b}{energy eigenfunctions} $u_E=u_E(x)$. Note that $u_E(x)$ has to be \su{r}{invariant under translations}. (What does this mean? Why?) Note also that $E \geq 0$. (Why?)
+		\item[g.] Hence, determine $\psi(x,t)$ for time $t>0$.
+		\item[h.] Determine
+		\begin{enumerate}
+			\item[i.] $\ev{x}_t$ the expectation value of, and
+			\item[ii.] $\Delta x(t)$ the uncertainty in the position of the quantum particle at time $t>0$. Hence, verify that
+			$$\dv{t} \ev{x}_t = \frac{1}{m} \ev{p}_t$$
+		\end{enumerate}
+		\item[i.] Express the \su{r}{Schrödinger equation} for the free quantum particle in the \su{r}{linear momentum representation}, and solve it to obtain $\phi(p,t)$. Does $|\phi(p,t)|^2$ depend on time $t$? What is the physical significance of this result?
+		\item[j.] Using \su{r}{MATHEMATICA}, or otherwise, simulate the dependence of $|\psi(x,t)|^2$'s on time $t$. Reconcile your simulation with the above results.
+	\end{enumerate}
+	}
+	\newpage
+	\sol{}{
+	\wa
+	\sss{(a)}{
+	\begin{align*}
+		&\qmi\qmk\cdot \dd x\\
+		&=\qmi\pqty{\frac{1}{\sqrt{\sqrt{2\pi}\sigma_{0}}}\exp\pqty{\frac{-i}{\hbar}p_{0}x}\exp\pqty{-\frac{1}{4\sigma_{0}^{2}}\pqty{x-x_{0}}^{2}}}\pqty{\frac{1}{\sqrt{\sqrt{2\pi}\sigma_{0}}}\exp\pqty{\frac{i}{\hbar}p_{0}x}\exp\pqty{-\frac{1}{4\sigma_{0}^{2}}\pqty{x-x_{0}}^{2}}}.\dd x\\
+		&=\frac{1}{\sqrt{2\pi}\sigma_{0}}\qmi\exp\pqty{-\frac{\pqty{x-x_{0}}^{2}}{2\sigma_{0}^{2}}}\cdot \dd x\\
+		&=\frac{1}{\sqrt{2\pi}\sigma_{0}}\qmi\exp\pqty{-y^{2}}\cdot\sqrt{2}\sigma_{0}\dd y\quad \quad \bqty{\because y=\frac{x-x_{0}}{\sqrt{2}\sigma_{0}}\Rightarrow \dd y=\frac{\dd x}{\sqrt{2}\sigma_{0}}}\\
+		&=\frac{1}{\sqrt{\pi}}\qmi\exp\pqty{-y^{2}}\cdot \dd y\\
+		&=\frac{1}{\sqrt{\pi}}\cdot\sqrt{\pi}\imps \boxed{\qmi\qmk\cdot \dd x=1}
+	\end{align*}
+	\qed
+	\\
+	}
+
+	\wa
+	\sss{(b)}{
+	\paragraph{i.}
+	\begin{align*}
+		\ev{x}_0&=\qmi\psi^{*}(x,0)[x]\psi(x,0)\cdot \dd x\\
+		&=\qmi\pqty{\frac{1}{\sqrt{\sqrt{2\pi}\sigma_{0}}}\exp\pqty{\frac{-i}{\hbar}p_{0}x}\exp\pqty{-\frac{1}{4\sigma_{0}^{2}}\pqty{x-x_{0}}^{2}}}x\pqty{\frac{1}{\sqrt{\sqrt{2\pi}\sigma_{0}}}\exp\pqty{\frac{i}{\hbar}p_{0}x}\exp\pqty{-\frac{1}{4\sigma_{0}^{2}}\pqty{x-x_{0}}^{2}}}.\dd x\\
+		&=\frac{1}{\sqrt{\pi}}\qmi\pqty{\frac{x-x_0+x_0}{\sqrt{2}\sigma_0}}\exp\pqty{-\frac{\pqty{x-x_{0}}^{2}}{2\sigma_{0}^{2}}}\cdot \dd x\\
+		&=\frac{1}{\sqrt{\pi}}\bqty{\qmi y\exp\pqty{-y^{2}}\cdot\sqrt{2}\sigma_{0}\dd y + \frac{x_0}{\sqrt{2}\sigma_0}\qmi\exp\pqty{-y^{2}}\cdot\sqrt{2}\sigma_{0}\dd y} \quad \quad \bqty{\because y=\frac{x-x_{0}}{\sqrt{2}\sigma_{0}}\Rightarrow \dd y=\frac{\dd x}{\sqrt{2}\sigma_{0}}}\\
+		&=\frac{\sqrt{2}\sigma_0}{\sqrt{\pi}}\bqty{0 + \frac{x_0}{\sqrt{2}\sigma_0}\sqrt{\pi}} \quad \quad \bqty{\because y\exp(-y^2) \text{is an odd function and} \qmi\exp\pqty{-y^{2}}\cdot \dd y =\sqrt{\pi}} \\
+		&\\
+		\imps & \boxed{\ev{x}_0 = x_0}
+	\end{align*}
+	\paragraph{ii.}
+	We have,
+	\begin{align*}
+		\ev{x^2}_0&=\qmi\psi^{*}(x,0)[x]^2\psi(x,0)\cdot \dd x\\
+		&=\qmi[(x-x_0)^2 + 2xx_0 -x_0^2]|\psi(x,0)|^2\dd x\\
+		&=\qmi(x-x_0)^2|\psi(x,0)|^2\dd x+2x_0\qmi[x]|\psi(x,0)|^2\dd x-x_0^2\qmi|\psi(x,0)|^2\dd x\\
+		&=\frac{1}{\sqrt{2\pi}\sigma_{0}}\qmi(x-x_0)^2\exp\pqty{-\frac{\pqty{x-x_{0}}^{2}}{2\sigma_{0}^{2}}}\dd x+2x_0\ev{x}-x_0^2\\
+		&=\frac{1}{\sqrt{2\pi}\sigma_{0}}\qmi(y\sqrt{2}\sigma_{0})^2\exp\pqty{-y^{2}}\cdot\sqrt{2}\sigma_{0}\dd y+x_0^2 \quad \quad \bqty{\because y=\frac{x-x_{0}}{\sqrt{2}\sigma_{0}}\Rightarrow \dd y=\frac{\dd x}{\sqrt{2}\sigma_{0}}}\\
+		&=\frac{2\sigma_{0}^2}{\sqrt{\pi}}\bqty{\qmi   y^2\exp\pqty{-y^{2}}\cdot\dd y}+x_0^2 \tag{1} \label{01}\\
+	\end{align*}
+	Here, with $a > 0$,
+	\[\qmi \exp(-a x^2) \dd{x} = \frac{1}{\sqrt{a}} \qmi \exp(-a x^2) \dd{(\sqrt{a} x)} = \sqrt{\frac{\pi}{a}}\]
+	It follows that
+	\[\qmi x^2 \exp(-a x^2) \dd{x} = -\pdv{}{a} \qmi \exp(-a x^2) \dd{x} = \frac{1}{2} \sqrt{\frac{\pi}{a^3}}\]
+	Using this is \eqref{01},
+	\begin{align*}
+		\ev{x^2}_0&=\frac{2\sigma_{0}^2}{\sqrt{\pi}}\bqty{\frac{\sqrt{\pi}}{2}}+x_0^2\\
+		\ev{x^2}_0-x_0^2&=\sigma_{0}^2\\
+		\sqrt{\ev{x^2}_0-\ev{x}^2}&=\sigma_{0} \imps \boxed{\Delta x(0)=\sigma_{0}}
+	\end{align*}
+	}
+
+	\wa
+	\sss{(c)}{
+	\paragraph{i.}{
+	\begin{align*}
+		\ev{p}_0 &= \qmi\psi^{*}(x,0)\bqty{-i\hbar\pdv{x}}\psi(x,0)\cdot \dd x \\
+		&= \frac{1}{\sqrt{2\pi}\sigma_0} \qmi \qmls \lt(-i\hbar \pdv{x}\rt) \qml \dd x \\
+		&= \frac{1}{\sqrt{2\pi}\sigma_0} \qmi \qmls \lt(\frac{i\hbar(x-x_0)}{2\sigma_0^2} +p_0\rt) \qml \dd x \\
+		&= \frac{1}{\sqrt{2\pi}\sigma_0} \qmi\lt(\frac{i\hbar(x-x_0)}{2\sigma_0^2} +p_0\rt) \exp{-\frac{(x - x_0)^2}{2\sigma_0^2}} \dd x \\
+		&= \qmi\lt(\frac{i\hbar(x-x_0)}{2\sigma_0^2} +p_0\rt)\qmk \dd x \\
+		&=p_0\qmi\qmk\cdot \dd x +\frac{i\hbar}{2\sigma_0^2}\qmi x\qmk\cdot \dd x -x_0\frac{i\hbar}{2\sigma_0^2}\qmi\qmk\cdot \dd x\\
+		&=p_0+\frac{i\hbar}{2\sigma_0^2}(x_0) -x_0\frac{i\hbar}{2\sigma_0^2}\\
+		\imps & \boxed{\ev{p}_0 = p_0}
+	\end{align*}
+
+	\paragraph{ii.}
+	We have,
+	\begin{align*}
+		\ev{p^2}_0&=\qmi\psi^{*}(x,0)\bqty{-i\hbar\pdv{x}}^2\psi(x,0)\cdot \dd x \\
+		&=\frac{1}{\sqrt{2\pi}\sigma_0}\qmi\qmls \bqty{-i\hbar\pdv{x}} \lt[ \lt(\frac{i\hbar(x-x_0)}{2\sigma_0^2} +p_0\rt)\qml \rt]\cdot \dd x \\
+		&=\frac{1}{\sqrt{2\pi}\sigma_0}\qmi\qmls \pqty{\frac{\hbar^2}{2\sigma_0^2} + \lt(\frac{i\hbar(x-x_0)}{2\sigma_0^2} +p_0\rt)^2} \qml\cdot \dd x \\
+		&=\frac{1}{\sqrt{2\pi}\sigma_0}\qmi\qmls \pqty{\frac{\hbar^2}{2\sigma_0^2} + \lt(\frac{i\hbar(x-x_0)}{2\sigma_0^2} +p_0\rt)^2} \qml\cdot \dd x \\
+		&=\qmi \pqty{\frac{\hbar^2}{2\sigma_0^2} + \lt(\frac{i\hbar(x-x_0)}{2\sigma_0^2} +p_0\rt)^2} \qmk\cdot \dd x \\
+		&=\qmi \pqty{
+			\frac{\hbar^2}{2\sigma_0^2} - \frac{\hbar^2(x-x_0)^2}{4\sigma_0^4} + \frac{i\hbar(x-x_0)p_0}{\sigma_0^2} + p_0^2
+			} \qmk\cdot \dd x \\
+		&=\qmi \pqty{
+			-\frac{\hbar^2 x^2}{4\sigma_0^4} + \qty(\frac{\hbar^2 x_0}{2\sigma_0^4} + \frac{i\hbar p_0}{\sigma_0^2})x
+			+ \qty(\frac{\hbar^2}{2\sigma_0^2} - \frac{\hbar^2 x_0^2}{4\sigma_0^4} - \frac{i\hbar x_0 p_0}{\sigma_0^2} + p_0^2)
+		} \qmk\cdot \dd x \\
+		&=\qty(\frac{\hbar^2}{2\sigma_0^2} - \frac{\hbar^2 x_0^2}{4\sigma_0^4} - \frac{i\hbar x_0 p_0}{\sigma_0^2} + p_0^2)\qmi\qmk\cdot\dd x +\\
+		&\quad \qty(\frac{\hbar^2 x_0}{2\sigma_0^4} + \frac{i\hbar p_0}{\sigma_0^2})\qmi x\qmk\cdot\dd x
+		-\frac{\hbar^2}{4\sigma_0^4}\qmi x^2\qmk\cdot\dd x \\
+		&=\frac{\hbar^2}{2\sigma_0^2} - \frac{\hbar^2 x_0^2}{4\sigma_0^4} - \frac{i\hbar x_0 p_0}{\sigma_0^2} + p_0^2 +\qty(\frac{\hbar^2 x_0}{2\sigma_0^4} + \frac{i\hbar p_0}{\sigma_0^2})x_0
+		-\frac{\hbar^2}{4\sigma_0^4}\qty(\sigma_0^2 + x_0^2) \\
+		\ev{p^2}_0&=\frac{\hbar^2}{4\sigma_0^2}+p_0^2\\
+		\ev{p^2}_0-\ev{p}^2&=\frac{\hbar^2}{4\sigma_0^2}\\
+		\sqrt{\ev{p^2}_0-\ev{p}^2}&=\frac{\hbar}{2\sigma_0} \imps \boxed{\Delta p(0)= \frac{\hbar}{2\sigma_0}}
+	\end{align*}
+	}}
+
+	\wa
+	\pagebreak
+	\sss{(d)}{
+	The momentum eigenfunctions $u_p(x)$ are given by:
+	$$u_p(x) = \frac{1}{\sqrt{2\pi\hbar}} \e{\frac{ipx}{\hbar}}	$$
+	Such that:
+	$$\psi(x, 0) = \qmi \phi(p, 0) u_p(x) \dd{p} \quad \text{where $\phi(p, 0)$ is the momentum-space wavefunction at $t = 0$.}$$
+	To determine $\phi(p, 0)$, we use the Fourier transform relationship between the position-space wavefunction $\psi(x, 0)$ and the momentum-space wavefunction $\phi(p, 0)$:
+	$$
+	\phi(p, 0) = \qmi \psi(x, 0) u_p^*(x) \dd{x}
+	$$
+	Hence,
+	\begin{align*}
+		\phi(p, 0) &= \qmi \psi(x, 0) u_p^*(x) \dd{x}\\
+		&=\qmi \frac{1}{\sqrt{\sqrt{2\pi}\sigma_0}} \exp\lt(\frac{i}{\hbar} p_0 x\rt) \exp\lt(-\frac{1}{4\sigma_0^2}(x - x_0)^2\rt) \cdot \frac{1}{\sqrt{2\pi\hbar}} \e{-\frac{ipx}{\hbar}} \dd{x}\\
+		&= \frac{1}{\sqrt{2\pi\hbar \sqrt{2\pi}\sigma_0}} \qmi \exp\lt(-\frac{1}{4\sigma_0^2}(x - x_0)^2\rt) \exp\lt( \frac{ix}{\hbar}(p_0 - p)\rt) \dd{x}\tag{2} \label{02}
+	\end{align*}
+	Here,
+	\begin{align*}
+		&\qmi \e{-\frac{1}{4\sigma_0^2}(x - x_0)^2} \exp\lt(\frac{i x}{\hbar}(p_0 - p)\rt) \dd{x} \\
+		&= \qmi \e{-\frac{1}{4\sigma_0^2}(x - x_0)^2 + \frac{i x}{\hbar}(p_0 - p)} \dd{x} \\
+		&= \qmi \e{A(x - x_0)^2 + Bx} \dd{x} && \lt[\text{Let } A = -\frac{1}{4\sigma_0^2}, B = \frac{i (p_0 - p)}{\hbar}\rt]\\
+		&= \qmi \e{Ax^2 + (B - 2Ax_0)x + Ax_0^2} \dd{x} \\
+		&= \qmi \e{A\lt(x + \frac{B - 2Ax_0}{2A}}^2 - \frac{B^2}{4A} + x_0B \rt) \dd{x} \\
+		&= \e{- \frac{B^2}{4A} + x_0B}\qmi \e{A\lt(x + \frac{B - 2Ax_0}{2A}\rt)^2 } \dd\lt(x + \frac{B - 2Ax_0}{2A}\rt) \\
+		&= \sqrt{\frac{\pi}{-A}} \e{-\frac{B^2}{4A} + x_0B} && \lt[\because \qmi \e{-a y^2} \dd{y} = \sqrt{\frac{\pi}{a}}\rt] \\
+		&= \sqrt{\frac{\pi}{\frac{1}{4\sigma_0^2}}} \e{-\frac{\lt(\frac{i (p_0 - p)}{\hbar}\rt)^2}{4\lt(-\frac{1}{4\sigma_0^2}\rt)} + x_0\lt(\frac{i (p_0 - p)}{\hbar}\rt)}\\
+		&= \sqrt{4\pi\sigma_0^2} \e{-\frac{\sigma_0^2(p_0 - p)^2}{\hbar^2} + \frac{i x_0 (p_0 - p)}{\hbar}} \tag{3} \label{03}
+	\end{align*}
+	Using \eqref{02} and \eqref{03},
+	\begin{align*}
+		\phi(p, 0) &= \frac{1}{\sqrt{2\pi\hbar \sqrt{2\pi}\sigma_0}} \sqrt{4\pi\sigma_0^2} \e{-\frac{\sigma_0^2(p_0 - p)^2}{\hbar^2} + \frac{i x_0 (p_0 - p)}{\hbar}}\\
+		&=\frac{\sqrt{4\pi\sigma_0^2}}{\sqrt{2\pi\hbar \sqrt{2\pi}\sigma_0}} \exp\lt( \frac{ix_0}{\hbar}(p_0 - p)\rt) \exp\lt(-\frac{\sigma_0^2}{\hbar^2}(p_0 - p)^2\rt)\\
+		\imps & \boxed{\phi(p, 0) = \lt( \frac{2}{\pi} \rt)^{1/4} \sqrt{\frac{\sigma_0}{\hbar}} \exp\lt( \frac{ix_0}{\hbar}(p_0 - p)\rt) \exp\lt(-\frac{\sigma_0^2}{\hbar^2}(p_0 - p)^2\rt)}\\
+	\end{align*}
+	}
+
+	\wa
+	\sss{(e)}{
+	\begin{align*}
+		&\qmi|\phi(p,0)|^2\cdot \dd p\\
+		&=\qmi \pqty{\lt( \frac{2}{\pi} \rt)^{1/4} \sqrt{\frac{\sigma_0}{\hbar}} \exp\lt( \frac{-ix_0}{\hbar}(p_0 - p)\rt) \exp\lt(-\frac{\sigma_0^2}{\hbar^2}(p_0 - p)^2\rt)}\pqty{\lt( \frac{2}{\pi} \rt)^{1/4} \sqrt{\frac{\sigma_0}{\hbar}} \exp\lt( \frac{ix_0}{\hbar}(p_0 - p)\rt) \e{-\frac{\sigma_0^2}{\hbar^2}(p_0 - p)^2}}\cdot \dd p\\
+		&=\sqrt{\frac{2}{\pi}}\frac{\sigma_0}{\hbar}\qmi\e{-\frac{2\sigma_0^2}{\hbar^2}(p - p_0)^2}\cdot \dd p\\
+		&=\sqrt{\frac{2}{\pi}}\frac{\sigma_0}{\hbar}\qmi\exp\pqty{-y^{2}}\cdot\frac{\hbar}{\sqrt{2}\sigma_0}\dd y\quad \quad \bqty{\because y=\frac{\sqrt{2}\sigma_0(p-p_{0})}{\hbar}\Rightarrow \dd y=\frac{\sqrt{2}\sigma_0}{\hbar} \dd p}\\
+		&=\frac{1}{\sqrt{\pi}}\qmi\exp\pqty{-y^{2}}\cdot \dd y\\
+		&=\frac{1}{\sqrt{\pi}}\cdot\sqrt{\pi}\imps \boxed{\qmi|\phi(p,0)|^2\cdot \dd x=1}
+	\end{align*}
+	\qed
+	\\
+	\paragraph{i.}
+	Evaluating $\ev{p}_0$,
+	\begin{align*}
+		\ev{p}_0&=\qmi\phi^{*}(p,0)[p]\phi(p,0)\cdot \dd p\\
+		&=\sqrt{\frac{2}{\pi}}\frac{\sigma_0}{\hbar}\qmi p\e{-\frac{2\sigma_0^2}{\hbar^2}(p - p_0)^2}\cdot \dd p\\
+		&=\frac{1}{\sqrt{\pi}}\bqty{\qmi y\exp\pqty{-y^{2}}\cdot\frac{\hbar}{\sqrt{2}\sigma_0}\dd y + \frac{\sqrt{2}\sigma_0p_0}{\hbar}\qmi\exp\pqty{-y^{2}}\cdot\frac{\hbar}{\sqrt{2}\sigma_0}\dd y} \quad \quad \bqty{\because y=\frac{\sqrt{2}\sigma_0(p-p_{0})}{\hbar}\Rightarrow \dd y=\frac{\sqrt{2}\sigma_0}{\hbar} \dd p}\\
+		&=\frac{1}{\sqrt{\pi}}\bqty{0 + {p_0}\sqrt{\pi}} \quad \quad \bqty{\because y\exp(-y^2) \text{is an odd function and} \qmi\exp\pqty{-y^{2}}\cdot \dd y =\sqrt{\pi}} \\
+		&\\
+		\imps & \boxed{\ev{p}_0 = p_0}\\
+	\end{align*}
+	\paragraph{ii.}
+	Evaluating $\Delta p(0)$,
+	\begin{align*}
+		\ev{p^2}_0&=\qmi\phi^{*}(p,0)[p]^2\phi(p,0)\cdot \dd p\\
+		&=\qmi[(p-p_0)^2 + 2pp_0 -p_0^2]|\phi(p,0)|^2\dd p\\
+		&=\qmi(p-p_0)^2|\phi(p,0)|^2\dd p+2p_0\qmi[p]|\phi(p,0)|^2\dd p-p_0^2\qmi|\phi(p,0)|^2\dd p\\
+		&=\sqrt{\frac{2}{\pi}}\frac{\sigma_0}{\hbar}\qmi(p-p_0)^2\exp\pqty{-\frac{2\sigma_{0}^{2}\pqty{p-p_{0}}^{2}}{\hbar}}\dd p+2p_0\ev{p}-p_0^2\\
+		&=\sqrt{\frac{2}{\pi}}\frac{\sigma_0}{\hbar}\qmi\lt(y\frac{\hbar}{\sqrt{2}\sigma_{0}}\rt)^2\exp\pqty{-y^{2}}\cdot\frac{\hbar}{\sqrt{2}\sigma_{0}}\dd y+p_0^2 \quad \quad \bqty{\because y=\frac{\sqrt{2}\sigma_0(p-p_{0})}{\hbar}\Rightarrow \dd y=\frac{\sqrt{2}\sigma_0}{\hbar} \dd p}\\
+		&=\frac{1}{2\sqrt{\pi}}\frac{\hbar^2}{\sigma_0^2}\bqty{\qmi   y^2\exp\pqty{-y^{2}}\cdot\dd y}+p_0^2 \tag{4} \label{04}\\
+	\end{align*}
+	Here, with $a > 0$,
+	\[\qmi \exp(-a x^2) \dd{x} = \frac{1}{\sqrt{a}} \qmi \exp(-a x^2) \dd{(\sqrt{a} x)} = \sqrt{\frac{\pi}{a}}\]
+	It follows that
+	\[\qmi x^2 \exp(-a x^2) \dd{x} = -\pdv{}{a} \qmi \exp(-a x^2) \dd{x} = \frac{1}{2} \sqrt{\frac{\pi}{a^3}}\]
+	Using this is \eqref{04},
+	\begin{align*}
+		\ev{p^2}_0&=\frac{1}{2\sqrt{\pi}}\frac{\hbar^2}{\sigma_0^2}\bqty{\frac{\sqrt{\pi}}{2}}+p_0^2\\
+		\ev{p^2}_0-p_0^2&=\frac{\hbar^2}{4\sigma_{0}^2}\\
+		\sqrt{\ev{p^2}_0-\ev{p}^2}&=\frac{\hbar}{2\sigma_0} \imps \boxed{\Delta p(0)=\frac{\hbar}{2\sigma_0}}\\
+	\end{align*}
+
+	\vspace{1em}
+	}
+
+	\wa
+	\sss{(f)}{
+	The time-independent Schrödinger equation for a free particle is:
+	$$
+		-\frac{\hbar^2}{2m} \pdv[2]{u_E(x)}{x} = E u_E(x)
+		\imps \pdv[2]{u_E(x)}{x} + \frac{2mE}{\hbar^2} u_E(x) = 0
+		\imps \pdv[2]{u_E(x)}{x} + k^2 u_E(x) = 0
+		\quad \quad \lt[\because k = \sqrt{\frac{2mE}{\hbar^2}} \rt]
+	$$
+	For which the general solution is:
+	\begin{equation*}
+		u_E(x) = A e^{ikx} + B e^{-ikx}.
+	\end{equation*}
+	For a free particle, the potential is constant (or zero), so the system is invariant under translations. This implies that the energy eigenfunctions must also be translationally invariant. Thus, we choose plane waves as the eigenfunctions:
+	$$
+		u_E(x) = \frac{1}{\sqrt{2\pi}} e^{ikx}\quad \text{ ,where $k = \sqrt{\frac{2mE}{\hbar^2}}$}
+	$$
+	Since $k = \sqrt{\dfrac{2mE}{\hbar^2}}$, the energy eigenvalues are:
+	\begin{equation*}
+		E = \frac{\hbar^2 k^2}{2m}.
+	\end{equation*}
+	Note that $E \geq 0$ because the kinetic energy of a free particle cannot be negative.
+
+	\vspace{1em}
+	}
+
+	\wa
+	\sss{(g)}{
+	The time-dependent wavefunction can be expressed as a superposition of momentum eigenfunctions:
+	\begin{align*}
+		\psi(x, t) &= \qmi \phi(p, 0) u_p(x) \e{-\frac{iEt}{\hbar}} \dd{p}\\
+		&= \qmi \phi(p, 0) \frac{1}{\sqrt{2\pi\hbar}} \e{\frac{ipx}{\hbar}} \e{-\frac{ip^2t}{2m\hbar}} \dd{p} \quad \quad \lt[\because \text{$u_p(x) = \frac{1}{\sqrt{2\pi\hbar}} \e{\frac{ipx}{\hbar}}$ and $E = \frac{p^2}{2m}$}\rt]\\
+		&= \qmi \lt(\lt(\frac{2}{\pi}\rt)^{1/4} \sqrt{\frac{\sigma_0}{\hbar}} \e{\frac{ix_0}{\hbar}(p_0 - p)} \e{-\frac{\sigma_0^2}{\hbar^2} (p_0 - p)^2 }\rt) \frac{1}{\sqrt{2\pi\hbar}} \e{\frac{ipx}{\hbar}} \e{-\frac{ip^2 t}{2m\hbar}} \dd p \\
+		&= \sqrt{\frac{\sigma_0}{\sqrt{2}\pi^{3/2}\hbar^2}}\qmi \e{\frac{ix_0}{\hbar}(p_0 - p)-\frac{\sigma_0^2}{\hbar^2} (p_0 - p)^2 + \frac{ipx}{\hbar} -\frac{ip^2 t}{2m\hbar}}\dd p \\
+	\end{align*}
+	Here,
+	\begin{align*}
+		&\quad \frac{ix_0}{\hbar}(p_0 - p)-\frac{\sigma_0^2}{\hbar^2} (p_0 - p)^2 + \frac{ipx}{\hbar} -\frac{ip^2 t}{2m\hbar}\\
+		&= -p^2\qty(\frac{\sigma_0^2}{\hbar^2} + \frac{it}{2m\hbar}) +p\qty(\frac{2\sigma_0^2p_0}{\hbar^2} + \frac{i(x-x_0)}{\hbar}) -\qty(\frac{p_0^2\sigma_0^2}{\hbar^2} - \frac{ix_0p_0}{\hbar})\\
+		&= -Ap^2 +Bp-C\\
+		&= -A\lt[p-\frac{B}{2A}\rt]^2 +\frac{B^2}{4A} -C
+	\end{align*}
+	$$\text{where, } A=\qty(\frac{\sigma_0^2}{\hbar^2} + \frac{it}{2m\hbar}) \qc B=\qty(\frac{2\sigma_0^2p_0}{\hbar^2} + \frac{i(x-x_0)}{\hbar}) \qc C=\qty(\frac{p_0^2\sigma_0^2}{\hbar^2} - \frac{ix_0p_0}{\hbar})$$
+	Consequently,
+	\begin{align*}
+		\psi(x, t) &=\sqrt{\frac{\sigma_0}{\sqrt{2}\pi^{3/2}\hbar^2}} \qmi \e{-A\lt[p-\frac{B}{2A}\rt]^2 +\frac{B^2}{4A} -C}\dd p\\
+		&=\sqrt{\frac{\sigma_0}{\sqrt{2}\pi^{3/2}\hbar^2}}
+		\e{\frac{B^2}{4A} -C} \qmi \e{-A\lt[p-\frac{B}{2A}\rt]^2}\dd p\\
+		&=\sqrt{\frac{\sigma_0}{\sqrt{2}\pi^{3/2}\hbar^2}}
+		\e{\frac{B^2}{4A} -C}\sqrt{\frac{\pi}{A}} && \lt[\because \qmi \e{-a y^2} \dd{y} = \sqrt{\frac{\pi}{a}}\rt]\\
+		&=\sqrt{\frac{\sigma_0}{\sqrt{2}\pi^{1/2}\hbar^2A}}
+		\e{\frac{B^2}{4A} -C}\\
+		&=\sqrt{\frac{\sigma_0}{\sqrt{2\pi}\hbar^2\qty(\frac{\sigma_0^2}{\hbar^2} + \frac{it}{2m\hbar})}}\e{\frac{B^2}{4A} -C}\\
+		&=\frac{1}{\sqrt{\sqrt{2\pi}\sigma_0\qty(1 + \frac{i\hbar t}{2m\sigma_0^2})}}\e{\frac{B^2}{4A} -C} \tag{5} \label{05}\\
+	\end{align*}
+	Here,
+	\begin{align*}
+		\frac{B^2}{4A} -C &= \frac{\qty(\frac{2\sigma_0^2p_0}{\hbar^2} + \frac{i(x-x_0)}{\hbar})^2}{4\qty(\frac{\sigma_0^2}{\hbar^2} + \frac{it}{2m\hbar})} -\qty(\frac{p_0^2\sigma_0^2}{\hbar^2} - \frac{ix_0p_0}{\hbar})\\
+		&=\frac{\hbar^2\qty(\frac{2\sigma_0^2p_0}{\hbar^2} + \frac{i(x-x_0)}{\hbar})^2}{4\sigma_0^2\qty(1 + \frac{i\hbar t}{2m\sigma_0^2})} -\frac{p_0^2\sigma_0^2}{\hbar^2}+ \frac{ix_0p_0}{\hbar}\\
+		&=\frac{\qty(\frac{4\sigma_0^4p_0^2}{\hbar^2} -(x-x_0)^2+\frac{i}{\hbar}4\sigma_0^2p_0(x-x_0))}{4\sigma_0^2\qty(1 + \frac{i\hbar t}{2m\sigma_0^2})} -\frac{p^2\sigma_0^2}{\hbar^2}+ \frac{ix_0p_0}{\hbar}\\
+		&=\frac{\qty(\frac{4\sigma_0^4p_0^2}{\hbar^2})}{4\sigma_0^2\qty(1 + \frac{i\hbar t}{2m\sigma_0^2})} + \frac{\qty(-(x-x_0-\frac{p_0}{m}t)^2)+\frac{p_0^2}{m^2}t^2 -\frac{2p_0(x-x_0)}{m}t}{4\sigma_0^2\qty(1 + \frac{i\hbar t}{2m\sigma_0^2})} + \frac{\qty(\frac{i}{\hbar}4\sigma_0^2p_0(x-x_0))}{4\sigma_0^2\qty(1 + \frac{i\hbar t}{2m\sigma_0^2})} -\frac{p_0^2\sigma_0^2}{\hbar^2}+ \frac{ix_0p_0}{\hbar}\\
+		&= \frac{\sigma_0^2 p_0^2}{\hbar^2 \qty(1 + \frac{i \hbar t}{2 m \sigma_0^2})} - \frac{p_0^2 \sigma_0^2}{\hbar^2} - \frac{(x - x_0 - \frac{p_0}{m} t)^2}{4 \sigma_0^2 \qty(1 + \frac{i \hbar t}{2 m \sigma_0^2})} + \frac{\frac{p_0^2}{m^2} t^2 - \frac{2 p_0 (x - x_0)}{m} t}{4 \sigma_0^2 \qty(1 + \frac{i \hbar t}{2 m \sigma_0^2})} + \frac{i p_0 (x - x_0)}{\hbar \qty(1 + \frac{i \hbar t}{2 m \sigma_0^2})} + \frac{i x_0 p_0}{\hbar} \\
+		&= - \frac{p_0^2 \sigma_0^2}{\hbar^2}\qty(1 - \frac{1}{1 + \frac{i \hbar t}{2 m \sigma_0^2}}) - \frac{(x - x_0 - \frac{p_0}{m} t)^2}{4 \sigma_0^2 \qty(1 + \frac{i \hbar t}{2 m \sigma_0^2})} + \frac{p_0^2 t^2 - 2 p_0 (x - x_0)m t}{4 \sigma_0^2m^2 \qty(1 + \frac{i \hbar t}{2 m \sigma_0^2})} + \frac{i p_0 x}{\hbar \qty(1 + \frac{i \hbar t}{2 m \sigma_0^2})} + \frac{i x_0 p_0}{\hbar} \qty(1 - \frac{1}{1 + \frac{i \hbar t}{2 m \sigma_0^2}}) \\
+		&= \frac{-i p_0^2t}{2 m \hbar \qty(1 + \frac{i \hbar t}{2 m \sigma_0^2})} - \frac{(x - x_0 - \frac{p_0}{m} t)^2}{4 \sigma_0^2 \qty(1 + \frac{i \hbar t}{2 m \sigma_0^2})} + \frac{p_0^2 t^2 - 2 p_0 (x - x_0)m t}{4 \sigma_0^2m^2 \qty(1 + \frac{i \hbar t}{2 m \sigma_0^2})} + \frac{i p_0 x}{\hbar \qty(1 + \frac{i \hbar t}{2 m \sigma_0^2})} - \frac{x_0 p_0 t}{2 m \sigma_0^2 \qty(1 + \frac{i \hbar t}{2 m \sigma_0^2})} \\
+		&= - \frac{(x - x_0 - \frac{p_0}{m} t)^2}{4 \sigma_0^2 \qty(1 + \frac{i \hbar t}{2 m \sigma_0^2})} +\frac{-i p_0^2t}{2 m \hbar \qty(1 + \frac{i \hbar t}{2 m \sigma_0^2})} + \frac{p_0^2 t^2 - 2 p_0 x m t}{4 \sigma_0^2m^2 \qty(1 + \frac{i \hbar t}{2 m \sigma_0^2})} + \frac{i p_0 x}{\hbar \qty(1 + \frac{i \hbar t}{2 m \sigma_0^2})} \\
+		&= - \frac{(x - x_0 - \frac{p_0}{m} t)^2}{4 \sigma_0^2 \qty(1 + \frac{i \hbar t}{2 m \sigma_0^2})} +\frac{-i p_0^2t}{2 m \hbar \qty(1 + \frac{i \hbar t}{2 m \sigma_0^2})} + \frac{p_0^2 t^2 - 2 p_0 x m t}{4 \sigma_0^2m^2 \qty(1 + \frac{i \hbar t}{2 m \sigma_0^2})} + \frac{i p_0 x}{\hbar \qty(1 + \frac{i \hbar t}{2 m \sigma_0^2})} + \frac{i}{\hbar}\qty(p_0x-\frac{p_0^2}{2m}t) - \frac{i}{\hbar}\qty(p_0x-\frac{p_0^2}{2m}t)\\
+		&=- \frac{(x-x_0-\frac{p_0}{m}t)^2}{4\sigma_0^2\qty(1 + \frac{i\hbar t}{2m\sigma_0^2})}+ \frac{i}{\hbar}\qty(p_0x-\frac{p_0^2}{2m}t) +  \frac{p_0^2 t^2 - 2 p_0 x m t}{4 \sigma_0^2m^2 \qty(1 + \frac{i \hbar t}{2 m \sigma_0^2})}- \frac{i}{\hbar}\qty(p_0x-\frac{p_0^2}{2m}t)\qty(1 - \frac{1}{1 + \frac{i \hbar t}{2 m \sigma_0^2}})\\
+		&=- \frac{(x-x_0-\frac{p_0}{m}t)^2}{4\sigma_0^2\qty(1 + \frac{i\hbar t}{2m\sigma_0^2})}+ \frac{i}{\hbar}\qty(p_0x-\frac{p_0^2}{2m}t) +  \frac{p_0^2 t^2 - 2 p_0 x m t}{4 \sigma_0^2m^2 \qty(1 + \frac{i \hbar t}{2 m \sigma_0^2})}- \frac{p_0^2 t^2 - 2 p_0 x m t}{4 \sigma_0^2m^2 \qty(1 + \frac{i \hbar t}{2 m \sigma_0^2})}\\
+		&=- \frac{(x-x_0-\frac{p_0}{m}t)^2}{4\sigma_0^2\qty(1 + \frac{i\hbar t}{2m\sigma_0^2})}+ \frac{i}{\hbar}\qty(p_0x-\frac{p_0^2}{2m}t) \tag{6} \label{06}\\
+	\end{align*}
+	Using \eqref{05} and \eqref{06},
+	$$\boxed{\psi(x, t)=\frac{1}{\sqrt{\sqrt{2\pi}\sigma_0\qty(1 + \dfrac{i\hbar t}{2m\sigma_0^2})}}\e{\dfrac{i}{\hbar}\qty(p_0x-\dfrac{p_0^2}{2m}t)}\e{- \dfrac{\qty(x-x_0-\dfrac{p_0}{m}t)^2}{4\sigma_0^2\qty(1 + \dfrac{i\hbar t}{2m\sigma_0^2})}}}$$
+	\vspace{1em}
+	}
+
+	\wa
+	\sss{(h)}{
+	We have,
+	$$
+	\begin{cases}
+		\psi(x, t)&=\frac{1}{\sqrt{\sqrt{2\pi}\sigma_0\qty(1 + \dfrac{i\hbar t}{2m\sigma_0^2})}}\e{\dfrac{i}{\hbar}\qty(p_0x-\dfrac{p_0^2}{2m}t)}\e{- \dfrac{\qty(x-x_0-\dfrac{p_0}{m}t)^2}{4\sigma_0^2\qty(1 + \dfrac{i\hbar t}{2m\sigma_0^2})}}\\
+		\psi^{*}(x, t)&=\frac{1}{\sqrt{\sqrt{2\pi}\sigma_0\qty(1 - \dfrac{i\hbar t}{2m\sigma_0^2})}}\e{-\dfrac{i}{\hbar}\qty(p_0x-\dfrac{p_0^2}{2m}t)}\e{- \dfrac{\qty(x-x_0-\dfrac{p_0}{m}t)^2}{4\sigma_0^2\qty(1 - \dfrac{i\hbar t}{2m\sigma_0^2})}}\\
+	\end{cases}
+	$$
+	$$\imps \rho(x,t)=|\psi(x,t)|^2= \frac{1}{\sqrt{2\pi\sigma_0^2\qty(1 + \qty(\dfrac{\hbar t}{2m\sigma_0^2})^2)}}\e{-\dfrac{\qty(x-x_0-\dfrac{p_0}{m}t)^2}{2\sigma_0^2\qty(1 + \qty(\dfrac{\hbar t}{2m\sigma_0^2})^2)}}$$
+	\paragraph{i.}
+	\begin{align*}
+		\ev{x}_t&=\qmi\psi^{*}(x,t)[x]\psi(x,t)\cdot \dd x\\
+		&=\qmi x |\psi(x,t)|^2 \cdot\dd x\\
+		&=\frac{1}{\sqrt{\pi}}\qmi\pqty{\frac{x-x_0-\dfrac{p_0}{m}t+x_0+\dfrac{p_0}{m}t}{\sqrt{2\sigma_0^2\qty(1 + \qty(\dfrac{\hbar t}{2m\sigma_0^2})^2)}}}\e{-\dfrac{\qty(x-x_0-\dfrac{p_0}{m}t)^2}{2\sigma_0^2\qty(1 + \qty(\dfrac{\hbar t}{2m\sigma_0^2})^2)}}\cdot \dd x\\ \\
+		&\quad \quad \bqty{\because y=\frac{x-x_0-\dfrac{p_0}{m}t}{\sqrt{2\sigma_0^2\qty(1 + \qty(\dfrac{\hbar t}{2m\sigma_0^2})^2)}}\Rightarrow \dd y=\frac{\dd x}{\sqrt{2\sigma_0^2\qty(1 + \qty(\dfrac{\hbar t}{2m\sigma_0^2})^2)}}}\\ \\
+		&=\frac{1}{\sqrt{\pi}}\bqty{\qmi y\exp\pqty{-y^{2}}\cdot{\sqrt{2\sigma_0^2\qty(1 + \qty(\dfrac{\hbar t}{2m\sigma_0^2})^2)}}\dd y + \frac{x_0+\dfrac{p_0}{m}t}{\sqrt{2\sigma_0^2\qty(1 + \qty(\dfrac{\hbar t}{2m\sigma_0^2})^2)}}\qmi\exp\pqty{-y^{2}}\cdot{\sqrt{2\sigma_0^2\qty(1 + \qty(\dfrac{\hbar t}{2m\sigma_0^2})^2)}}\dd y}\\
+		&=\frac{\sqrt{2\sigma_0^2\qty(1 + \qty(\dfrac{\hbar t}{2m\sigma_0^2})^2)}}{\sqrt{\pi}}\bqty{0 + \frac{x_0+\dfrac{p_0}{m}t}{\sqrt{2\sigma_0^2\qty(1 + \qty(\dfrac{\hbar t}{2m\sigma_0^2})^2)}}\sqrt{\pi}} \quad \quad \bqty{\because y\exp(-y^2) \text{is an odd function and} \atop \qmi\exp\pqty{-y^{2}}\cdot \dd y =\sqrt{\pi}} \\
+		&\\
+		\imps & \boxed{\ev{x}_t = x_0 + \frac{p_0}{m} t}
+	\end{align*}
+
+	\paragraph{ii.}
+	We have,
+	\begin{align*}
+		\ev{x^2}_0&=\qmi\psi^{*}(x,t)[x]^2\psi(x,t)\cdot \dd x\\
+		&=\qmi\qty[\qty(x-x_0-\dfrac{p_0}{m}t)^2 + 2x\qty(x_0+\dfrac{p_0}{m}t) -\qty(x_0+\dfrac{p_0}{m}t)^2] |\psi(x,t)|^2 \cdot\dd x\\
+		&=\qty[\qmi\qty(x-x_0-\dfrac{p_0}{m}t)^2|\psi(x,t)|^2\dd x]+\qty[2\qty(x_0+\dfrac{p_0}{m}t)\qmi[x]|\psi(x,t)|^2\dd x]-\qty[\qty(x_0+\dfrac{p_0}{m}t)^2\qmi|\psi(x,0)|^2\dd x]\\
+		&=\qty[\frac{1}{\sqrt{2\pi\sigma_0^2\qty(1 + \qty(\dfrac{\hbar t}{2m\sigma_0^2})^2)}}\qmi\qty(x-x_0-\dfrac{p_0}{m}t)^2\e{- \dfrac{\qty(x-x_0-\dfrac{p_0}{m}t)^2}{2\sigma_0^2\qty(1 + \dfrac{i\hbar t}{2m\sigma_0^2})}}\dd x]+2\qty(x_0+\dfrac{p_0}{m}t)\ev{x}_t-\qty(x_0+\dfrac{p_0}{m}t)^2\\ \\
+		&\quad \quad \bqty{\because y=\frac{x-x_0-\dfrac{p_0}{m}t}{\sqrt{2\sigma_0^2\qty(1 + \qty(\dfrac{\hbar t}{2m\sigma_0^2})^2)}}\Rightarrow \dd y=\frac{\dd x}{\sqrt{2\sigma_0^2\qty(1 + \qty(\dfrac{\hbar t}{2m\sigma_0^2})^2)}}}\\ \\
+		&=\qty[\frac{1}{\sqrt{2\pi\sigma_0^2\qty(1 + \qty(\dfrac{\hbar t}{2m\sigma_0^2})^2)}}\qmi\qty(y{\sqrt{2\sigma_0^2\qty(1 + \qty(\dfrac{\hbar t}{2m\sigma_0^2})^2)}})^2\exp\pqty{-y^{2}}\cdot{\sqrt{2\sigma_0^2\qty(1 + \qty(\dfrac{\hbar t}{2m\sigma_0^2})^2)}}\dd y]+\qty(x_0+\dfrac{p_0}{m}t)^2\\
+		&=\frac{2\sigma_0^2\qty(1 + \qty(\dfrac{\hbar t}{2m\sigma_0^2})^2)}{\sqrt{\pi}}\bqty{\qmi   y^2\exp\pqty{-y^{2}}\cdot\dd y}+\qty(x_0+\dfrac{p_0}{m}t)^2 \tag{7} \label{07}\\
+	\end{align*}
+	Here, with $a > 0$,
+	\[\qmi \exp(-a x^2) \dd{x} = \frac{1}{\sqrt{a}} \qmi \exp(-a x^2) \dd{(\sqrt{a} x)} = \sqrt{\frac{\pi}{a}}\]
+	It follows that
+	\[\qmi x^2 \exp(-a x^2) \dd{x} = -\pdv{}{a} \qmi \exp(-a x^2) \dd{x} = \frac{1}{2} \sqrt{\frac{\pi}{a^3}}\]
+	Using this is \eqref{07},
+	\begin{align*}
+		\ev{x^2}_0&=\frac{2\sigma_0^2\qty(1 + \qty(\dfrac{\hbar t}{2m\sigma_0^2})^2)}{\sqrt{\pi}}\bqty{\frac{\sqrt{\pi}}{2}}+x_0^2\\
+		\ev{x^2}_0-x_0^2&=\sigma_{0}^2\qty(1 + \qty(\dfrac{\hbar t}{2m\sigma_0^2})^2)\\
+		\sqrt{\ev{x^2}_0-\ev{x}^2}&=\sigma_{0}\sqrt{1 + \qty(\dfrac{\hbar t}{2m\sigma_0^2})^2} \imps \boxed{\Delta x(t)=\sigma_0 \sqrt{1 + \lt(\frac{\hbar t}{2m\sigma_0^2}\rt)^2}}\\
+	\end{align*}
+	\paragraph{Verifying the expression for the expectation value of velocity,}
+	$$\dv{t} \ev{x}_t = \dv{t} \qty(x_0 + \frac{p_0}{m} t) = \frac{p_0}{m} = \frac{1}{m} \ev{p}_t \imps \boxed{\dv{t} \ev{x}_t = \frac{1}{m} \ev{p}_t}$$
+	}
+
+	\wa
+	\sss{(i)}{
+	We have,
+	\begin{align*}
+		\hat{H} \phi_p(t) &= i\hbar \pdv{t} \phi_p(t) \imps
+		\frac{p^2}{2m} \phi_p(t) = i\hbar \pdv{t} \phi_p(t) \imps
+		\pdv{t} \phi_p(t) = \frac{-i}{\hbar} \frac{p^2}{2m} \phi_p(t) \\ \\
+		&\imps
+		\boxed{\phi_p(t) = \phi_p(0) \e{- \frac{i p^2 t}{2m\hbar}}} \\
+	\end{align*}
+	Note that $ \abs{\phi_p(t)}^2 = \abs{\phi_p(0)}^2 $, which implies that $ \abs{\phi_p(t)}^2 $ does not depent on time $t$.\\
+	Hence,
+	\begin{align*}
+		\ev{p}_t &= \int_{-\infty}^{\infty} \phi_p^*(t) p \phi_p(t) \dd{p} = \qmi p \abs{\phi_p(t)}^2 \dd{p} = \qmi p \abs{\phi_p(0)}^2 \dd{p} = \ev{p}_0 = p_0
+	\end{align*}
+	Therefore, the independence of $ \abs{\phi_p(t)}^2 $ with respect to time $t$ implies that the expectation value of momemtum $\ev{p}_t$ is conserved for the particle.\\
+	}
+	\wa
+	}
+\end{document}
