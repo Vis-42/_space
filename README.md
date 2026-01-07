@@ -34,9 +34,42 @@ _space/
 
 ### Prerequisites
 
-- **Python 3.12+** with [uv](https://github.com/astral-sh/uv) installed
+- **Python 3.12+** managed via [pyenv](https://github.com/pyenv/pyenv)
+- **[uv](https://github.com/astral-sh/uv)** for Python dependency management
 - **Typst** for document compilation
 - **Git** with SSH configured
+
+### System Configuration
+
+**macOS Setup (Homebrew + pyenv):**
+```bash
+# Python version management
+brew install pyenv
+
+# Add to ~/.zshrc (already configured):
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# Install required Python versions
+pyenv install 3.13.11  # For 1010S, manim
+pyenv install 3.14.2   # For py, ms/at
+
+# Verify installation
+pyenv versions
+```
+
+**Project-specific Python versions:**
+- `1010S/`: Python 3.13.11 (`.python-version` managed by pyenv)
+- `py/`: Python 3.14.2
+- `py/manim/`: Python 3.13.11
+- `ms/at/`: Python 3.14.2
+
+**Tool versions on this system:**
+- Shell: zsh 5.9
+- Python: pyenv-managed (3.13.11, 3.14.2)
+- Package manager: uv (installed via pipx)
+- Homebrew: `/opt/homebrew` (Apple Silicon)
 
 ### Setup
 

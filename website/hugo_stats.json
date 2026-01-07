@@ -1,0 +1,54 @@
+{
+  "htmlElements": {
+    "tags": [
+      "a",
+      "body",
+      "button",
+      "div",
+      "footer",
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "head",
+      "header",
+      "html",
+      "li",
+      "link",
+      "main",
+      "meta",
+      "nav",
+      "p",
+      "script",
+      "section",
+      "span",
+      "strong",
+      "style",
+      "title",
+      "ul"
+    ],
+    "classes": [
+      "bio",
+      "contact",
+      "coursework-subsection",
+      "experience-item",
+      "hero",
+      "logo",
+      "menu-toggle",
+      "meta",
+      "nav-links",
+      "notes-list",
+      "project-card",
+      "projects-grid",
+      "subtitle",
+      "theme-icon",
+      "theme-text",
+      "theme-toggle"
+    ],
+    "ids": [
+      "about",
+      "coursework",
+      "experience"
+    ]
+  }
+}

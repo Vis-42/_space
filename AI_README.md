@@ -6,10 +6,13 @@
 
 ## System Environment
 
-- **OS:** macOS (darwin 25.1.0)
-- **Python:** 3.14.0
+- **OS:** macOS (darwin 25.1.0, Apple Silicon)
+- **Python:** Managed via pyenv 2.6.16
+  - Installed versions: 3.13.11, 3.14.2
+  - System fallback: 3.14.0 (Homebrew)
 - **RAM:** 18 GB
-- **Shell:** zsh
+- **Shell:** zsh 5.9
+- **Package Manager:** Homebrew (`/opt/homebrew`)
 - **Workspace Path:** `/Users/parthbhargava/_space`
 
 ---
@@ -38,46 +41,109 @@ _space/
 
 ## Python Environment Management
 
-### Tool: `uv`
+### Version Management: `pyenv`
 
-All Python projects use [uv](https://github.com/astral-sh/uv) for dependency management. Virtual environments are automatically created in `.venv/` directories and are git-ignored.
+**Status:** ✅ Installed and configured  
+**Version:** pyenv 2.6.16  
+**Location:** `~/.pyenv`
+
+**Shell initialization (in `~/.zshrc`):**
+```bash
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+```
+
+**Installed Python versions:**
+- 3.13.11 (for 1010S, py/manim)
+- 3.14.2 (for py, ms/at)
+- system (Homebrew Python 3.14.0 - fallback)
+
+**How it works:**
+Each project directory contains a `.python-version` file. When you `cd` into a project, pyenv automatically switches to the specified Python version.
+
+```bash
+cd /Users/parthbhargava/_space/py
+python --version  # Automatically uses 3.14.2
+
+cd /Users/parthbhargava/_space/py/manim
+python --version  # Automatically switches to 3.13.11
+```
+
+### Package Management: `uv`
+
+**Status:** ✅ Installed via pipx  
+**Location:** `~/.local/bin/uv`
+
+Most Python projects use [uv](https://github.com/astral-sh/uv) for dependency management. Virtual environments are automatically created in `.venv/` directories and are git-ignored.
+
+**Exception:** `ms/at/` uses traditional `venv` + `pip` (legacy workflow)
 
 ### Projects with `pyproject.toml`
 
-1. **`py/pyproject.toml`**
-   - Python: `>=3.12`
+| Project | Path | Python Version | pyenv-managed | Package Manager |
+|---------|------|----------------|---------------|------------------|
+| py | `py/` | 3.14.2 (>= 3.12) | `.python-version` | uv |
+| 1010S | `1010S/` | 3.13.11 (>= 3.13) | `.python-version` | uv |
+| manim | `py/manim/` | 3.13.11 (>= 3.13) | `.python-version` | uv |
+| ms/at | `ms/at/` | 3.14.2 (>= 3.12) | `.python-version` | venv + pip |
+
+**Details:**
+
+1. **`py/pyproject.toml`** (Python 3.14.2)
    - Dependencies: `matplotlib`, `pillow`, `scipy`, `pandas`, `openpyxl`
    - Description: Main Python workspace for data analysis, simulations, and visualizations
 
-2. **`1010S/pyproject.toml`**
-   - Python: `>=3.13`
+2. **`1010S/pyproject.toml`** (Python 3.13.11)
    - Dependencies: `cocos2d`, `pillow`, `seaborn`
    - Description: CS1010S Programming Methodology assignments
 
-3. **`py/manim/pyproject.toml`**
-   - Python: `>=3.13`
+3. **`py/manim/pyproject.toml`** (Python 3.13.11)
    - Dependencies: `manim`
    - Description: Manim animation projects
+   - Note: Uses older Python than parent `py/` for library compatibility
 
-4. **`ms/at/pyproject.toml`**
-   - Python: `>=3.12`
+4. **`ms/at/pyproject.toml`** (Python 3.14.2)
    - Dependencies: `numpy`, `matplotlib`, `scipy`
    - Description: Physics experiment analysis scripts
+   - Uses traditional `venv_physics/` instead of uv
 
 ### Working with Python Projects
 
+**For uv-managed projects (py, 1010S, py/manim):**
 ```bash
 # Navigate to project
-cd py/  # or 1010S/, py/manim/, ms/at/
+cd /Users/parthbhargava/_space/py  # or 1010S/, py/manim/
+
+# pyenv automatically switches Python version based on .python-version
+python --version  # Verify correct version
 
 # Sync dependencies (creates .venv automatically)
 uv sync
 
 # Run scripts
-uv run python script.py
+python script.py  # or: uv run python script.py
 
 # Add dependency
 uv add package-name
+```
+
+**For venv-managed projects (ms/at):**
+```bash
+# Navigate to project
+cd /Users/parthbhargava/_space/ms/at
+
+# pyenv automatically switches to 3.14.2
+python --version  # Verify 3.14.2
+
+# Activate virtual environment
+source venv_physics/bin/activate
+
+# Run scripts
+python hall_effect/scripts/hall_effect_analysis.py
+
+# Deactivate when done
+deactivate
 ```
 
 ### Python File Conventions

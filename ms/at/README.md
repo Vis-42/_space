@@ -56,6 +56,57 @@ at/
 
 ---
 
+---
+
+## 🛠️ System Setup
+
+**Python Version:** 3.14.2 (managed via pyenv)  
+**Package Manager:** pip (via venv)  
+**Shell:** zsh 5.9 on macOS  
+**Document Compiler:** Typst
+
+### Quick Start for AI Agents
+
+```bash
+# Python version is auto-selected via .python-version
+cd /Users/parthbhargava/_space/ms/at
+
+# Verify Python version
+python --version  # Should show 3.14.2
+
+# Activate virtual environment
+source venv_physics/bin/activate
+
+# Run analysis scripts
+python hall_effect/scripts/hall_effect_analysis.py
+python xrd/scripts/xrd_final_corrected.py
+python magnetic_moment/scripts/mm_analysis.py
+
+# Compile Typst reports
+typst compile --root . hall_effect/he.typ hall_effect/he.pdf
+typst compile --root . xrd/xrd.typ xrd/xrd.pdf
+typst compile --root . magnetic_moment/mm.typ magnetic_moment/mm.pdf
+```
+
+### Python Environment
+
+**Using pyenv + venv hybrid:**
+- Base Python: 3.14.2 (managed by pyenv via `.python-version`)
+- Virtual environment: `venv_physics/` (traditional venv, not uv)
+- Dependencies: numpy, matplotlib, scipy
+
+**Recreate environment if needed:**
+```bash
+cd /Users/parthbhargava/_space/ms/at
+python -m venv venv_physics
+source venv_physics/bin/activate
+pip install numpy matplotlib scipy
+```
+
+**Note:** This project uses traditional `venv` instead of `uv` (unlike other `_space` projects)
+
+---
+
 ## 🧪 Experiments
 
 ### 1. Hall Effect in Semiconductors (Experiment D)

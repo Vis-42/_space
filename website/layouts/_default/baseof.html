@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>{{ if .IsHome }}Parth Bhargava{{ else }}{{ .Title }} | Parth Bhargava{{ end }}</title>
+  <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <meta name="author" content="{{ .Site.Params.profile.name }}">
+  <meta name="keywords" content="physics, academic, research, experimental physics, data analysis, NUS">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ .Site.BaseURL }}">
+  <meta property="og:title" content="{{ .Site.Title }}">
+  <meta property="og:description" content="{{ .Site.Params.description }}">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:title" content="{{ .Site.Title }}">
+  <meta property="twitter:description" content="{{ .Site.Params.description }}">
+  
+  <!-- Professional Typography: Serif for headings, Sans-serif for body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ============================================
+       PROFESSIONAL ACADEMIC DESIGN SYSTEM
+       Light & Dark Mode Support
+       ============================================ */
+    
+    :root {
+      /* Light Mode Colors */
+      --color-text-primary: #1a1a1a;
+      --color-text-secondary: #4a4a4a;
+      --color-text-muted: #6b6b6b;
+      --color-accent: #2563eb;
+      --color-accent-hover: #1d4ed8;
+      --color-bg-primary: #ffffff;
+      --color-bg-secondary: #fafafa;
+      --color-border: #e5e5e5;
+      --color-border-light: #f0f0f0;
+      --header-bg: rgba(255, 255, 255, 0.98);
+    }
+    
+    [data-theme="dark"] {
+      /* Dark Mode Colors */
+      --color-text-primary: #e5e5e5;
+      --color-text-secondary: #b0b0b0;
+      --color-text-muted: #888888;
+      --color-accent: #60a5fa;
+      --color-accent-hover: #3b82f6;
+      --color-bg-primary: #0f0f0f;
+      --color-bg-secondary: #1a1a1a;
+      --color-border: #2a2a2a;
+      --color-border-light: #252525;
+      --header-bg: rgba(15, 15, 15, 0.98);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-weight: 400;
+      color: var(--color-text-primary);
+      line-height: 1.75;
+      background-color: var(--color-bg-primary);
+      letter-spacing: -0.01em;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    /* ============================================
+       TYPOGRAPHY - Academic Standards
+       ============================================ */
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Crimson Text', Georgia, serif;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      line-height: 1.3;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+    }
+    
+    h2 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-top: 3rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+    
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    
+    h4 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    p {
+      margin-bottom: 1.25rem;
+      color: var(--color-text-secondary);
+    }
+    
+    a {
+      color: var(--color-accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+    
+    a:hover {
+      border-bottom-color: var(--color-accent);
+    }
+    
+    a:focus {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+    
+    /* ============================================
+       HEADER - Minimal and Professional
+       ============================================ */
+    
+    header {
+      background: var(--header-bg);
+      border-bottom: 1px solid var(--color-border);
+      padding: 1.5rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+    
+    nav {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-family: 'Crimson Text', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+      transition: color 0.3s ease;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    
+    .nav-links a {
+      font-size: 0.95rem;
+      color: var(--color-text-secondary);
+      font-weight: 400;
+      text-transform: lowercase;
+      letter-spacing: 0.02em;
+      transition: color 0.2s ease;
+    }
+    
+    .nav-links a:hover {
+      color: var(--color-text-primary);
+      border-bottom: none;
+    }
+    
+    /* Dark Mode Toggle */
+    .theme-toggle {
+      background: none;
+      border: 1px solid var(--color-border);
+      color: var(--color-text-secondary);
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .theme-toggle:hover {
+      color: var(--color-text-primary);
+      border-color: var(--color-accent);
+      background: var(--color-bg-secondary);
+    }
+    
+    .theme-toggle:focus {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+    
+    /* Mobile Menu Toggle */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--color-border);
+      color: var(--color-text-secondary);
+      padding: 0.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: all 0.2s ease;
+    }
+    
+    .menu-toggle:hover {
+      color: var(--color-text-primary);
+      border-color: var(--color-accent);
+    }
+    
+    /* ============================================
+       MAIN CONTENT - Academic Layout
+       ============================================ */
+    
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+    
+    /* ============================================
+       HERO SECTION - Clean and Professional
+       ============================================ */
+    
+    .hero {
+      text-align: left;
+      padding: 0;
+      margin-bottom: 4rem;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 3rem;
+    }
+    
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 400;
+      color: var(--color-text-primary);
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+    
+    .hero .subtitle {
+      font-size: 1.125rem;
+      color: var(--color-text-secondary);
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+    
+    .hero .contact {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    
+    .hero .contact a {
+      font-size: 0.95rem;
+      color: var(--color-text-secondary);
+      font-weight: 400;
+    }
+    
+    .hero .contact a:hover {
+      color: var(--color-accent);
+    }
+    
+    /* ============================================
+       SECTIONS - Clean Spacing
+       ============================================ */
+    
+    section {
+      margin-bottom: 4rem;
+      scroll-margin-top: 100px;
+    }
+    
+    section:last-child {
+      margin-bottom: 0;
+    }
+    
+    /* ============================================
+       BIO SECTION - Professional Presentation
+       ============================================ */
+    
+    .bio {
+      background: transparent;
+      padding: 0;
+      margin-bottom: 2rem;
+    }
+    
+    .bio p {
+      font-size: 1.0625rem;
+      line-height: 1.8;
+      color: var(--color-text-secondary);
+      margin-bottom: 1.5rem;
+    }
+    
+    .bio ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 1rem;
+    }
+    
+    .bio ul li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      color: var(--color-text-secondary);
+      font-size: 1rem;
+    }
+    
+    .bio ul li:before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--color-text-muted);
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+    
+    /* ============================================
+       PROJECTS - Clean Grid Layout
+       ============================================ */
+    
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      margin-top: 2rem;
+    }
+    
+    .project-card {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--color-border-light);
+      padding: 0 0 2.5rem 0;
+      transition: none;
+    }
+    
+    .project-card:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    
+    .project-card h3,
+    .project-card h4 {
+      font-size: 1.375rem;
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+      color: var(--color-text-primary);
+    }
+    
+    .coursework-subsection {
+      margin-bottom: 3rem;
+    }
+    
+    .coursework-subsection:last-child {
+      margin-bottom: 0;
+    }
+    
+    .coursework-subsection h3 {
+      font-size: 1.375rem;
+      font-weight: 600;
+      margin-top: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--color-text-primary);
+      border-bottom: 1px solid var(--color-border-light);
+      padding-bottom: 0.5rem;
+    }
+    
+    .coming-soon {
+      color: var(--color-text-muted);
+      font-style: italic;
+      margin-top: 1rem;
+    }
+    
+    .notes-list {
+      margin-top: 1.5rem;
+    }
+    
+    .notes-list ul {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 0.75rem;
+    }
+    
+    .notes-list ul li {
+      margin: 0;
+      padding: 0;
+    }
+    
+    .notes-list ul li a {
+      display: block;
+      padding: 0.5rem 0.75rem;
+      color: var(--color-text-secondary);
+      border: 1px solid var(--color-border-light);
+      border-radius: 4px;
+      text-align: center;
+      transition: all 0.2s ease;
+      font-size: 0.9rem;
+    }
+    
+    .notes-list ul li a:hover {
+      color: var(--color-accent);
+      border-color: var(--color-accent);
+      background-color: var(--color-bg-secondary);
+    }
+    
+    .project-card p {
+      margin-bottom: 0.75rem;
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+    }
+    
+    .project-card strong {
+      font-weight: 500;
+      color: var(--color-text-primary);
+    }
+    
+    .project-card a {
+      font-size: 0.95rem;
+      color: var(--color-accent);
+      font-weight: 400;
+      margin-top: 0.5rem;
+      display: inline-block;
+    }
+    
+    /* PDF Link Styling */
+    .project-card a[href$=".pdf"] {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    /* ============================================
+       EXPERIENCE SECTION
+       ============================================ */
+    
+    .experience-item {
+      margin-bottom: 2.5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--color-border-light);
+    }
+    
+    .experience-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+    
+    .experience-item h3 {
+      font-size: 1.25rem;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+    }
+    
+    .experience-item .meta {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+    
+    .experience-item ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 1rem;
+    }
+    
+    .experience-item ul li {
+      padding: 0.4rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+    }
+    
+    .experience-item ul li:before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--color-text-muted);
+    }
+    
+    /* ============================================
+       FOOTER - Minimal
+       ============================================ */
+    
+    footer {
+      background: transparent;
+      border-top: 1px solid var(--color-border);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      color: var(--color-text-muted);
+      margin-top: 5rem;
+      font-size: 0.9rem;
+    }
+    
+    /* ============================================
+       RESPONSIVE DESIGN - Mobile First
+       ============================================ */
+    
+    @media (max-width: 768px) {
+      html {
+        font-size: 15px;
+      }
+      
+      nav {
+        padding: 0 1.5rem;
+      }
+      
+      .menu-toggle {
+        display: block;
+      }
+      
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--header-bg);
+        border-bottom: 1px solid var(--color-border);
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1rem;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+        backdrop-filter: blur(8px);
+      }
+      
+      .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+      
+      .nav-links li {
+        width: 100%;
+      }
+      
+      .nav-links a {
+        display: block;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid var(--color-border-light);
+      }
+      
+      .nav-links a:last-child {
+        border-bottom: none;
+      }
+      
+      .hero h1 {
+        font-size: 2.25rem;
+      }
+      
+      main {
+        padding: 3rem 1.5rem;
+      }
+      
+      h2 {
+        font-size: 1.5rem;
+      }
+      
+      .notes-list ul {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 0.5rem;
+      }
+      
+      .notes-list ul li a {
+        padding: 0.4rem 0.5rem;
+        font-size: 0.85rem;
+      }
+      
+      .theme-toggle {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      html {
+        font-size: 14px;
+      }
+      
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .notes-list ul {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    /* ============================================
+       PRINT STYLES
+       ============================================ */
+    
+    @media print {
+      header, footer, .theme-toggle, .menu-toggle {
+        display: none;
+      }
+      
+      main {
+        max-width: 100%;
+        padding: 0;
+      }
+      
+      a {
+        color: #000;
+        text-decoration: underline;
+      }
+    }
+    
+    /* ============================================
+       ACCESSIBILITY
+       ============================================ */
+    
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      
+      html {
+        scroll-behavior: auto;
+      }
+    }
+    
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+  </style>
+  
+  {{ block "head" . }}{{ end }}
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/" class="logo">{{ .Site.Title }}</a>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        ☰
+      </button>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#coursework">Coursework</a></li>
+        <li><a href="#experience">Experience</a></li>
+      </ul>
+      <button class="theme-toggle" aria-label="Toggle dark mode">
+        <span class="theme-icon">🌙</span>
+        <span class="theme-text">Dark</span>
+      </button>
+    </nav>
+  </header>
+  
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+  
+  <footer>
+    <p>&copy; {{ now.Year }} {{ .Site.Title }}</p>
+  </footer>
+  
+  <script>
+    // Dark Mode Toggle
+    (function() {
+      const themeToggle = document.querySelector('.theme-toggle');
+      const themeIcon = document.querySelector('.theme-icon');
+      const themeText = document.querySelector('.theme-text');
+      const html = document.documentElement;
+      
+      // Get saved theme or default to light
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      if (savedTheme === 'dark') {
+        html.setAttribute('data-theme', 'dark');
+        themeIcon.textContent = '☀️';
+        themeText.textContent = 'Light';
+      }
+      
+      themeToggle.addEventListener('click', function() {
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        
+        if (newTheme === 'dark') {
+          themeIcon.textContent = '☀️';
+          themeText.textContent = 'Light';
+        } else {
+          themeIcon.textContent = '🌙';
+          themeText.textContent = 'Dark';
+        }
+      });
+    })();
+    
+    // Mobile Menu Toggle
+    (function() {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      
+      menuToggle.addEventListener('click', function() {
+        const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', !isExpanded);
+        navLinks.classList.toggle('active');
+      });
+      
+      // Close menu when clicking a link
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+          navLinks.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+    
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+    
+    // Verify PDF links on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      const pdfLinks = document.querySelectorAll('a[href$=".pdf"]');
+      pdfLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          // Allow default behavior (opening PDF)
+          // Could add analytics here if needed
+        });
+      });
+    });
+  </script>
+</body>
+</html>

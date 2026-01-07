@@ -1,0 +1,15 @@
+baseURL = "https://vis-42.github.io/"
+languageCode = 'en-us'
+title = 'Parth Bhargava'
+theme = 'academic'
+
+[params]
+  # Site description
+  description = "Working archive of academic life and intellectual trajectory - Physics major interested in complex systems, nonlinear dynamics, chaos, networks, and emergence"
+  
+  # Author
+  [params.profile]
+    name = "Parth Bhargava"
+    email = "bhargava.parth07@gmail.com"
+    github = "Vis-42"
+

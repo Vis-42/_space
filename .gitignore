@@ -124,6 +124,6 @@ saved_plots/*.jpeg
 !README.pdf
 !LICENSE.pdf
 
-# Keep some important PDFs if needed (uncomment and modify as needed)
-# !ms/at/**/*.pdf
+# Allow PDFs in website directory for GitHub Pages
+!website/static/pdfs/**/*.pdf
 
