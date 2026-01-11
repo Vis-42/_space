@@ -55,14 +55,23 @@ https://github.com/Vis-42 | https://vis-42.github.io/ | linkedin.com/in/parth-bh
 
 #v(0.15em)
 
-// EXPERIMENTAL PHYSICS
-#section_header("EXPERIMENTAL PHYSICS")
+// COURSEWORK
+#section_header("COURSEWORK")
 
+*Experimental Physics:*
 - Measured carrier mobility and type in semiconductors via Hall effect; cross-validated results through magnetoresistance analysis (R² > 0.99); identified intrinsic transition temperature
 - Determined lattice constants via X-ray diffraction with sub-2% accuracy; applied structural fingerprinting to identify unknown crystal phases; validated Kramers theory for bremsstrahlung cutoff
 - Calibrated Helmholtz field configuration; validated five independent scaling laws (R² > 0.997); quantified uncertainty in field constant to 3.3% through cross-method comparison
 - Characterized electron spin resonance in paramagnetic systems; extracted g-factors and analyzed hyperfine interactions
 - Analyzed laser light propagation through optical media; measured diffraction patterns and beam characteristics
+
+*Theoretical & Computational:*
+- Mechanics: Lagrangian and Hamiltonian formulations, coupled ODEs, variational principles
+- Electromagnetism: Maxwell's equations, boundary-value problems, vector calculus
+- Quantum Mechanics: Schrödinger equation, operator methods, eigenvalue problems
+- Mathematical Methods: Linear algebra, ODEs/PDEs, Fourier analysis, complex analysis
+- Computation: Python, Julia, C++; numerical methods, data analysis, visualization
+- Experimental Methods: Statistical analysis, uncertainty propagation, calibration, regression
 
 #v(0.15em)
 
@@ -79,22 +88,6 @@ https://github.com/Vis-42 | https://vis-42.github.io/ | linkedin.com/in/parth-bh
   "Jan 2025 -- Mar 2025"
 )
 
-#v(0.15em)
-
-// RELEVANT COURSEWORK & CAPABILITIES
-#section_header("RELEVANT COURSEWORK & CAPABILITIES")
-
-#grid(
-  columns: (auto, 2em, 1fr),
-  align: (left, left),
-  gutter: 0.5em,
-  [*Mechanics:*], [], [Lagrangian and Hamiltonian formulations, coupled ODEs, variational principles],
-  [*Electromagnetism:*], [], [Maxwell's equations, boundary-value problems, vector calculus],
-  [*Quantum Mechanics:*], [], [Schrödinger equation, operator methods, eigenvalue problems],
-  [*Mathematical Methods:*], [], [Linear algebra, ODEs/PDEs, Fourier analysis, complex analysis],
-  [*Computation:*], [], [Python, Julia, C++; numerical methods, data analysis, visualization],
-  [*Experimental Methods:*], [], [Statistical analysis, uncertainty propagation, calibration, regression]
-)
 #v(0.15em)
 
 // ACHIEVEMENTS
