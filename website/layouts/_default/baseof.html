@@ -442,6 +442,49 @@
       background-color: var(--color-bg-secondary);
     }
     
+    /* Collapsible Assignments Section */
+    .assignments-collapsible {
+      margin-top: 1.5rem;
+    }
+    
+    .assignments-toggle {
+      cursor: pointer;
+      font-weight: 500;
+      color: var(--color-text-primary);
+      padding: 0.75rem 1rem;
+      background: var(--color-bg-secondary);
+      border: 1px solid var(--color-border);
+      border-radius: 4px;
+      list-style: none;
+      user-select: none;
+      transition: all 0.2s ease;
+    }
+    
+    .assignments-toggle:hover {
+      background: var(--color-bg-primary);
+      border-color: var(--color-accent);
+    }
+    
+    .assignments-toggle::-webkit-details-marker {
+      display: none;
+    }
+    
+    .assignments-toggle::before {
+      content: "▶";
+      display: inline-block;
+      margin-right: 0.5rem;
+      transition: transform 0.2s ease;
+    }
+    
+    details[open] .assignments-toggle::before {
+      transform: rotate(90deg);
+    }
+    
+    .assignments-collapsible .notes-list {
+      margin-top: 1rem;
+      padding-left: 0;
+    }
+    
     .project-card p {
       margin-bottom: 0.75rem;
       color: var(--color-text-secondary);
