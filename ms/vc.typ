@@ -59,19 +59,19 @@ https://github.com/Vis-42 | https://vis-42.github.io/ | linkedin.com/in/parth-bh
 #section_header("COURSEWORK")
 
 *Experimental Physics:*
-- Measured carrier mobility and type in semiconductors via Hall effect; cross-validated results through magnetoresistance analysis (R² > 0.99); identified intrinsic transition temperature
-- Determined lattice constants via X-ray diffraction with sub-2% accuracy; applied structural fingerprinting to identify unknown crystal phases; validated Kramers theory for bremsstrahlung cutoff
-- Calibrated Helmholtz field configuration; validated five independent scaling laws (R² > 0.997); quantified uncertainty in field constant to 3.3% through cross-method comparison
-- Characterized electron spin resonance in paramagnetic systems; extracted g-factors and analyzed hyperfine interactions
-- Analyzed laser light propagation through optical media; measured diffraction patterns and beam characteristics
+- Measured *carrier mobility* and type in semiconductors via *Hall effect*; cross-validated through *magnetoresistance analysis* (R² > 0.99); identified *intrinsic transition temperature*
+- Determined *lattice constants* via *X-ray diffraction* with sub-2% accuracy; applied *structural fingerprinting* to identify unknown crystal phases; validated *Kramers theory* for bremsstrahlung cutoff
+- Calibrated *Helmholtz field configuration*; validated *five independent scaling laws* (R² > 0.997); quantified uncertainty in field constant to *3.3%* through cross-method comparison
+- Characterized *electron spin resonance* in paramagnetic systems; extracted *g-factors* and analyzed *hyperfine interactions*
+- Analyzed *laser light propagation* through optical media; measured *diffraction patterns* and beam characteristics
 
 *Theoretical & Computational:*
-- Mechanics: Lagrangian and Hamiltonian formulations, coupled ODEs, variational principles
-- Electromagnetism: Maxwell's equations, boundary-value problems, vector calculus
-- Quantum Mechanics: Schrödinger equation, operator methods, eigenvalue problems
-- Mathematical Methods: Linear algebra, ODEs/PDEs, Fourier analysis, complex analysis
-- Computation: Python, Julia, C++; numerical methods, data analysis, visualization
-- Experimental Methods: Statistical analysis, uncertainty propagation, calibration, regression
+- *Mechanics:* Lagrangian and Hamiltonian formulations, coupled ODEs, variational principles
+- *Electromagnetism:* Maxwell's equations, boundary-value problems, vector calculus
+- *Quantum Mechanics:* Schrödinger equation, operator methods, eigenvalue problems
+- *Mathematical Methods:* Linear algebra, ODEs/PDEs, Fourier analysis, complex analysis
+- *Computation:* Python, Julia, C++; numerical methods, data analysis, visualization
+- *Experimental Methods:* Statistical analysis, uncertainty propagation, calibration, regression
 
 #v(0.15em)
 
@@ -82,8 +82,8 @@ https://github.com/Vis-42 | https://vis-42.github.io/ | linkedin.com/in/parth-bh
   "Quantum Wavepacket Visualization",
   [
     #text(style: "italic")[Developed interactive visualizations of quantum phenomena in Python]
-    - 3D simulation of a quantum wavepacket traversing a potential barrier
-    - Quantum harmonic oscillator dynamics
+    - *3D simulation* of a quantum wavepacket traversing a potential barrier
+    - *Quantum harmonic oscillator* dynamics
   ],
   "Jan 2025 -- Mar 2025"
 )
@@ -104,5 +104,6 @@ https://github.com/Vis-42 | https://vis-42.github.io/ | linkedin.com/in/parth-bh
 // INTERESTS
 #section_header("INTERESTS")
 
-- *Computational Physics and Machine Learning:* Physics-informed neural networks, scientific computing, and data-driven approaches to modeling complex physical systems
-- *Experimental and Theoretical Integration:* Laboratory techniques in condensed matter physics, instrumentation development, and bridging experimental data with computational models
+- *Complex Systems & Nonlinear Dynamics:* Emergence, collective behavior, and how simple rules generate complex patterns across scales
+- *Network Science & Information Theory:* Information flow, network structures, and connections between abstract mathematics and physical systems
+- *Computational Modeling:* Simulation, geometric intuition, and bridging theoretical frameworks with numerical methods
