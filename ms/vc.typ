@@ -59,11 +59,11 @@ https://github.com/Vis-42 | https://vis-42.github.io/ | linkedin.com/in/parth-bh
 #section_header("COURSEWORK")
 
 *Labwork:*
-- Measured *carrier type*, *density*, and *mobility* in semiconductors via *Hall effect*; cross-validated mobility through independent *magnetoresistance analysis* (R² > 0.99); characterized *temperature-dependent transition* from extrinsic to intrinsic conduction
-- Determined *lattice constants* via *X-ray diffraction* using *Bragg's law*; applied *structural fingerprinting* to identify unknown crystal phases; extracted *Planck's constant* from bremsstrahlung cutoff analysis; achieved sub-2% accuracy in lattice parameter determination
-- Calibrated *Helmholtz field configuration* through five independent experimental methods; validated *electromagnetic torque scaling laws* (R² > 0.997); determined unknown loop geometries via *magnetic moment measurements*; corrected mathematical model (quadratic vs linear fitting)
-- Characterized *electron spin resonance* in paramagnetic systems; extracted *g-factors* from frequency-field relationships (R² = 0.9995); analyzed *Zeeman splitting* and resonance conditions
-- Measured *Gaussian beam propagation* and *spatial intensity profiles*; determined *beam waist* and *Rayleigh range* with sub-1% agreement to theory; characterized *beam quality factor*; validated *Gaussian beam optics* model (R² > 0.998)
+- Measured *carrier type*, *density*, and *mobility* in n-type and p-type germanium via *Hall effect*; cross-validated mobility through independent *magnetoresistance analysis* (R² > 0.99); characterized *temperature-dependent transition* from extrinsic to intrinsic conduction at 106°C
+- Determined *lattice constants* via *X-ray diffraction* using *Bragg's law*; achieved *sub-2% accuracy* for LiF and *0.24% deviation* for KBr identification through structural fingerprinting; extracted *Planck's constant* from bremsstrahlung cutoff analysis
+- Calibrated *Helmholtz field constant* through five independent experimental methods with *3.3% uncertainty*; validated all *electromagnetic torque scaling laws* (R² > 0.997); determined unknown loop geometries via *magnetic moment measurements*; corrected mathematical model using *quadratic fitting* (T ∝ d² vs linear)
+- Characterized *electron spin resonance* in paramagnetic systems; extracted *g-factors* from frequency-field relationships with excellent linearity (R² = 0.9995); analyzed *Zeeman splitting* and resonance conditions
+- Measured *Gaussian beam propagation* and *spatial intensity profiles*; determined *beam waist* and *Rayleigh range* with *sub-1% agreement* to theoretical predictions; characterized *beam quality factor*; validated *Gaussian beam optics* model (R² > 0.998)
 
 *Theory & Computation:*
 - *Mechanics:* Lagrangian and Hamiltonian formulations, coupled ODEs, variational principles, phase space dynamics
