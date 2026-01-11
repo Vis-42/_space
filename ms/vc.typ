@@ -59,11 +59,11 @@ https://github.com/Vis-42 | https://vis-42.github.io/ | linkedin.com/in/parth-bh
 #section_header("COURSEWORK")
 
 *Labwork:*
-- Measured *carrier density* and *mobility* in n-type and p-type germanium via *Hall effect*; determined n-type: $n = 6.25 times 10^20$ m⁻³, $mu = 0.363$ m²/(V·s); p-type: $n = 8.60 times 10^20$ m⁻³, $mu = 0.287$ m²/(V·s); cross-validated mobility through *magnetoresistance* (R² > 0.99); observed *extrinsic→intrinsic transition* at 106°C via sign reversal
-- Determined *LiF lattice constant* via *X-ray diffraction*: $d = 2.047 plus.minus 0.017$ Å (1.93% deviation); identified unknown crystal as *KBr* through structural fingerprinting: $d = 3.282 plus.minus 0.006$ Å (0.24% deviation); extracted *Planck's constant* from bremsstrahlung cutoff: $h = 8.7 times 10^(-34)$ J·s (31% deviation, limited by S/N)
-- Calibrated *Helmholtz field constant* through five independent experiments: $c = 6.81 times 10^(-4)$ T·A⁻¹ (3.3% uncertainty); validated all *scaling laws* (R² > 0.997); determined unknown loop area: $110 plus.minus 4$ cm²; corrected diameter analysis using *quadratic fitting* (T ∝ d²)
-- Characterized *electron spin resonance* in DPPH; extracted *g-factor*: $g = 1.905 plus.minus 0.025$ (4.9% deviation from free electron); validated frequency-field linearity (R² = 0.9995)
-- Measured *Gaussian beam propagation* of He-Ne laser; determined *beam waist*: $W_0 = 0.394 plus.minus 0.008$ mm; *Rayleigh range*: $Z_R = 770 plus.minus 15$ mm (0.1% agreement with theory); beam quality: $M^2 = 1.08 plus.minus 0.05$; all intensity profiles fit Gaussian (R² > 0.998)
+- Measured *carrier type*, *density*, and *mobility* in semiconductors via *Hall effect*; cross-validated mobility through independent *magnetoresistance analysis* (R² > 0.99); characterized *temperature-dependent transition* from extrinsic to intrinsic conduction
+- Determined *lattice constants* via *X-ray diffraction* using *Bragg's law*; applied *structural fingerprinting* to identify unknown crystal phases; extracted *Planck's constant* from bremsstrahlung cutoff analysis; achieved sub-2% accuracy in lattice parameter determination
+- Calibrated *Helmholtz field configuration* through five independent experimental methods; validated *electromagnetic torque scaling laws* (R² > 0.997); determined unknown loop geometries via *magnetic moment measurements*; corrected mathematical model (quadratic vs linear fitting)
+- Characterized *electron spin resonance* in paramagnetic systems; extracted *g-factors* from frequency-field relationships (R² = 0.9995); analyzed *Zeeman splitting* and resonance conditions
+- Measured *Gaussian beam propagation* and *spatial intensity profiles*; determined *beam waist* and *Rayleigh range* with sub-1% agreement to theory; characterized *beam quality factor*; validated *Gaussian beam optics* model (R² > 0.998)
 
 *Theory & Computation:*
 - *Mechanics:* Lagrangian and Hamiltonian formulations, coupled ODEs, variational principles, phase space dynamics
