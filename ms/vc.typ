@@ -18,7 +18,7 @@
 #text(size: 18pt, weight: "bold")[Parth Bhargava]\
 #v(0em)
 +65 9121 7298 | Singapore | bhargava.parth07\@gmail.com \
-https://github.com/Vis-42 | linkedin.com/in/parth-bhargava-6819b124a/
+https://github.com/Vis-42 | https://vis-42.github.io/ | linkedin.com/in/parth-bhargava-6819b124a/
 
 #v(0.3em)
 
@@ -67,16 +67,23 @@ https://github.com/Vis-42 | linkedin.com/in/parth-bhargava-6819b124a/
   ],
   "Jan 2025 -- Mar 2025"
 )
-#cv-entry(
-  "Quantum Wavepacket Visualization",
-  [
-    #text(style: "italic")[Developed interactive visualizations of quantum phenomena in Python]
-    - 3D simulation of a quantum wavepacket traversing a potential barrier
-    - Quantum harmonic oscillator dynamics
-  ],
-  "Jan 2025 -- Mar 2025"
-)
 
+#v(0.15em)
+
+// COURSEWORK
+#section_header("COURSEWORK")
+
+#grid(
+  columns: (auto, 2em, 1fr),
+  align: (left, left),
+  gutter: 0.5em,
+  [*Classical Mechanics:*], [], [Lagrangian and Hamiltonian formulations, coupled ODEs, variational principles],
+  [*Electromagnetism:*], [], [Maxwell's equations, boundary-value problems, vector calculus],
+  [*Quantum Mechanics:*], [], [Schrödinger equation, operator methods, eigenvalue problems],
+  [*Mathematical Methods:*], [], [Linear algebra, ODEs/PDEs, Fourier analysis, complex analysis],
+  [*Programming:*], [], [Python/Java, algorithmic problem-solving, debugging],
+  [*Experimental Physics:*], [], [Experimental design, statistical data analysis, uncertainty estimation]
+)
 #v(0.15em)
 
 // SKILLS
