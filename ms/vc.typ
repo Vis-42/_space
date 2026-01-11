@@ -58,14 +58,14 @@ https://github.com/Vis-42 | https://vis-42.github.io/ | linkedin.com/in/parth-bh
 // COURSEWORK
 #section_header("COURSEWORK")
 
-*Experimental Physics:*
+*Labwork:*
 - Measured *carrier mobility* and type in semiconductors via *Hall effect*; cross-validated through *magnetoresistance analysis* (R² > 0.99); identified *intrinsic transition temperature* at 106°C
 - Determined *lattice constants* via *X-ray diffraction* with sub-2% accuracy; applied *structural fingerprinting* to identify unknown crystal phases (KBr); validated *Kramers theory* for bremsstrahlung cutoff
 - Calibrated *Helmholtz field configuration*; validated *five independent scaling laws* (R² > 0.997); quantified uncertainty to *3.3%*; corrected diameter dependence (T ∝ d² vs T ∝ d)
 - Characterized *electron spin resonance* in paramagnetic systems; extracted *g-factors* and analyzed *hyperfine interactions*
 - Analyzed *laser light propagation* through optical media; measured *diffraction patterns* and beam characteristics
 
-*Theoretical & Computational:*
+*Theory & Computation:*
 - *Mechanics:* Lagrangian and Hamiltonian formulations, coupled ODEs, variational principles, phase space dynamics
 - *Electromagnetism:* Maxwell's equations, boundary-value problems, vector calculus, gauge theory
 - *Quantum Mechanics:* Schrödinger equation, operator methods, eigenvalue problems, perturbation theory
