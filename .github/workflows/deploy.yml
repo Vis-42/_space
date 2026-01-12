@@ -43,15 +43,12 @@ jobs:
       - name: Build with Hugo
         working-directory: ./website
         run: |
-          hugo \
-            --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/" || exit 1
+          hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./website/public
-        if: success()
 
       - name: Deploy to GitHub Pages
         id: deployment
