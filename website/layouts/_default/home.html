@@ -1,7 +1,7 @@
 {{ define "main" }}
 <div class="hero">
   <h1>Parth Bhargava</h1>
-  <p class="subtitle">Physics Student | National University of Singapore</p>
+  <p class="subtitle">Year 2 Physics Student | National University of Singapore</p>
           <div class="contact">
             <a href="mailto:bhargava.parth07@gmail.com">bhargava.parth07@gmail.com</a>
             <a href="https://github.com/Vis-42" target="_blank">GitHub</a>
@@ -13,48 +13,39 @@
 <section id="about" class="bio">
   <h2>About</h2>
   <p>
-    This is a working archive of my academic work: notes, experiments, and things I'm thinking through.
+    I'm a second-year physics student building toward research in complex systems and nonlinear dynamics. This site documents my experimental work, computational projects, and theoretical explorations as I develop from coursework into independent research.
   </p>
   <p>
-    I study physics, focused on complex systems. Nonlinear dynamics, chaos, networks, emergence. How simple rules create complicated behavior. I'm drawn to problems where abstract math connects to physical systems, whether through modeling, simulation, or geometric intuition.
+    My focus is on how simple rules generate complex behavior across scales—nonlinear dynamics, chaos, networks, emergence. I'm particularly interested in problems where abstract mathematics connects to physical systems through modeling, simulation, or geometric intuition. This naturally intersects with fluid dynamics, information theory, and network science.
   </p>
   <p>
-    You'll find course notes, explanations I wrote for myself, research explorations, and longer pieces where I'm working through ideas. Much of this is incomplete by design. These are ideas under construction, not polished conclusions. I use writing as a tool for thinking, not just communication.
+    The work here spans experimental physics (Hall effect, X-ray diffraction, magnetic moment measurements), computational modeling (quantum wavepacket simulations), and theoretical coursework. Each project includes analysis of uncertainty, methodological limitations, and where things went wrong—not just what worked. I use writing as a tool for thinking, so much of this is incomplete by design: ideas under construction rather than polished conclusions.
   </p>
   <p>
-    My approach is systems-first. Less about isolated tricks, more about how parts interact, how information flows, and how collective behavior emerges across scales. This connects naturally to fluid dynamics, information theory, evolution, and network science.
-  </p>
-  <p>
-    This isn't a portfolio in the marketing sense. It's a public notebook meant to grow, break, and reorganize over time. If you're looking for finished answers, you may be disappointed. If you're interested in how a physicist thinks while learning, this is the right place.
+    I'm seeking research opportunities that combine theoretical rigor with computational and experimental approaches. I work well with structured mentorship and clear feedback, and I'm looking for environments where I can contribute to ongoing projects while developing independent research direction.
   </p>
   
-  <h3>Research Interests</h3>
-  <ul>
-    <li>Complex Systems</li>
-    <li>Nonlinear Dynamics & Chaos</li>
-    <li>Network Science</li>
-    <li>Emergence & Collective Behavior</li>
-    <li>Information Theory</li>
-    <li>Fluid Dynamics</li>
-    <li>Computational Modeling & Simulation</li>
-  </ul>
+  <h3>Research Focus</h3>
+  <p><strong>Primary:</strong> Complex systems and nonlinear dynamics—how collective behavior emerges from local interactions, pattern formation, and the mathematical structures underlying physical phenomena.</p>
+  <p><strong>Methods:</strong> Computational modeling and simulation, experimental measurement and analysis, theoretical frameworks connecting abstract math to physical systems.</p>
+  <p><strong>Applications:</strong> Network science, information flow, fluid dynamics, and systems where geometric intuition bridges theory and computation.</p>
 </section>
 
 <section id="experience">
   <h2>Experience</h2>
   <div class="experience-item">
     <h3>Physics Student</h3>
-    <p class="meta">National University of Singapore | Singapore | 2023 - Present</p>
-    <p>Working on computational modeling, theory, and experiments. Trying to understand emergent behavior, nonlinear dynamics, and the mathematical structures underlying physical phenomena.</p>
-    <p>Some experimental work:</p>
+    <p class="meta">National University of Singapore | Singapore | Aug 2024 - Present</p>
+    <p>Year 2 undergraduate working on computational modeling, theory, and experimental physics. Building toward research in complex systems and nonlinear dynamics.</p>
+    <p><strong>Experimental work (PC2193):</strong> Five lab projects over one semester, each requiring independent data analysis, uncertainty quantification, and comparison with theory. Worked within time constraints (typically 3-4 hours per experiment) and equipment limitations.</p>
     <ul>
-      <li><strong>Hall Effect in Semiconductors</strong> - Carrier type identification, mobility measurements, intrinsic transition analysis</li>
-      <li><strong>X-Ray Diffraction</strong> - Lattice constant determination, crystal structure analysis, Planck's constant extraction</li>
-      <li><strong>Magnetic Moment in Helmholtz Field</strong> - Field calibration, torque measurements, scaling law validation</li>
-      <li><strong>Electron Spin Resonance (ESR)</strong> - Resonance frequency measurements, g-factor determination, hyperfine interaction analysis</li>
-      <li><strong>Propagation of Laser Light (PLL)</strong> - Laser beam propagation analysis, diffraction patterns, optical properties</li>
+      <li><strong>Hall Effect in Semiconductors</strong> - Identified carrier types via Hall voltage polarity; cross-validated mobility through magnetoresistance (R² > 0.99); characterized extrinsic→intrinsic transition at 106°C. <em>Challenge:</em> Initial confusion about sign conventions required revisiting theory.</li>
+      <li><strong>X-Ray Diffraction</strong> - Determined LiF lattice constant (sub-2% accuracy); identified unknown crystal (KBr) via structural fingerprinting (0.24% deviation); extracted Planck's constant (31% deviation, limited by S/N at bremsstrahlung cutoff). <em>Limitation:</em> Goniometer calibration offset dominated systematic error.</li>
+      <li><strong>Magnetic Moment in Helmholtz Field</strong> - Calibrated field constant through 5 independent methods (3.3% uncertainty); validated scaling laws (R² > 0.997); corrected mathematical model (T ∝ d², not linear). <em>Learning:</em> Discovered and fixed incorrect fitting assumption mid-analysis.</li>
+      <li><strong>Electron Spin Resonance (ESR)</strong> - Extracted g-factor from frequency-field relationship (R² = 0.9995); analyzed Zeeman splitting. <em>Uncertainty:</em> Visual resonance detection introduced subjective error; systematic field inhomogeneity likely contributed to 4.9% deviation from theory.</li>
+      <li><strong>Propagation of Laser Light (PLL)</strong> - Measured Gaussian beam parameters with sub-1% agreement to theory; characterized beam quality (M² = 1.08). <em>Constraint:</em> Finite detector aperture limited spatial resolution at beam waist.</li>
     </ul>
-    <p>Also developing computational simulations and analysis tools using Python and Julia.</p>
+    <p>Also developing computational simulations in Python and Julia, focusing on quantum systems and numerical methods.</p>
   </div>
 </section>
 
@@ -66,34 +57,36 @@
     <div class="projects-grid">
       <div class="project-card">
         <h4>Hall Effect in Semiconductors</h4>
-        <p>Analyzed carrier types and mobility in p-type and n-type Germanium. Did Hall voltage measurements, looked at magnetoresistance, and studied temperature dependence.</p>
-        <p><strong>Results:</strong> Identified carrier types from Hall voltage polarity, checked mobility using both Hall effect and magnetoresistance (R² > 0.99), and saw the intrinsic transition around 106°C.</p>
+        <p><strong>Scope:</strong> 3-hour lab session; n-type and p-type Germanium samples. <strong>Methods:</strong> Hall voltage vs current/field measurements; magnetoresistance analysis; temperature-dependent study (room temp to 143°C).</p>
+        <p><strong>Results:</strong> Cross-validated mobility through two independent methods (R² > 0.99); identified intrinsic transition at 106°C via sign reversal. <strong>Reflection:</strong> Initial sign confusion required revisiting carrier physics; systematic error dominated by sample geometry uncertainty.</p>
         <p><a href="/pdfs/experiments/hall-effect.pdf" target="_blank">📄 View Report (PDF)</a></p>
       </div>
       
       <div class="project-card">
         <h4>X-Ray Diffraction Analysis</h4>
-        <p>Used X-ray diffraction to find lattice constants and analyze crystal structures. Applied Bragg's law, analyzed peak positions, and checked Kramers theory for the bremsstrahlung cutoff.</p>
-        <p><strong>Results:</strong> Got the LiF lattice constant within 2% accuracy, figured out an unknown crystal structure (turned out to be KBr) by matching patterns, and confirmed Kramers theory works.</p>
+        <p><strong>Scope:</strong> 4-hour session; LiF and unknown crystal samples. <strong>Methods:</strong> Bragg's law analysis; weighted peak averaging; bremsstrahlung cutoff extrapolation at multiple voltages.</p>
+        <p><strong>Results:</strong> LiF lattice constant within 2% accuracy; identified KBr (0.24% deviation); Planck's constant 31% off (S/N limited). <strong>Reflection:</strong> Systematic goniometer offset (~0.4°) dominated error; bremsstrahlung analysis limited by poor signal quality (0-20 counts/s) rather than methodology.</p>
         <p><a href="/pdfs/experiments/xrd.pdf" target="_blank">📄 View Report (PDF)</a></p>
       </div>
       
       <div class="project-card">
         <h4>Magnetic Moment in Helmholtz Field</h4>
-        <p>Analyzed magnetic torque measurements and calibrated the Helmholtz field. Checked theoretical scaling laws using five different experimental methods with proper error analysis.</p>
-        <p><strong>Results:</strong> All 5 scaling laws checked out (R² > 0.997), verified the Helmholtz constant using different methods (3.3% uncertainty), and corrected a math error in the diameter dependence: it's T ∝ d², not T ∝ d.</p>
+        <p><strong>Scope:</strong> 4-hour session; five independent experiments varying current, turns, angle, diameter. <strong>Methods:</strong> Torque measurements; multi-experiment calibration; residual analysis.</p>
+        <p><strong>Results:</strong> All scaling laws validated (R² > 0.997); Helmholtz constant 3.3% uncertainty; corrected diameter dependence (T ∝ d²). <strong>Reflection:</strong> Initially used linear fit for diameter; quadratic correction came from recognizing area dependence. Error budget showed field calibration dominated variance (86%).</p>
         <p><a href="/pdfs/experiments/magnetic-moment.pdf" target="_blank">📄 View Report (PDF)</a></p>
       </div>
       
       <div class="project-card">
         <h4>Electron Spin Resonance (ESR)</h4>
-        <p>Experimental analysis of electron spin resonance in paramagnetic samples. Measured resonance frequencies, determined g-factors, and analyzed hyperfine interactions.</p>
+        <p><strong>Scope:</strong> 3-hour session; DPPH sample. <strong>Methods:</strong> Frequency-field sweeps (30-76.6 MHz); phase-sensitive detection with 50 Hz modulation.</p>
+        <p><strong>Results:</strong> g-factor extraction (R² = 0.9995); 4.9% deviation from free electron value. <strong>Reflection:</strong> Visual resonance detection introduced subjective uncertainty; field inhomogeneity and finite sample size likely contributed systematic error. Excellent linearity validates theory despite deviation.</p>
         <p><a href="/pdfs/experiments/esr.pdf" target="_blank">📄 View Report (PDF)</a></p>
       </div>
       
       <div class="project-card">
         <h4>Propagation of Laser Light (PLL)</h4>
-        <p>Analysis of laser light propagation through various media. Studied beam characteristics, diffraction patterns, and optical properties.</p>
+        <p><strong>Scope:</strong> 3-hour session; He-Ne laser (632.8 nm). <strong>Methods:</strong> Transverse intensity scans at 8 distances (10 cm to 15 m); Gaussian profile fitting.</p>
+        <p><strong>Results:</strong> Beam waist and Rayleigh range with sub-1% agreement to theory; M² = 1.08 (near-ideal Gaussian). <strong>Reflection:</strong> Detector positioning uncertainty (±0.05 mm) dominated error; finite aperture (1 mm) limited resolution at waist. Thermal lensing may have introduced systematic effects during extended measurements.</p>
         <p><a href="/pdfs/experiments/pll.pdf" target="_blank">📄 View Report (PDF)</a></p>
       </div>
     </div>

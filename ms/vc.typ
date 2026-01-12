@@ -55,6 +55,13 @@ https://github.com/Vis-42 | https://vis-42.github.io/ | linkedin.com/in/parth-bh
 
 #v(0.15em)
 
+// SUMMARY
+#section_header("SUMMARY")
+
+Year 2 physics student building toward research in complex systems and nonlinear dynamics. Experience in experimental physics (Hall effect, X-ray diffraction, magnetic moment measurements) with emphasis on uncertainty analysis and methodological limitations. Developing computational modeling skills in Python and Julia. Seeking research opportunities combining theoretical rigor with computational and experimental approaches.
+
+#v(0.15em)
+
 // COURSEWORK
 #section_header("COURSEWORK")
 
