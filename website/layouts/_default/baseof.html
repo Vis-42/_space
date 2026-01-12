@@ -274,13 +274,22 @@
       line-height: 1.2;
     }
     
-    .hero .subtitle {
-      font-size: 1.125rem;
-      color: var(--color-text-secondary);
-      font-weight: 400;
-      margin-bottom: 1.5rem;
-      font-style: italic;
-    }
+            .hero .subtitle {
+              font-size: 1.125rem;
+              color: var(--color-text-secondary);
+              font-weight: 400;
+              margin-bottom: 1rem;
+              font-style: italic;
+            }
+            
+            .hero .purpose-statement {
+              font-size: 1rem;
+              color: var(--color-text-primary);
+              font-weight: 500;
+              margin-bottom: 1.5rem;
+              max-width: 700px;
+              line-height: 1.6;
+            }
     
     .hero .contact {
       display: flex;
@@ -322,12 +331,64 @@
       margin-bottom: 2rem;
     }
     
-    .bio p {
-      font-size: 1.0625rem;
-      line-height: 1.8;
-      color: var(--color-text-secondary);
-      margin-bottom: 1.5rem;
-    }
+            .bio p {
+              font-size: 1.0625rem;
+              line-height: 1.8;
+              color: var(--color-text-secondary);
+              margin-bottom: 1.5rem;
+            }
+            
+            .bio .summary-lead {
+              font-size: 1.125rem;
+              line-height: 1.7;
+              color: var(--color-text-primary);
+              margin-bottom: 2rem;
+              padding-bottom: 1.5rem;
+              border-bottom: 1px solid var(--color-border-light);
+            }
+            
+            .research-focus-grid {
+              display: grid;
+              grid-template-columns: 1fr;
+              gap: 1.5rem;
+              margin-top: 1rem;
+              margin-bottom: 2rem;
+            }
+            
+            .focus-item {
+              padding: 1rem;
+              background: var(--color-bg-secondary);
+              border-left: 3px solid var(--color-accent);
+              border-radius: 4px;
+            }
+            
+            .interests-with-work {
+              list-style: none;
+              padding: 0;
+              margin-top: 1rem;
+            }
+            
+            .interests-with-work li {
+              padding: 0.75rem 0;
+              padding-left: 1.5rem;
+              position: relative;
+              color: var(--color-text-secondary);
+              font-size: 1rem;
+              line-height: 1.7;
+              border-bottom: 1px solid var(--color-border-light);
+            }
+            
+            .interests-with-work li:last-child {
+              border-bottom: none;
+            }
+            
+            .interests-with-work li:before {
+              content: "→";
+              position: absolute;
+              left: 0;
+              color: var(--color-accent);
+              font-weight: 600;
+            }
     
     .bio ul {
       list-style: none;
@@ -485,16 +546,25 @@
       padding-left: 0;
     }
     
-    .project-card p {
-      margin-bottom: 0.75rem;
-      color: var(--color-text-secondary);
-      line-height: 1.7;
-    }
-    
-    .project-card strong {
-      font-weight: 500;
-      color: var(--color-text-primary);
-    }
+            .project-card p {
+              margin-bottom: 0.75rem;
+              color: var(--color-text-secondary);
+              line-height: 1.7;
+            }
+            
+            .project-card p:first-of-type {
+              margin-top: 0.5rem;
+            }
+            
+            .project-card strong {
+              font-weight: 600;
+              color: var(--color-text-primary);
+            }
+            
+            .project-card em {
+              font-style: italic;
+              color: var(--color-text-muted);
+            }
     
     .project-card a {
       font-size: 0.95rem;
