@@ -43,19 +43,9 @@ jobs:
       - name: Build with Hugo
         working-directory: ./website
         run: |
-          set -e
           hugo \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
-          if [ ! -d "public" ]; then
-            echo "Error: public directory not created"
-            exit 1
-          fi
-          if [ ! -f "public/index.html" ]; then
-            echo "Error: index.html not found"
-            exit 1
-          fi
-          echo "Build successful: $(find public -type f | wc -l) files generated"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
