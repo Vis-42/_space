@@ -232,16 +232,20 @@
       background: none;
       border: 1px solid var(--color-border);
       color: var(--color-text-secondary);
-      padding: 0.5rem;
+      padding: 0.5rem 0.75rem;
       border-radius: 4px;
       cursor: pointer;
-      font-size: 1.2rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
       transition: all 0.2s ease;
     }
     
     .menu-toggle:hover {
       color: var(--color-text-primary);
       border-color: var(--color-accent);
+      background: var(--color-bg-secondary);
     }
     
     /* ============================================
@@ -356,10 +360,18 @@
             }
             
             .focus-item {
-              padding: 1rem;
+              padding: 1.25rem 1.5rem;
               background: var(--color-bg-secondary);
               border-left: 3px solid var(--color-accent);
-              border-radius: 4px;
+              border-radius: 0;
+              margin-bottom: 0;
+            }
+            
+            .focus-item strong {
+              display: block;
+              margin-bottom: 0.5rem;
+              color: var(--color-text-primary);
+              font-weight: 600;
             }
             
             .interests-with-work {
@@ -383,10 +395,18 @@
             }
             
             .interests-with-work li:before {
-              content: "→";
+              content: "";
               position: absolute;
               left: 0;
-              color: var(--color-accent);
+              width: 4px;
+              height: 4px;
+              background: var(--color-accent);
+              border-radius: 50%;
+              top: 0.9rem;
+            }
+            
+            .interests-with-work li strong {
+              color: var(--color-text-primary);
               font-weight: 600;
             }
     
@@ -530,15 +550,16 @@
       display: none;
     }
     
-    .assignments-toggle::before {
-      content: "▶";
+    .assignments-toggle::after {
+      content: "+";
       display: inline-block;
-      margin-right: 0.5rem;
+      margin-left: 0.5rem;
+      font-weight: 400;
       transition: transform 0.2s ease;
     }
     
-    details[open] .assignments-toggle::before {
-      transform: rotate(90deg);
+    details[open] .assignments-toggle::after {
+      content: "−";
     }
     
     .assignments-collapsible .notes-list {
@@ -574,21 +595,31 @@
       display: inline-block;
     }
     
-    /* PDF Link Styling */
-            .project-card a[href$=".pdf"] {
-              display: inline-flex;
-              align-items: center;
-              gap: 0.5rem;
-            }
-            
-            .project-card .note {
-              font-size: 0.9rem;
-              color: var(--color-text-muted);
-              font-style: italic;
-              margin-top: 0.5rem;
-              padding-top: 0.5rem;
-              border-top: 1px solid var(--color-border-light);
-            }
+    .project-links {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--color-border-light);
+    }
+    
+    .project-links a {
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+      margin-right: 1rem;
+    }
+    
+    .project-links a:hover {
+      color: var(--color-accent);
+    }
+    
+    .project-card .note {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      font-style: normal;
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--color-border-light);
+      line-height: 1.6;
+    }
     
     /* ============================================
        EXPERIENCE SECTION
@@ -806,18 +837,17 @@
     <nav>
       <a href="/" class="logo">{{ .Site.Title }}</a>
       <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-        ☰
+        Menu
       </button>
-              <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#coursework">Coursework</a></li>
-                <li><a href="/pdfs/cv.pdf" target="_blank">CV</a></li>
-              </ul>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#coursework">Coursework</a></li>
+        <li><a href="/pdfs/cv.pdf" target="_blank">CV</a></li>
+      </ul>
       <button class="theme-toggle" aria-label="Toggle dark mode">
-        <span class="theme-icon">🌙</span>
         <span class="theme-text">Dark</span>
       </button>
     </nav>
@@ -835,7 +865,6 @@
     // Dark Mode Toggle
     (function() {
       const themeToggle = document.querySelector('.theme-toggle');
-      const themeIcon = document.querySelector('.theme-icon');
       const themeText = document.querySelector('.theme-text');
       const html = document.documentElement;
       
@@ -843,7 +872,6 @@
       const savedTheme = localStorage.getItem('theme') || 'light';
       if (savedTheme === 'dark') {
         html.setAttribute('data-theme', 'dark');
-        themeIcon.textContent = '☀️';
         themeText.textContent = 'Light';
       }
       
@@ -855,10 +883,8 @@
         localStorage.setItem('theme', newTheme);
         
         if (newTheme === 'dark') {
-          themeIcon.textContent = '☀️';
           themeText.textContent = 'Light';
         } else {
-          themeIcon.textContent = '🌙';
           themeText.textContent = 'Dark';
         }
       });
