@@ -866,6 +866,8 @@
     (function() {
       const themeToggle = document.querySelector('.theme-toggle');
       const themeText = document.querySelector('.theme-text');
+      if (!themeToggle || !themeText) return;
+      
       const html = document.documentElement;
       
       // Get saved theme or default to light
@@ -894,6 +896,7 @@
     (function() {
       const menuToggle = document.querySelector('.menu-toggle');
       const navLinks = document.querySelector('.nav-links');
+      if (!menuToggle || !navLinks) return;
       
       menuToggle.addEventListener('click', function() {
         const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
@@ -911,29 +914,28 @@
     })();
     
     // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        if (href === '#') return;
-        
-        e.preventDefault();
-        const target = document.querySelector(href);
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-    
-    // Verify PDF links on page load
     document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const href = this.getAttribute('href');
+          if (href === '#' || !href) return;
+          
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+      
+      // Verify PDF links on page load
       const pdfLinks = document.querySelectorAll('a[href$=".pdf"]');
       pdfLinks.forEach(link => {
         link.addEventListener('click', function(e) {
           // Allow default behavior (opening PDF)
-          // Could add analytics here if needed
         });
       });
     });
