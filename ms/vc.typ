@@ -1,6 +1,6 @@
 #set page(
   paper: "us-letter",
-  margin: (top: 0.4in, bottom: 0.4in, left: 0.4in, right: 0.4in)
+  margin: (top: 0.35in, bottom: 0.35in, left: 0.35in, right: 0.35in)
 )
 
 #set text(
