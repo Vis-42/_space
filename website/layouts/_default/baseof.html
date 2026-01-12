@@ -575,11 +575,20 @@
     }
     
     /* PDF Link Styling */
-    .project-card a[href$=".pdf"] {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
+            .project-card a[href$=".pdf"] {
+              display: inline-flex;
+              align-items: center;
+              gap: 0.5rem;
+            }
+            
+            .project-card .note {
+              font-size: 0.9rem;
+              color: var(--color-text-muted);
+              font-style: italic;
+              margin-top: 0.5rem;
+              padding-top: 0.5rem;
+              border-top: 1px solid var(--color-border-light);
+            }
     
     /* ============================================
        EXPERIENCE SECTION
