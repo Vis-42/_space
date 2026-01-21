@@ -979,7 +979,7 @@
       const html = document.documentElement;
       
       // Get saved theme or default to light
-      const savedTheme = localStorage.getItem('theme') || 'light';
+      const savedTheme = localStorage.getItem('theme') || 'dark';
       if (savedTheme === 'dark') {
         html.setAttribute('data-theme', 'dark');
         if (themeText) themeText.textContent = 'Light';
