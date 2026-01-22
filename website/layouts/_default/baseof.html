@@ -43,8 +43,10 @@
       --color-accent-soft: #d7e2ec;
       --color-bg-primary: #f7f2e8;
       --color-bg-secondary: #f1ece2;
-      --color-border: #d6cfc4;
-      --color-border-light: #e7dfd4;
+      --color-border: #b9b1a6;
+      --color-border-light: #d9d1c6;
+      --line-strong: #6f7f90;
+      --line-soft: #c6bfb4;
       --header-bg: rgba(247, 242, 232, 0.9);
     }
     
@@ -58,8 +60,10 @@
       --color-accent-soft: rgba(159, 178, 199, 0.18);
       --color-bg-primary: #000000;
       --color-bg-secondary: #0a0a0a;
-      --color-border: #4a4a4a;
+      --color-border: #5a5a5a;
       --color-border-light: #cfc7b8;
+      --line-strong: #cfc7b8;
+      --line-soft: #3f3f3f;
       --header-bg: rgba(0, 0, 0, 0.92);
     }
     
@@ -130,7 +134,7 @@
       margin-top: 3rem;
       margin-bottom: 1.5rem;
       padding-bottom: 0.75rem;
-      border-bottom: 1px solid var(--color-border-light);
+      border-bottom: 1px solid var(--line-soft);
       letter-spacing: 0.01em;
     }
     
@@ -177,7 +181,7 @@
     
     header {
       background: var(--header-bg);
-      border-bottom: 1px solid var(--color-border-light);
+      border-bottom: 1px solid var(--line-soft);
       padding: 1.25rem 0;
       position: sticky;
       top: 0;
@@ -289,16 +293,6 @@
       position: relative;
     }
 
-    main::before {
-      content: "";
-      position: absolute;
-      top: 3.5rem;
-      bottom: 3.5rem;
-      left: 1.25rem;
-      width: 1px;
-      background: var(--color-border-light);
-      opacity: 1;
-    }
     
     /* ============================================
        HERO SECTION - Clean and Professional
@@ -308,7 +302,7 @@
       text-align: left;
       padding: 0;
       margin-bottom: 4rem;
-      border-bottom: 1px solid var(--color-border-light);
+      border-bottom: 1px solid var(--line-soft);
       padding-bottom: 3rem;
     }
 
@@ -426,7 +420,7 @@
     .section-body {
       padding-top: 0.8rem;
       min-width: 0;
-      border-top: 2px solid var(--color-border);
+      border-top: 2px solid var(--line-strong);
     }
 
     .section-body::before {
@@ -456,7 +450,7 @@
               color: var(--color-text-primary);
               margin-bottom: 1.75rem;
               padding-bottom: 1.25rem;
-              border-bottom: 1px solid var(--color-border-light);
+              border-bottom: 1px solid var(--line-soft);
             }
             
             .research-focus-grid {
@@ -558,7 +552,7 @@
     .project-card {
       background: transparent;
       border: none;
-      border-left: 1px solid var(--color-border-light);
+      border-left: 1px solid var(--line-soft);
       padding: 0 0 2rem 1.25rem;
       transition: none;
     }
@@ -590,7 +584,7 @@
       margin-top: 2rem;
       margin-bottom: 1.25rem;
       color: var(--color-text-primary);
-      border-bottom: 1px solid var(--color-border-light);
+      border-bottom: 1px solid var(--line-soft);
       padding-bottom: 0.5rem;
     }
     
@@ -621,7 +615,7 @@
       display: block;
       padding: 0.5rem 0.75rem;
       color: var(--color-text-secondary);
-      border: 1px solid var(--color-border-light);
+      border: 1px solid var(--line-soft);
       border-radius: 2px;
       text-align: center;
       transition: all 0.2s ease;
@@ -646,7 +640,7 @@
       color: var(--color-text-primary);
       padding: 0.6rem 0.9rem;
       background: transparent;
-      border: 1px solid var(--color-border-light);
+      border: 1px solid var(--line-soft);
       border-radius: 2px;
       list-style: none;
       user-select: none;
@@ -712,7 +706,7 @@
     .project-links {
       margin-top: 0.875rem;
       padding-top: 0.875rem;
-      border-top: 1px solid var(--color-border-light);
+      border-top: 1px solid var(--line-soft);
     }
     
     .project-links a {
@@ -732,7 +726,7 @@
       font-style: normal;
       margin-top: 0.625rem;
       padding-top: 0.625rem;
-      border-top: 1px solid var(--color-border-light);
+      border-top: 1px solid var(--line-soft);
       line-height: 1.55;
     }
     
@@ -743,7 +737,7 @@
     .experience-item {
       margin-bottom: 2rem;
       padding-bottom: 2rem;
-      border-bottom: 1px solid var(--color-border-light);
+      border-bottom: 1px solid var(--line-soft);
     }
     
     .experience-item:last-child {
@@ -801,7 +795,7 @@
     
     footer {
       background: transparent;
-      border-top: 1px solid var(--color-border-light);
+      border-top: 1px solid var(--line-soft);
       padding: 2rem 2rem 2.5rem;
       text-align: center;
       color: var(--color-text-muted);
@@ -866,7 +860,7 @@
       .nav-links a {
         display: block;
         padding: 0.75rem 0;
-        border-bottom: 1px solid var(--color-border-light);
+        border-bottom: 1px solid var(--line-soft);
       }
       
       .nav-links a:last-child {
@@ -909,7 +903,7 @@
       .section-title h2 {
         font-size: 1.4rem;
         text-align: left;
-        border-bottom: 1px solid var(--color-border-light);
+        border-bottom: 1px solid var(--line-soft);
         padding-bottom: 0.5rem;
       }
 
