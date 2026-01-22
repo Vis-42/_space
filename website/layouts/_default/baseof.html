@@ -700,19 +700,20 @@
     .experiments-toggle {
       cursor: pointer;
       font-weight: 500;
-      color: var(--color-text-primary);
-      padding: 0.6rem 0.9rem;
+      color: var(--color-accent);
+      padding: 0;
       background: transparent;
-      border: 1px solid var(--line-soft);
-      border-radius: 2px;
+      border: none;
       list-style: none;
       user-select: none;
-      transition: all 0.2s ease;
+      transition: color 0.2s ease;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.2em;
     }
 
     .experiments-toggle:hover {
-      background: var(--color-bg-secondary);
-      border-color: var(--color-border);
+      color: var(--color-accent-hover);
     }
 
     .experiments-toggle::-webkit-details-marker {
@@ -720,7 +721,7 @@
     }
 
     .experiments-toggle::after {
-      content: "+";
+      content: "→";
       display: inline-block;
       margin-left: 0.5rem;
       font-weight: 400;
@@ -728,7 +729,7 @@
     }
 
     details[open] .experiments-toggle::after {
-      content: "−";
+      content: "←";
     }
     
     .assignments-toggle:hover {
