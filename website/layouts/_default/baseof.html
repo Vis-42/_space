@@ -48,7 +48,8 @@
       --line-strong: #6f7f90;
       --line-soft: #c6bfb4;
       --header-bg: rgba(247, 242, 232, 0.9);
-      --nav-bg: rgba(245, 239, 229, 0.95);
+      --nav-bg: #efe6d8;
+      --nav-button-bg: #e1d7c8;
     }
     
     [data-theme="dark"] {
@@ -66,7 +67,8 @@
       --line-strong: #cfc7b8;
       --line-soft: #3f3f3f;
       --header-bg: rgba(0, 0, 0, 0.92);
-      --nav-bg: rgba(0, 0, 0, 0.96);
+      --nav-bg: #0a0a0a;
+      --nav-button-bg: #161616;
     }
     
     * {
@@ -239,9 +241,10 @@
     .nav-links a.nav-cta {
       color: var(--color-text-primary);
       border: 1px solid var(--line-soft);
-      padding: 0.25rem 0.6rem;
+      padding: 0.3rem 0.7rem;
       letter-spacing: 0.1em;
-      background-color: transparent;
+      background-color: var(--nav-button-bg);
+      display: inline-block;
     }
 
     .nav-links a.nav-cta:hover {
@@ -262,7 +265,7 @@
     /* Dark Mode Toggle */
     .theme-toggle {
       background: none;
-      background-color: transparent;
+      background-color: var(--nav-button-bg);
       border: 1px solid var(--line-soft);
       color: var(--color-text-primary);
       padding: 0.45rem 0.8rem;
@@ -292,7 +295,7 @@
     .menu-toggle {
       display: none;
       background: none;
-      background-color: transparent;
+      background-color: var(--nav-button-bg);
       border: 1px solid var(--line-soft);
       color: var(--color-text-primary);
       padding: 0.45rem 0.7rem;
@@ -311,6 +314,11 @@
       width: 100%;
       display: flex;
       justify-content: center;
+    }
+
+    .nav-links li {
+      width: 100%;
+      text-align: center;
     }
     
     .menu-toggle:hover {
