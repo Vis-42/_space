@@ -700,7 +700,7 @@
     .experiments-toggle {
       cursor: pointer;
       font-weight: 500;
-      color: var(--color-accent);
+      color: #2563eb;
       padding: 0;
       background: transparent;
       border: none;
@@ -709,11 +709,19 @@
       transition: color 0.2s ease;
       text-decoration: underline;
       text-decoration-thickness: 1px;
-      text-underline-offset: 0.2em;
+      text-underline-offset: 0.18em;
     }
 
     .experiments-toggle:hover {
-      color: var(--color-accent-hover);
+      color: #1d4ed8;
+    }
+
+    [data-theme="dark"] .experiments-toggle {
+      color: #93c5fd;
+    }
+
+    [data-theme="dark"] .experiments-toggle:hover {
+      color: #bfdbfe;
     }
 
     .experiments-toggle::-webkit-details-marker {
