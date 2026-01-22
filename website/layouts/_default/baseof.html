@@ -68,7 +68,7 @@
     }
     
     html {
-      font-size: 15px;
+      font-size: 16.5px;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       scroll-behavior: smooth;
@@ -393,6 +393,27 @@
     
     section:last-child {
       margin-bottom: 0;
+    }
+
+    .section-split {
+      display: grid;
+      grid-template-columns: minmax(180px, 1fr) minmax(0, 2.4fr);
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .section-title h2 {
+      font-size: 2.6rem;
+      margin: 0;
+      padding: 0;
+      border: none;
+      line-height: 1.1;
+      text-align: right;
+      color: var(--color-text-primary);
+    }
+
+    .section-body {
+      padding-top: 0.2rem;
     }
     
     /* ============================================
@@ -850,6 +871,22 @@
       
       h2 {
         font-size: 1.5rem;
+      }
+
+      .section-split {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .section-title h2 {
+        font-size: 1.6rem;
+        text-align: left;
+        border-bottom: 1px solid var(--color-border-light);
+        padding-bottom: 0.5rem;
+      }
+
+      .section-body {
+        padding-top: 0;
       }
       
       .notes-list ul {

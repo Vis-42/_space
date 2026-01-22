@@ -18,24 +18,29 @@
   </div>
 </div>
 
-<section id="about" class="bio">
-  <h2>About</h2>
-  <p class="summary-lead">
-    <strong>I'm a second-year physics student building toward research in complex systems and nonlinear dynamics.</strong> This site is a public notebook of experiments, simulations, and ideas in progress.
-  </p>
-  <p>
-    I care about how simple rules generate structure across scales: nonlinear dynamics, emergence, and the geometry behind physical systems. I learn by building models, running measurements, and writing down what fails as much as what works.
-  </p>
-  <p>
-    I'm looking for research environments that value careful thinking, honest uncertainty, and iterative work with mentorship.
-  </p>
-  
+<section id="about" class="bio section-split">
+  <div class="section-title">
+    <h2>About</h2>
+  </div>
+  <div class="section-body">
+    <p class="summary-lead">
+      <strong>I'm a second-year physics student building toward research in complex systems and nonlinear dynamics.</strong> This site is a public notebook of experiments, simulations, and ideas in progress.
+    </p>
+    <p>
+      I care about how simple rules generate structure across scales: nonlinear dynamics, emergence, and the geometry behind physical systems. I learn by building models, running measurements, and writing down what fails as much as what works.
+    </p>
+    <p>
+      I'm looking for research environments that value careful thinking, honest uncertainty, and iterative work with mentorship.
+    </p>
+  </div>
 </section>
 
-<section id="projects">
-  <h2>Projects</h2>
-  
-  <div class="projects-grid">
+<section id="projects" class="section-split">
+  <div class="section-title">
+    <h2>Projects</h2>
+  </div>
+  <div class="section-body">
+    <div class="projects-grid">
     <div class="project-card">
       <h4>Quantum Wavepacket Visualization</h4>
       <p>3D wavepacket dynamics for barrier scattering using Crank-Nicolson finite differences and absorbing boundary conditions. Focus on stability, resolution, and interpretation.</p>
@@ -51,13 +56,16 @@
         <a href="https://github.com/Vis-42/_space/tree/main/py/qm_sim" target="_blank">Source Code</a>
       </p>
     </div>
+    </div>
   </div>
 </section>
 
-<section id="coursework">
-  <h2>Coursework</h2>
-  
-  <div class="coursework-subsection">
+<section id="coursework" class="section-split">
+  <div class="section-title">
+    <h2>Coursework</h2>
+  </div>
+  <div class="section-body">
+    <div class="coursework-subsection">
     <h3>Experimental Work</h3>
     <div class="projects-grid">
       <div class="project-card">
@@ -90,9 +98,9 @@
         <p class="project-links"><a href="/pdfs/experiments/pll.pdf" target="_blank">View Report (PDF)</a></p>
       </div>
     </div>
-  </div>
+    </div>
   
-  <div class="coursework-subsection">
+    <div class="coursework-subsection">
     <h3>Notes and Assignments</h3>
     <div class="notes-list">
       <ul>
@@ -134,6 +142,7 @@
         </ul>
     </div>
     </details>
+    </div>
   </div>
 </section>
 {{ end }}
