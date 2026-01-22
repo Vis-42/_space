@@ -410,27 +410,12 @@
       line-height: 1.1;
       text-align: right;
       color: var(--color-text-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
     }
 
     .section-body {
       padding-top: 0.2rem;
-    }
-
-    .about-media {
-      float: left;
-      margin: 0.15rem 1.5rem 0.75rem 0;
-    }
-
-    .about-photo {
-      width: 180px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 6px;
-      border: 1px solid var(--color-border);
-      background: var(--color-bg-secondary);
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
-      transform: rotate(-0.6deg);
-      display: block;
     }
     
     /* ============================================
@@ -818,11 +803,15 @@
       }
       
       nav {
-        padding: 0 1.5rem;
+        padding: 0 0.75rem;
+        position: relative;
       }
       
       .menu-toggle {
         display: block;
+        position: absolute;
+        right: 0.5rem;
+        top: 0.2rem;
       }
       
       .nav-links {
@@ -904,16 +893,6 @@
 
       .section-body {
         padding-top: 0;
-      }
-
-      .about-media {
-        float: none;
-        margin: 0 0 1rem 0;
-      }
-
-      .about-photo {
-        width: 140px;
-        height: 140px;
       }
       
       .notes-list ul {
