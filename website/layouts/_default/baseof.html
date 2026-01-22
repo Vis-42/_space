@@ -426,7 +426,7 @@
     .section-body {
       padding-top: 0.8rem;
       min-width: 0;
-      border-top: 2px solid var(--color-border-light);
+      border-top: 2px solid var(--color-border);
     }
 
     .section-body::before {
@@ -915,6 +915,12 @@
 
       .section-body {
         padding-top: 0;
+        border-top: none;
+      }
+
+      .theme-toggle,
+      .menu-toggle {
+        background-color: var(--color-bg-primary);
       }
       
       .notes-list ul {
