@@ -48,6 +48,7 @@
       --line-strong: #6f7f90;
       --line-soft: #c6bfb4;
       --header-bg: rgba(247, 242, 232, 0.9);
+      --nav-bg: rgba(245, 239, 229, 0.95);
     }
     
     [data-theme="dark"] {
@@ -65,6 +66,7 @@
       --line-strong: #cfc7b8;
       --line-soft: #3f3f3f;
       --header-bg: rgba(0, 0, 0, 0.92);
+      --nav-bg: rgba(0, 0, 0, 0.96);
     }
     
     * {
@@ -180,7 +182,7 @@
        ============================================ */
     
     header {
-      background: var(--header-bg);
+      background: var(--nav-bg);
       border-right: 1px solid var(--line-soft);
       padding: 2rem 1.5rem;
       position: fixed;
@@ -219,6 +221,7 @@
       gap: 1.25rem;
       list-style: none;
       align-items: center;
+      width: 100%;
     }
     
     .nav-links a {
@@ -238,6 +241,7 @@
       border: 1px solid var(--line-soft);
       padding: 0.25rem 0.6rem;
       letter-spacing: 0.1em;
+      background-color: transparent;
     }
 
     .nav-links a.nav-cta:hover {
@@ -259,8 +263,8 @@
     .theme-toggle {
       background: none;
       background-color: transparent;
-      border: 1px solid var(--color-border-light);
-      color: var(--color-text-secondary);
+      border: 1px solid var(--line-soft);
+      color: var(--color-text-primary);
       padding: 0.45rem 0.8rem;
       border-radius: 2px;
       cursor: pointer;
@@ -271,11 +275,6 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
-    }
-
-    .theme-toggle {
-      border-color: var(--line-soft);
-      color: var(--color-text-primary);
     }
     
     .theme-toggle:hover {
@@ -294,8 +293,8 @@
       display: none;
       background: none;
       background-color: transparent;
-      border: 1px solid var(--color-border-light);
-      color: var(--color-text-secondary);
+      border: 1px solid var(--line-soft);
+      color: var(--color-text-primary);
       padding: 0.45rem 0.7rem;
       border-radius: 2px;
       cursor: pointer;
@@ -304,6 +303,14 @@
       text-transform: uppercase;
       letter-spacing: 0.05em;
       transition: all 0.2s ease;
+    }
+    .nav-actions {
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line-soft);
+      width: 100%;
+      display: flex;
+      justify-content: center;
     }
     
     .menu-toggle:hover {
@@ -876,7 +883,7 @@
         top: 70px;
         left: 0;
         right: 0;
-        background: var(--header-bg);
+        background: var(--nav-bg);
         border-bottom: 1px solid var(--color-border);
         flex-direction: column;
         padding: 1.5rem;
@@ -1064,9 +1071,11 @@
         <li><a href="#coursework">Coursework</a></li>
         <li><a href="/pdfs/cv.pdf" target="_blank" class="nav-cta">CV</a></li>
       </ul>
-      <button class="theme-toggle" aria-label="Toggle dark mode">
-        <span class="theme-text">Dark</span>
-      </button>
+      <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Toggle dark mode">
+          <span class="theme-text">Dark</span>
+        </button>
+      </div>
     </nav>
   </header>
   
@@ -1131,10 +1140,10 @@
       }
     })();
     
-    // Highlight nav item on section hover
+    // Highlight nav item based on scroll position
     (function() {
       const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
-      if (!navLinks.length) return;
+      if (!navLinks.length || !('IntersectionObserver' in window)) return;
 
       const linkById = {};
       navLinks.forEach((link) => {
@@ -1142,17 +1151,20 @@
         if (id) linkById[id] = link;
       });
 
-      document.querySelectorAll('section[id]').forEach((section) => {
-        section.addEventListener('mouseenter', () => {
-          navLinks.forEach((link) => link.classList.remove('active'));
-          const link = linkById[section.id];
-          if (link) link.classList.add('active');
-        });
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            navLinks.forEach((link) => link.classList.remove('active'));
+            const link = linkById[entry.target.id];
+            if (link) link.classList.add('active');
+          });
+        },
+        { rootMargin: '-40% 0px -55% 0px', threshold: 0.01 }
+      );
 
-        section.addEventListener('mouseleave', () => {
-          const link = linkById[section.id];
-          if (link) link.classList.remove('active');
-        });
+      document.querySelectorAll('section[id]').forEach((section) => {
+        observer.observe(section);
       });
     })();
 
