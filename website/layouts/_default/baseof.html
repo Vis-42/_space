@@ -700,28 +700,18 @@
     .experiments-toggle {
       cursor: pointer;
       font-weight: 500;
-      color: #2563eb;
+      color: var(--color-accent);
       padding: 0;
       background: transparent;
       border: none;
       list-style: none;
       user-select: none;
       transition: color 0.2s ease;
-      text-decoration: underline;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 0.18em;
+      text-decoration: none;
     }
 
     .experiments-toggle:hover {
-      color: #1d4ed8;
-    }
-
-    [data-theme="dark"] .experiments-toggle {
-      color: #93c5fd;
-    }
-
-    [data-theme="dark"] .experiments-toggle:hover {
-      color: #bfdbfe;
+      color: var(--color-accent-hover);
     }
 
     .experiments-toggle::-webkit-details-marker {
