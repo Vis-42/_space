@@ -692,6 +692,44 @@
       user-select: none;
       transition: all 0.2s ease;
     }
+
+    .experiments-collapsible {
+      margin-top: 1.5rem;
+    }
+
+    .experiments-toggle {
+      cursor: pointer;
+      font-weight: 500;
+      color: var(--color-text-primary);
+      padding: 0.6rem 0.9rem;
+      background: transparent;
+      border: 1px solid var(--line-soft);
+      border-radius: 2px;
+      list-style: none;
+      user-select: none;
+      transition: all 0.2s ease;
+    }
+
+    .experiments-toggle:hover {
+      background: var(--color-bg-secondary);
+      border-color: var(--color-border);
+    }
+
+    .experiments-toggle::-webkit-details-marker {
+      display: none;
+    }
+
+    .experiments-toggle::after {
+      content: "+";
+      display: inline-block;
+      margin-left: 0.5rem;
+      font-weight: 400;
+      transition: transform 0.2s ease;
+    }
+
+    details[open] .experiments-toggle::after {
+      content: "−";
+    }
     
     .assignments-toggle:hover {
       background: var(--color-bg-secondary);
