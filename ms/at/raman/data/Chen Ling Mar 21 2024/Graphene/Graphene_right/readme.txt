@@ -1,0 +1,1 @@
+All measurements taken at the same location due to shortage of time

@@ -1,0 +1,121 @@
+{
+  "carbon_rod": {
+    "parent": "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1",
+    "paths": [
+      "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1/rod-smooth-2.txt",
+      "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1/rod-smooth-3.txt",
+      "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1/rod-smooth-1.txt"
+    ],
+    "avg_score": 33.802461844598156,
+    "count": 3
+  },
+  "hopg": {
+    "parent": "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1",
+    "paths": [
+      "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1/hopg-s-3.txt",
+      "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1/hopg-s-2.txt",
+      "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1/hopg-s-1.txt"
+    ],
+    "avg_score": 26.395744423036394,
+    "count": 3
+  },
+  "diamond": {
+    "parent": "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1",
+    "paths": [
+      "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1/diamond-smooth-2.txt",
+      "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1/diamond-smooth-3.txt",
+      "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1/diamond-smooth-1.txt"
+    ],
+    "avg_score": 32.11222374973121,
+    "count": 3
+  },
+  "graphene": {
+    "parent": "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Graphene_Right",
+    "paths": [
+      "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Graphene_Right/Loc1_500ms_100snap.txt",
+      "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Graphene_Right/Loc4_500ms_100snap.txt",
+      "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Graphene_Right/Loc5_500ms_100snap.txt",
+      "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Graphene_Right/Loc3_500ms_100snap.txt",
+      "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Graphene_Right/Loc2_500ms_100snap.txt"
+    ],
+    "avg_score": 23.551247379302517,
+    "count": 5
+  },
+  "cnt": {
+    "parent": "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/Nanotube",
+    "paths": [
+      "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/Nanotube/nanotube_AT10000ms_AVERAGE_10.txt",
+      "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/Nanotube/nanotube_AT2000ms_AVERAGE_10.txt",
+      "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/Nanotube/nanotube_AT1000ms_AVERAGE_10.txt",
+      "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/Nanotube/nanotube_AT7000ms_AVERAGE_10.txt",
+      "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/Nanotube/nanotube_AT5000ms_AVERAGE_10.txt"
+    ],
+    "avg_score": 3.7742606495776827,
+    "count": 5
+  },
+  "unknown_semiconductor": {
+    "parent": "/Users/parthbhargava/_space/ms/at/raman/data/parth/day2",
+    "paths": [
+      "/Users/parthbhargava/_space/ms/at/raman/data/parth/day2/unknown1.txt",
+      "/Users/parthbhargava/_space/ms/at/raman/data/parth/day2/unknown2.txt",
+      "/Users/parthbhargava/_space/ms/at/raman/data/parth/day2/unknown3.txt",
+      "/Users/parthbhargava/_space/ms/at/raman/data/parth/day2/unknown4.txt",
+      "/Users/parthbhargava/_space/ms/at/raman/data/parth/day2/unknown5.txt"
+    ],
+    "avg_score": 288.2299787106163,
+    "count": 5
+  },
+  "diamond_like": [
+    {
+      "parent": "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/Unknown A",
+      "paths": [
+        "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/Unknown A/5.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/Unknown A/4.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/Unknown A/3.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/Unknown A/2.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/Unknown A/1.txt"
+      ],
+      "avg_score": 280.305671395103,
+      "count": 5
+    },
+    {
+      "parent": "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC",
+      "paths": [
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_80mW_AT6000ms_AVERAGE_10.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_90mW_AT6000ms_AVERAGE_10_2.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_50mW_AT6000ms_AVERAGE_10.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_75mW_AT6000ms_AVERAGE_10_2.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_90mW_AT6000ms_AVERAGE_10.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_50mW_AT6000ms_AVERAGE_10_2.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_80mW_AT6000ms_AVERAGE_10_2.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_75mW_AT7000ms_AVERAGE_10_2.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_75mW_AT1000ms_AVERAGE_10.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_75mW_AT5000ms_AVERAGE_10_2.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_75mW_AT7000ms_AVERAGE_10.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_75mW_AT5000ms_AVERAGE_10_3.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_75mW_AT6000ms_AVERAGE_10.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_75mW_AT5000ms_AVERAGE_10.txt"
+      ],
+      "avg_score": 3.914638735437379,
+      "count": 14
+    },
+    {
+      "parent": "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB",
+      "paths": [
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT300ms_AVERAGE_10.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT500ms_AVERAGE_10.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT1500ms_AVERAGE_10.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT700ms_AVERAGE_10.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT400ms_AVERAGE_10.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT1200ms_AVERAGE_1.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT2000ms_AVERAGE_10.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT200ms_AVERAGE_10.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT1000ms_AVERAGE_10.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT100ms_AVERAGE_10.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT1000ms_AVERAGE_1.txt"
+      ],
+      "avg_score": 3.842716549269772,
+      "count": 11
+    }
+  ]
+}

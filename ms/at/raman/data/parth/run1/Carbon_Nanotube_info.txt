@@ -1,0 +1,10 @@
+Date=4/2/2026
+Time=3:03 pm
+Sample name=Carbon_Nanotube
+Integration time=1600[ms]
+Averaging=3
+Laser wavelength=-3033.4[nm]
+Laser power=0[mW]
+Relative Intensity Correction=No
+DATATYPE;Wavelength (nm);Intensity (Counts)
+Smoothing=No 

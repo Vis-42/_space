@@ -1,0 +1,42 @@
+============================================================
+                 Saved DATA File for TRIM                   
+       Changes will Modify Continued TRIM Calculations      
+============================================================
+TRIM  Version  Number  /  Calculation Name 
+"SRIM-2008.04"    "Ar (1E+06) into GaAs                    "
+ION DATA:At.Numb, Mass(amu), Energy (keV) , Angle to Target
+          18     39.9620  3.0000E+01    00.0
+ION NUMB: Current, Total, AutoSave, Transmitted, Backscattered 
+        5000 5000  5000    0    211
+CURRENT ION: Energy(eV),  Depth (X,Y,Z), Trajectory: Cos(X,Y,Z), Sin(X)
+8.06994E-01 3.61086E+02 4.30746E+01 1.40878E+02 0.350951 -0.923775 -0.153211 0.936394
+ION AVGS:  Range,      Straggling,   Vacancies/Ion
+        2.6141E+02   1.4316E+02   6.1782E+02
+ION SUMS:  Range,Straggling,(Vacancies,Replacements,Interstitials)/Ang.
+1.25191E+006  4.25415E+008  1.69865E+011  7.62714E+013  3.08909E+005  8.80660E+003  3.13342E+005  4.37470E+004
+Ion Y-Z Lateral Data :  Range, Straggling, Kurtosis, Radial Dev.
+5.17727E+005  9.26223E+007  8.13721E+005  1.85061E+008
+1.69915E+002  9.88534E+001  1.08107E+002  1.39071E+002  7.22172E+001
+Cascades (1=KP,2=Full,3=Sputt,3=Neut+KP,4=Neut+Full),Disk FLAGS:Backscatter,Transmit, Sputter, Seeds
+          3                                      0            0   1  1314916470 705866330 2
+TGT DATA: ------- Numb.Elements, Numb.Layers -----------------
+                       2           1
+TGT DATA: Atomic Numb, Mass,  Disp., Binding, Surf. Energy(eV)
+ 31           69.7200       20.00         3.00          2.00
+ 33           74.9220       25.00         3.00          1.26
+TGT Layers: Name      Width(A),    Depth(A), Density(g/cm3), Stoichiometry (Tgt.Atoms)
+    "GaAs" 1.0000E+03       1.0000E+03    5.3200E+00 5.00000E-01 5.00000E-01
+Lowest E,  Ed(min)  (eV)
+ 1             20 
+Total Sputtered Atoms and Energy (eV)     (Target Atoms 1 - 2  )
+    1.712E+004 2.155E+006    2.662E+004 2.249E+006 
+Plot Display Start Depth (A), End Depth(A), Depth Resolution (Ang.)
+ 0             1000          10 
+Plotting Colors from TRIM.CFG
+ 255           0             6             8388608       255           0             0             0             255           8388608       65280         16776960 
+ 255  6487906  15982183  16744703  16777088  13159423  16760769  8421376  6422724  8388736  4755857  9408399  255 
+ 0  837122  16417654  12519886  13814035  9673727  16711680  65280  12615935  16716287  8700353  12566463  0 
+Collision Plots and Plot Positions
+ 1             0             0             0             0             200           0             0             0             162           0             0 
+Animated Collison Plot Position
+ 2865          2935          3005          3075 

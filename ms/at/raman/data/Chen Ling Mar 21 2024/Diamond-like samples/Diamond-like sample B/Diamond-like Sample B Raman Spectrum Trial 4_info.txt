@@ -1,0 +1,10 @@
+Date=4/4/2024
+Time=2:28 pm
+Sample name=Diamond-like Sample B Raman Spectrum Trial 4
+Integration time=700[ms]
+Averaging=20
+Laser wavelength=532.1[nm]
+Laser power=0[mW]
+Relative Intensity Correction=No
+DATATYPE;Raman shift (cm-1);Intensity (Counts)
+Smoothing=No 

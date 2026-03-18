@@ -1,0 +1,10 @@
+Date=10/10/2022
+Time=4:45 pm
+Sample name=D run 1
+Integration time=800[ms]
+Averaging=1
+Laser wavelength=532.1[nm]
+Laser power=0[mW]
+Relative Intensity Correction=No
+DATATYPE;Raman shift (cm-1);Intensity (Counts)
+Smoothing=No 

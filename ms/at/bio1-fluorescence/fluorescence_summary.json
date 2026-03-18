@@ -1,0 +1,126 @@
+[
+  {
+    "file": "sol1.csv",
+    "label": "BSA + PBS",
+    "x_range": [
+      300.0,
+      400.0
+    ],
+    "peak_raw": {
+      "wavelength_nm": 343.0700073,
+      "intensity": 108.646286
+    },
+    "peak_smoothed": {
+      "wavelength_nm": 346.0,
+      "intensity": 106.93
+    },
+    "meta": {
+      "Collection Time": "3/3/2026 4:15:32 pm",
+      "Operator Name": "",
+      "Scan Software Version": "1.2(147)",
+      "Parameter List": "",
+      "Method Log": "",
+      "Method Name": "Default",
+      "Date/Time stamp": "3/3/2026 3:52:07 pm",
+      "Method Modifications": "",
+      "Autoconvert Changed": "3/3/2026 4:10:14 pm, Old:None, New:Ascii with Log",
+      "Excitation Wavelength Changed": "3/3/2026 4:10:14 pm, Old: 350.00, New: 280.00",
+      "Emission Wavelength Changed": "3/3/2026 4:10:14 pm, Old: 400.00, New: 300.00",
+      "Stop Wavelength Changed": "3/3/2026 4:10:14 pm, Old: 600.00, New: 400.00",
+      "Zero Mode Changed": "3/3/2026 4:10:22 pm, Old:Reading, New:ON"
+    }
+  },
+  {
+    "file": "sol2.csv",
+    "label": "BSA + acid",
+    "x_range": [
+      300.0,
+      400.0
+    ],
+    "peak_raw": {
+      "wavelength_nm": 324.0,
+      "intensity": 82.81098175
+    },
+    "peak_smoothed": {
+      "wavelength_nm": 327.0700073,
+      "intensity": 81.74
+    },
+    "meta": {
+      "Collection Time": "3/3/2026 4:20:06 pm",
+      "Operator Name": "",
+      "Scan Software Version": "1.2(147)",
+      "Parameter List": "",
+      "Method Log": "",
+      "Method Name": "Default",
+      "Date/Time stamp": "3/3/2026 3:52:07 pm",
+      "Method Modifications": "",
+      "Autoconvert Changed": "3/3/2026 4:10:14 pm, Old:None, New:Ascii with Log",
+      "Excitation Wavelength Changed": "3/3/2026 4:10:14 pm, Old: 350.00, New: 280.00",
+      "Emission Wavelength Changed": "3/3/2026 4:10:14 pm, Old: 400.00, New: 300.00",
+      "Stop Wavelength Changed": "3/3/2026 4:10:14 pm, Old: 600.00, New: 400.00",
+      "Zero Mode Changed": "3/3/2026 4:10:22 pm, Old:Reading, New:ON"
+    }
+  },
+  {
+    "file": "sol3.csv",
+    "label": "Lysozyme + PBS",
+    "x_range": [
+      300.0,
+      400.0
+    ],
+    "peak_raw": {
+      "wavelength_nm": 344.0,
+      "intensity": 161.8457794
+    },
+    "peak_smoothed": {
+      "wavelength_nm": 343.0700073,
+      "intensity": 160.73
+    },
+    "meta": {
+      "Collection Time": "3/3/2026 4:23:36 pm",
+      "Operator Name": "",
+      "Scan Software Version": "1.2(147)",
+      "Parameter List": "",
+      "Method Log": "",
+      "Method Name": "Default",
+      "Date/Time stamp": "3/3/2026 3:52:07 pm",
+      "Method Modifications": "",
+      "Autoconvert Changed": "3/3/2026 4:10:14 pm, Old:None, New:Ascii with Log",
+      "Excitation Wavelength Changed": "3/3/2026 4:10:14 pm, Old: 350.00, New: 280.00",
+      "Emission Wavelength Changed": "3/3/2026 4:10:14 pm, Old: 400.00, New: 300.00",
+      "Stop Wavelength Changed": "3/3/2026 4:10:14 pm, Old: 600.00, New: 400.00",
+      "Zero Mode Changed": "3/3/2026 4:10:22 pm, Old:Reading, New:ON"
+    }
+  },
+  {
+    "file": "sol4.csv",
+    "label": "Lysozyme + acid",
+    "x_range": [
+      300.0,
+      400.0
+    ],
+    "peak_raw": {
+      "wavelength_nm": 343.0700073,
+      "intensity": 117.930603
+    },
+    "peak_smoothed": {
+      "wavelength_nm": 344.0,
+      "intensity": 115.66
+    },
+    "meta": {
+      "Collection Time": "3/3/2026 4:26:08 pm",
+      "Operator Name": "",
+      "Scan Software Version": "1.2(147)",
+      "Parameter List": "",
+      "Method Log": "",
+      "Method Name": "Default",
+      "Date/Time stamp": "3/3/2026 3:52:07 pm",
+      "Method Modifications": "",
+      "Autoconvert Changed": "3/3/2026 4:10:14 pm, Old:None, New:Ascii with Log",
+      "Excitation Wavelength Changed": "3/3/2026 4:10:14 pm, Old: 350.00, New: 280.00",
+      "Emission Wavelength Changed": "3/3/2026 4:10:14 pm, Old: 400.00, New: 300.00",
+      "Stop Wavelength Changed": "3/3/2026 4:10:14 pm, Old: 600.00, New: 400.00",
+      "Zero Mode Changed": "3/3/2026 4:10:22 pm, Old:Reading, New:ON"
+    }
+  }
+]

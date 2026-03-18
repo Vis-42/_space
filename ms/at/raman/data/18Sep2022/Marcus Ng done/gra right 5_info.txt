@@ -1,0 +1,10 @@
+Date=16/9/2022
+Time=3:50 pm
+Sample name=gra right 5
+Integration time=1000[ms]
+Averaging=10
+Laser wavelength=532.0[nm]
+Laser power=0[mW]
+Relative Intensity Correction=No
+DATATYPE;Raman shift (cm-1);Intensity (Counts)
+Smoothing=No 

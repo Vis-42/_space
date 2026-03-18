@@ -45,3 +45,4 @@ Complete experimental analysis of Hall Effect measurements in p-type and n-type 
 - **Visualization**: Publication-quality plots (300 dpi, serif fonts)
 - **Report**: Typst document with comprehensive analysis
 
+

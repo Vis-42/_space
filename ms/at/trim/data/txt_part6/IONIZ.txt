@@ -1,0 +1,174 @@
+====== H (2000) into Skin+Skull+Brain+Tumor+Ske =======
+        SRIM-2013.00
+========================================
+      Ion and Recoil IONIZATION     
+ See SRIM Outputs\TDATA.txt for details   
+========================================
+ See file :  SRIM Outputs\TDATA.txt   for calculation data
+ Ion    =  H   Energy = 36850 keV
+============= TARGET MATERIAL ======================================
+Layer 1 : Skin
+Layer Width = 10000.E+03 A ;
+  Layer # 1- Density = 18.49E22 atoms/cm3 = 1.92 g/cm3
+  Layer # 1-  H = 62.0 Atomic Percent = 10.0 Mass Percent
+  Layer # 1-  C = 10.6 Atomic Percent = 20.4 Mass Percent
+  Layer # 1-  N = 1.87 Atomic Percent = 4.20 Mass Percent
+  Layer # 1-  O = 25.2 Atomic Percent = 64.5 Mass Percent
+  Layer # 1-  S = 3.89 Atomic Percent = .199 Mass Percent
+  Layer # 1- Cl = .053 Atomic Percent = .300 Mass Percent
+  Layer # 1- Na = 5.44 Atomic Percent = .200 Mass Percent
+  Layer # 1-  K = .016 Atomic Percent = .100 Mass Percent
+Layer 2 : Skull
+Layer Width = 40000.E+03 A ;
+  Layer # 2- Density = 9.946E22 atoms/cm3 = 1.92 g/cm3
+  Layer # 2- Ca = 6.53 Atomic Percent = 22.5 Mass Percent
+  Layer # 2-  P = 3.86 Atomic Percent = 10.3 Mass Percent
+  Layer # 2-  H = 39.2 Atomic Percent = 3.40 Mass Percent
+  Layer # 2-  C = 15.0 Atomic Percent = 15.5 Mass Percent
+  Layer # 2-  N = 3.48 Atomic Percent = 4.20 Mass Percent
+  Layer # 2-  O = 31.6 Atomic Percent = 43.5 Mass Percent
+  Layer # 2-  S = .108 Atomic Percent = .300 Mass Percent
+  Layer # 2- Mg = 9.57 Atomic Percent = .200 Mass Percent
+Layer 3 : Brain
+Layer Width = 30000.E+03 A ;
+  Layer # 3- Density = 10.13E22 atoms/cm3 = 1.05 g/cm3
+  Layer # 3-  H = 63.1 Atomic Percent = 10.2 Mass Percent
+  Layer # 3-  C = 7.43 Atomic Percent = 14.3 Mass Percent
+  Layer # 3-  N = 1.51 Atomic Percent = 3.40 Mass Percent
+  Layer # 3-  O = 27.7 Atomic Percent = 71.0 Mass Percent
+  Layer # 3-  K = 6.38 Atomic Percent = .400 Mass Percent
+  Layer # 3-  S = .058 Atomic Percent = .300 Mass Percent
+  Layer # 3-  P = .040 Atomic Percent = .200 Mass Percent
+  Layer # 3- Cl = .017 Atomic Percent = .100 Mass Percent
+Layer 4 : Tumor
+Layer Width = 20000.E+03 A ;
+  Layer # 4- Density = 4.510E22 atoms/cm3 = 1.05 g/cm3
+  Layer # 4-  H = 10.2 Atomic Percent = .734 Mass Percent
+  Layer # 4-  C = 14.3 Atomic Percent = 12.2 Mass Percent
+  Layer # 4-  N = 3.40 Atomic Percent = 3.40 Mass Percent
+  Layer # 4-  O = 71.0 Atomic Percent = 81.1 Mass Percent
+  Layer # 4-  K = .400 Atomic Percent = 1.11 Mass Percent
+  Layer # 4-  S = .300 Atomic Percent = .686 Mass Percent
+  Layer # 4-  P = .200 Atomic Percent = .442 Mass Percent
+  Layer # 4- Cl = .100 Atomic Percent = .253 Mass Percent
+Layer 5 : Brain
+Layer Width = 60000.E+03 A ;
+  Layer # 5- Density = 4.510E22 atoms/cm3 = 1.05 g/cm3
+  Layer # 5-  H = 10.2 Atomic Percent = .734 Mass Percent
+  Layer # 5-  C = 14.3 Atomic Percent = 12.2 Mass Percent
+  Layer # 5-  N = 3.40 Atomic Percent = 3.40 Mass Percent
+  Layer # 5-  O = 71.0 Atomic Percent = 81.1 Mass Percent
+  Layer # 5-  K = .400 Atomic Percent = 1.11 Mass Percent
+  Layer # 5-  S = .300 Atomic Percent = .686 Mass Percent
+  Layer # 5-  P = .200 Atomic Percent = .442 Mass Percent
+  Layer # 5- Cl = .100 Atomic Percent = .253 Mass Percent
+====================================================================
+ Total Ions calculated =005000.00
+===============================================================
+  Ionization Energy Units are  >>>>  eV /(Angstrom-Ion)  <<<<  
+===============================================================
+
+  TARGET       IONIZ.       IONIZ.  
+  DEPTH         by           by     
+  (Ang)        IONS         RECOILS 
+-----------  -----------  -----------
+160000.E+01  3077.61E-04  3124.01E-08
+320000.E+01  3111.78E-04  1159.08E-07
+480000.E+01  3153.57E-04  4922.21E-08
+640000.E+01  3184.53E-04  2758.49E-08
+800000.E+01  3226.08E-04  2325.64E-08
+960000.E+01  3257.79E-04  4075.14E-07
+112000.E+02  3007.72E-04  1874.46E-08
+128000.E+02  2938.52E-04  1344.87E-08
+144000.E+02  2971.55E-04  2569.81E-08
+160000.E+02  3017.24E-04  2550.22E-08
+176000.E+02  3043.51E-04  8486.77E-08
+192000.E+02  3094.05E-04  2809.59E-08
+208000.E+02  3131.53E-04  3394.42E-08
+224000.E+02  3171.44E-04  3618.43E-08
+240000.E+02  3210.53E-04  5959.72E-08
+256000.E+02  3257.70E-04  2763.90E-08
+272000.E+02  3306.10E-04  2202.93E-08
+288000.E+02  3360.83E-04  1749.96E-08
+304000.E+02  3408.54E-04  9744.26E-08
+320000.E+02  3472.88E-04  1005.76E-07
+336000.E+02  3534.65E-04  3453.64E-08
+352000.E+02  3593.82E-04  2186.73E-08
+368000.E+02  3664.07E-04  3312.14E-08
+384000.E+02  3726.96E-04  5982.99E-08
+400000.E+02  3802.32E-04  5105.04E-08
+416000.E+02  3881.00E-04  4625.31E-08
+432000.E+02  3962.95E-04  5585.70E-08
+448000.E+02  4059.31E-04  4829.22E-08
+464000.E+02  4166.76E-04  6197.51E-08
+480000.E+02  4273.74E-04  2404.60E-08
+496000.E+02  4382.15E-04  4698.76E-08
+512000.E+02  3235.11E-04  5281.61E-08
+528000.E+02  2862.32E-04  1983.54E-08
+544000.E+02  2925.56E-04  4413.75E-08
+560000.E+02  2989.92E-04  5179.98E-08
+576000.E+02  3053.50E-04  3478.60E-08
+592000.E+02  3125.05E-04  5640.25E-08
+608000.E+02  3202.86E-04  2591.30E-08
+624000.E+02  3287.99E-04  2059.49E-08
+640000.E+02  3377.89E-04  5034.93E-08
+656000.E+02  3481.22E-04  2662.23E-07
+672000.E+02  3595.66E-04  1043.74E-07
+688000.E+02  3724.38E-04  3138.21E-08
+704000.E+02  3863.93E-04  6410.94E-08
+720000.E+02  4012.38E-04  3651.02E-08
+736000.E+02  4190.03E-04  6659.45E-08
+752000.E+02  4395.17E-04  6856.01E-08
+768000.E+02  4643.65E-04  3690.03E-08
+784000.E+02  4932.86E-04  4805.60E-08
+800000.E+02  5301.99E-04  6383.89E-08
+816000.E+02  4973.70E-04  3406.90E-08
+832000.E+02  5438.94E-04  4345.00E-08
+848000.E+02  6086.27E-04  8775.24E-08
+864000.E+02  7146.98E-04  1110.41E-07
+880000.E+02  8714.86E-04  1214.18E-07
+896000.E+02  9435.61E-04  1630.07E-07
+912000.E+02  7378.25E-04  1079.36E-07
+928000.E+02  3425.32E-04  6080.74E-08
+944000.E+02  8724.41E-05  2149.55E-08
+960000.E+02  9362.32E-06  1179.79E-09
+976000.E+02  2954.67E-07  4225.41E-11
+992000.E+02  0000.00E+00  0000.00E+00
+100800.E+03  0000.00E+00  0000.00E+00
+102400.E+03  0000.00E+00  0000.00E+00
+104000.E+03  0000.00E+00  0000.00E+00
+105600.E+03  0000.00E+00  0000.00E+00
+107200.E+03  0000.00E+00  0000.00E+00
+108800.E+03  0000.00E+00  0000.00E+00
+110400.E+03  0000.00E+00  0000.00E+00
+112000.E+03  0000.00E+00  0000.00E+00
+113600.E+03  0000.00E+00  0000.00E+00
+115200.E+03  0000.00E+00  0000.00E+00
+116800.E+03  0000.00E+00  0000.00E+00
+118400.E+03  0000.00E+00  0000.00E+00
+120000.E+03  0000.00E+00  0000.00E+00
+121600.E+03  0000.00E+00  0000.00E+00
+123200.E+03  0000.00E+00  0000.00E+00
+124800.E+03  0000.00E+00  0000.00E+00
+126400.E+03  0000.00E+00  0000.00E+00
+128000.E+03  0000.00E+00  0000.00E+00
+129600.E+03  0000.00E+00  0000.00E+00
+131200.E+03  0000.00E+00  0000.00E+00
+132800.E+03  0000.00E+00  0000.00E+00
+134400.E+03  0000.00E+00  0000.00E+00
+136000.E+03  0000.00E+00  0000.00E+00
+137600.E+03  0000.00E+00  0000.00E+00
+139200.E+03  0000.00E+00  0000.00E+00
+140800.E+03  0000.00E+00  0000.00E+00
+142400.E+03  0000.00E+00  0000.00E+00
+144000.E+03  0000.00E+00  0000.00E+00
+145600.E+03  0000.00E+00  0000.00E+00
+147200.E+03  0000.00E+00  0000.00E+00
+148800.E+03  0000.00E+00  0000.00E+00
+150400.E+03  0000.00E+00  0000.00E+00
+152000.E+03  0000.00E+00  0000.00E+00
+153600.E+03  0000.00E+00  0000.00E+00
+155200.E+03  0000.00E+00  0000.00E+00
+156800.E+03  0000.00E+00  0000.00E+00
+158400.E+03  0000.00E+00  0000.00E+00
+160000.E+03  0000.00E+00  0000.00E+00

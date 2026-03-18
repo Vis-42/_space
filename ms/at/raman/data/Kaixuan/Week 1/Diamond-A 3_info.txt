@@ -1,0 +1,10 @@
+Date=18/8/2023
+Time=3:48 pm
+Sample name=Diamond-A 3
+Integration time=1500[ms]
+Averaging=10
+Laser wavelength=532.0[nm]
+Laser power=0[mW]
+Relative Intensity Correction=No
+DATATYPE;Raman shift (cm-1);Intensity (Counts)
+Smoothing=Yes (Side Points 15; Polynomial Order 3)

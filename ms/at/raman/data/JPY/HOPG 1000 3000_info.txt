@@ -1,0 +1,10 @@
+Date=14/2/2025
+Time=3:37 pm
+Sample name=HOPG 1000 3000
+Integration time=3000[ms]
+Averaging=10
+Laser wavelength=532.1[nm]
+Laser power=0[mW]
+Relative Intensity Correction=No
+DATATYPE;Raman shift (cm-1);Intensity (Counts)
+Smoothing=Yes (Side Points 6; Polynomial Order 3)

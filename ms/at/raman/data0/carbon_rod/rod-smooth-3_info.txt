@@ -1,0 +1,10 @@
+Date=5/2/2026
+Time=4:18 pm
+Sample name=rod-smooth-3
+Integration time=1000[ms]
+Averaging=3
+Laser wavelength=532.1[nm]
+Laser power=0[mW]
+Relative Intensity Correction=No
+DATATYPE;Raman shift (cm-1);Intensity (Counts)
+Smoothing=Yes (Side Points 6; Polynomial Order 3)

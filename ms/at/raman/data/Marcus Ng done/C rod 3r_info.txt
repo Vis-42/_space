@@ -1,0 +1,10 @@
+Date=13/9/2022
+Time=2:37 pm
+Sample name=C rod 3r
+Integration time=1500[ms]
+Averaging=100
+Laser wavelength=532.0[nm]
+Laser power=0[mW]
+Relative Intensity Correction=No
+DATATYPE;Raman shift (cm-1);Intensity (Counts)
+Smoothing=No 

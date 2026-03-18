@@ -1,0 +1,10 @@
+Date=25/8/2023
+Time=3:11 pm
+Sample name=Semiconductor S 2 1500ms 5aq
+Integration time=1500[ms]
+Averaging=5
+Laser wavelength=533.4[nm]
+Laser power=100[mW]
+Relative Intensity Correction=No
+DATATYPE;Raman shift (cm-1);Intensity (Counts)
+Smoothing=Yes (Side Points 3; Polynomial Order 3)

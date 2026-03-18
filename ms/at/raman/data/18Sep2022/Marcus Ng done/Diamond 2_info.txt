@@ -1,0 +1,10 @@
+Date=9/9/2022
+Time=4:21 pm
+Sample name=Diamond 2
+Integration time=30[ms]
+Averaging=1000
+Laser wavelength=532.0[nm]
+Laser power=0[mW]
+Relative Intensity Correction=No
+DATATYPE;Raman shift (cm-1);Intensity (Counts)
+Smoothing=No 

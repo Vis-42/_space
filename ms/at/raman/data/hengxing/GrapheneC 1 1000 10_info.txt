@@ -1,0 +1,10 @@
+Date=31/8/2023
+Time=3:52 pm
+Sample name=GrapheneC 1 1000 10
+Integration time=1000[ms]
+Averaging=10
+Laser wavelength=532.1[nm]
+Laser power=0[mW]
+Relative Intensity Correction=No
+DATATYPE;Raman shift (cm-1);Intensity (Counts)
+Smoothing=Yes (Side Points 6; Polynomial Order 3)

@@ -1,0 +1,10 @@
+Date=28/4/2023
+Time=4:18 pm
+Sample name=200ppm-caffe-100mW-10s-1avg
+Integration time=10000[ms]
+Averaging=1
+Laser wavelength=532.0[nm]
+Laser power=0[mW]
+Relative Intensity Correction=No
+DATATYPE;Raman shift (cm-1);Intensity (Counts)
+Smoothing=No 

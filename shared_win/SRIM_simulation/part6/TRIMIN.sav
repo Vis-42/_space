@@ -1,0 +1,71 @@
+==> SRIM-2013.00 This file controls TRIM Calculations.
+Ion: Z1 ,  M1,  Energy (keV), Angle,Number,Bragg Corr,AutoSave Number.
+     1   1.008       36850       0    5000        1     5000
+Cascades(1=No;2=Full;3=Sputt;4-5=Ions;6-7=Neutrons), Random Number Seed, Reminders
+                      2                                   0       0
+Diskfiles (0=no,1=yes): Ranges, Backscatt, Transmit, Sputtered, Collisions(1=Ion;2=Ion+Recoils), Special EXYZ.txt file
+                          1       0           0       0               0                               0
+Target material : Number of Elements & Layers
+"H (2000) into Skin+Skull+Brain+Tumor+Ske"      40               5
+PlotType (0-5); Plot Depths: Xmin, Xmax(Ang.) [=0 0 for Viewing Full Target]
+       0                         0         1.6E+08
+Target Elements:    Z   Mass(amu)
+Atom 1 = H =       1   1.008
+Atom 2 = C =       6  12.011
+Atom 3 = N =       7  14.007
+Atom 4 = O =       8  15.999
+Atom 5 = S =      16  32.066
+Atom 6 = Cl =      17  35.453
+Atom 7 = Na =      11   22.99
+Atom 8 = K =      19  39.098
+Atom 9 = Ca =      20   40.08
+Atom 10 = P =      15  30.974
+Atom 11 = H =       1   1.008
+Atom 12 = C =       6  12.011
+Atom 13 = N =       7  14.007
+Atom 14 = O =       8  15.999
+Atom 15 = S =      16  32.066
+Atom 16 = Mg =      12  24.305
+Atom 17 = H =       1   1.008
+Atom 18 = C =       6  12.011
+Atom 19 = N =       7  14.007
+Atom 20 = O =       8  15.999
+Atom 21 = K =      19  39.098
+Atom 22 = S =      16  32.066
+Atom 23 = P =      15  30.974
+Atom 24 = Cl =      17  35.453
+Atom 25 = H =       1   1.008
+Atom 26 = C =       6  12.011
+Atom 27 = N =       7  14.007
+Atom 28 = O =       8  15.999
+Atom 29 = K =      19  39.098
+Atom 30 = S =      16  32.066
+Atom 31 = P =      15  30.974
+Atom 32 = Cl =      17  35.453
+Atom 33 = H =       1   1.008
+Atom 34 = C =       6  12.011
+Atom 35 = N =       7  14.007
+Atom 36 = O =       8  15.999
+Atom 37 = K =      19  39.098
+Atom 38 = S =      16  32.066
+Atom 39 = P =      15  30.974
+Atom 40 = Cl =      17  35.453
+Layer   Layer Name /               Width Density      H(1)    C(6)    N(7)    O(8)   S(16)  Cl(17)  Na(11)   K(19)  Ca(20)   P(15)    H(1)    C(6)    N(7)    O(8)   S(16)  Mg(12)    H(1)    C(6)    N(7)    O(8)   K(19)   S(16)   P(15)  Cl(17)    H(1)    C(6)    N(7)    O(8)   K(19)   S(16)   P(15)  Cl(17)    H(1)    C(6)    N(7)    O(8)   K(19)   S(16)   P(15)  Cl(17)
+Numb.   Description                (Ang) (g/cm3)    Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich
+ 1      "Skin"           10000000  1.92 .620956  .10631 .018768 .252341  .00039  .00053 .000545  .00016       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+ 2      "Skull"           40000000  1.92       0       0       0       0       0       0       0       0 .065324 .038695 .392496 .150165 .034892 .316383 .001089 .000958       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+ 3      "Brain"           30000000  1.05       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0  .63169 .074323 .015153 .277032 .000639 .000584 .000403 .000176       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+ 4      "Tumor"           20000000  1.05       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0 .102102 .143143 .034034 .710711 .004004 .003003 .002002 .001001       0       0       0       0       0       0       0       0
+ 5      "Brain"           60000000  1.05       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0 .102102 .143143 .034034 .710711 .004004 .003003 .002002 .001001
+0  Target layer phases (0=Solid, 1=Gas)
+0 0 0 0 0 
+Target Compound Corrections (Bragg)
+ 1   1   1   1   1  
+Individual target atom displacement energies (eV)
+      10      28      28      28      25      25      25      25      25      25      10      28      28      28      25      25      10      28      28      28      25      25      25      25      10      28      28      28      25      25      25      25      10      28      28      28      25      25      25      25
+Individual target atom lattice binding energies (eV)
+       3       3       3       3       3       3       3       3       3       3       3       3       3       3       3       3       3       3       3       3       3       3       3       3       3       3       3       3       3       3       3       3       3       3       3       3       3       3       3       3
+Individual target atom surface binding energies (eV)
+       2    7.41       2       2    2.88       2    1.12     .93    1.83    3.27       2    7.41       2       2    2.88    1.54       2    7.41       2       2     .93    2.88    3.27       2       2    7.41       2       2     .93    2.88    3.27       2       2    7.41       2       2     .93    2.88    3.27       2
+Stopping Power Version (1=2011, 0=2011)
+ 0 

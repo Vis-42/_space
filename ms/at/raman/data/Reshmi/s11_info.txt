@@ -1,0 +1,10 @@
+Date=10/3/2023
+Time=5:04 pm
+Sample name=s11
+Integration time=100[ms]
+Averaging=10
+Laser wavelength=532.1[nm]
+Laser power=0[mW]
+Relative Intensity Correction=No
+DATATYPE;Raman shift (cm-1);Intensity (Counts)
+Smoothing=No 

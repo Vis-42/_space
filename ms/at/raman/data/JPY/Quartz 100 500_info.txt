@@ -1,0 +1,10 @@
+Date=7/2/2025
+Time=4:49 pm
+Sample name=Quartz 100 500
+Integration time=500[ms]
+Averaging=10
+Laser wavelength=532.1[nm]
+Laser power=0[mW]
+Relative Intensity Correction=No
+DATATYPE;Raman shift (cm-1);Intensity (Counts)
+Smoothing=Yes (Side Points 6; Polynomial Order 3)

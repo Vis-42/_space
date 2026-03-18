@@ -1,0 +1,10 @@
+Date=26/1/2024
+Time=4:45 pm
+Sample name=5_500ms_10snap_info_info
+Integration time=500[ms]
+Averaging=10
+Laser wavelength=532.1[nm]
+Laser power=0[mW]
+Relative Intensity Correction=No
+DATATYPE;Raman shift (cm-1);Intensity (Counts)
+Smoothing=No 

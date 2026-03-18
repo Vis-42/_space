@@ -1,0 +1,10 @@
+Date=18/8/2023
+Time=4:13 pm
+Sample name=Diamond-B 2
+Integration time=1500[ms]
+Averaging=5
+Laser wavelength=532.0[nm]
+Laser power=0[mW]
+Relative Intensity Correction=No
+DATATYPE;Raman shift (cm-1);Intensity (Counts)
+Smoothing=No 

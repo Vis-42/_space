@@ -4,6 +4,7 @@
       "a",
       "body",
       "button",
+      "details",
       "div",
       "footer",
       "h1",
@@ -24,14 +25,18 @@
       "span",
       "strong",
       "style",
+      "summary",
       "title",
       "ul"
     ],
     "classes": [
+      "assignments-collapsible",
+      "assignments-toggle",
       "bio",
       "contact",
       "coursework-subsection",
       "experience-item",
+      "focus-item",
       "hero",
       "logo",
       "menu-toggle",
@@ -39,16 +44,20 @@
       "nav-links",
       "notes-list",
       "project-card",
+      "project-links",
       "projects-grid",
+      "purpose-statement",
+      "research-focus-grid",
       "subtitle",
-      "theme-icon",
+      "summary-lead",
       "theme-text",
       "theme-toggle"
     ],
     "ids": [
       "about",
       "coursework",
-      "experience"
+      "experience",
+      "projects"
     ]
   }
 }

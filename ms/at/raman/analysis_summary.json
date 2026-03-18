@@ -1,0 +1,506 @@
+{
+  "carbon_rod": {
+    "paths": [
+      "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1/rod-smooth-2.txt",
+      "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1/rod-smooth-3.txt",
+      "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1/rod-smooth-1.txt"
+    ],
+    "avg_path": "/Users/parthbhargava/_space/ms/at/raman/data0/carbon_rod/carbon_rod_avg.txt",
+    "count": 3,
+    "peaks": {
+      "D": 1346.1149049998385,
+      "G": 1566.0780529998142,
+      "2D": 2681.005764999691,
+      "Dprime": 1591.2646729998114
+    },
+    "integration_ms": [
+      1000.0,
+      1000.0,
+      1000.0
+    ],
+    "averaging": [
+      3,
+      3,
+      3
+    ],
+    "laser_nm": [
+      532.1,
+      532.1,
+      532.1
+    ],
+    "power_mw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "smoothing": [
+      "Yes (Side Points 6; Polynomial Order 3)",
+      "Yes (Side Points 6; Polynomial Order 3)",
+      "Yes (Side Points 6; Polynomial Order 3)"
+    ]
+  },
+  "hopg": {
+    "paths": [
+      "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1/hopg-s-3.txt",
+      "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1/hopg-s-2.txt",
+      "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1/hopg-s-1.txt"
+    ],
+    "avg_path": "/Users/parthbhargava/_space/ms/at/raman/data0/hopg/hopg_avg.txt",
+    "count": 3,
+    "peaks": {
+      "D": 1364.5850929998364,
+      "G": 1581.1900249998125,
+      "2D": 2719.625248999687,
+      "Dprime": 1591.2646729998114
+    },
+    "integration_ms": [
+      1200.0,
+      1200.0,
+      1200.0
+    ],
+    "averaging": [
+      3,
+      3,
+      3
+    ],
+    "laser_nm": [
+      532.1,
+      532.1,
+      532.1
+    ],
+    "power_mw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "smoothing": [
+      "Yes (Side Points 6; Polynomial Order 3)",
+      "Yes (Side Points 6; Polynomial Order 3)",
+      "Yes (Side Points 6; Polynomial Order 3)"
+    ]
+  },
+  "graphene": {
+    "paths": [
+      "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Graphene_Right/Loc1_500ms_100snap.txt",
+      "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Graphene_Right/Loc4_500ms_100snap.txt",
+      "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Graphene_Right/Loc5_500ms_100snap.txt",
+      "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Graphene_Right/Loc3_500ms_100snap.txt",
+      "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Graphene_Right/Loc2_500ms_100snap.txt"
+    ],
+    "avg_path": "/Users/parthbhargava/_space/ms/at/raman/data0/graphene/graphene_avg.txt",
+    "count": 5,
+    "peaks": {
+      "D": 1359.7189090001348,
+      "G": 1584.7195150001553,
+      "2D": 2687.894128000256,
+      "Dprime": 1591.435951000156
+    },
+    "integration_ms": [
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0
+    ],
+    "averaging": [
+      100,
+      100,
+      100,
+      100,
+      100
+    ],
+    "laser_nm": [
+      532.1,
+      532.1,
+      532.1,
+      532.1,
+      532.1
+    ],
+    "power_mw": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "smoothing": [
+      "No",
+      "No",
+      "No",
+      "No",
+      "No"
+    ]
+  },
+  "cnt": {
+    "paths": [
+      "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/Nanotube/nanotube_AT10000ms_AVERAGE_10.txt",
+      "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/Nanotube/nanotube_AT2000ms_AVERAGE_10.txt",
+      "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/Nanotube/nanotube_AT1000ms_AVERAGE_10.txt",
+      "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/Nanotube/nanotube_AT7000ms_AVERAGE_10.txt",
+      "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/Nanotube/nanotube_AT5000ms_AVERAGE_10.txt"
+    ],
+    "avg_path": "/Users/parthbhargava/_space/ms/at/raman/data0/cnt/cnt_avg.txt",
+    "count": 5,
+    "peaks": {
+      "D": 1337.4015489998392,
+      "G": 1572.4766689998132,
+      "2D": 2677.3297329996913,
+      "Dprime": 1590.9468569998112
+    },
+    "integration_ms": [
+      10000.0,
+      2000.0,
+      1000.0,
+      7000.0,
+      5000.0
+    ],
+    "averaging": [
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "laser_nm": [
+      532.1,
+      532.1,
+      532.1,
+      532.1,
+      532.1
+    ],
+    "power_mw": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "smoothing": [
+      "Yes (Side Points 6; Polynomial Order 3)",
+      "Yes (Side Points 6; Polynomial Order 3)",
+      "Yes (Side Points 6; Polynomial Order 3)",
+      "Yes (Side Points 6; Polynomial Order 3)",
+      "Yes (Side Points 6; Polynomial Order 3)"
+    ]
+  },
+  "diamond": {
+    "paths": [
+      "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1/diamond-smooth-2.txt",
+      "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1/diamond-smooth-3.txt",
+      "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1/diamond-smooth-1.txt"
+    ],
+    "avg_path": "/Users/parthbhargava/_space/ms/at/raman/data0/diamond/diamond_avg.txt",
+    "count": 3,
+    "peaks": {
+      "diamond": 1332.68204099984
+    },
+    "integration_ms": [
+      1000.0,
+      1000.0,
+      1000.0
+    ],
+    "averaging": [
+      3,
+      3,
+      3
+    ],
+    "laser_nm": [
+      532.1,
+      532.1,
+      532.1
+    ],
+    "power_mw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "smoothing": [
+      "Yes (Side Points 6; Polynomial Order 3)",
+      "Yes (Side Points 6; Polynomial Order 3)",
+      "Yes (Side Points 6; Polynomial Order 3)"
+    ]
+  },
+  "unknown_semiconductor": {
+    "paths": [
+      "/Users/parthbhargava/_space/ms/at/raman/data/parth/day2/unknown1.txt",
+      "/Users/parthbhargava/_space/ms/at/raman/data/parth/day2/unknown2.txt",
+      "/Users/parthbhargava/_space/ms/at/raman/data/parth/day2/unknown3.txt",
+      "/Users/parthbhargava/_space/ms/at/raman/data/parth/day2/unknown4.txt",
+      "/Users/parthbhargava/_space/ms/at/raman/data/parth/day2/unknown5.txt"
+    ],
+    "avg_path": "/Users/parthbhargava/_space/ms/at/raman/data0/unknown_semiconductor/unknown_semiconductor_avg.txt",
+    "count": 5,
+    "peaks": {
+      "520": 521.3965500001026,
+      "268": 296.39607800006655
+    },
+    "integration_ms": [
+      1000.0,
+      1000.0,
+      1000.0,
+      1000.0,
+      1000.0
+    ],
+    "averaging": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "laser_nm": [
+      532.1,
+      532.1,
+      532.1,
+      532.1,
+      532.1
+    ],
+    "power_mw": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "smoothing": [
+      "Yes (Side Points 6; Polynomial Order 3)",
+      "Yes (Side Points 6; Polynomial Order 3)",
+      "Yes (Side Points 6; Polynomial Order 3)",
+      "Yes (Side Points 6; Polynomial Order 3)",
+      "Yes (Side Points 6; Polynomial Order 3)"
+    ]
+  },
+  "diamond_like": [
+    {
+      "paths": [
+        "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/Unknown A/5.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/Unknown A/4.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/Unknown A/3.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/Unknown A/2.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/Unknown A/1.txt"
+      ],
+      "avg_path": "/Users/parthbhargava/_space/ms/at/raman/data0/diamond_like_1/diamond_like_1_avg.txt",
+      "count": 5,
+      "diamond_peak": 1335.7218259997392,
+      "integration_ms": [
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0
+      ],
+      "averaging": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "laser_nm": [
+        532.0,
+        532.0,
+        532.0,
+        532.0,
+        532.0
+      ],
+      "power_mw": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "smoothing": [
+        "No",
+        "No",
+        "No",
+        "No",
+        "No"
+      ]
+    },
+    {
+      "paths": [
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_80mW_AT6000ms_AVERAGE_10.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_90mW_AT6000ms_AVERAGE_10_2.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_50mW_AT6000ms_AVERAGE_10.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_75mW_AT6000ms_AVERAGE_10_2.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_90mW_AT6000ms_AVERAGE_10.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_50mW_AT6000ms_AVERAGE_10_2.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_80mW_AT6000ms_AVERAGE_10_2.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_75mW_AT7000ms_AVERAGE_10_2.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_75mW_AT1000ms_AVERAGE_10.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_75mW_AT5000ms_AVERAGE_10_2.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_75mW_AT7000ms_AVERAGE_10.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_75mW_AT5000ms_AVERAGE_10_3.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_75mW_AT6000ms_AVERAGE_10.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_75mW_AT5000ms_AVERAGE_10.txt"
+      ],
+      "avg_path": "/Users/parthbhargava/_space/ms/at/raman/data0/diamond_like_2/diamond_like_2_avg.txt",
+      "count": 14,
+      "diamond_peak": 1307.4161390002287,
+      "integration_ms": [
+        6000.0,
+        6000.0,
+        6000.0,
+        6000.0,
+        6000.0,
+        6000.0,
+        6000.0,
+        7000.0,
+        5000.0,
+        5000.0,
+        7000.0,
+        5000.0,
+        6000.0,
+        5000.0
+      ],
+      "averaging": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "laser_nm": [
+        532.1,
+        532.1,
+        532.1,
+        532.1,
+        532.1,
+        532.1,
+        532.1,
+        532.1,
+        532.1,
+        532.1,
+        532.1,
+        532.1,
+        532.1,
+        532.1
+      ],
+      "power_mw": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "smoothing": [
+        "Yes (Side Points 6; Polynomial Order 3)",
+        "Yes (Side Points 6; Polynomial Order 3)",
+        "Yes (Side Points 6; Polynomial Order 3)",
+        "Yes (Side Points 6; Polynomial Order 3)",
+        "Yes (Side Points 6; Polynomial Order 3)",
+        "Yes (Side Points 6; Polynomial Order 3)",
+        "Yes (Side Points 6; Polynomial Order 3)",
+        "Yes (Side Points 6; Polynomial Order 3)",
+        "Yes (Side Points 6; Polynomial Order 3)",
+        "Yes (Side Points 6; Polynomial Order 3)",
+        "Yes (Side Points 6; Polynomial Order 3)",
+        "Yes (Side Points 6; Polynomial Order 3)",
+        "Yes (Side Points 6; Polynomial Order 3)",
+        "Yes (Side Points 6; Polynomial Order 3)"
+      ]
+    },
+    {
+      "paths": [
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT300ms_AVERAGE_10.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT500ms_AVERAGE_10.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT1500ms_AVERAGE_10.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT700ms_AVERAGE_10.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT400ms_AVERAGE_10.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT1200ms_AVERAGE_1.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT2000ms_AVERAGE_10.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT200ms_AVERAGE_10.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT1000ms_AVERAGE_10.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT100ms_AVERAGE_10.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT1000ms_AVERAGE_1.txt"
+      ],
+      "avg_path": "/Users/parthbhargava/_space/ms/at/raman/data0/diamond_like_3/diamond_like_3_avg.txt",
+      "count": 11,
+      "diamond_peak": 1302.140280999843,
+      "integration_ms": [
+        300.0,
+        500.0,
+        1500.0,
+        700.0,
+        400.0,
+        1200.0,
+        2000.0,
+        200.0,
+        1000.0,
+        100.0,
+        1000.0
+      ],
+      "averaging": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        1
+      ],
+      "laser_nm": [
+        532.1,
+        532.1,
+        532.1,
+        532.1,
+        532.1,
+        532.1,
+        532.1,
+        532.1,
+        532.1,
+        532.1,
+        532.1
+      ],
+      "power_mw": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "smoothing": [
+        "Yes (Side Points 6; Polynomial Order 3)",
+        "Yes (Side Points 6; Polynomial Order 3)",
+        "Yes (Side Points 6; Polynomial Order 3)",
+        "Yes (Side Points 6; Polynomial Order 3)",
+        "Yes (Side Points 6; Polynomial Order 3)",
+        "Yes (Side Points 6; Polynomial Order 3)",
+        "Yes (Side Points 6; Polynomial Order 3)",
+        "Yes (Side Points 6; Polynomial Order 3)",
+        "Yes (Side Points 6; Polynomial Order 3)",
+        "Yes (Side Points 6; Polynomial Order 3)",
+        "No"
+      ]
+    }
+  ]
+}

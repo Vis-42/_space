@@ -1,0 +1,909 @@
+{
+  "selection": {
+    "carbon_rod": {
+      "parent": "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1",
+      "paths": [
+        "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1/rod-smooth-2.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1/rod-smooth-3.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1/rod-smooth-1.txt"
+      ],
+      "avg_score": 33.802461844598156,
+      "count": 3
+    },
+    "hopg": {
+      "parent": "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1",
+      "paths": [
+        "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1/hopg-s-3.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1/hopg-s-2.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1/hopg-s-1.txt"
+      ],
+      "avg_score": 26.395744423036394,
+      "count": 3
+    },
+    "diamond": {
+      "parent": "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1",
+      "paths": [
+        "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1/diamond-smooth-2.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1/diamond-smooth-3.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1/diamond-smooth-1.txt"
+      ],
+      "avg_score": 32.11222374973121,
+      "count": 3
+    },
+    "graphene": {
+      "parent": "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Graphene_Right",
+      "paths": [
+        "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Graphene_Right/Loc1_500ms_100snap.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Graphene_Right/Loc4_500ms_100snap.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Graphene_Right/Loc5_500ms_100snap.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Graphene_Right/Loc3_500ms_100snap.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Graphene_Right/Loc2_500ms_100snap.txt"
+      ],
+      "avg_score": 23.551247379302517,
+      "count": 5
+    },
+    "cnt": {
+      "parent": "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/Nanotube",
+      "paths": [
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/Nanotube/nanotube_AT10000ms_AVERAGE_10.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/Nanotube/nanotube_AT2000ms_AVERAGE_10.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/Nanotube/nanotube_AT1000ms_AVERAGE_10.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/Nanotube/nanotube_AT7000ms_AVERAGE_10.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/Nanotube/nanotube_AT5000ms_AVERAGE_10.txt"
+      ],
+      "avg_score": 3.7742606495776827,
+      "count": 5
+    },
+    "unknown_semiconductor": {
+      "parent": "/Users/parthbhargava/_space/ms/at/raman/data/parth/day2",
+      "paths": [
+        "/Users/parthbhargava/_space/ms/at/raman/data/parth/day2/unknown1.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/parth/day2/unknown2.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/parth/day2/unknown3.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/parth/day2/unknown4.txt",
+        "/Users/parthbhargava/_space/ms/at/raman/data/parth/day2/unknown5.txt"
+      ],
+      "avg_score": 288.2299787106163,
+      "count": 5
+    },
+    "diamond_like": [
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/Unknown A",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/Unknown A/5.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/Unknown A/4.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/Unknown A/3.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/Unknown A/2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/Unknown A/1.txt"
+        ],
+        "avg_score": 280.305671395103,
+        "count": 5
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_80mW_AT6000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_90mW_AT6000ms_AVERAGE_10_2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_50mW_AT6000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_75mW_AT6000ms_AVERAGE_10_2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_90mW_AT6000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_50mW_AT6000ms_AVERAGE_10_2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_80mW_AT6000ms_AVERAGE_10_2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_75mW_AT7000ms_AVERAGE_10_2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_75mW_AT1000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_75mW_AT5000ms_AVERAGE_10_2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_75mW_AT7000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_75mW_AT5000ms_AVERAGE_10_3.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_75mW_AT6000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_75mW_AT5000ms_AVERAGE_10.txt"
+        ],
+        "avg_score": 3.914638735437379,
+        "count": 14
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT300ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT500ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT1500ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT700ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT400ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT1200ms_AVERAGE_1.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT2000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT200ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT1000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT100ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT1000ms_AVERAGE_1.txt"
+        ],
+        "avg_score": 3.842716549269772,
+        "count": 11
+      }
+    ]
+  },
+  "candidates": {
+    "hopg": [
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/Marcus Ng",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/Marcus Ng/HOPG 1.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Marcus Ng/HOPG 2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Marcus Ng/HOPG 3.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Marcus Ng/HOPG 4.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Marcus Ng/HOPG 5.txt"
+        ],
+        "avg_score": 30.510657092137997,
+        "count": 5
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/Marcus Ng done",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/Marcus Ng done/HOPG 1.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Marcus Ng done/HOPG 2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Marcus Ng done/HOPG 3.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Marcus Ng done/HOPG 4.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Marcus Ng done/HOPG 5.txt"
+        ],
+        "avg_score": 30.510657092137997,
+        "count": 5
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/arif",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/arif/hopg_2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/arif/hopg_3.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/arif/hopg_1.txt"
+        ],
+        "avg_score": 24.97313629462565,
+        "count": 3
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/JPY",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/HOPG 100 1000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/HOPG 100 2000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/HOPG 100 2500.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/HOPG 75 2000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/HOPG 1000 3000.txt"
+        ],
+        "avg_score": 22.16494651658763,
+        "count": 5
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1/hopg-s-3.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1/hopg-s-2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1/hopg-s-1.txt"
+        ],
+        "avg_score": 26.395744423036394,
+        "count": 3
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_17/HOPG",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_17/HOPG/HOPG_AT1200ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_17/HOPG/HOPG_AT500ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_17/HOPG/HOPG_AT300ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_17/HOPG/HOPG_AT100ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_17/HOPG/HOPG_AT200ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_17/HOPG/HOPG_AT1500ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_17/HOPG/HOPG_AT400ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_17/HOPG/HOPG_AT1000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_17/HOPG/HOPG_AT700ms_AVERAGE_10.txt"
+        ],
+        "avg_score": 20.636933348718483,
+        "count": 9
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/HOPG",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/HOPG/HOPG Raman Spectrum Trial 2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/HOPG/HOPG Raman Spectrum Trial 3.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/HOPG/HOPG Raman Spectrum Trial 1.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/HOPG/HOPG Raman Spectrum Trial 4.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/HOPG/HOPG Raman Spectrum Trial 5.txt"
+        ],
+        "avg_score": 28.45723410265266,
+        "count": 5
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/HOPG/Graphs",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/HOPG/Graphs/5.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/HOPG/Graphs/4.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/HOPG/Graphs/3.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/HOPG/Graphs/2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/HOPG/Graphs/1.txt"
+        ],
+        "avg_score": 23.43139353640309,
+        "count": 5
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/HOPG",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/HOPG/Loc1_500ms_100snap.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/HOPG/Loc4_500ms_100snap.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/HOPG/Loc5_500ms_100snap.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/HOPG/Loc3_500ms_100snap.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/HOPG/Loc2_500ms_100snap.txt"
+        ],
+        "avg_score": 26.542991417905228,
+        "count": 5
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/18Sep2022/Marcus Ng",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/18Sep2022/Marcus Ng/HOPG 1.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/18Sep2022/Marcus Ng/HOPG 2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/18Sep2022/Marcus Ng/HOPG 3.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/18Sep2022/Marcus Ng/HOPG 4.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/18Sep2022/Marcus Ng/HOPG 5.txt"
+        ],
+        "avg_score": 30.510657092137997,
+        "count": 5
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/18Sep2022/Marcus Ng done",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/18Sep2022/Marcus Ng done/HOPG 1.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/18Sep2022/Marcus Ng done/HOPG 2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/18Sep2022/Marcus Ng done/HOPG 3.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/18Sep2022/Marcus Ng done/HOPG 4.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/18Sep2022/Marcus Ng done/HOPG 5.txt"
+        ],
+        "avg_score": 30.510657092137997,
+        "count": 5
+      }
+    ],
+    "graphene": [
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/hengxing",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/hengxing/Graphene1 1000 10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/hengxing/GrapheneC 2 1000 10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/hengxing/GrapheneC 1 1000 10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/hengxing/Graphene2 1000 10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/hengxing/GrapheneB 3 1000 10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/hengxing/GrapheneC 3 1000 10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/hengxing/GrapheneB 1 1000 10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/hengxing/Graphene3 1000 10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/hengxing/GrapheneB 2 1000 10.txt"
+        ],
+        "avg_score": 14.360556659375199,
+        "count": 9
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/JPY",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/graphene m 60 1000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/graphene m 100 500.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/graphene r 60 1000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/graphene r 100 500.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/graphene l 75 1000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/graphene l 60 500.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/graphene l 100 3000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/graphene l 60 750.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/graphene r 100 1000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/graphene m 75 1000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/graphene m 100 1000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/graphene m 750 1000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/graphene m 100 3000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/graphene r 100 750.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/graphene l 100 1000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/graphene m 100 750.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/graphene r 100 3000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/graphene l 100 500.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/graphene l 60 1000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/graphene l 100 1000 2.txt"
+        ],
+        "avg_score": 12.393063596641877,
+        "count": 20
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/Kaixuan/Week 2",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/Kaixuan/Week 2/Graphene Centre 3 1500ms 5aq.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Kaixuan/Week 2/Graphene Left 1 1500ms 5aq.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Kaixuan/Week 2/Graphene Right 1 1500ms 5aq.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Kaixuan/Week 2/Graphene Right 3 1500ms 5aq.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Kaixuan/Week 2/Graphene Left 2 1500ms 5aq.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Kaixuan/Week 2/Graphene Left 3 1500ms 5aq.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Kaixuan/Week 2/Graphene Left 4 1500ms 5aq.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Kaixuan/Week 2/Graphene Centre 1 1500ms 5aq.txt"
+        ],
+        "avg_score": 12.967375686115107,
+        "count": 8
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/mary/Graphene",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/mary/Graphene/G left run.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/mary/Graphene/G right run 2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/mary/Graphene/G right run.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/mary/Graphene/G middle run.txt"
+        ],
+        "avg_score": 10.830867516283025,
+        "count": 4
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_17/graphene",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_17/graphene/graphene_AT100_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_17/graphene/graphene_AT1200_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_17/graphene/graphene_AT500_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_17/graphene/graphene_AT300_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_17/graphene/graphene_AT700_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_17/graphene/graphene_AT1000_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_17/graphene/graphene_AT900_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_17/graphene/graphene_AT2000_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_17/graphene/graphene_AT200_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_17/graphene/graphene_AT50_AVERAGE_10.txt"
+        ],
+        "avg_score": 15.213324824848394,
+        "count": 10
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Graphene/Graphene_mid",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Graphene/Graphene_mid/Graphene-mid-trial-5.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Graphene/Graphene_mid/Graphene-mid-trial-4.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Graphene/Graphene_mid/Graphene-mid-trial-3.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Graphene/Graphene_mid/Graphene-mid-trial-2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Graphene/Graphene_mid/Graphene-mid-trial-1.txt"
+        ],
+        "avg_score": 3.6233122662551382,
+        "count": 5
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Graphene/Graphene_left",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Graphene/Graphene_left/Graphene-left-trial-1.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Graphene/Graphene_left/Graphene-left-trial-2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Graphene/Graphene_left/Graphene-left-trial-3.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Graphene/Graphene_left/Graphene-left-trial-4.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Graphene/Graphene_left/Graphene-left-trial-5.txt"
+        ],
+        "avg_score": 0.0,
+        "count": 5
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Graphene_Right",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Graphene_Right/Loc1_500ms_100snap.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Graphene_Right/Loc4_500ms_100snap.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Graphene_Right/Loc5_500ms_100snap.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Graphene_Right/Loc3_500ms_100snap.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Graphene_Right/Loc2_500ms_100snap.txt"
+        ],
+        "avg_score": 23.551247379302517,
+        "count": 5
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Graphene_middle",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Graphene_middle/Loc1_500ms_100snap.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Graphene_middle/Loc4_500ms_100snap.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Graphene_middle/Loc5_500ms_100snap.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Graphene_middle/Loc6_500ms_100snap.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Graphene_middle/Loc2_500ms_100snap.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Graphene_middle/Loc7_500ms_100snap.txt"
+        ],
+        "avg_score": 19.005824070602255,
+        "count": 6
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Graphene_Left",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Graphene_Left/Loc1_500ms_100snap.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Graphene_Left/Loc4_500ms_100snap.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Graphene_Left/Loc5_500ms_100snap.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Graphene_Left/Loc3_500ms_100snap.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Graphene_Left/Loc2_500ms_100snap.txt"
+        ],
+        "avg_score": 1.44973353488096,
+        "count": 5
+      }
+    ],
+    "carbon_rod": [
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/Marcus Ng done",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/Marcus Ng done/crod 1r.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Marcus Ng done/Carbon rod 1.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Marcus Ng done/Carbon rod 2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Marcus Ng done/C rod 3r.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Marcus Ng done/C rod 5r.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Marcus Ng done/crod 2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Marcus Ng done/C rod 4r.txt"
+        ],
+        "avg_score": 48.64087995353951,
+        "count": 7
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/JPY",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/Carbon Rod 100 2500.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/carbon rod 100 2000 2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/Carbon Rod 60 2000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/Carbon Rod 100 2000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/Carbon Rod 75 1000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/carbon rod 100 1500.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/Carbon Rod 100 1000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/Carbon Rod 100 500.txt"
+        ],
+        "avg_score": 77.95389474495893,
+        "count": 8
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/Zhu Rongqi/carbon rod",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/Zhu Rongqi/carbon rod/carbon_rod_1000_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Zhu Rongqi/carbon rod/carbon_rod_500_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Zhu Rongqi/carbon rod/carbon_rod_2000_10.txt"
+        ],
+        "avg_score": 35.98421916394326,
+        "count": 3
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1/rod-smooth-2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1/rod-smooth-3.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1/rod-smooth-1.txt"
+        ],
+        "avg_score": 33.802461844598156,
+        "count": 3
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_16/CarbonRod",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_16/CarbonRod/CarbonRod_AT300_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_16/CarbonRod/CarbonRod_AT1200_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_16/CarbonRod/CarbonRod_AT700_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_16/CarbonRod/CarbonRod_AT10_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_16/CarbonRod/CarbonRod_AT900_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_16/CarbonRod/CarbonRod_AT1000_AVERAGE_5.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_16/CarbonRod/CarbonRod_AT1000_AVERAGE_20.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_16/CarbonRod/CarbonRod_AT1000_AVERAGE_1.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_16/CarbonRod/CarbonRod_AT1000_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_16/CarbonRod/CarbonRod_AT100_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_16/CarbonRod/CarbonRod_AT1000_AVERAGE_15.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_16/CarbonRod/CarbonRod_AT50_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_16/CarbonRod/CarbonRod_AT500_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_16/CarbonRod/CarbonRod_AT1500_AVERAGE_10.txt"
+        ],
+        "avg_score": 41.98679417721549,
+        "count": 14
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/carbonrod",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/carbonrod/carbonrod_AT1000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/carbonrod/carbonrod_AT2000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/carbonrod/carbonrod_AT5000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/carbonrod/carbonrod_AT7000ms_AVERAGE_10.txt"
+        ],
+        "avg_score": 60.230556175012936,
+        "count": 4
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Carbon Rod",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Carbon Rod/Carbon rod trial 5 raman spectrum.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Carbon Rod/Carbon rod trial 3 raman spectrum.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Carbon Rod/Carbon rod trial 1 raman spectrum.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Carbon Rod/Carbon rod trial 2 raman spectrum.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Carbon Rod/Carbon rod trial 4 raman spectrum.txt"
+        ],
+        "avg_score": 31.560442199093643,
+        "count": 5
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/CarnonRod",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/CarnonRod/Loc2_5000ms_10snap.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/CarnonRod/Loc3_5000ms_10snap.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/CarnonRod/Loc1_5000ms_10snap.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/CarnonRod/Loc4_5000ms_10snap.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/CarnonRod/Loc4_5000ms_10snap_v2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/CarnonRod/Loc5_500ms_100snap.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/CarnonRod/Loc7_500ms_100snap.txt"
+        ],
+        "avg_score": 35.277744260302576,
+        "count": 7
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/CarnonRod/FocusStacking",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/CarnonRod/FocusStacking/1_500ms_10snap.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/CarnonRod/FocusStacking/0_500ms_10snap.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/CarnonRod/FocusStacking/3_500ms_10snap.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/CarnonRod/FocusStacking/2_500ms_10snap.txt"
+        ],
+        "avg_score": 51.368753817292756,
+        "count": 4
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/18Sep2022/Marcus Ng done",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/18Sep2022/Marcus Ng done/crod 1r.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/18Sep2022/Marcus Ng done/Carbon rod 1.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/18Sep2022/Marcus Ng done/Carbon rod 2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/18Sep2022/Marcus Ng done/C rod 3r.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/18Sep2022/Marcus Ng done/C rod 5r.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/18Sep2022/Marcus Ng done/crod 2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/18Sep2022/Marcus Ng done/C rod 4r.txt"
+        ],
+        "avg_score": 48.64087995353951,
+        "count": 7
+      }
+    ],
+    "diamond": [
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/Marcus Ng done",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/Marcus Ng done/Diamond 3.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Marcus Ng done/Diamond 2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Marcus Ng done/Diamond 5.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Marcus Ng done/Diamond1.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Marcus Ng done/Diamond1a.txt"
+        ],
+        "avg_score": 2443.525910739171,
+        "count": 5
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/JPY",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/Diamond 100 1000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/Are these Diamonds 2 100 1000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/Diamond 100 1000 2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/Diamond 100 1000 3.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/Are these Diamonds 75 2000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/diamond 100 1500.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/Diamond 60 500.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/Are these Diamonds 2 100 2000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/Are these Diamonds 100 2000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/Diamond 75 750.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/Diamond 100 750.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/Are these Diamonds 75 1000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/Diamond 75 1000.txt"
+        ],
+        "avg_score": 453.0101553405654,
+        "count": 13
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1/diamond-smooth-2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1/diamond-smooth-3.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/parth/run1/diamond-smooth-1.txt"
+        ],
+        "avg_score": 32.11222374973121,
+        "count": 3
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_17/Diamond",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_17/Diamond/Diamond_AT900ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_17/Diamond/Diamond_AT700ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_17/Diamond/Diamond_AT200ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_17/Diamond/Diamond_AT1000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_17/Diamond/Diamond_AT2000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_17/Diamond/Diamond_AT1500ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_17/Diamond/Diamond_AT500ms_AVERAGE_10.txt"
+        ],
+        "avg_score": 238.08317901400963,
+        "count": 7
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/Diamond",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/Diamond/DIAMOND_50mW_AT500ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/Diamond/DIAMOND_50mW_AT1000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/Diamond/DIAMOND_90mW_AT1000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/Diamond/DIAMOND_80mW_AT1000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/Diamond/DIAMOND_50mW_AT200ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/Diamond/DIAMOND_50mW_AT700ms_AVERAGE_10.txt"
+        ],
+        "avg_score": 134.3145235268601,
+        "count": 6
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Diamond",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Diamond/Diamond Raman Spectrum Trial 5.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Diamond/Diamond Raman Spectrum Trial 4.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Diamond/Diamond Raman Spectrum Trial 3.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Diamond/Diamond Raman Spectrum Trial 2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Diamond/Diamond Raman Spectrum Trial 1.txt"
+        ],
+        "avg_score": 3574.5872963461784,
+        "count": 5
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Diamond-like samples/Diamond-like sample A",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Diamond-like samples/Diamond-like sample A/Diamond-like Sample A Trial 3.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Diamond-like samples/Diamond-like sample A/Diamond-like Sample A Trial 2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Diamond-like samples/Diamond-like sample A/Diamond-like Sample A Trial 1.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Diamond-like samples/Diamond-like sample A/Diamond-like Sample A Trial 5.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Diamond-like samples/Diamond-like sample A/Diamond-like Sample A Trial 4.txt"
+        ],
+        "avg_score": 0.0,
+        "count": 5
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Diamond-like samples/Diamond-like sample B",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Diamond-like samples/Diamond-like sample B/Diamond-like Sample B Raman Spectrum Trial 6.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Diamond-like samples/Diamond-like sample B/Diamond-like Sample B Raman Spectrum Trial 4.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Diamond-like samples/Diamond-like sample B/Diamond-like Sample B Raman Spectrum Trial 5.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Diamond-like samples/Diamond-like sample B/Diamond-like Sample B Raman Spectrum Trial 1.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Diamond-like samples/Diamond-like sample B/Diamond-like Sample B Raman Spectrum Trial 2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Diamond-like samples/Diamond-like sample B/Diamond-like Sample B Raman Spectrum Trial 3.txt"
+        ],
+        "avg_score": 12.73934126718545,
+        "count": 6
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Diamond_unclear_2",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Diamond_unclear_2/Loc1_500ms_100snap.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Diamond_unclear_2/Loc4_500ms_100snap.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Diamond_unclear_2/Loc5_500ms_100snap.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Diamond_unclear_2/Loc3_500ms_100snap.txt"
+        ],
+        "avg_score": 0.0,
+        "count": 4
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Diamond_unclear_1",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Diamond_unclear_1/Loc1_500ms_100snap.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Diamond_unclear_1/Loc4_500ms_100snap.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Diamond_unclear_1/Loc3_500ms_100snap.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/Diamond_unclear_1/Loc2_500ms_100snap.txt"
+        ],
+        "avg_score": 0.0,
+        "count": 4
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/18Sep2022/Marcus Ng done",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/18Sep2022/Marcus Ng done/Diamond 3.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/18Sep2022/Marcus Ng done/Diamond 2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/18Sep2022/Marcus Ng done/Diamond 5.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/18Sep2022/Marcus Ng done/Diamond1.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/18Sep2022/Marcus Ng done/Diamond1a.txt"
+        ],
+        "avg_score": 2443.525910739171,
+        "count": 5
+      }
+    ],
+    "cnt": [
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/JPY",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/nanotube 75 750.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/nanotube 100 1000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/nanotube 100 3000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/nanotube 100 1500.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/nanotube 75 500.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/nanotube 100 500.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/nanotube 100 2000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/nanotube 100 2500.txt"
+        ],
+        "avg_score": 0.23859618390670462,
+        "count": 8
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/Kaixuan/Week 1",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/Kaixuan/Week 1/Carbon Nanotube Tet 1500ms 5aq.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Kaixuan/Week 1/Carbon Nanotube 3 1500ms 10aq.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Kaixuan/Week 1/Carbon Nanotube 2 1500ms 10aq.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Kaixuan/Week 1/Carbon Nanotube 1 1500ms 10aq.txt"
+        ],
+        "avg_score": 0.0,
+        "count": 4
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_16/Nanotube",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_16/Nanotube/Nanotube_AT300ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_16/Nanotube/Nanotube_AT5000ms_AVERAGE_20.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_16/Nanotube/Nanotube_AT5000ms_AVERAGE_5.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_16/Nanotube/Nanotube_AT5000ms_AVERAGE_20_2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_16/Nanotube/Nanotube_AT5000ms_AVERAGE_1.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_16/Nanotube/Nanotube_AT500ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_16/Nanotube/Nanotube_AT800ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_16/Nanotube/Nanotube_AT5000ms_AVERAGE_15.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_16/Nanotube/Nanotube_AT2000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_16/Nanotube/Nanotube_AT1000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_16/Nanotube/Nanotube_AT5000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_16/Nanotube/Nanotube_AT5000ms_AVERAGE_10_3.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_16/Nanotube/Nanotube_AT5000ms_AVERAGE_10_2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_16/Nanotube/Nanotube_AT100ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_16/Nanotube/Nanotube_AT5000ms_AVERAGE_10_4.txt"
+        ],
+        "avg_score": 0.18440602545221493,
+        "count": 15
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/Nanotube",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/Nanotube/nanotube_AT10000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/Nanotube/nanotube_AT2000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/Nanotube/nanotube_AT1000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/Nanotube/nanotube_AT7000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/Nanotube/nanotube_AT5000ms_AVERAGE_10.txt"
+        ],
+        "avg_score": 3.7742606495776827,
+        "count": 5
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Carbon nanotube",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Carbon nanotube/Carbon Nanotube Raman Spectrum Trial 4.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Carbon nanotube/Carbon Nanotube Raman Spectrum Trial 5.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Carbon nanotube/Carbon Nanotube Raman Spectrum Trial 2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Carbon nanotube/Carbon Nanotube Raman Spectrum Trial 3.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Carbon nanotube/Carbon Nanotube Raman Spectrum Trial 1.txt"
+        ],
+        "avg_score": 0.42454504362591017,
+        "count": 5
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/CarbonNanotube",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/CarbonNanotube/Loc7_5000ms_10snap.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/CarbonNanotube/Loc3_5000ms_10snap.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/CarbonNanotube/Loc6_5000ms_10snap.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/CarbonNanotube/Loc5_5000ms_10snap.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/CarbonNanotube/Loc4_v2_5000ms_10snap.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/CarbonNanotube/Loc1_5000ms_10snap.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/CarbonNanotube/Loc4_5000ms_10snap.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/CarbonNanotube/Loc2_v2_5000ms_10snap.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JulianSanten/CarbonNanotube/Loc3_v2_5000ms_10snap.txt"
+        ],
+        "avg_score": 2.0527870498971925,
+        "count": 9
+      }
+    ],
+    "unknown": [
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/JPY",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/unknown B 60 1000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/unknown B 100 500.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/unknown A 100 2000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/unknown B 100 1000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/unknown A 60 1000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/unknown A 100 500.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/unknown C 100 1000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/unknown B 100 3000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/unknown B 100 2500.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/unknown A 100 1000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/unknown C 60 1000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/unknown B 100 750.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/unknown C 100 2500.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/unknown B 75 1000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/unknown A 100 3000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/unknown C 100 2000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/unknown A 75 1000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/unknown B 75 1000 2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/unknown A 100 750.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/unknown B 100 2000.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/JPY/unknown C 100 2000 2.txt"
+        ],
+        "avg_score": 63.481812248039745,
+        "count": 21
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT300ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT500ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT1500ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT700ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT400ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT1200ms_AVERAGE_1.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT2000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT200ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT1000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT100ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknowB/UnknownB_AT1000ms_AVERAGE_1.txt"
+        ],
+        "avg_score": 3.842716549269772,
+        "count": 11
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknownC",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknownC/UnknownC_colorpart_AT2500ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknownC/UnknownC_colorpart_AT5000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknownC/UnknownC_transparentpart_AT7000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknownC/UnknownC_transparentpart_AT5000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknownC/UnknownC_colorpart_AT7000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknownC/UnknownC_transparentpart_AT2000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknownC/UnknownC_transparentpart_AT3000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknownC/UnknownC_colorpart_AT1000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknownC/UnknownC_colorpart_AT2000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknownC/UnknownC_colorpart_AT3000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_23/UnknownC/UnknownC_transparentpart_AT1000ms_AVERAGE_10.txt"
+        ],
+        "avg_score": 3.8450680793757566,
+        "count": 11
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_80mW_AT6000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_90mW_AT6000ms_AVERAGE_10_2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_50mW_AT6000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_75mW_AT6000ms_AVERAGE_10_2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_90mW_AT6000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_50mW_AT6000ms_AVERAGE_10_2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_80mW_AT6000ms_AVERAGE_10_2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_75mW_AT7000ms_AVERAGE_10_2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_75mW_AT1000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_75mW_AT5000ms_AVERAGE_10_2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_75mW_AT7000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_75mW_AT5000ms_AVERAGE_10_3.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_75mW_AT6000ms_AVERAGE_10.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/ZHANG DH/2025_1_24/UnkonwnC/UnknownC_75mW_AT5000ms_AVERAGE_10.txt"
+        ],
+        "avg_score": 3.914638735437379,
+        "count": 14
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Unknown A",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Unknown A/Unknown-A-trial-2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Unknown A/Unknown-A-trial-3.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Unknown A/Unknown-A-trial-1.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Unknown A/Unknown-A-trial-4.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Chen Ling Mar 21 2024/Unknown A/Unknown-A-trial-5.txt"
+        ],
+        "avg_score": 288.2299787106163,
+        "count": 5
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/Unknown A",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/Unknown A/5.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/Unknown A/4.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/Unknown A/3.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/Unknown A/2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/Unknown A/1.txt"
+        ],
+        "avg_score": 280.305671395103,
+        "count": 5
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/Unknown C",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/Unknown C/5.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/Unknown C/4.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/Unknown C/3.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/Unknown C/2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/Unknown C/1.txt"
+        ],
+        "avg_score": 5.110024587709044,
+        "count": 5
+      },
+      {
+        "parent": "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/Unknown B",
+        "paths": [
+          "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/Unknown B/5.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/Unknown B/4.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/Unknown B/3.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/Unknown B/2.txt",
+          "/Users/parthbhargava/_space/ms/at/raman/data/Lixon Low Raman Spectroscopy/Unknown B/1.txt"
+        ],
+        "avg_score": 2.9838929415006232,
+        "count": 5
+      }
+    ]
+  }
+}

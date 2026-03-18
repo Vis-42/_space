@@ -1,0 +1,226 @@
+[
+  {
+    "file": "Sample Run_11.csv",
+    "wavelength": 1.540598,
+    "scan_range": [
+      20.01,
+      139.99
+    ],
+    "step": 0.01999999999999602,
+    "peaks": [
+      {
+        "two_theta_deg": 22.07,
+        "intensity": 41.0,
+        "d_angstrom": 4.0244
+      },
+      {
+        "two_theta_deg": 27.59,
+        "intensity": 42.0,
+        "d_angstrom": 3.2305
+      },
+      {
+        "two_theta_deg": 27.75,
+        "intensity": 43.0,
+        "d_angstrom": 3.2122
+      },
+      {
+        "two_theta_deg": 28.43,
+        "intensity": 2201.0,
+        "d_angstrom": 3.1369
+      },
+      {
+        "two_theta_deg": 29.85,
+        "intensity": 41.0,
+        "d_angstrom": 2.9908
+      },
+      {
+        "two_theta_deg": 47.33,
+        "intensity": 525.0,
+        "d_angstrom": 1.9191
+      },
+      {
+        "two_theta_deg": 56.15,
+        "intensity": 256.0,
+        "d_angstrom": 1.6368
+      },
+      {
+        "two_theta_deg": 69.11,
+        "intensity": 139.0,
+        "d_angstrom": 1.3581
+      },
+      {
+        "two_theta_deg": 76.35,
+        "intensity": 246.0,
+        "d_angstrom": 1.2463
+      },
+      {
+        "two_theta_deg": 76.57,
+        "intensity": 114.0,
+        "d_angstrom": 1.2433
+      },
+      {
+        "two_theta_deg": 88.01,
+        "intensity": 246.0,
+        "d_angstrom": 1.1088
+      },
+      {
+        "two_theta_deg": 88.27,
+        "intensity": 132.0,
+        "d_angstrom": 1.1062
+      },
+      {
+        "two_theta_deg": 94.93,
+        "intensity": 140.0,
+        "d_angstrom": 1.0454
+      },
+      {
+        "two_theta_deg": 95.25,
+        "intensity": 66.0,
+        "d_angstrom": 1.0427
+      },
+      {
+        "two_theta_deg": 106.69,
+        "intensity": 95.0,
+        "d_angstrom": 0.9602
+      },
+      {
+        "two_theta_deg": 114.07,
+        "intensity": 129.0,
+        "d_angstrom": 0.9181
+      },
+      {
+        "two_theta_deg": 114.51,
+        "intensity": 61.0,
+        "d_angstrom": 0.9158
+      },
+      {
+        "two_theta_deg": 127.53,
+        "intensity": 122.0,
+        "d_angstrom": 0.8588
+      },
+      {
+        "two_theta_deg": 128.11,
+        "intensity": 59.0,
+        "d_angstrom": 0.8566
+      },
+      {
+        "two_theta_deg": 136.89,
+        "intensity": 71.0,
+        "d_angstrom": 0.8282
+      }
+    ],
+    "plot": "/Users/parthbhargava/_space/ms/at/lau+xrc/plots/Sample Run_11_xrc.png"
+  },
+  {
+    "file": "Sample Run_7.csv",
+    "wavelength": 1.540598,
+    "scan_range": [
+      20.01,
+      139.99
+    ],
+    "step": 0.01999999999999602,
+    "peaks": [
+      {
+        "two_theta_deg": 26.47,
+        "intensity": 120.0,
+        "d_angstrom": 3.3646
+      },
+      {
+        "two_theta_deg": 27.19,
+        "intensity": 115.0,
+        "d_angstrom": 3.2771
+      },
+      {
+        "two_theta_deg": 27.63,
+        "intensity": 117.0,
+        "d_angstrom": 3.2259
+      },
+      {
+        "two_theta_deg": 27.87,
+        "intensity": 124.0,
+        "d_angstrom": 3.1986
+      },
+      {
+        "two_theta_deg": 28.21,
+        "intensity": 115.0,
+        "d_angstrom": 3.1609
+      },
+      {
+        "two_theta_deg": 28.47,
+        "intensity": 113.0,
+        "d_angstrom": 3.1326
+      },
+      {
+        "two_theta_deg": 28.73,
+        "intensity": 141.0,
+        "d_angstrom": 3.1048
+      },
+      {
+        "two_theta_deg": 29.11,
+        "intensity": 125.0,
+        "d_angstrom": 3.0651
+      },
+      {
+        "two_theta_deg": 29.31,
+        "intensity": 115.0,
+        "d_angstrom": 3.0447
+      },
+      {
+        "two_theta_deg": 29.79,
+        "intensity": 128.0,
+        "d_angstrom": 2.9967
+      },
+      {
+        "two_theta_deg": 29.95,
+        "intensity": 137.0,
+        "d_angstrom": 2.9811
+      },
+      {
+        "two_theta_deg": 31.75,
+        "intensity": 117.0,
+        "d_angstrom": 2.816
+      },
+      {
+        "two_theta_deg": 33.51,
+        "intensity": 119.0,
+        "d_angstrom": 2.6721
+      },
+      {
+        "two_theta_deg": 33.83,
+        "intensity": 114.0,
+        "d_angstrom": 2.6475
+      },
+      {
+        "two_theta_deg": 40.67,
+        "intensity": 353.0,
+        "d_angstrom": 2.2166
+      },
+      {
+        "two_theta_deg": 58.15,
+        "intensity": 136.0,
+        "d_angstrom": 1.5851
+      },
+      {
+        "two_theta_deg": 58.81,
+        "intensity": 6318.0,
+        "d_angstrom": 1.5689
+      },
+      {
+        "two_theta_deg": 73.83,
+        "intensity": 2238.0,
+        "d_angstrom": 1.2825
+      },
+      {
+        "two_theta_deg": 116.07,
+        "intensity": 292.0,
+        "d_angstrom": 0.908
+      },
+      {
+        "two_theta_deg": 116.45,
+        "intensity": 178.0,
+        "d_angstrom": 0.9061
+      }
+    ],
+    "plot": "/Users/parthbhargava/_space/ms/at/lau+xrc/plots/Sample Run_7_xrc.png"
+  }
+]

@@ -41,3 +41,4 @@ Comprehensive experimental analysis of magnetic moment measurements in a Helmhol
 - **Visualization**: 20+ publication-quality plots including polar plots and 3D surfaces
 - **Report**: Typst document with comprehensive analysis and presentation
 
+

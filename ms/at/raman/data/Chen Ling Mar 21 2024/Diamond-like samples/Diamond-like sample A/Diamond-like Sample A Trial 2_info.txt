@@ -1,0 +1,10 @@
+Date=22/3/2024
+Time=4:32 pm
+Sample name=Diamond-like Sample A Trial 2
+Integration time=700[ms]
+Averaging=20
+Laser wavelength=532.0[nm]
+Laser power=0[mW]
+Relative Intensity Correction=No
+DATATYPE;Raman shift (cm-1);Intensity (Counts)
+Smoothing=No 

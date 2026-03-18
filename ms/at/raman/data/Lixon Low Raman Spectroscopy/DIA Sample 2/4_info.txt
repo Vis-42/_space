@@ -1,0 +1,10 @@
+Date=25/1/2024
+Time=2:02 pm
+Sample name=4
+Integration time=1000[ms]
+Averaging=3
+Laser wavelength=532.0[nm]
+Laser power=0[mW]
+Relative Intensity Correction=No
+DATATYPE;Raman shift (cm-1);Intensity (Counts)
+Smoothing=No 

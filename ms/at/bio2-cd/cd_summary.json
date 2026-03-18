@@ -1,0 +1,142 @@
+[
+  {
+    "file": "sol1.txt",
+    "x_range": [
+      200.0,
+      250.0
+    ],
+    "min_210_222": [
+      210.0,
+      -141.352
+    ],
+    "min_206_210": [
+      210.0,
+      -141.352
+    ],
+    "meta": {
+      "TITLE": "",
+      "DATA TYPE": "",
+      "ORIGIN": "JASCO",
+      "OWNER": "",
+      "DATE": "26/03/03",
+      "TIME": "15:17:54",
+      "SPECTROMETER/DATA SYSTEM": "",
+      "RESOLUTION": "",
+      "DELTAX": "-1",
+      "XUNITS": "NANOMETERS",
+      "YUNITS": "CD[mdeg]",
+      "Y2UNITS": "HT[V]",
+      "FIRSTX": "250.0000",
+      "LASTX": "200.0000",
+      "NPOINTS": "51",
+      "FIRSTY": "-1.34006",
+      "MAXY": "1.59956",
+      "MINY": "-141.35201"
+    }
+  },
+  {
+    "file": "sol2.txt",
+    "x_range": [
+      200.0,
+      250.0
+    ],
+    "min_210_222": [
+      210.0,
+      -111.102
+    ],
+    "min_206_210": [
+      210.0,
+      -111.102
+    ],
+    "meta": {
+      "TITLE": "",
+      "DATA TYPE": "",
+      "ORIGIN": "JASCO",
+      "OWNER": "",
+      "DATE": "26/03/03",
+      "TIME": "15:26:03",
+      "SPECTROMETER/DATA SYSTEM": "JASCO Corp., J-810, Rev. 1.00",
+      "RESOLUTION": "",
+      "DELTAX": "-1",
+      "XUNITS": "NANOMETERS",
+      "YUNITS": "CD[mdeg]",
+      "Y2UNITS": "HT[V]",
+      "FIRSTX": "250.0000",
+      "LASTX": "200.0000",
+      "NPOINTS": "51",
+      "FIRSTY": "-0.79704",
+      "MAXY": "1.54872",
+      "MINY": "-111.10179"
+    }
+  },
+  {
+    "file": "sol3.txt",
+    "x_range": [
+      200.0,
+      250.0
+    ],
+    "min_210_222": [
+      211.0,
+      -72.8352
+    ],
+    "min_206_210": [
+      210.0,
+      -72.7698
+    ],
+    "meta": {
+      "TITLE": "",
+      "DATA TYPE": "",
+      "ORIGIN": "JASCO",
+      "OWNER": "",
+      "DATE": "26/03/03",
+      "TIME": "15:34:23",
+      "SPECTROMETER/DATA SYSTEM": "JASCO Corp., J-810, Rev. 1.00",
+      "RESOLUTION": "",
+      "DELTAX": "-1",
+      "XUNITS": "NANOMETERS",
+      "YUNITS": "CD[mdeg]",
+      "Y2UNITS": "HT[V]",
+      "FIRSTX": "250.0000",
+      "LASTX": "200.0000",
+      "NPOINTS": "51",
+      "FIRSTY": "-1.77863",
+      "MAXY": "2.88190",
+      "MINY": "-72.83521"
+    }
+  },
+  {
+    "file": "sol4.txt",
+    "x_range": [
+      200.0,
+      250.0
+    ],
+    "min_210_222": [
+      212.0,
+      -72.1224
+    ],
+    "min_206_210": [
+      210.0,
+      -70.9507
+    ],
+    "meta": {
+      "TITLE": "",
+      "DATA TYPE": "",
+      "ORIGIN": "JASCO",
+      "OWNER": "",
+      "DATE": "26/03/03",
+      "TIME": "15:40:19",
+      "SPECTROMETER/DATA SYSTEM": "JASCO Corp., J-810, Rev. 1.00",
+      "RESOLUTION": "",
+      "DELTAX": "-1",
+      "XUNITS": "NANOMETERS",
+      "YUNITS": "CD[mdeg]",
+      "Y2UNITS": "HT[V]",
+      "FIRSTX": "250.0000",
+      "LASTX": "200.0000",
+      "NPOINTS": "51",
+      "FIRSTY": "-1.60516",
+      "MAXY": "3.73843",
+      "MINY": "-72.12239"
+    }
+  }
+]

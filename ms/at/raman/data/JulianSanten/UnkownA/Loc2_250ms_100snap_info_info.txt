@@ -1,0 +1,10 @@
+Date=1/2/2024
+Time=4:20 pm
+Sample name=Loc2_250ms_100snap_info
+Integration time=250[ms]
+Averaging=200
+Laser wavelength=533.4[nm]
+Laser power=100[mW]
+Relative Intensity Correction=No
+DATATYPE;Raman shift (cm-1);Intensity (Counts)
+Smoothing=No 

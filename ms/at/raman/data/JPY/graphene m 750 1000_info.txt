@@ -1,0 +1,10 @@
+Date=13/2/2025
+Time=2:39 pm
+Sample name=graphene m 750 1000
+Integration time=1000[ms]
+Averaging=10
+Laser wavelength=532.1[nm]
+Laser power=0[mW]
+Relative Intensity Correction=No
+DATATYPE;Raman shift (cm-1);Intensity (Counts)
+Smoothing=No 

@@ -1,0 +1,10 @@
+Date=24/1/2025
+Time=2:45 pm
+Sample name=UnknownC_75mW_AT7000ms_AVERAGE_10
+Integration time=7000[ms]
+Averaging=10
+Laser wavelength=532.1[nm]
+Laser power=0[mW]
+Relative Intensity Correction=No
+DATATYPE;Raman shift (cm-1);Intensity (Counts)
+Smoothing=Yes (Side Points 6; Polynomial Order 3)
